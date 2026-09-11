@@ -212,48 +212,37 @@ footer{
 </footer>
 
 <script>
+function addScore() {
 
-function addScore(){
+    let name = document.getElementById("studentName").value.trim();
+    let score = parseFloat(document.getElementById("studentScore").value);
+    let percentage = parseFloat(document.getElementById("studentPercentage").value);
 
-let name = document.getElementById("studentName").value.trim();
+    if (name === "" || isNaN(score) || isNaN(percentage)) {
+        alert("Please enter Name, Score and Percentage.");
+        return;
+    }
 
-let score = parseFloat(
-document.getElementById("studentScore").value
-);
+    fetch("https://script.google.com/macros/s/AKfycbxV1CyjtjBJJlpvIJxEx37AsBms2rStoPck9kcvD9uaN5UpgoTkKT0Y4EQWr77onNNx/exec", {
+        method: "POST",
+        body: JSON.stringify({
+            name: name,
+            score: score,
+            percentage: percentage
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert("Score submitted successfully!");
 
-let percentage = parseFloat(
-document.getElementById("studentPercentage").value
-);
+        document.getElementById("studentName").value = "";
+        document.getElementById("studentScore").value = "";
+        document.getElementById("studentPercentage").value = "";
 
-if(name === "" || isNaN(score) || isNaN(percentage)){
-alert("Please enter Name, Score and Percentage.");
-return;
+        loadLeaderboard();
+    })
+    .catch(error => {
+        alert("Error submitting score. Please try again.");
+        console.error(error);
+    });
 }
-
-let table = document.getElementById("leaderboardBody");
-
-let row = table.insertRow();
-
-let rankCell = row.insertCell(0);
-let nameCell = row.insertCell(1);
-let scoreCell = row.insertCell(2);
-let percentageCell = row.insertCell(3);
-
-rankCell.innerHTML = "🏅";
-nameCell.innerHTML = name;
-scoreCell.innerHTML = score.toFixed(2) + " / 20";
-percentageCell.innerHTML = percentage.toFixed(2) + "%";
-
-document.getElementById("studentName").value = "";
-document.getElementById("studentScore").value = "";
-document.getElementById("studentPercentage").value = "";
-
-alert("Score submitted successfully!");
-
-}
-
-</script>
-
-</body>
-</html>
-```
