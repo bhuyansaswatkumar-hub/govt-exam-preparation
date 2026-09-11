@@ -78,6 +78,24 @@ button:hover{
     text-align:center;
 }
 
+.review{
+    background:white;
+    padding:20px;
+    margin-top:20px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.correct{
+    color:green;
+    font-weight:bold;
+}
+
+.wrong{
+    color:red;
+    font-weight:bold;
+}
+
 .nav{
     text-align:center;
     margin:30px 0;
@@ -108,109 +126,91 @@ button:hover{
 
 <div class="quiz-box">
 <div class="question">1. Who founded the Mughal Empire in India?</div>
-
 <label><input type="radio" name="q1" value="A"> Akbar</label>
 <label><input type="radio" name="q1" value="B"> Babur</label>
 <label><input type="radio" name="q1" value="C"> Humayun</label>
 <label><input type="radio" name="q1" value="D"> Shah Jahan</label>
 </div>
 
-
 <div class="quiz-box">
 <div class="question">2. What is the capital of India?</div>
-
 <label><input type="radio" name="q2" value="A"> Mumbai</label>
 <label><input type="radio" name="q2" value="B"> Kolkata</label>
 <label><input type="radio" name="q2" value="C"> New Delhi</label>
 <label><input type="radio" name="q2" value="D"> Chennai</label>
 </div>
 
-
 <div class="quiz-box">
 <div class="question">3. Which Article of the Indian Constitution deals with Fundamental Rights?</div>
-
 <label><input type="radio" name="q3" value="A"> Articles 12–35</label>
 <label><input type="radio" name="q3" value="B"> Articles 36–51</label>
 <label><input type="radio" name="q3" value="C"> Articles 52–78</label>
 <label><input type="radio" name="q3" value="D"> Articles 79–100</label>
 </div>
 
-
 <div class="quiz-box">
 <div class="question">4. What is the currency of India?</div>
-
 <label><input type="radio" name="q4" value="A"> Dollar</label>
 <label><input type="radio" name="q4" value="B"> Rupee</label>
 <label><input type="radio" name="q4" value="C"> Pound</label>
 <label><input type="radio" name="q4" value="D"> Yen</label>
 </div>
 
-
 <div class="quiz-box">
 <div class="question">5. Which planet is known as the Red Planet?</div>
-
 <label><input type="radio" name="q5" value="A"> Venus</label>
 <label><input type="radio" name="q5" value="B"> Jupiter</label>
 <label><input type="radio" name="q5" value="C"> Mars</label>
 <label><input type="radio" name="q5" value="D"> Saturn</label>
 </div>
 
-
 <div class="quiz-box">
 <div class="question">6. Which gas is most abundant in Earth's atmosphere?</div>
-
 <label><input type="radio" name="q6" value="A"> Oxygen</label>
 <label><input type="radio" name="q6" value="B"> Nitrogen</label>
 <label><input type="radio" name="q6" value="C"> Carbon Dioxide</label>
 <label><input type="radio" name="q6" value="D"> Hydrogen</label>
 </div>
 
-
 <div class="quiz-box">
 <div class="question">7. Who is known as the Father of the Indian Constitution?</div>
-
 <label><input type="radio" name="q7" value="A"> Mahatma Gandhi</label>
 <label><input type="radio" name="q7" value="B"> Jawaharlal Nehru</label>
 <label><input type="radio" name="q7" value="C"> Dr. B. R. Ambedkar</label>
 <label><input type="radio" name="q7" value="D"> Sardar Patel</label>
 </div>
 
-
 <div class="quiz-box">
 <div class="question">8. Which is the largest state in India by area?</div>
-
 <label><input type="radio" name="q8" value="A"> Odisha</label>
 <label><input type="radio" name="q8" value="B"> Maharashtra</label>
 <label><input type="radio" name="q8" value="C"> Rajasthan</label>
 <label><input type="radio" name="q8" value="D"> Madhya Pradesh</label>
 </div>
 
-
 <div class="quiz-box">
 <div class="question">9. What does CPU stand for?</div>
-
 <label><input type="radio" name="q9" value="A"> Central Processing Unit</label>
 <label><input type="radio" name="q9" value="B"> Computer Processing Utility</label>
 <label><input type="radio" name="q9" value="C"> Central Program Unit</label>
 <label><input type="radio" name="q9" value="D"> Computer Program Unit</label>
 </div>
 
-
 <div class="quiz-box">
 <div class="question">10. Which bank is known as the central bank of India?</div>
-
 <label><input type="radio" name="q10" value="A"> SBI</label>
 <label><input type="radio" name="q10" value="B"> RBI</label>
 <label><input type="radio" name="q10" value="C"> PNB</label>
 <label><input type="radio" name="q10" value="D"> Bank of Baroda</label>
 </div>
 
-
 <button type="button" onclick="checkQuiz()">Submit Quiz</button>
 
 </form>
 
 <div id="result"></div>
+
+<div id="review"></div>
 
 <div class="nav">
 <a href="index.html">Home</a>
@@ -220,46 +220,101 @@ button:hover{
 
 </div>
 
-
 <script>
 
 function checkQuiz(){
 
 let answers = {
-    q1:"B",
-    q2:"C",
-    q3:"A",
-    q4:"B",
-    q5:"C",
-    q6:"B",
-    q7:"C",
-    q8:"C",
-    q9:"A",
-    q10:"B"
+q1:"B",
+q2:"C",
+q3:"A",
+q4:"B",
+q5:"C",
+q6:"B",
+q7:"C",
+q8:"C",
+q9:"A",
+q10:"B"
+};
+
+let questions = {
+q1:"Who founded the Mughal Empire in India?",
+q2:"What is the capital of India?",
+q3:"Which Article of the Indian Constitution deals with Fundamental Rights?",
+q4:"What is the currency of India?",
+q5:"Which planet is known as the Red Planet?",
+q6:"Which gas is most abundant in Earth's atmosphere?",
+q7:"Who is known as the Father of the Indian Constitution?",
+q8:"Which is the largest state in India by area?",
+q9:"What does CPU stand for?",
+q10:"Which bank is known as the central bank of India?"
+};
+
+let correctText = {
+q1:"Babur",
+q2:"New Delhi",
+q3:"Articles 12–35",
+q4:"Rupee",
+q5:"Mars",
+q6:"Nitrogen",
+q7:"Dr. B. R. Ambedkar",
+q8:"Rajasthan",
+q9:"Central Processing Unit",
+q10:"RBI"
 };
 
 let score = 0;
+let reviewHTML = "<div class='review'><h2>📖 Answer Review</h2>";
 
 for(let q in answers){
 
-    let selected = document.querySelector(
-        'input[name="' + q + '"]:checked'
-    );
+let selected = document.querySelector(
+'input[name="' + q + '"]:checked'
+);
 
-    if(selected && selected.value === answers[q]){
-        score++;
-    }
+if(selected && selected.value === answers[q]){
+
+score++;
+
+reviewHTML +=
+"<p class='correct'>✔️ " +
+questions[q] +
+"<br>Correct Answer: " +
+correctText[q] +
+"</p>";
+
+}else{
+
+let yourAnswer = selected
+? selected.parentElement.innerText
+: "Not answered";
+
+reviewHTML +=
+"<p class='wrong'>❌ " +
+questions[q] +
+"<br>Your Answer: " +
+yourAnswer +
+"<br>Correct Answer: " +
+correctText[q] +
+"</p>";
+
+}
+
 }
 
 let percentage = (score / 10) * 100;
 
 document.getElementById("result").innerHTML =
-"Your Score: " + score + " / 10<br>" +
-"Percentage: " + percentage + "%";
+"🎯 Your Score: " + score + " / 10<br>" +
+"📊 Percentage: " + percentage + "%";
+
+reviewHTML += "</div>";
+
+document.getElementById("review").innerHTML = reviewHTML;
 
 window.scrollTo({
-    top: document.body.scrollHeight,
-    behavior: "smooth"
+top:document.body.scrollHeight,
+behavior:"smooth"
 });
 
 }
