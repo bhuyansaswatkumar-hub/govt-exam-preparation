@@ -8,121 +8,121 @@
 <title>Leaderboard | SSC & Banking</title>
 
 <style>
-*{
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
 }
 
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#f4f6f8;
-    color:#222;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
 }
 
-header{
-    background:#17365d;
-    color:white;
-    text-align:center;
-    padding:35px 15px;
+header {
+    background: #17365d;
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
 }
 
-header h1{
-    margin:0;
-    font-size:32px;
+header h1 {
+    margin: 0;
+    font-size: 32px;
 }
 
-header p{
-    font-size:18px;
+header p {
+    font-size: 18px;
 }
 
-nav{
-    background:#0d2542;
-    text-align:center;
-    padding:12px;
+nav {
+    background: #0d2542;
+    text-align: center;
+    padding: 12px;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin:0 8px;
-    font-weight:bold;
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 8px;
+    font-weight: bold;
 }
 
-.container{
-    max-width:900px;
-    margin:30px auto;
-    padding:20px;
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
 }
 
-.card{
-    background:white;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
-    margin-bottom:25px;
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
 }
 
-h2{
-    text-align:center;
-    color:#17365d;
+h2 {
+    text-align: center;
+    color: #17365d;
 }
 
-input{
-    width:100%;
-    padding:12px;
-    margin:8px 0 15px;
-    border:1px solid #ccc;
-    border-radius:6px;
-    font-size:16px;
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
 }
 
-button{
-    width:100%;
-    padding:13px;
-    background:#17365d;
-    color:white;
-    border:none;
-    border-radius:6px;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
+button {
+    width: 100%;
+    padding: 13px;
+    background: #17365d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-button:hover{
-    background:#0d2542;
+button:hover {
+    background: #0d2542;
 }
 
-table{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:25px;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
 }
 
-th,td{
-    padding:15px;
-    text-align:center;
-    border-bottom:1px solid #ddd;
+th, td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
 }
 
-th{
-    background:#17365d;
-    color:white;
+th {
+    background: #17365d;
+    color: white;
 }
 
-tr:nth-child(even){
-    background:#f4f6f8;
+tr:nth-child(even) {
+    background: #f4f6f8;
 }
 
-.rank{
-    font-size:22px;
+.rank {
+    font-size: 22px;
 }
 
-footer{
-    background:#17365d;
-    color:white;
-    text-align:center;
-    padding:25px;
-    margin-top:40px;
+footer {
+    background: #17365d;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
 }
 </style>
 </head>
@@ -159,7 +159,7 @@ footer{
 <label>Percentage</label>
 <input type="number" id="studentPercentage" placeholder="Example: 92.50" step="0.01" min="0" max="100">
 
-<button onclick="addScore()">Submit Score</button>
+<button type="button" onclick="addScore()">Submit Score</button>
 
 </div>
 
@@ -169,12 +169,14 @@ footer{
 
 <table>
 
+<thead>
 <tr>
 <th>Rank</th>
 <th>Student</th>
 <th>Score</th>
 <th>Percentage</th>
 </tr>
+</thead>
 
 <tbody id="leaderboardBody">
 
@@ -212,39 +214,69 @@ footer{
 </footer>
 
 <script>
+
 function addScore() {
 
     let name = document.getElementById("studentName").value.trim();
     let score = parseFloat(document.getElementById("studentScore").value);
     let percentage = parseFloat(document.getElementById("studentPercentage").value);
 
-    if (name === "" || isNaN(score) || isNaN(percentage)) {
-        alert("Please enter Name, Score and Percentage.");
+    if (name === "") {
+        alert("Please enter your name.");
         return;
     }
-fetch("https://script.google.com/macros/s/AKfycbxV1CyjtjBJJlpvIJxEx37AsBms2rStoPck9kcvD9uaN5UpgoTkKT0Y4EQWr77onNNx/exec", {
-    method: "POST",
-    body: new URLSearchParams({
-        name: name,
-        score: score,
-        percentage: percentage
-    })
-})
-.then(response => response.text())
-.then(data => {
-    if (data === "success") {
-        alert("Score submitted successfully!");
 
-        document.getElementById("studentName").value = "";
-        document.getElementById("studentScore").value = "";
-        document.getElementById("studentPercentage").value = "";
-    } else {
-        alert("Score could not be submitted.");
+    if (isNaN(score)) {
+        alert("Please enter your score.");
+        return;
     }
-})
-.catch(error => {
-    alert("Error submitting score. Please try again.");
-    console.error(error);
-});
-    
+
+    if (isNaN(percentage)) {
+        alert("Please enter your percentage.");
+        return;
+    }
+
+    fetch("https://script.google.com/macros/s/AKfycbxV1CyjtjBJJlpvIJxEx37AsBms2rStoPck9kcvD9uaN5UpgoTkKT0Y4EQWr77onNNx/exec", {
+        method: "POST",
+        body: new URLSearchParams({
+            name: name,
+            score: score,
+            percentage: percentage
+        })
+    })
+
+    .then(response => response.text())
+
+    .then(data => {
+
+        if (data.trim() === "success") {
+
+            alert("Score submitted successfully!");
+
+            document.getElementById("studentName").value = "";
+            document.getElementById("studentScore").value = "";
+            document.getElementById("studentPercentage").value = "";
+
+        } else {
+
+            alert("Score could not be submitted.");
+
+        }
+
+    })
+
+    .catch(error => {
+
+        alert("Error submitting score. Please try again.");
+
+        console.error(error);
+
+    });
+
 }
+
+</script>
+
+</body>
+</html>
+```
