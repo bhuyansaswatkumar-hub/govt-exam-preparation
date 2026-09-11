@@ -59,11 +59,37 @@ nav a{
     padding:25px;
     border-radius:10px;
     box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom:25px;
 }
 
 h2{
     text-align:center;
     color:#17365d;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin:8px 0 15px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:16px;
+}
+
+button{
+    width:100%;
+    padding:13px;
+    background:#17365d;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0d2542;
 }
 
 table{
@@ -95,7 +121,6 @@ footer{
     background:#17365d;
     color:white;
     text-align:center;
-    color:white;
     padding:25px;
     margin-top:40px;
 }
@@ -106,7 +131,7 @@ footer{
 
 <header>
 <h1>🏆 SSC & Banking Leaderboard</h1>
-<p>Top Performers</p>
+<p>Submit Your Mock Test Score</p>
 </header>
 
 <nav>
@@ -123,6 +148,23 @@ footer{
 
 <div class="card">
 
+<h2>📝 Submit Your Score</h2>
+
+<label>Student Name</label>
+<input type="text" id="studentName" placeholder="Enter your name">
+
+<label>Score</label>
+<input type="number" id="studentScore" placeholder="Example: 18.50" step="0.01" min="0" max="20">
+
+<label>Percentage</label>
+<input type="number" id="studentPercentage" placeholder="Example: 92.50" step="0.01" min="0" max="100">
+
+<button onclick="addScore()">Submit Score</button>
+
+</div>
+
+<div class="card">
+
 <h2>🏆 Top Performers</h2>
 
 <table>
@@ -133,6 +175,8 @@ footer{
 <th>Score</th>
 <th>Percentage</th>
 </tr>
+
+<tbody id="leaderboardBody">
 
 <tr>
 <td class="rank">🥇</td>
@@ -155,19 +199,7 @@ footer{
 <td>91.25%</td>
 </tr>
 
-<tr>
-<td>4</td>
-<td>Student 4</td>
-<td>17.50 / 20</td>
-<td>87.50%</td>
-</tr>
-
-<tr>
-<td>5</td>
-<td>Student 5</td>
-<td>16.75 / 20</td>
-<td>83.75%</td>
-</tr>
+</tbody>
 
 </table>
 
@@ -178,6 +210,49 @@ footer{
 <footer>
 <p>© 2026 SSC & Banking Exam Preparation</p>
 </footer>
+
+<script>
+
+function addScore(){
+
+let name = document.getElementById("studentName").value.trim();
+
+let score = parseFloat(
+document.getElementById("studentScore").value
+);
+
+let percentage = parseFloat(
+document.getElementById("studentPercentage").value
+);
+
+if(name === "" || isNaN(score) || isNaN(percentage)){
+alert("Please enter Name, Score and Percentage.");
+return;
+}
+
+let table = document.getElementById("leaderboardBody");
+
+let row = table.insertRow();
+
+let rankCell = row.insertCell(0);
+let nameCell = row.insertCell(1);
+let scoreCell = row.insertCell(2);
+let percentageCell = row.insertCell(3);
+
+rankCell.innerHTML = "🏅";
+nameCell.innerHTML = name;
+scoreCell.innerHTML = score.toFixed(2) + " / 20";
+percentageCell.innerHTML = percentage.toFixed(2) + "%";
+
+document.getElementById("studentName").value = "";
+document.getElementById("studentScore").value = "";
+document.getElementById("studentPercentage").value = "";
+
+alert("Score submitted successfully!");
+
+}
+
+</script>
 
 </body>
 </html>
