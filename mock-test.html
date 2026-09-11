@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mock Test | SSC & Banking</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f6f8;
+    color:#222;
+}
+
+header{
+    background:#17365d;
+    color:white;
+    padding:30px 20px;
+    text-align:center;
+}
+
+header h1{
+    margin:0;
+}
+
+.container{
+    max-width:900px;
+    margin:25px auto;
+    padding:20px;
+}
+
+.info{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+    text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.timer{
+    font-size:24px;
+    font-weight:bold;
+    color:#d32f2f;
+    margin:10px;
+}
+
+.quiz-box{
+    background:white;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.question{
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+label{
+    display:block;
+    background:#f1f3f5;
+    padding:12px;
+    margin:8px 0;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+label:hover{
+    background:#e2e6ea;
+}
+
+button{
+    background:#17365d;
+    color:white;
+    border:none;
+    padding:14px 25px;
+    font-size:17px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0d2542;
+}
+
+#result{
+    margin-top:25px;
+    padding:25px;
+    background:white;
+    border-radius:10px;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.review{
+    background:white;
+    padding:20px;
+    margin-top:20px;
+    border-radius:10px;
+}
+
+.correct{
+    color:green;
+    font-weight:bold;
+}
+
+.wrong{
+    color:red;
+    font-weight:bold;
+}
+
+.nav{
+    text-align:center;
+    margin:30px 0;
+}
+
+.nav a{
+    display:inline-block;
+    text-decoration:none;
+    background:#17365d;
+    color:white;
+    padding:10px 15px;
+    margin:5px;
+    border-radius:5px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h1>📝 SSC & Banking Mock Test</h1>
+
+<p>20 Questions • 10 Minute Test</p>
+
+</header>
+
+<div class="container">
+
+<div class="info">
+
+<p><strong>Total Questions:</strong> 20</p>
+
+<p><strong>Marks:</strong> 1 mark each</p>
+
+<div class="timer">
+⏱️ Time Left: <span id="timer">10:00</span>
+</div>
+
+</div>
+
+<form id="quizForm">
+
+<div class="quiz-box">
+<div class="question">1. Who founded the Mughal Empire in India?</div>
+<label><input type="radio" name="q1" value="A"> Akbar</label>
+<label><input type="radio" name="q1" value="B"> Babur</label>
+<label><input type="radio" name="q1" value="C"> Humayun</label>
+<label><input type="radio" name="q1" value="D"> Shah Jahan</label>
+</div>
+
+<div class="quiz-box">
+<div class="question">2. What is the capital of India?</div>
+<label><input type="radio" name="q2" value="A"> Mumbai</label>
+<label><input type="radio" name="q2" value="B"> Kolkata</label>
+<label><input type="radio" name="q2" value="C"> New Delhi</label>
+<label><input type="radio" name="q2" value="D"> Chennai</label>
+</div>
+
+<div class="quiz-box">
+<div class="question">3. Which Article deals with Fundamental Rights?</div>
+<label><input type="radio" name="q3" value="A"> Articles 12–35</label>
+<label><input type="radio" name="q3" value="B"> Articles 36–51</label>
+<label><input type="radio" name="q3" value="C"> Articles 52–78</label>
+<label><input type="radio" name="q3" value="D"> Articles 79–100</label>
+</div>
+
+<div class="quiz-box">
+<div class="question">4. What is the currency of India?</div>
+<label><input type="radio" name="q4" value="A"> Dollar</label>
+<label><input type="radio" name="q4" value="B"> Rupee</label>
+<label><input type="radio" name="q4" value="C"> Pound</label>
+<label><input type="radio" name="q4" value="D"> Yen</label>
+</div>
+
+<div class="quiz-box">
+<div class="question">5. Which planet is known as the Red Planet?</div>
+<label><input type="radio" name="q5" value="A"> Venus</label>
+<label><input type="radio" name="q5" value="B"> Jupiter</label>
+<label><input type="radio" name="q5" value="C"> Mars</label>
+<label><input type="radio" name="q5" value="D"> Saturn</label>
+</div>
+
+<div class="quiz-box">
+<div class="question">6. Which gas is most abundant in Earth's atmosphere?</div>
+<label><input type="radio" name="q6" value="A"> Oxygen</label>
+<label><input type="radio" name="q6" value="B"> Nitrogen</label>
+<label><input type="radio" name="q6" value="C"> Carbon Dioxide</label>
+<label><input type="radio" name="q6" value="D"> Hydrogen</label>
+</div>
+
+<div class="quiz-box">
+<div class="question">7. Who is known as the Father of the Indian Constitution?</div>
+<label><input type="radio" name="q7" value="A"> Mahatma Gandhi</label>
+<label><input type="radio" name="q7" value="B"> Jawaharlal Nehru</label>
+<label><input type="radio" name="q7" value="C"> Dr. B. R. Ambedkar</label>
+<label><input type="radio" name="q7" value="D"> Sardar Patel</label>
+</div>
+
+<div class="quiz-box">
+<div class="question">8. Which is the largest Indian state by area?</div>
+<label><input type="radio" name="q8" value="A"> Odisha</label>
+<label><input type="radio" name="q8" value="B"> Maharashtra</label>
+<label><input type="radio" name="q8" value="C"> Rajasthan</label>
+<label><input type="radio" name="q8" value="D"> Madhya Pradesh</label>
+</div>
+
+<div class="quiz-box">
+<div class="question">9. What does CPU stand for?</div>
+<label><input type="radio" name="q9" value="A"> Central Processing Unit</label>
+<label><input type="radio" name="q9" value="B"> Computer Processing Utility</label>
+<label><input type="radio" name="q9" value="C"> Central Program Unit</label>
+<label><input type="radio" name="q9" value="D"> Computer Program Unit</label>
+</div>
+
+<div class="quiz-box">
+<div class="question">10. Which bank is the central bank of India?</div>
+<label><input type="radio" name="q10" value="A"> SBI</label>
+<label><input type="radio" name="q10" value="B"> RBI</label>
+<label><input type="radio" name="q10" value="C"> PNB</label>
+<label><input type="radio" name="q10" value="D"> Bank of Baroda</label>
+</div>
+
+<div class="quiz-box">
+<div class="question">11. Who was the first President of India?</div>
+<label><input type="radio" name="q11" value="A"> Dr. Rajendra Prasad</label>
+<label><input type="radio" name="q11" value="B"> S. Radhakrishnan</label>
+<label><input type="radio" name="q11" value="C"> Jawaharlal Nehru</label>
+<label><input type="radio" name="q11" value="D"> Dr. B. R. Ambedkar</label>
+</div>
+
+<div class="quiz-box">
+<div class="question">12. Which is the longest river in India?</div>
+<label><input type="radio" name="q12" value="A"> Yamuna</label>
+<label><input type="radio" name="q12" value="B"> Ganga</label>
+<label><input type="radio" name="q12" value="C"> Godavari</label>
+<label><input type="radio" name="q12" value="D"> Narmada</label>
+</div>
+
+<div class="quiz-box">
+<div class="question">13. How many Fundamental Duties are there in the Indian Constitution?</div>
+<label><input type="radio" name="q13" value="A"> 9</label>
+<label><input type="radio" name="q13" value="B"> 10</label>
+<label><input type="radio" name="q13" value="C"> 11</label>
+<label><input type="radio" name="q13" value="D"> 12</label>
+</div>
+
+<div class="quiz-box">
+<div class="question">14. Which vitamin is produced in the human body by sunlight?</div>
+<label><input type="radio" name="q14" value="A"> Vitamin A</label>
+<label><input type="radio" name="q14" value="B"> Vitamin B</label>
+<label><input type="radio" name="q14" value="C"> Vitamin C</label>
+<label><input type="radio" name="q14" value="D"> Vitamin D</label>
+</div>
+
+<div class="quiz-box">
+<div class="question">15. Which is the largest planet in our Solar System?</div>
+<label><input type="radio" name="q15" value="A"> Earth</label>
+<label><input type="radio" name="q15" value="B"> Saturn</label>
+<label><input type="radio" name="q15" value="C"> Jupiter</label>
+<label><input type="radio" name="q15" value="D"> Neptune</label>
+</div>
+
+<div class="quiz-box">
+<div class="question">16. What is the full form of ATM?</div>
+<label><input type="radio" name="q16" value="A"> Automatic Transfer Machine</label>
+<label><input type="radio" name="q16" value="B"> Automated Teller Machine</label>
+<label><input type="radio" name="q16" value="C"> Automatic Teller Money</label>
+<label><input type="radio" name="q16" value="D"> Automated Transfer Money</label>
+</div>
+
+<div class="quiz-box">
+<div class="question">17. Who wrote the national anthem of India?</div>
+<label><input type="radio" name="q17" value="A"> Bankim Chandra Chattopadhyay</label>
+<label><input type="radio" name="q17" value="B"> Rabindranath Tagore</label>
+<label><input type="radio" name="q17" value="C"> Sarojini Naidu</label>
+<label><input type="radio" name="q17" value="D"> Subhash Chandra Bose</label>
+</div>
+
+<div class="quiz-box">
+<div class="question">18. Which ocean lies to the south of India?</div>
+<label><input type="radio" name="q18" value="A"> Atlantic Ocean</label>
+<label><input type="radio" name="q18" value="B"> Pacific Ocean</label>
+<label><input type="radio" name="q18" value="C"> Indian Ocean</label>
+<label><input type="radio" name="q18" value="D"> Arctic Ocean</label>
+</div>
+
+<div class="quiz-box">
+<div class="question">19. What is the full form of GDP?</div>
+<label><input type="radio" name="q19" value="A"> Gross Domestic Product</label>
+<label><input type="radio" name="q19" value="B"> General Domestic Product</label>
+<label><input type="radio" name="q19" value="C"> Gross Development Plan</label>
+<label><input type="radio" name="q19" value="D"> General Development Product</label>
+</div>
+
+<div class="quiz-box">
+<div class="question">20. Which computer device is used to enter text?</div>
+<label><input type="radio" name="q20" value="A"> Monitor</label>
+<label><input type="radio" name="q20" value="B"> Printer</label>
+<label><input type="radio" name="q20" value="C"> Keyboard</label>
+<label><input type="radio" name="q20" value="D"> Speaker</label>
+</div>
+
+<button type="button" onclick="submitTest()">Submit Test</button>
+
+</form>
+
+<div id="result"></div>
+
+<div id="review"></div>
+
+<div class="nav">
+<a href="index.html">Home</a>
+<a href="study-material.html">Study Material</a>
+<a href="daily-quiz.html">Daily Quiz</a>
+</div>
+
+</div>
+
+<script>
+
+let timeLeft = 600;
+let submitted = false;
+
+let timerInterval = setInterval(function(){
+
+if(timeLeft <= 0){
+
+clearInterval(timerInterval);
+
+if(!submitted){
+submitTest();
+}
+
+return;
+
+}
+
+let minutes = Math.floor(timeLeft / 60);
+let seconds = timeLeft % 60;
+
+document.getElementById("timer").innerText =
+String(minutes).padStart(2,"0") + ":" +
+String(seconds).padStart(2,"0");
+
+timeLeft--;
+
+},1000);
+
+
+function submitTest(){
+
+if(submitted){
+return;
+}
+
+submitted = true;
+
+clearInterval(timerInterval);
+
+let answers = {
+
+q1:"B",
+q2:"C",
+q3:"A",
+q4:"B",
+q5:"C",
+q6:"B",
+q7:"C",
+q8:"C",
+q9:"A",
+q10:"B",
+q11:"A",
+q12:"B",
+q13:"C",
+q14:"D",
+q15:"C",
+q16:"B",
+q17:"B",
+q18:"C",
+q19:"A",
+q20:"C"
+
+};
+
+let correctText = {
+
+q1:"Babur",
+q2:"New Delhi",
+q3:"Articles 12–35",
+q4:"Rupee",
+q5:"Mars",
+q6:"Nitrogen",
+q7:"Dr. B. R. Ambedkar",
+q8:"Rajasthan",
+q9:"Central Processing Unit",
+q10:"RBI",
+q11:"Dr. Rajendra Prasad",
+q12:"Ganga",
+q13:"11",
+q14:"Vitamin D",
+q15:"Jupiter",
+q16:"Automated Teller Machine",
+q17:"Rabindranath Tagore",
+q18:"Indian Ocean",
+q19:"Gross Domestic Product",
+q20:"Keyboard"
+
+};
+
+let score = 0;
+
+let reviewHTML =
+"<div class='review'><h2>📖 Answer Review</h2>";
+
+for(let q in answers){
+
+let selected =
+document.querySelector(
+'input[name="' + q + '"]:checked'
+);
+
+if(selected && selected.value === answers[q]){
+
+score++;
+
+reviewHTML +=
+"<p class='correct'>✔️ Question " +
+q.substring(1) +
+": Correct<br>Answer: " +
+correctText[q] +
+"</p>";
+
+}else{
+
+let yourAnswer =
+selected ?
+selected.parentElement.innerText :
+"Not Answered";
+
+reviewHTML +=
+"<p class='wrong'>❌ Question " +
+q.substring(1) +
+": Wrong<br>Your Answer: " +
+yourAnswer +
+"<br>Correct Answer: " +
+correctText[q] +
+"</p>";
+
+}
+
+}
+
+let percentage =
+(score / 20) * 100;
+
+document.getElementById("result").innerHTML =
+"🎯 Your Score: " + score + " / 20<br>" +
+"📊 Percentage: " + percentage + "%<br><br>" +
+"🏆 Test Completed!";
+
+reviewHTML += "</div>";
+
+document.getElementById("review").innerHTML =
+reviewHTML;
+
+window.scrollTo({
+top:document.body.scrollHeight,
+behavior:"smooth"
+});
+
+}
+
+</script>
+
+</body>
+</html>
