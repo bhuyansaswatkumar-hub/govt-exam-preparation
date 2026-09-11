@@ -222,27 +222,29 @@ function addScore() {
         alert("Please enter Name, Score and Percentage.");
         return;
     }
-
-    fetch("https://script.google.com/macros/s/AKfycbxV1CyjtjBJJlpvIJxEx37AsBms2rStoPck9kcvD9uaN5UpgoTkKT0Y4EQWr77onNNx/exec", {
-        method: "POST",
-        body: JSON.stringify({
-            name: name,
-            score: score,
-            percentage: percentage
-        })
+fetch("https://script.google.com/macros/s/AKfycbxV1CyjtjBJJlpvIJxEx37AsBms2rStoPck9kcvD9uaN5UpgoTkKT0Y4EQWr77onNNx/exec", {
+    method: "POST",
+    body: new URLSearchParams({
+        name: name,
+        score: score,
+        percentage: percentage
     })
-    .then(response => response.json())
-    .then(data => {
+})
+.then(response => response.text())
+.then(data => {
+    if (data === "success") {
         alert("Score submitted successfully!");
 
         document.getElementById("studentName").value = "";
         document.getElementById("studentScore").value = "";
         document.getElementById("studentPercentage").value = "";
-
-        loadLeaderboard();
-    })
-    .catch(error => {
-        alert("Error submitting score. Please try again.");
-        console.error(error);
-    });
+    } else {
+        alert("Score could not be submitted.");
+    }
+})
+.catch(error => {
+    alert("Error submitting score. Please try again.");
+    console.error(error);
+});
+    
 }
