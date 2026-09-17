@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,7 +89,7 @@ nav a:hover {
     color: #666;
 }
 
-/* TOP 3 */
+/* TOP THREE */
 
 .top-three {
     display: flex;
@@ -224,6 +225,13 @@ tbody tr:hover {
     background: #f1f5fa;
 }
 
+/* CURRENT USER ROW */
+
+.current-user-row {
+    background: #eef4ff !important;
+    border-left: 4px solid #173b75;
+}
+
 /* RANK */
 
 .rank {
@@ -292,33 +300,27 @@ tbody tr:hover {
 
 .your-rank p {
     color: #444;
+    line-height: 1.7;
 }
 
-/* PAGINATION */
+/* REFRESH */
 
-.pagination {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 25px;
-    flex-wrap: wrap;
+.refresh-area {
+    text-align: center;
+    margin-top: 20px;
 }
 
-.pagination button {
+.refresh-button {
     border: none;
     background: #173b75;
     color: white;
-    padding: 10px 15px;
-    border-radius: 6px;
+    padding: 11px 20px;
+    border-radius: 7px;
     cursor: pointer;
     font-size: 14px;
 }
 
-.pagination button:hover {
-    background: #0d2852;
-}
-
-.pagination button.active {
+.refresh-button:hover {
     background: #0d2852;
 }
 
@@ -450,57 +452,9 @@ footer a:hover {
 
     <!-- TOP THREE -->
 
-    <div class="top-three">
+    <div class="top-three" id="topThree">
 
-        <!-- SECOND -->
-
-        <div class="top-card second">
-
-            <div class="medal">🥈</div>
-
-            <div class="rank-number">2</div>
-
-            <h3>Rahul Kumar</h3>
-
-            <p>Banking Mock Test</p>
-
-            <div class="score">92 / 100</div>
-
-        </div>
-
-
-        <!-- FIRST -->
-
-        <div class="top-card first">
-
-            <div class="medal">🏆</div>
-
-            <div class="rank-number">1</div>
-
-            <h3>Aditya Sharma</h3>
-
-            <p>SSC CGL Mock Test</p>
-
-            <div class="score">96 / 100</div>
-
-        </div>
-
-
-        <!-- THIRD -->
-
-        <div class="top-card third">
-
-            <div class="medal">🥉</div>
-
-            <div class="rank-number">3</div>
-
-            <h3>Priya Das</h3>
-
-            <p>SSC CHSL Mock Test</p>
-
-            <div class="score">89 / 100</div>
-
-        </div>
+        <!-- Filled automatically by JavaScript -->
 
     </div>
 
@@ -549,258 +503,7 @@ footer a:hover {
                 </thead>
 
 
-                <tbody>
-
-                    <tr>
-
-                        <td class="rank">1</td>
-
-                        <td class="user-name">Aditya Sharma</td>
-
-                        <td>SSC CGL</td>
-
-                        <td class="score-cell">96 / 100</td>
-
-                        <td class="percentage">96%</td>
-
-                        <td>
-                            <span class="badge excellent">
-                                Excellent
-                            </span>
-                        </td>
-
-                    </tr>
-
-
-                    <tr>
-
-                        <td class="rank">2</td>
-
-                        <td class="user-name">Rahul Kumar</td>
-
-                        <td>Banking</td>
-
-                        <td class="score-cell">92 / 100</td>
-
-                        <td class="percentage">92%</td>
-
-                        <td>
-                            <span class="badge excellent">
-                                Excellent
-                            </span>
-                        </td>
-
-                    </tr>
-
-
-                    <tr>
-
-                        <td class="rank">3</td>
-
-                        <td class="user-name">Priya Das</td>
-
-                        <td>SSC CHSL</td>
-
-                        <td class="score-cell">89 / 100</td>
-
-                        <td class="percentage">89%</td>
-
-                        <td>
-                            <span class="badge excellent">
-                                Excellent
-                            </span>
-                        </td>
-
-                    </tr>
-
-
-                    <tr>
-
-                        <td class="rank">4</td>
-
-                        <td class="user-name">Amit Singh</td>
-
-                        <td>SSC CGL</td>
-
-                        <td class="score-cell">86 / 100</td>
-
-                        <td class="percentage">86%</td>
-
-                        <td>
-                            <span class="badge good">
-                                Good
-                            </span>
-                        </td>
-
-                    </tr>
-
-
-                    <tr>
-
-                        <td class="rank">5</td>
-
-                        <td class="user-name">Neha Patnaik</td>
-
-                        <td>Banking</td>
-
-                        <td class="score-cell">84 / 100</td>
-
-                        <td class="percentage">84%</td>
-
-                        <td>
-                            <span class="badge good">
-                                Good
-                            </span>
-                        </td>
-
-                    </tr>
-
-
-                    <tr>
-
-                        <td class="rank">6</td>
-
-                        <td class="user-name">Suresh Das</td>
-
-                        <td>Railway</td>
-
-                        <td class="score-cell">81 / 100</td>
-
-                        <td class="percentage">81%</td>
-
-                        <td>
-                            <span class="badge good">
-                                Good
-                            </span>
-                        </td>
-
-                    </tr>
-
-
-                    <tr>
-
-                        <td class="rank">7</td>
-
-                        <td class="user-name">Anjali Mishra</td>
-
-                        <td>SSC CHSL</td>
-
-                        <td class="score-cell">78 / 100</td>
-
-                        <td class="percentage">78%</td>
-
-                        <td>
-                            <span class="badge good">
-                                Good
-                            </span>
-                        </td>
-
-                    </tr>
-
-
-                    <tr>
-
-                        <td class="rank">8</td>
-
-                        <td class="user-name">Rakesh Nayak</td>
-
-                        <td>Banking</td>
-
-                        <td class="score-cell">75 / 100</td>
-
-                        <td class="percentage">75%</td>
-
-                        <td>
-                            <span class="badge average">
-                                Average
-                            </span>
-                        </td>
-
-                    </tr>
-
-
-                    <tr>
-
-                        <td class="rank">9</td>
-
-                        <td class="user-name">Pooja Singh</td>
-
-                        <td>Railway</td>
-
-                        <td class="score-cell">72 / 100</td>
-
-                        <td class="percentage">72%</td>
-
-                        <td>
-                            <span class="badge average">
-                                Average
-                            </span>
-                        </td>
-
-                    </tr>
-
-
-                    <tr>
-
-                        <td class="rank">10</td>
-
-                        <td class="user-name">Manoj Behera</td>
-
-                        <td>SSC CGL</td>
-
-                        <td class="score-cell">69 / 100</td>
-
-                        <td class="percentage">69%</td>
-
-                        <td>
-                            <span class="badge average">
-                                Average
-                            </span>
-                        </td>
-
-                    </tr>
-
-
-                    <tr>
-
-                        <td class="rank">11</td>
-
-                        <td class="user-name">Kiran Rout</td>
-
-                        <td>Banking</td>
-
-                        <td class="score-cell">67 / 100</td>
-
-                        <td class="percentage">67%</td>
-
-                        <td>
-                            <span class="badge average">
-                                Average
-                            </span>
-                        </td>
-
-                    </tr>
-
-
-                    <tr>
-
-                        <td class="rank">12</td>
-
-                        <td class="user-name">Deepak Mohanty</td>
-
-                        <td>Railway</td>
-
-                        <td class="score-cell">64 / 100</td>
-
-                        <td class="percentage">64%</td>
-
-                        <td>
-                            <span class="badge average">
-                                Average
-                            </span>
-                        </td>
-
-                    </tr>
+                <tbody id="leaderboardBody">
 
                 </tbody>
 
@@ -811,7 +514,7 @@ footer a:hover {
 
         <!-- YOUR RANK -->
 
-        <div class="your-rank">
+        <div class="your-rank" id="yourRank">
 
             <h3>📊 Your Performance</h3>
 
@@ -822,19 +525,13 @@ footer a:hover {
         </div>
 
 
-        <!-- PAGINATION -->
+        <!-- REFRESH -->
 
-        <div class="pagination">
+        <div class="refresh-area">
 
-            <button onclick="previousPage()">Previous</button>
-
-            <button class="active">1</button>
-
-            <button>2</button>
-
-            <button>3</button>
-
-            <button onclick="nextPage()">Next</button>
+            <button class="refresh-button" onclick="loadLeaderboard()">
+                🔄 Refresh Leaderboard
+            </button>
 
         </div>
 
@@ -868,44 +565,668 @@ footer a:hover {
 
 <script>
 
-/* SEARCH FUNCTION */
+/* =====================================================
+   DEMO PARTICIPANTS
+   These appear when there are no real student scores.
+   ===================================================== */
+
+const demoParticipants = [
+
+    {
+        id: "demo1",
+        name: "Aditya Sharma",
+        exam: "SSC CGL",
+        score: 96,
+        total: 100,
+        percentage: 96
+    },
+
+    {
+        id: "demo2",
+        name: "Rahul Kumar",
+        exam: "Banking",
+        score: 92,
+        total: 100,
+        percentage: 92
+    },
+
+    {
+        id: "demo3",
+        name: "Priya Das",
+        exam: "SSC CHSL",
+        score: 89,
+        total: 100,
+        percentage: 89
+    },
+
+    {
+        id: "demo4",
+        name: "Amit Singh",
+        exam: "SSC CGL",
+        score: 86,
+        total: 100,
+        percentage: 86
+    },
+
+    {
+        id: "demo5",
+        name: "Neha Patnaik",
+        exam: "Banking",
+        score: 84,
+        total: 100,
+        percentage: 84
+    },
+
+    {
+        id: "demo6",
+        name: "Suresh Das",
+        exam: "Railway",
+        score: 81,
+        total: 100,
+        percentage: 81
+    },
+
+    {
+        id: "demo7",
+        name: "Anjali Mishra",
+        exam: "SSC CHSL",
+        score: 78,
+        total: 100,
+        percentage: 78
+    },
+
+    {
+        id: "demo8",
+        name: "Rakesh Nayak",
+        exam: "Banking",
+        score: 75,
+        total: 100,
+        percentage: 75
+    },
+
+    {
+        id: "demo9",
+        name: "Pooja Singh",
+        exam: "Railway",
+        score: 72,
+        total: 100,
+        percentage: 72
+    },
+
+    {
+        id: "demo10",
+        name: "Manoj Behera",
+        exam: "SSC CGL",
+        score: 69,
+        total: 100,
+        percentage: 69
+    },
+
+    {
+        id: "demo11",
+        name: "Kiran Rout",
+        exam: "Banking",
+        score: 67,
+        total: 100,
+        percentage: 67
+    },
+
+    {
+        id: "demo12",
+        name: "Deepak Mohanty",
+        exam: "Railway",
+        score: 64,
+        total: 100,
+        percentage: 64
+    }
+
+];
+
+
+/* =====================================================
+   GET SAVED STUDENT RESULTS
+   ===================================================== */
+
+function getSavedResults() {
+
+    try {
+
+        const saved =
+            localStorage.getItem("examPrepLeaderboard");
+
+        if (!saved) {
+            return [];
+        }
+
+        const results = JSON.parse(saved);
+
+        if (!Array.isArray(results)) {
+            return [];
+        }
+
+        return results;
+
+    } catch (error) {
+
+        console.log("Could not read leaderboard:", error);
+
+        return [];
+
+    }
+
+}
+
+
+/* =====================================================
+   NORMALIZE RESULT
+   ===================================================== */
+
+function normalizeResult(result) {
+
+    const score = Number(result.score) || 0;
+
+    const total = Number(result.total) || 20;
+
+    let percentage = Number(result.percentage);
+
+    if (!percentage && total > 0) {
+
+        percentage = (score / total) * 100;
+
+    }
+
+    return {
+
+        id: result.id || ("student-" + Date.now()),
+
+        name: result.name || "Student",
+
+        exam: result.exam || "SSC & Banking",
+
+        score: score,
+
+        total: total,
+
+        percentage: percentage
+
+    };
+
+}
+
+
+/* =====================================================
+   PERFORMANCE BADGE
+   ===================================================== */
+
+function getPerformance(percentage) {
+
+    if (percentage >= 85) {
+
+        return `
+            <span class="badge excellent">
+                Excellent
+            </span>
+        `;
+
+    }
+
+    if (percentage >= 70) {
+
+        return `
+            <span class="badge good">
+                Good
+            </span>
+        `;
+
+    }
+
+    return `
+        <span class="badge average">
+            Average
+        </span>
+    `;
+
+}
+
+
+/* =====================================================
+   LOAD LEADERBOARD
+   ===================================================== */
+
+function loadLeaderboard() {
+
+    const savedResults = getSavedResults();
+
+    const realResults =
+        savedResults.map(normalizeResult);
+
+    /*
+       Combine demo participants and real student results.
+       Real results are kept at the top when percentage is higher.
+    */
+
+    let allParticipants = [
+        ...demoParticipants,
+        ...realResults
+    ];
+
+    /*
+       Sort by percentage.
+       This is important because the current mock test
+       is out of 20 while demo results are out of 100.
+    */
+
+    allParticipants.sort(function(a, b) {
+
+        if (b.percentage !== a.percentage) {
+
+            return b.percentage - a.percentage;
+
+        }
+
+        return b.score - a.score;
+
+    });
+
+
+    /* Remove accidental duplicate IDs */
+
+    const uniqueParticipants = [];
+
+    const usedIds = new Set();
+
+    allParticipants.forEach(function(person) {
+
+        if (!usedIds.has(person.id)) {
+
+            usedIds.add(person.id);
+
+            uniqueParticipants.push(person);
+
+        }
+
+    });
+
+
+    /* Show Top 3 */
+
+    renderTopThree(uniqueParticipants);
+
+
+    /* Show Table */
+
+    renderTable(uniqueParticipants);
+
+
+    /* Show Current Student */
+
+    renderCurrentUser(uniqueParticipants);
+
+}
+
+
+/* =====================================================
+   TOP THREE
+   ===================================================== */
+
+function renderTopThree(participants) {
+
+    const topThree =
+        document.getElementById("topThree");
+
+    if (!participants.length) {
+
+        topThree.innerHTML = "";
+
+        return;
+
+    }
+
+
+    const medals = ["🏆", "🥈", "🥉"];
+
+    const classes = ["first", "second", "third"];
+
+    let html = "";
+
+
+    for (let i = 0; i < Math.min(3, participants.length); i++) {
+
+        const person = participants[i];
+
+        html += `
+
+            <div class="top-card ${classes[i]}">
+
+                <div class="medal">
+                    ${medals[i]}
+                </div>
+
+                <div class="rank-number">
+                    ${i + 1}
+                </div>
+
+                <h3>
+                    ${escapeHTML(person.name)}
+                </h3>
+
+                <p>
+                    ${escapeHTML(person.exam)}
+                </p>
+
+                <div class="score">
+                    ${person.score} / ${person.total}
+                </div>
+
+                <p>
+                    ${formatPercentage(person.percentage)}
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+
+    topThree.innerHTML = html;
+
+}
+
+
+/* =====================================================
+   TABLE
+   ===================================================== */
+
+function renderTable(participants) {
+
+    const body =
+        document.getElementById("leaderboardBody");
+
+    const currentUser =
+        getCurrentUser();
+
+
+    if (!participants.length) {
+
+        body.innerHTML = `
+            <tr>
+                <td colspan="6">
+                    No results available.
+                </td>
+            </tr>
+        `;
+
+        return;
+
+    }
+
+
+    let html = "";
+
+
+    participants.forEach(function(person, index) {
+
+        const isCurrentUser =
+            currentUser &&
+            currentUser.id &&
+            person.id === currentUser.id;
+
+
+        html += `
+
+            <tr class="${isCurrentUser ? "current-user-row" : ""}">
+
+                <td class="rank">
+                    ${index + 1}
+                </td>
+
+                <td class="user-name">
+
+                    ${escapeHTML(person.name)}
+
+                    ${isCurrentUser ? " ⭐ You" : ""}
+
+                </td>
+
+                <td>
+                    ${escapeHTML(person.exam)}
+                </td>
+
+                <td class="score-cell">
+                    ${person.score} / ${person.total}
+                </td>
+
+                <td class="percentage">
+                    ${formatPercentage(person.percentage)}
+                </td>
+
+                <td>
+                    ${getPerformance(person.percentage)}
+                </td>
+
+            </tr>
+
+        `;
+
+    });
+
+
+    body.innerHTML = html;
+
+}
+
+
+/* =====================================================
+   CURRENT USER
+   ===================================================== */
+
+function getCurrentUser() {
+
+    try {
+
+        const saved =
+            localStorage.getItem("examPrepCurrentUser");
+
+        if (!saved) {
+            return null;
+        }
+
+        return JSON.parse(saved);
+
+    } catch (error) {
+
+        return null;
+
+    }
+
+}
+
+
+/* =====================================================
+   SHOW CURRENT USER PERFORMANCE
+   ===================================================== */
+
+function renderCurrentUser(participants) {
+
+    const box =
+        document.getElementById("yourRank");
+
+    const currentUser =
+        getCurrentUser();
+
+
+    if (!currentUser) {
+
+        box.innerHTML = `
+
+            <h3>📊 Your Performance</h3>
+
+            <p>
+                Complete a mock test to see your score and rank
+                on the leaderboard.
+            </p>
+
+        `;
+
+        return;
+
+    }
+
+
+    const userId = currentUser.id;
+
+
+    let userIndex =
+        participants.findIndex(function(person) {
+
+            return person.id === userId;
+
+        });
+
+
+    /*
+       If the current user ID is not found,
+       try matching by name.
+    */
+
+    if (userIndex === -1 && currentUser.name) {
+
+        userIndex =
+            participants.findIndex(function(person) {
+
+                return person.name.toLowerCase() ===
+                    currentUser.name.toLowerCase();
+
+            });
+
+    }
+
+
+    if (userIndex === -1) {
+
+        box.innerHTML = `
+
+            <h3>📊 Your Performance</h3>
+
+            <p>
+                Your latest test result could not be found.
+                Please complete the mock test again.
+            </p>
+
+        `;
+
+        return;
+
+    }
+
+
+    const person =
+        participants[userIndex];
+
+    const rank =
+        userIndex + 1;
+
+
+    box.innerHTML = `
+
+        <h3>📊 Your Performance</h3>
+
+        <p>
+
+            <strong>${escapeHTML(person.name)}</strong>
+
+            &nbsp; | &nbsp;
+
+            🏆 Rank: <strong>#${rank}</strong>
+
+            &nbsp; | &nbsp;
+
+            Score:
+            <strong>${person.score}/${person.total}</strong>
+
+            &nbsp; | &nbsp;
+
+            Percentage:
+            <strong>${formatPercentage(person.percentage)}</strong>
+
+        </p>
+
+        <p style="margin-top:8px;">
+
+            ${getPerformanceText(person.percentage)}
+
+        </p>
+
+    `;
+
+}
+
+
+/* =====================================================
+   PERFORMANCE TEXT
+   ===================================================== */
+
+function getPerformanceText(percentage) {
+
+    if (percentage >= 85) {
+
+        return "Excellent performance! Keep practicing to maintain your score.";
+
+    }
+
+    if (percentage >= 70) {
+
+        return "Good performance! Continue practicing to improve further.";
+
+    }
+
+    return "Keep practicing. Regular mock tests can help improve your score.";
+
+}
+
+
+/* =====================================================
+   SEARCH
+   ===================================================== */
 
 function searchTable() {
 
-    let input =
-        document.getElementById("searchInput")
+    const input =
+        document
+        .getElementById("searchInput")
         .value
-        .toLowerCase();
+        .toLowerCase()
+        .trim();
 
-    let table =
-        document.getElementById("leaderboardTable");
 
-    let rows =
-        table
-        .getElementsByTagName("tbody")[0]
+    const rows =
+        document
+        .getElementById("leaderboardBody")
         .getElementsByTagName("tr");
+
 
     for (let i = 0; i < rows.length; i++) {
 
-        let name =
-            rows[i]
-            .getElementsByTagName("td")[1];
+        const nameCell =
+            rows[i].getElementsByTagName("td")[1];
 
-        if (name) {
+        if (!nameCell) {
+            continue;
+        }
 
-            let text =
-                name.textContent
-                .toLowerCase();
 
-            if (text.indexOf(input) > -1) {
+        const text =
+            nameCell.textContent.toLowerCase();
 
-                rows[i].style.display = "";
 
-            } else {
+        if (text.indexOf(input) > -1) {
 
-                rows[i].style.display = "none";
+            rows[i].style.display = "";
 
-            }
+        } else {
+
+            rows[i].style.display = "none";
 
         }
 
@@ -914,22 +1235,60 @@ function searchTable() {
 }
 
 
-/* PAGINATION BUTTONS */
+/* =====================================================
+   FORMAT PERCENTAGE
+   ===================================================== */
 
-function previousPage() {
+function formatPercentage(value) {
 
-    alert("You are already on the first page.");
+    const number =
+        Number(value) || 0;
+
+    return number.toFixed(2).replace(".00", "") + "%";
+
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+   Prevents names from breaking the page.
+   ===================================================== */
+
+function escapeHTML(value) {
+
+    const div =
+        document.createElement("div");
+
+    div.textContent = value;
+
+    return div.innerHTML;
 
 }
 
 
-function nextPage() {
+/* =====================================================
+   START
+   ===================================================== */
 
-    alert("More leaderboard results will be available soon.");
+loadLeaderboard();
 
-}
+
+/*
+   Automatically refresh when the page becomes visible.
+*/
+
+document.addEventListener("visibilitychange", function() {
+
+    if (!document.hidden) {
+
+        loadLeaderboard();
+
+    }
+
+});
 
 </script>
 
 </body>
 </html>
+```
