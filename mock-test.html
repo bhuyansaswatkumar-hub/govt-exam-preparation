@@ -1,1666 +1,1241 @@
 ```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Mock Test | SSC & Banking</title>
 
 <meta name="description"
-content="Free SSC and Banking Mock Test with score, percentage, negative marking and leaderboard.">
+content="Free SSC and Banking mock test with timer, scoring, answer review and leaderboard.">
 
 <style>
 
-/* =========================
-   BASIC RESET
-========================= */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*{
+    box-sizing:border-box;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f6f8;
-    color: #222;
-    line-height: 1.6;
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f6f8;
+    color:#222;
 }
 
-
-/* =========================
-   HEADER
-========================= */
-
-header {
-    background: #17365d;
-    color: white;
-    padding: 30px 20px;
-    text-align: center;
+header{
+    background:#17365d;
+    color:white;
+    padding:30px 20px;
+    text-align:center;
 }
 
-header h1 {
-    font-size: 30px;
-    margin-bottom: 8px;
+header h1{
+    margin:0;
+    font-size:30px;
 }
 
-header p {
-    font-size: 15px;
+header p{
+    margin:10px 0 0;
+    font-size:15px;
 }
 
-
-/* =========================
-   NAVIGATION
-========================= */
-
-.navbar {
-    background: #0d2852;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.container{
+    max-width:900px;
+    margin:25px auto;
+    padding:20px;
 }
 
-.navbar a {
-    color: white;
-    text-decoration: none;
-    padding: 12px 15px;
-    font-size: 14px;
+.info{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+    text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
 }
 
-.navbar a:hover {
-    background: #17365d;
+.info p{
+    margin:8px 0;
 }
 
-
-/* =========================
-   CONTAINER
-========================= */
-
-.container {
-    max-width: 900px;
-    margin: 25px auto;
-    padding: 20px;
+.timer{
+    font-size:26px;
+    font-weight:bold;
+    color:#d32f2f;
+    margin:15px;
 }
 
-
-/* =========================
-   NAME SCREEN
-========================= */
-
-.start-box {
-    background: white;
-    padding: 35px 25px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
-    margin-bottom: 25px;
+.quiz-box{
+    background:white;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
 }
 
-.start-box h2 {
-    color: #17365d;
-    margin-bottom: 10px;
+.question{
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:15px;
+    line-height:1.5;
 }
 
-.start-box p {
-    color: #666;
-    margin-bottom: 20px;
+label{
+    display:block;
+    background:#f1f3f5;
+    padding:12px;
+    margin:8px 0;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.2s;
 }
 
-.name-input {
-    width: 100%;
-    max-width: 450px;
-    padding: 14px;
-    border: 1px solid #ccc;
-    border-radius: 7px;
-    font-size: 16px;
-    margin-bottom: 15px;
-    outline: none;
+label:hover{
+    background:#e2e6ea;
 }
 
-.name-input:focus {
-    border-color: #17365d;
+label input{
+    margin-right:8px;
 }
 
-
-/* =========================
-   BUTTONS
-========================= */
-
-button {
-    background: #17365d;
-    color: white;
-    border: none;
-    padding: 13px 22px;
-    font-size: 16px;
-    border-radius: 7px;
-    cursor: pointer;
-    margin: 5px;
+button{
+    background:#17365d;
+    color:white;
+    border:none;
+    padding:14px 25px;
+    font-size:17px;
+    border-radius:6px;
+    cursor:pointer;
+    margin:5px;
 }
 
-button:hover {
-    background: #0d2542;
+button:hover{
+    background:#0d2542;
 }
 
-.start-button {
-    background: #2e7d32;
+.submit-area{
+    text-align:center;
+    margin:25px 0;
 }
 
-.start-button:hover {
-    background: #1b5e20;
+.submit-button{
+    background:#17365d;
+    padding:15px 35px;
+    font-size:18px;
 }
 
-.submit-button {
-    background: #17365d;
+.restart{
+    background:#2e7d32;
 }
 
-.restart {
-    background: #2e7d32;
+.restart:hover{
+    background:#1b5e20;
 }
 
-.restart:hover {
-    background: #1b5e20;
+.leaderboard-button{
+    background:#d4a017;
+    color:#111;
 }
 
-.leaderboard-button {
-    background: #d68910;
+.leaderboard-button:hover{
+    background:#b8860b;
+    color:white;
 }
 
-.leaderboard-button:hover {
-    background: #a96208;
+#result{
+    margin-top:25px;
+    padding:25px;
+    background:white;
+    border-radius:10px;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
 }
 
-
-/* =========================
-   TEST INFO
-========================= */
-
-.info {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+#nameSection{
+    display:none;
+    margin-top:25px;
+    padding:25px;
+    background:white;
+    border-radius:10px;
+    text-align:center;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
 }
 
-.info p {
-    margin: 5px 0;
+#nameSection h2{
+    color:#17365d;
+    margin-top:0;
 }
 
-
-/* =========================
-   TIMER
-========================= */
-
-.timer {
-    font-size: 28px;
-    font-weight: bold;
-    color: #d32f2f;
-    margin-top: 15px;
+.name-input{
+    width:100%;
+    max-width:450px;
+    padding:14px;
+    border:1px solid #ccc;
+    border-radius:7px;
+    font-size:16px;
+    margin:10px 0;
 }
 
-.timer.warning {
-    color: #b71c1c;
-    animation: blink 1s infinite;
+.name-input:focus{
+    outline:none;
+    border-color:#17365d;
 }
 
-@keyframes blink {
+.save-button{
+    background:#2e7d32;
+}
 
-    50% {
-        opacity: 0.4;
+.save-button:hover{
+    background:#1b5e20;
+}
+
+#savedMessage{
+    display:none;
+    margin-top:15px;
+    padding:12px;
+    background:#dff5e1;
+    color:#1b7a32;
+    border-radius:7px;
+    font-weight:bold;
+}
+
+.review{
+    background:white;
+    padding:20px;
+    margin-top:20px;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.review h2{
+    color:#17365d;
+    margin-top:0;
+}
+
+.correct{
+    color:green;
+    font-weight:bold;
+    background:#f0fff2;
+    padding:10px;
+    border-radius:6px;
+}
+
+.wrong{
+    color:red;
+    font-weight:bold;
+    background:#fff2f2;
+    padding:10px;
+    border-radius:6px;
+}
+
+.unanswered{
+    color:#555;
+    font-weight:bold;
+    background:#f5f5f5;
+    padding:10px;
+    border-radius:6px;
+}
+
+.nav{
+    text-align:center;
+    margin:30px 0;
+}
+
+.nav a{
+    display:inline-block;
+    text-decoration:none;
+    background:#17365d;
+    color:white;
+    padding:10px 15px;
+    margin:5px;
+    border-radius:5px;
+}
+
+.nav a:hover{
+    background:#0d2542;
+}
+
+.hidden{
+    display:none;
+}
+
+footer{
+    background:#0d2852;
+    color:white;
+    text-align:center;
+    padding:25px 15px;
+    margin-top:40px;
+}
+
+footer p{
+    margin:6px 0;
+    font-size:14px;
+}
+
+footer a{
+    color:white;
+    text-decoration:none;
+    margin:0 6px;
+}
+
+footer a:hover{
+    text-decoration:underline;
+}
+
+@media(max-width:600px){
+
+    header h1{
+        font-size:24px;
     }
 
-}
-
-
-/* =========================
-   QUIZ BOX
-========================= */
-
-.quiz-box {
-    background: white;
-    padding: 20px;
-    margin-bottom: 18px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.question {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    background: #f1f3f5;
-    padding: 12px;
-    margin: 8px 0;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-label:hover {
-    background: #e2e6ea;
-}
-
-label input {
-    margin-right: 8px;
-}
-
-
-/* =========================
-   SUBMIT AREA
-========================= */
-
-.submit-area {
-    text-align: center;
-    margin: 25px 0;
-}
-
-
-/* =========================
-   RESULT
-========================= */
-
-#result {
-    display: none;
-    margin-top: 25px;
-    padding: 30px 20px;
-    background: white;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
-}
-
-.result-title {
-    color: #17365d;
-    font-size: 27px;
-    margin-bottom: 20px;
-}
-
-.result-card {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    max-width: 600px;
-    margin: 20px auto;
-}
-
-.result-item {
-    background: #f4f6f8;
-    padding: 15px;
-    border-radius: 8px;
-}
-
-.result-item strong {
-    display: block;
-    color: #17365d;
-    font-size: 21px;
-}
-
-.result-message {
-    font-size: 18px;
-    margin: 20px 0;
-    font-weight: bold;
-}
-
-
-/* =========================
-   REVIEW
-========================= */
-
-.review {
-    background: white;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-
-.review h2 {
-    color: #17365d;
-    margin-bottom: 20px;
-}
-
-.review p {
-    padding: 12px;
-    margin: 8px 0;
-    border-radius: 6px;
-    background: #f7f7f7;
-}
-
-.correct {
-    color: green;
-    font-weight: bold;
-}
-
-.wrong {
-    color: red;
-    font-weight: bold;
-}
-
-.unanswered {
-    color: #555;
-    font-weight: bold;
-}
-
-
-/* =========================
-   HIDDEN
-========================= */
-
-.hidden {
-    display: none !important;
-}
-
-
-/* =========================
-   NAV BUTTONS
-========================= */
-
-.bottom-nav {
-    text-align: center;
-    margin: 30px 0;
-}
-
-.bottom-nav a {
-    display: inline-block;
-    text-decoration: none;
-    background: #17365d;
-    color: white;
-    padding: 10px 15px;
-    margin: 5px;
-    border-radius: 5px;
-}
-
-.bottom-nav a:hover {
-    background: #0d2542;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    background: #0d2852;
-    color: white;
-    text-align: center;
-    padding: 25px 15px;
-    margin-top: 40px;
-}
-
-footer a {
-    color: white;
-    text-decoration: none;
-    margin: 0 6px;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 600px) {
-
-    header h1 {
-        font-size: 24px;
+    .container{
+        padding:12px;
     }
 
-    .container {
-        padding: 12px;
+    .question{
+        font-size:16px;
     }
 
-    .quiz-box {
-        padding: 15px;
+    button{
+        width:100%;
+        margin:6px 0;
     }
 
-    .question {
-        font-size: 16px;
-    }
-
-    .result-card {
-        grid-template-columns: 1fr;
-    }
-
-    .navbar a {
-        padding: 10px 8px;
-        font-size: 12px;
+    .name-input{
+        width:100%;
     }
 
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- =========================
-     HEADER
-========================= -->
-
 <header>
 
-    <h1>📝 SSC & Banking Mock Test</h1>
+<h1>📝 SSC & Banking Mock Test</h1>
 
-    <p>Test Your Knowledge • Check Your Score • Improve Your Rank</p>
+<p>20 Questions • 10 Minutes • Negative Marking</p>
 
 </header>
 
 
-<!-- =========================
-     NAVIGATION
-========================= -->
-
-<div class="navbar">
-
-    <a href="index.html">Home</a>
-
-    <a href="ssc.html">SSC</a>
-
-    <a href="banking.html">Banking</a>
-
-    <a href="railway.html">Railway</a>
-
-    <a href="notes.html">Notes</a>
-
-    <a href="mcq.html">MCQ</a>
-
-    <a href="current-affairs.html">Current Affairs</a>
-
-    <a href="mock-test.html">Mock Test</a>
-
-    <a href="leaderboard.html">Leaderboard</a>
-
-</div>
-
-
-<!-- =========================
-     MAIN
-========================= -->
-
 <div class="container">
 
 
-    <!-- =========================
-         START SCREEN
-    ========================= -->
+<!-- TEST INFORMATION -->
 
-    <div id="startScreen" class="start-box">
+<div class="info">
 
-        <h2>🏆 Welcome to the Mock Test</h2>
+<p><strong>Total Questions:</strong> 20</p>
 
-        <p>
-            Enter your name to start the SSC & Banking Mock Test.
-        </p>
+<p><strong>Correct Answer:</strong> +1 Mark</p>
 
-        <p>
-            <strong>20 Questions • 10 Minutes • Negative Marking</strong>
-        </p>
+<p><strong>Wrong Answer:</strong> −0.25 Mark</p>
 
-        <br>
+<p><strong>Unanswered:</strong> 0 Mark</p>
 
-        <input
-            type="text"
-            id="studentName"
-            class="name-input"
-            placeholder="Enter your full name"
-            maxlength="40"
-        >
+<div class="timer">
+⏱️ Time Left: <span id="timer">10:00</span>
+</div>
 
-        <br>
+</div>
 
-        <button
-            type="button"
-            class="start-button"
-            onclick="startTest()"
-        >
-            🚀 Start Test
-        </button>
 
-    </div>
+<!-- QUIZ -->
 
+<form id="quizForm">
 
-    <!-- =========================
-         TEST AREA
-    ========================= -->
 
-    <div id="testArea" class="hidden">
+<div class="quiz-box">
 
+<div class="question">
+1. Who founded the Mughal Empire in India?
+</div>
 
-        <!-- TEST INFORMATION -->
+<label>
+<input type="radio" name="q1" value="A">
+Akbar
+</label>
 
-        <div class="info">
+<label>
+<input type="radio" name="q1" value="B">
+Babur
+</label>
 
-            <p>
-                <strong>Total Questions:</strong>
-                20
-            </p>
+<label>
+<input type="radio" name="q1" value="C">
+Humayun
+</label>
 
-            <p>
-                <strong>Correct Answer:</strong>
-                +1 Mark
-            </p>
+<label>
+<input type="radio" name="q1" value="D">
+Shah Jahan
+</label>
 
-            <p>
-                <strong>Wrong Answer:</strong>
-                −0.25 Mark
-            </p>
+</div>
 
-            <p>
-                <strong>Unanswered:</strong>
-                0 Mark
-            </p>
 
-            <div class="timer">
+<div class="quiz-box">
 
-                ⏱️ Time Left:
-                <span id="timer">10:00</span>
+<div class="question">
+2. What is the capital of India?
+</div>
 
-            </div>
+<label>
+<input type="radio" name="q2" value="A">
+Mumbai
+</label>
 
-        </div>
+<label>
+<input type="radio" name="q2" value="B">
+Kolkata
+</label>
 
+<label>
+<input type="radio" name="q2" value="C">
+New Delhi
+</label>
 
-        <!-- =========================
-             QUIZ FORM
-        ========================= -->
+<label>
+<input type="radio" name="q2" value="D">
+Chennai
+</label>
 
-        <form id="quizForm">
+</div>
 
 
-            <!-- QUESTION 1 -->
+<div class="quiz-box">
 
-            <div class="quiz-box">
+<div class="question">
+3. Which Articles of the Indian Constitution deal with Fundamental Rights?
+</div>
 
-                <div class="question">
-                    1. Who founded the Mughal Empire in India?
-                </div>
+<label>
+<input type="radio" name="q3" value="A">
+Articles 12–35
+</label>
 
-                <label>
-                    <input type="radio" name="q1" value="A">
-                    Akbar
-                </label>
+<label>
+<input type="radio" name="q3" value="B">
+Articles 36–51
+</label>
 
-                <label>
-                    <input type="radio" name="q1" value="B">
-                    Babur
-                </label>
+<label>
+<input type="radio" name="q3" value="C">
+Articles 52–78
+</label>
 
-                <label>
-                    <input type="radio" name="q1" value="C">
-                    Humayun
-                </label>
+<label>
+<input type="radio" name="q3" value="D">
+Articles 79–100
+</label>
 
-                <label>
-                    <input type="radio" name="q1" value="D">
-                    Shah Jahan
-                </label>
+</div>
 
-            </div>
 
+<div class="quiz-box">
 
-            <!-- QUESTION 2 -->
+<div class="question">
+4. What is the currency of India?
+</div>
 
-            <div class="quiz-box">
+<label>
+<input type="radio" name="q4" value="A">
+Dollar
+</label>
 
-                <div class="question">
-                    2. What is the capital of India?
-                </div>
+<label>
+<input type="radio" name="q4" value="B">
+Rupee
+</label>
 
-                <label>
-                    <input type="radio" name="q2" value="A">
-                    Mumbai
-                </label>
+<label>
+<input type="radio" name="q4" value="C">
+Pound
+</label>
 
-                <label>
-                    <input type="radio" name="q2" value="B">
-                    Kolkata
-                </label>
+<label>
+<input type="radio" name="q4" value="D">
+Yen
+</label>
 
-                <label>
-                    <input type="radio" name="q2" value="C">
-                    New Delhi
-                </label>
+</div>
 
-                <label>
-                    <input type="radio" name="q2" value="D">
-                    Chennai
-                </label>
 
-            </div>
+<div class="quiz-box">
 
+<div class="question">
+5. Which planet is known as the Red Planet?
+</div>
 
-            <!-- QUESTION 3 -->
+<label>
+<input type="radio" name="q5" value="A">
+Venus
+</label>
 
-            <div class="quiz-box">
+<label>
+<input type="radio" name="q5" value="B">
+Jupiter
+</label>
 
-                <div class="question">
-                    3. Which Articles of the Indian Constitution deal with Fundamental Rights?
-                </div>
+<label>
+<input type="radio" name="q5" value="C">
+Mars
+</label>
 
-                <label>
-                    <input type="radio" name="q3" value="A">
-                    Articles 12–35
-                </label>
+<label>
+<input type="radio" name="q5" value="D">
+Saturn
+</label>
 
-                <label>
-                    <input type="radio" name="q3" value="B">
-                    Articles 36–51
-                </label>
+</div>
 
-                <label>
-                    <input type="radio" name="q3" value="C">
-                    Articles 52–78
-                </label>
 
-                <label>
-                    <input type="radio" name="q3" value="D">
-                    Articles 79–100
-                </label>
+<div class="quiz-box">
 
-            </div>
+<div class="question">
+6. Which gas is most abundant in Earth's atmosphere?
+</div>
 
+<label>
+<input type="radio" name="q6" value="A">
+Oxygen
+</label>
 
-            <!-- QUESTION 4 -->
+<label>
+<input type="radio" name="q6" value="B">
+Nitrogen
+</label>
 
-            <div class="quiz-box">
+<label>
+<input type="radio" name="q6" value="C">
+Carbon Dioxide
+</label>
 
-                <div class="question">
-                    4. What is the currency of India?
-                </div>
+<label>
+<input type="radio" name="q6" value="D">
+Hydrogen
+</label>
 
-                <label>
-                    <input type="radio" name="q4" value="A">
-                    Dollar
-                </label>
+</div>
 
-                <label>
-                    <input type="radio" name="q4" value="B">
-                    Rupee
-                </label>
 
-                <label>
-                    <input type="radio" name="q4" value="C">
-                    Pound
-                </label>
+<div class="quiz-box">
 
-                <label>
-                    <input type="radio" name="q4" value="D">
-                    Yen
-                </label>
+<div class="question">
+7. Who is known as the Father of the Indian Constitution?
+</div>
 
-            </div>
+<label>
+<input type="radio" name="q7" value="A">
+Mahatma Gandhi
+</label>
 
+<label>
+<input type="radio" name="q7" value="B">
+Jawaharlal Nehru
+</label>
 
-            <!-- QUESTION 5 -->
+<label>
+<input type="radio" name="q7" value="C">
+Dr. B. R. Ambedkar
+</label>
 
-            <div class="quiz-box">
+<label>
+<input type="radio" name="q7" value="D">
+Sardar Patel
+</label>
 
-                <div class="question">
-                    5. Which planet is known as the Red Planet?
-                </div>
+</div>
 
-                <label>
-                    <input type="radio" name="q5" value="A">
-                    Venus
-                </label>
 
-                <label>
-                    <input type="radio" name="q5" value="B">
-                    Jupiter
-                </label>
+<div class="quiz-box">
 
-                <label>
-                    <input type="radio" name="q5" value="C">
-                    Mars
-                </label>
+<div class="question">
+8. Which is the largest Indian state by area?
+</div>
 
-                <label>
-                    <input type="radio" name="q5" value="D">
-                    Saturn
-                </label>
+<label>
+<input type="radio" name="q8" value="A">
+Odisha
+</label>
 
-            </div>
+<label>
+<input type="radio" name="q8" value="B">
+Maharashtra
+</label>
 
+<label>
+<input type="radio" name="q8" value="C">
+Rajasthan
+</label>
 
-            <!-- QUESTION 6 -->
+<label>
+<input type="radio" name="q8" value="D">
+Madhya Pradesh
+</label>
 
-            <div class="quiz-box">
+</div>
 
-                <div class="question">
-                    6. Which gas is most abundant in Earth's atmosphere?
-                </div>
 
-                <label>
-                    <input type="radio" name="q6" value="A">
-                    Oxygen
-                </label>
+<div class="quiz-box">
 
-                <label>
-                    <input type="radio" name="q6" value="B">
-                    Nitrogen
-                </label>
+<div class="question">
+9. What does CPU stand for?
+</div>
 
-                <label>
-                    <input type="radio" name="q6" value="C">
-                    Carbon Dioxide
-                </label>
+<label>
+<input type="radio" name="q9" value="A">
+Central Processing Unit
+</label>
 
-                <label>
-                    <input type="radio" name="q6" value="D">
-                    Hydrogen
-                </label>
+<label>
+<input type="radio" name="q9" value="B">
+Computer Processing Utility
+</label>
 
-            </div>
+<label>
+<input type="radio" name="q9" value="C">
+Central Program Unit
+</label>
 
+<label>
+<input type="radio" name="q9" value="D">
+Computer Program Unit
+</label>
 
-            <!-- QUESTION 7 -->
+</div>
 
-            <div class="quiz-box">
 
-                <div class="question">
-                    7. Who is known as the Father of the Indian Constitution?
-                </div>
+<div class="quiz-box">
 
-                <label>
-                    <input type="radio" name="q7" value="A">
-                    Mahatma Gandhi
-                </label>
+<div class="question">
+10. Which bank is the central bank of India?
+</div>
 
-                <label>
-                    <input type="radio" name="q7" value="B">
-                    Jawaharlal Nehru
-                </label>
+<label>
+<input type="radio" name="q10" value="A">
+SBI
+</label>
 
-                <label>
-                    <input type="radio" name="q7" value="C">
-                    Dr. B. R. Ambedkar
-                </label>
+<label>
+<input type="radio" name="q10" value="B">
+RBI
+</label>
 
-                <label>
-                    <input type="radio" name="q7" value="D">
-                    Sardar Patel
-                </label>
+<label>
+<input type="radio" name="q10" value="C">
+PNB
+</label>
 
-            </div>
+<label>
+<input type="radio" name="q10" value="D">
+Bank of Baroda
+</label>
 
+</div>
 
-            <!-- QUESTION 8 -->
 
-            <div class="quiz-box">
+<div class="quiz-box">
 
-                <div class="question">
-                    8. Which is the largest Indian state by area?
-                </div>
+<div class="question">
+11. Who was the first President of India?
+</div>
 
-                <label>
-                    <input type="radio" name="q8" value="A">
-                    Odisha
-                </label>
+<label>
+<input type="radio" name="q11" value="A">
+Dr. Rajendra Prasad
+</label>
 
-                <label>
-                    <input type="radio" name="q8" value="B">
-                    Maharashtra
-                </label>
+<label>
+<input type="radio" name="q11" value="B">
+S. Radhakrishnan
+</label>
 
-                <label>
-                    <input type="radio" name="q8" value="C">
-                    Rajasthan
-                </label>
+<label>
+<input type="radio" name="q11" value="C">
+Jawaharlal Nehru
+</label>
 
-                <label>
-                    <input type="radio" name="q8" value="D">
-                    Madhya Pradesh
-                </label>
+<label>
+<input type="radio" name="q11" value="D">
+Dr. B. R. Ambedkar
+</label>
 
-            </div>
+</div>
 
 
-            <!-- QUESTION 9 -->
+<div class="quiz-box">
 
-            <div class="quiz-box">
+<div class="question">
+12. Which is the longest river in India?
+</div>
 
-                <div class="question">
-                    9. What does CPU stand for?
-                </div>
+<label>
+<input type="radio" name="q12" value="A">
+Yamuna
+</label>
 
-                <label>
-                    <input type="radio" name="q9" value="A">
-                    Central Processing Unit
-                </label>
+<label>
+<input type="radio" name="q12" value="B">
+Ganga
+</label>
 
-                <label>
-                    <input type="radio" name="q9" value="B">
-                    Computer Processing Utility
-                </label>
+<label>
+<input type="radio" name="q12" value="C">
+Godavari
+</label>
 
-                <label>
-                    <input type="radio" name="q9" value="C">
-                    Central Program Unit
-                </label>
+<label>
+<input type="radio" name="q12" value="D">
+Narmada
+</label>
 
-                <label>
-                    <input type="radio" name="q9" value="D">
-                    Computer Program Unit
-                </label>
+</div>
 
-            </div>
 
+<div class="quiz-box">
 
-            <!-- QUESTION 10 -->
+<div class="question">
+13. How many Fundamental Duties are there in the Indian Constitution?
+</div>
 
-            <div class="quiz-box">
+<label>
+<input type="radio" name="q13" value="A">
+9
+</label>
 
-                <div class="question">
-                    10. Which bank is the central bank of India?
-                </div>
+<label>
+<input type="radio" name="q13" value="B">
+10
+</label>
 
-                <label>
-                    <input type="radio" name="q10" value="A">
-                    SBI
-                </label>
+<label>
+<input type="radio" name="q13" value="C">
+11
+</label>
 
-                <label>
-                    <input type="radio" name="q10" value="B">
-                    RBI
-                </label>
+<label>
+<input type="radio" name="q13" value="D">
+12
+</label>
 
-                <label>
-                    <input type="radio" name="q10" value="C">
-                    PNB
-                </label>
+</div>
 
-                <label>
-                    <input type="radio" name="q10" value="D">
-                    Bank of Baroda
-                </label>
 
-            </div>
+<div class="quiz-box">
 
+<div class="question">
+14. Which vitamin is produced in the human body by sunlight?
+</div>
 
-            <!-- QUESTION 11 -->
+<label>
+<input type="radio" name="q14" value="A">
+Vitamin A
+</label>
 
-            <div class="quiz-box">
+<label>
+<input type="radio" name="q14" value="B">
+Vitamin B
+</label>
 
-                <div class="question">
-                    11. Who was the first President of India?
-                </div>
+<label>
+<input type="radio" name="q14" value="C">
+Vitamin C
+</label>
 
-                <label>
-                    <input type="radio" name="q11" value="A">
-                    Dr. Rajendra Prasad
-                </label>
+<label>
+<input type="radio" name="q14" value="D">
+Vitamin D
+</label>
 
-                <label>
-                    <input type="radio" name="q11" value="B">
-                    S. Radhakrishnan
-                </label>
+</div>
 
-                <label>
-                    <input type="radio" name="q11" value="C">
-                    Jawaharlal Nehru
-                </label>
 
-                <label>
-                    <input type="radio" name="q11" value="D">
-                    Dr. B. R. Ambedkar
-                </label>
+<div class="quiz-box">
 
-            </div>
+<div class="question">
+15. Which is the largest planet in our Solar System?
+</div>
 
+<label>
+<input type="radio" name="q15" value="A">
+Earth
+</label>
 
-            <!-- QUESTION 12 -->
+<label>
+<input type="radio" name="q15" value="B">
+Saturn
+</label>
 
-            <div class="quiz-box">
+<label>
+<input type="radio" name="q15" value="C">
+Jupiter
+</label>
 
-                <div class="question">
-                    12. Which is the longest river in India?
-                </div>
+<label>
+<input type="radio" name="q15" value="D">
+Neptune
+</label>
 
-                <label>
-                    <input type="radio" name="q12" value="A">
-                    Yamuna
-                </label>
+</div>
 
-                <label>
-                    <input type="radio" name="q12" value="B">
-                    Ganga
-                </label>
 
-                <label>
-                    <input type="radio" name="q12" value="C">
-                    Godavari
-                </label>
+<div class="quiz-box">
 
-                <label>
-                    <input type="radio" name="q12" value="D">
-                    Narmada
-                </label>
+<div class="question">
+16. What is the full form of ATM?
+</div>
 
-            </div>
+<label>
+<input type="radio" name="q16" value="A">
+Automatic Transfer Machine
+</label>
 
+<label>
+<input type="radio" name="q16" value="B">
+Automated Teller Machine
+</label>
 
-            <!-- QUESTION 13 -->
+<label>
+<input type="radio" name="q16" value="C">
+Automatic Teller Money
+</label>
 
-            <div class="quiz-box">
+<label>
+<input type="radio" name="q16" value="D">
+Automated Transfer Money
+</label>
 
-                <div class="question">
-                    13. How many Fundamental Duties are there in the Indian Constitution?
-                </div>
+</div>
 
-                <label>
-                    <input type="radio" name="q13" value="A">
-                    9
-                </label>
 
-                <label>
-                    <input type="radio" name="q13" value="B">
-                    10
-                </label>
+<div class="quiz-box">
 
-                <label>
-                    <input type="radio" name="q13" value="C">
-                    11
-                </label>
+<div class="question">
+17. Who wrote the national anthem of India?
+</div>
 
-                <label>
-                    <input type="radio" name="q13" value="D">
-                    12
-                </label>
+<label>
+<input type="radio" name="q17" value="A">
+Bankim Chandra Chattopadhyay
+</label>
 
-            </div>
+<label>
+<input type="radio" name="q17" value="B">
+Rabindranath Tagore
+</label>
 
+<label>
+<input type="radio" name="q17" value="C">
+Sarojini Naidu
+</label>
 
-            <!-- QUESTION 14 -->
+<label>
+<input type="radio" name="q17" value="D">
+Subhash Chandra Bose
+</label>
 
-            <div class="quiz-box">
+</div>
 
-                <div class="question">
-                    14. Which vitamin is produced in the human body by sunlight?
-                </div>
 
-                <label>
-                    <input type="radio" name="q14" value="A">
-                    Vitamin A
-                </label>
+<div class="quiz-box">
 
-                <label>
-                    <input type="radio" name="q14" value="B">
-                    Vitamin B
-                </label>
+<div class="question">
+18. Which ocean lies to the south of India?
+</div>
 
-                <label>
-                    <input type="radio" name="q14" value="C">
-                    Vitamin C
-                </label>
+<label>
+<input type="radio" name="q18" value="A">
+Atlantic Ocean
+</label>
 
-                <label>
-                    <input type="radio" name="q14" value="D">
-                    Vitamin D
-                </label>
+<label>
+<input type="radio" name="q18" value="B">
+Pacific Ocean
+</label>
 
-            </div>
+<label>
+<input type="radio" name="q18" value="C">
+Indian Ocean
+</label>
 
+<label>
+<input type="radio" name="q18" value="D">
+Arctic Ocean
+</label>
 
-            <!-- QUESTION 15 -->
+</div>
 
-            <div class="quiz-box">
 
-                <div class="question">
-                    15. Which is the largest planet in our Solar System?
-                </div>
+<div class="quiz-box">
 
-                <label>
-                    <input type="radio" name="q15" value="A">
-                    Earth
-                </label>
+<div class="question">
+19. What is the full form of GDP?
+</div>
 
-                <label>
-                    <input type="radio" name="q15" value="B">
-                    Saturn
-                </label>
+<label>
+<input type="radio" name="q19" value="A">
+Gross Domestic Product
+</label>
 
-                <label>
-                    <input type="radio" name="q15" value="C">
-                    Jupiter
-                </label>
+<label>
+<input type="radio" name="q19" value="B">
+General Domestic Product
+</label>
 
-                <label>
-                    <input type="radio" name="q15" value="D">
-                    Neptune
-                </label>
+<label>
+<input type="radio" name="q19" value="C">
+Gross Development Plan
+</label>
 
-            </div>
+<label>
+<input type="radio" name="q19" value="D">
+General Development Product
+</label>
 
+</div>
 
-            <!-- QUESTION 16 -->
 
-            <div class="quiz-box">
+<div class="quiz-box">
 
-                <div class="question">
-                    16. What is the full form of ATM?
-                </div>
+<div class="question">
+20. Which computer device is used to enter text?
+</div>
 
-                <label>
-                    <input type="radio" name="q16" value="A">
-                    Automatic Transfer Machine
-                </label>
+<label>
+<input type="radio" name="q20" value="A">
+Monitor
+</label>
 
-                <label>
-                    <input type="radio" name="q16" value="B">
-                    Automated Teller Machine
-                </label>
+<label>
+<input type="radio" name="q20" value="B">
+Printer
+</label>
 
-                <label>
-                    <input type="radio" name="q16" value="C">
-                    Automatic Teller Money
-                </label>
+<label>
+<input type="radio" name="q20" value="C">
+Keyboard
+</label>
 
-                <label>
-                    <input type="radio" name="q16" value="D">
-                    Automated Transfer Money
-                </label>
+<label>
+<input type="radio" name="q20" value="D">
+Speaker
+</label>
 
-            </div>
+</div>
 
 
-            <!-- QUESTION 17 -->
+<div class="submit-area">
 
-            <div class="quiz-box">
+<button
+type="button"
+class="submit-button"
+onclick="submitTest()">
+Submit Test
+</button>
 
-                <div class="question">
-                    17. Who wrote the national anthem of India?
-                </div>
+</div>
 
-                <label>
-                    <input type="radio" name="q17" value="A">
-                    Bankim Chandra Chattopadhyay
-                </label>
+</form>
 
-                <label>
-                    <input type="radio" name="q17" value="B">
-                    Rabindranath Tagore
-                </label>
 
-                <label>
-                    <input type="radio" name="q17" value="C">
-                    Sarojini Naidu
-                </label>
+<!-- RESULT -->
 
-                <label>
-                    <input type="radio" name="q17" value="D">
-                    Subhash Chandra Bose
-                </label>
+<div id="result"></div>
 
-            </div>
 
+<!-- NAME SECTION -->
 
-            <!-- QUESTION 18 -->
+<div id="nameSection">
 
-            <div class="quiz-box">
+<h2>🏆 Save Your Score</h2>
 
-                <div class="question">
-                    18. Which ocean lies to the south of India?
-                </div>
+<p>
+Enter your name to appear on the leaderboard.
+</p>
 
-                <label>
-                    <input type="radio" name="q18" value="A">
-                    Atlantic Ocean
-                </label>
+<input
+type="text"
+id="studentName"
+class="name-input"
+placeholder="Enter your name"
+maxlength="40"
+autocomplete="name"
+>
 
-                <label>
-                    <input type="radio" name="q18" value="B">
-                    Pacific Ocean
-                </label>
+<br>
 
-                <label>
-                    <input type="radio" name="q18" value="C">
-                    Indian Ocean
-                </label>
+<button
+type="button"
+class="save-button"
+onclick="saveScore()">
+💾 Save Score
+</button>
 
-                <label>
-                    <input type="radio" name="q18" value="D">
-                    Arctic Ocean
-                </label>
+<div id="savedMessage">
+✅ Your score has been saved successfully!
+</div>
 
-            </div>
+</div>
 
 
-            <!-- QUESTION 19 -->
+<!-- ANSWER REVIEW -->
 
-            <div class="quiz-box">
+<div id="review"></div>
 
-                <div class="question">
-                    19. What is the full form of GDP?
-                </div>
 
-                <label>
-                    <input type="radio" name="q19" value="A">
-                    Gross Domestic Product
-                </label>
+<!-- BUTTONS -->
 
-                <label>
-                    <input type="radio" name="q19" value="B">
-                    General Domestic Product
-                </label>
+<div
+id="afterTestButtons"
+style="text-align:center;margin-top:20px;display:none;">
 
-                <label>
-                    <input type="radio" name="q19" value="C">
-                    Gross Development Plan
-                </label>
+<button
+class="restart"
+onclick="restartTest()">
+🔄 Restart Test
+</button>
 
-                <label>
-                    <input type="radio" name="q19" value="D">
-                    General Development Product
-                </label>
+<button
+class="leaderboard-button"
+onclick="window.location.href='leaderboard.html'">
+🏆 View Leaderboard
+</button>
 
-            </div>
+</div>
 
 
-            <!-- QUESTION 20 -->
+<!-- NAVIGATION -->
 
-            <div class="quiz-box">
+<div class="nav">
 
-                <div class="question">
-                    20. Which computer device is used to enter text?
-                </div>
+<a href="index.html">
+Home
+</a>
 
-                <label>
-                    <input type="radio" name="q20" value="A">
-                    Monitor
-                </label>
+<a href="study-material.html">
+Study Material
+</a>
 
-                <label>
-                    <input type="radio" name="q20" value="B">
-                    Printer
-                </label>
+<a href="daily-quiz.html">
+Daily Quiz
+</a>
 
-                <label>
-                    <input type="radio" name="q20" value="C">
-                    Keyboard
-                </label>
+<a href="leaderboard.html">
+🏆 Leaderboard
+</a>
 
-                <label>
-                    <input type="radio" name="q20" value="D">
-                    Speaker
-                </label>
-
-            </div>
-
-
-            <!-- SUBMIT -->
-
-            <div class="submit-area">
-
-                <button
-                    type="button"
-                    class="submit-button"
-                    onclick="submitTest()"
-                >
-                    ✅ Submit Test
-                </button>
-
-            </div>
-
-        </form>
-
-    </div>
-
-
-    <!-- =========================
-         RESULT
-    ========================= -->
-
-    <div id="result">
-
-        <div class="result-title">
-            🎉 Test Completed!
-        </div>
-
-        <div id="resultContent"></div>
-
-        <div class="result-message" id="resultMessage"></div>
-
-        <button
-            type="button"
-            class="leaderboard-button"
-            onclick="goToLeaderboard()"
-        >
-            🏆 View Leaderboard
-        </button>
-
-        <button
-            type="button"
-            class="restart"
-            onclick="restartTest()"
-        >
-            🔄 Take Test Again
-        </button>
-
-    </div>
-
-
-    <!-- =========================
-         ANSWER REVIEW
-    ========================= -->
-
-    <div id="review"></div>
-
-
-    <!-- =========================
-         BOTTOM NAVIGATION
-    ========================= -->
-
-    <div class="bottom-nav">
-
-        <a href="index.html">
-            Home
-        </a>
-
-        <a href="study-material.html">
-            Study Material
-        </a>
-
-        <a href="daily-quiz.html">
-            Daily Quiz
-        </a>
-
-        <a href="leaderboard.html">
-            🏆 Leaderboard
-        </a>
-
-    </div>
+</div>
 
 
 </div>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
 
-    <p>
-        © 2026 SSC & Banking Exam Preparation
-    </p>
+<p>
+© 2026 ExamPrep AI. All Rights Reserved.
+</p>
 
-    <p>
+<p>
 
-        <a href="index.html">Home</a>
+<a href="index.html">Home</a> |
 
-        |
+<a href="about.html">About</a> |
 
-        <a href="about.html">About</a>
+<a href="contact.html">Contact</a> |
 
-        |
+<a href="privacy.html">Privacy Policy</a>
 
-        <a href="contact.html">Contact</a>
-
-        |
-
-        <a href="privacy.html">Privacy Policy</a>
-
-    </p>
+</p>
 
 </footer>
 
 
 <script>
 
-/* ==========================================
-   TEST VARIABLES
-========================================== */
+/* =========================
+   TEST SETTINGS
+========================= */
 
 let timeLeft = 600;
-
-let timerInterval = null;
-
 let submitted = false;
 
-let studentName = "";
+let finalScore = 0;
+let finalCorrect = 0;
+let finalWrong = 0;
+let finalUnanswered = 0;
+let finalPercentage = 0;
 
 
-/* ==========================================
-   CORRECT ANSWERS
-========================================== */
-
-const answers = {
-
-    q1: "B",
-
-    q2: "C",
-
-    q3: "A",
-
-    q4: "B",
-
-    q5: "C",
-
-    q6: "B",
-
-    q7: "C",
-
-    q8: "C",
-
-    q9: "A",
-
-    q10: "B",
-
-    q11: "A",
-
-    q12: "B",
-
-    q13: "C",
-
-    q14: "D",
-
-    q15: "C",
-
-    q16: "B",
-
-    q17: "B",
-
-    q18: "C",
-
-    q19: "A",
-
-    q20: "C"
-
-};
-
-
-/* ==========================================
-   CORRECT ANSWER TEXT
-========================================== */
-
-const correctText = {
-
-    q1: "Babur",
-
-    q2: "New Delhi",
-
-    q3: "Articles 12–35",
-
-    q4: "Rupee",
-
-    q5: "Mars",
-
-    q6: "Nitrogen",
-
-    q7: "Dr. B. R. Ambedkar",
-
-    q8: "Rajasthan",
-
-    q9: "Central Processing Unit",
-
-    q10: "RBI",
-
-    q11: "Dr. Rajendra Prasad",
-
-    q12: "Ganga",
-
-    q13: "11",
-
-    q14: "Vitamin D",
-
-    q15: "Jupiter",
-
-    q16: "Automated Teller Machine",
-
-    q17: "Rabindranath Tagore",
-
-    q18: "Indian Ocean",
-
-    q19: "Gross Domestic Product",
-
-    q20: "Keyboard"
-
-};
-
-
-/* ==========================================
-   START TEST
-========================================== */
-
-function startTest() {
-
-    const nameInput =
-        document.getElementById("studentName");
-
-    studentName =
-        nameInput.value.trim();
-
-
-    if (studentName === "") {
-
-        alert("Please enter your name before starting the test.");
-
-        nameInput.focus();
-
-        return;
-
-    }
-
-
-    document.getElementById("startScreen")
-        .classList.add("hidden");
-
-
-    document.getElementById("testArea")
-        .classList.remove("hidden");
-
-
-    startTimer();
-
-    window.scrollTo({
-
-        top: 0,
-
-        behavior: "smooth"
-
-    });
-
-}
-
-
-/* ==========================================
+/* =========================
    TIMER
-========================================== */
+========================= */
 
-function startTimer() {
+let timerInterval = setInterval(function(){
 
-    timerInterval =
-        setInterval(function() {
+    if(timeLeft <= 0){
 
-            if (timeLeft <= 0) {
+        clearInterval(timerInterval);
 
-                clearInterval(timerInterval);
-
-                if (!submitted) {
-
-                    alert(
-                        "⏰ Time is over! Your test will be submitted automatically."
-                    );
-
-                    submitTest();
-
-                }
-
-                return;
-
-            }
-
-
-            const minutes =
-                Math.floor(timeLeft / 60);
-
-
-            const seconds =
-                timeLeft % 60;
-
-
-            const timer =
-                document.getElementById("timer");
-
-
-            timer.innerText =
-                String(minutes).padStart(2, "0")
-                + ":"
-                + String(seconds).padStart(2, "0");
-
-
-            if (timeLeft <= 60) {
-
-                timer.classList.add("warning");
-
-            }
-
-
-            timeLeft--;
-
-        }, 1000);
-
-}
-
-
-/* ==========================================
-   SUBMIT TEST
-========================================== */
-
-function submitTest() {
-
-    if (submitted) {
+        if(!submitted){
+            submitTest();
+        }
 
         return;
-
     }
 
+    let minutes = Math.floor(timeLeft / 60);
+    let seconds = timeLeft % 60;
+
+    document.getElementById("timer").innerText =
+        String(minutes).padStart(2,"0") + ":" +
+        String(seconds).padStart(2,"0");
+
+    timeLeft--;
+
+},1000);
+
+
+/* =========================
+   SUBMIT TEST
+========================= */
+
+function submitTest(){
+
+    if(submitted){
+        return;
+    }
 
     submitted = true;
-
 
     clearInterval(timerInterval);
 
 
+    let answers = {
+
+        q1:"B",
+        q2:"C",
+        q3:"A",
+        q4:"B",
+        q5:"C",
+        q6:"B",
+        q7:"C",
+        q8:"C",
+        q9:"A",
+        q10:"B",
+        q11:"A",
+        q12:"B",
+        q13:"C",
+        q14:"D",
+        q15:"C",
+        q16:"B",
+        q17:"B",
+        q18:"C",
+        q19:"A",
+        q20:"C"
+
+    };
+
+
+    let correctText = {
+
+        q1:"Babur",
+        q2:"New Delhi",
+        q3:"Articles 12–35",
+        q4:"Rupee",
+        q5:"Mars",
+        q6:"Nitrogen",
+        q7:"Dr. B. R. Ambedkar",
+        q8:"Rajasthan",
+        q9:"Central Processing Unit",
+        q10:"RBI",
+        q11:"Dr. Rajendra Prasad",
+        q12:"Ganga",
+        q13:"11",
+        q14:"Vitamin D",
+        q15:"Jupiter",
+        q16:"Automated Teller Machine",
+        q17:"Rabindranath Tagore",
+        q18:"Indian Ocean",
+        q19:"Gross Domestic Product",
+        q20:"Keyboard"
+
+    };
+
+
     let score = 0;
-
     let correct = 0;
-
     let wrong = 0;
-
     let unanswered = 0;
 
 
     let reviewHTML =
-        "<div class='review'>" +
-        "<h2>📖 Answer Review</h2>";
+        "<div class='review'><h2>📖 Answer Review</h2>";
 
 
-    /* =========================
-       CHECK ANSWERS
-    ========================= */
+    for(let q in answers){
 
-    for (let q in answers) {
-
-        const selected =
+        let selected =
             document.querySelector(
                 'input[name="' + q + '"]:checked'
             );
 
 
-        const questionNumber =
-            q.substring(1);
-
-
-        /* UNANSWERED */
-
-        if (!selected) {
+        if(!selected){
 
             unanswered++;
 
-
             reviewHTML +=
-
                 "<p class='unanswered'>" +
-
                 "⚪ Question " +
-                questionNumber +
+                q.substring(1) +
                 ": Not Answered<br>" +
-
                 "Correct Answer: " +
                 correctText[q] +
-
                 "</p>";
 
         }
 
 
-        /* CORRECT */
-
-        else if (selected.value === answers[q]) {
+        else if(selected.value === answers[q]){
 
             correct++;
-
-            score += 1;
-
+            score++;
 
             reviewHTML +=
-
                 "<p class='correct'>" +
-
                 "✔️ Question " +
-                questionNumber +
+                q.substring(1) +
                 ": Correct<br>" +
-
                 "Correct Answer: " +
                 correctText[q] +
-
                 "</p>";
 
         }
 
 
-        /* WRONG */
-
-        else {
+        else{
 
             wrong++;
 
             score -= 0.25;
 
-
             reviewHTML +=
-
                 "<p class='wrong'>" +
-
                 "❌ Question " +
-                questionNumber +
+                q.substring(1) +
                 ": Wrong<br>" +
-
                 "Your Answer: " +
                 selected.parentElement.innerText +
-
-                "<br>" +
-
-                "Correct Answer: " +
+                "<br>Correct Answer: " +
                 correctText[q] +
-
                 "</p>";
 
         }
@@ -1668,329 +1243,243 @@ function submitTest() {
     }
 
 
-    /* =========================
-       PREVENT NEGATIVE SCORE
-    ========================= */
-
-    if (score < 0) {
-
+    if(score < 0){
         score = 0;
-
     }
 
 
-    /* =========================
-       PERCENTAGE
-    ========================= */
-
-    const percentage =
+    let percentage =
         (score / 20) * 100;
 
 
-    /* =========================
-       SAVE RESULT
-    ========================= */
+    /* SAVE FINAL VALUES */
 
-    const rank =
-        saveLeaderboardResult(
-            studentName,
-            score,
-            percentage,
-            correct,
-            wrong,
-            unanswered
-        );
+    finalScore = Number(score.toFixed(2));
+    finalCorrect = correct;
+    finalWrong = wrong;
+    finalUnanswered = unanswered;
+    finalPercentage = Number(percentage.toFixed(2));
 
 
-    /* =========================
-       SHOW RESULT
-    ========================= */
+    /* SHOW RESULT */
 
-    document.getElementById("testArea")
-        .classList.add("hidden");
+    document.getElementById("result").innerHTML =
 
-
-    document.getElementById("result")
-        .style.display = "block";
-
-
-    document.getElementById("resultContent")
-        .innerHTML =
-
-        "<div class='result-card'>" +
-
-        "<div class='result-item'>" +
-        "Student" +
-        "<strong>" +
-        escapeHTML(studentName) +
-        "</strong>" +
-        "</div>" +
-
-        "<div class='result-item'>" +
-        "Rank" +
-        "<strong>#" +
-        rank +
-        "</strong>" +
-        "</div>" +
-
-        "<div class='result-item'>" +
-        "Score" +
-        "<strong>" +
-        score.toFixed(2) +
+        "🎯 Final Score: " +
+        finalScore.toFixed(2) +
         " / 20" +
-        "</strong>" +
-        "</div>" +
 
-        "<div class='result-item'>" +
-        "Percentage" +
-        "<strong>" +
-        percentage.toFixed(2) +
+        "<br><br>" +
+
+        "📊 Percentage: " +
+        finalPercentage.toFixed(2) +
         "%" +
-        "</strong>" +
-        "</div>" +
 
-        "<div class='result-item'>" +
-        "Correct" +
-        "<strong>" +
-        correct +
-        "</strong>" +
-        "</div>" +
+        "<br><br>" +
 
-        "<div class='result-item'>" +
-        "Wrong" +
-        "<strong>" +
-        wrong +
-        "</strong>" +
-        "</div>" +
+        "✔️ Correct: " +
+        finalCorrect +
 
-        "<div class='result-item'>" +
-        "Unanswered" +
-        "<strong>" +
-        unanswered +
-        "</strong>" +
-        "</div>" +
+        " &nbsp; ❌ Wrong: " +
+        finalWrong +
 
-        "<div class='result-item'>" +
-        "Negative Marks" +
-        "<strong>" +
-        (wrong * 0.25).toFixed(2) +
-        "</strong>" +
-        "</div>" +
+        " &nbsp; ⚪ Unanswered: " +
+        finalUnanswered +
 
-        "</div>";
+        "<br><br>" +
 
+        "🏆 Test Completed!";
 
-    /* =========================
-       RESULT MESSAGE
-    ========================= */
-
-    let message = "";
-
-
-    if (percentage >= 90) {
-
-        message =
-            "🌟 Outstanding performance! Keep it up!";
-
-    }
-
-    else if (percentage >= 75) {
-
-        message =
-            "👏 Excellent performance! You are doing very well.";
-
-    }
-
-    else if (percentage >= 60) {
-
-        message =
-            "👍 Good performance! Keep practicing.";
-
-    }
-
-    else if (percentage >= 40) {
-
-        message =
-            "📚 Keep studying and attempt more mock tests.";
-
-    }
-
-    else {
-
-        message =
-            "💪 Don't give up! Practice regularly and improve your score.";
-
-    }
-
-
-    document.getElementById("resultMessage")
-        .innerText = message;
-
-
-    /* =========================
-       REVIEW
-    ========================= */
 
     reviewHTML += "</div>";
 
+    document.getElementById("review").innerHTML =
+        reviewHTML;
 
-    document.getElementById("review")
-        .innerHTML = reviewHTML;
 
+    /* SHOW NAME SECTION */
+
+    document.getElementById("nameSection").style.display =
+        "block";
+
+
+    document.getElementById("afterTestButtons").style.display =
+        "block";
+
+
+    /* DISABLE QUESTIONS */
+
+    let inputs =
+        document.querySelectorAll(
+            "#quizForm input"
+        );
+
+    inputs.forEach(function(input){
+
+        input.disabled = true;
+
+    });
+
+
+    /* SCROLL TO RESULT */
 
     window.scrollTo({
 
-        top: 0,
+        top:document.body.scrollHeight,
 
-        behavior: "smooth"
+        behavior:"smooth"
 
     });
 
 }
 
 
-/* ==========================================
-   SAVE LEADERBOARD RESULT
-========================================== */
+/* =========================
+   SAVE SCORE
+========================= */
 
-function saveLeaderboardResult(
-    name,
-    score,
-    percentage,
-    correct,
-    wrong,
-    unanswered
-) {
+function saveScore(){
 
-    const storageKey =
-        "sscBankingLeaderboard";
+    let name =
+        document.getElementById("studentName")
+        .value
+        .trim();
 
 
-    let leaderboard;
+    if(name === ""){
+
+        alert("Please enter your name first.");
+
+        return;
+
+    }
 
 
-    try {
+    if(!submitted){
 
-        leaderboard =
+        alert("Please complete the test first.");
+
+        return;
+
+    }
+
+
+    /* GET OLD RESULTS */
+
+    let leaderboardData = [];
+
+
+    try{
+
+        leaderboardData =
             JSON.parse(
-                localStorage.getItem(storageKey)
+                localStorage.getItem("examPrepLeaderboard")
             ) || [];
 
     }
 
-    catch (error) {
+    catch(error){
 
-        leaderboard = [];
+        leaderboardData = [];
 
     }
 
 
-    /* =========================
-       FIND EXISTING USER
-    ========================= */
+    /* CREATE NEW RESULT */
 
-    const existingIndex =
-        leaderboard.findIndex(function(item) {
+    let newResult = {
 
-            return item.name.toLowerCase() ===
-                   name.toLowerCase();
-
-        });
-
-
-    const newResult = {
+        id: Date.now(),
 
         name: name,
 
-        score: Number(score.toFixed(2)),
-
-        percentage: Number(percentage.toFixed(2)),
-
-        correct: correct,
-
-        wrong: wrong,
-
-        unanswered: unanswered,
-
         exam: "SSC & Banking",
 
-        date: new Date().toLocaleString()
+        score: finalScore,
+
+        total: 20,
+
+        percentage: finalPercentage,
+
+        correct: finalCorrect,
+
+        wrong: finalWrong,
+
+        unanswered: finalUnanswered,
+
+        date: new Date().toLocaleDateString("en-IN")
 
     };
 
 
-    /* =========================
-       KEEP BEST SCORE
-    ========================= */
+    /* ADD RESULT */
 
-    if (existingIndex !== -1) {
-
-        if (
-            score >
-            leaderboard[existingIndex].score
-        ) {
-
-            leaderboard[existingIndex] =
-                newResult;
-
-        }
-
-    }
-
-    else {
-
-        leaderboard.push(newResult);
-
-    }
+    leaderboardData.push(newResult);
 
 
-    /* =========================
-       SORT BY SCORE
-    ========================= */
+    /* SORT BY SCORE */
 
-    leaderboard.sort(function(a, b) {
+    leaderboardData.sort(function(a,b){
 
         return b.score - a.score;
 
     });
 
 
-    /* =========================
-       SAVE
-    ========================= */
+    /* KEEP LATEST 100 RESULTS */
+
+    if(leaderboardData.length > 100){
+
+        leaderboardData =
+            leaderboardData.slice(0,100);
+
+    }
+
+
+    /* SAVE */
 
     localStorage.setItem(
-
-        storageKey,
-
-        JSON.stringify(leaderboard)
-
+        "examPrepLeaderboard",
+        JSON.stringify(leaderboardData)
     );
 
 
-    /* =========================
-       FIND RANK
-    ========================= */
+    /* SAVE CURRENT USER RESULT */
 
-    const currentIndex =
-        leaderboard.findIndex(function(item) {
-
-            return item.name.toLowerCase() ===
-                   name.toLowerCase();
-
-        });
+    localStorage.setItem(
+        "examPrepCurrentUser",
+        JSON.stringify(newResult)
+    );
 
 
-    return currentIndex + 1;
+    /* SHOW SUCCESS */
 
-}
+    document.getElementById("savedMessage").style.display =
+        "block";
 
 
-/* ==========================================
-   GO TO LEADERBOARD
-========================================== */
+    document.getElementById("studentName").disabled =
+        true;
 
-function goToLeaderboard() {
+
+    document.querySelector(
+        "#nameSection .save-button"
+    ).disabled = true;
+
+
+    document.querySelector(
+        "#nameSection .save-button"
+    ).style.opacity = "0.6";
+
+
+    alert(
+        "Your score has been saved successfully!\n\n" +
+        "Score: " +
+        finalScore.toFixed(2) +
+        " / 20\n\n" +
+        "Click OK to view the leaderboard."
+    );
+
 
     window.location.href =
         "leaderboard.html";
@@ -1998,36 +1487,18 @@ function goToLeaderboard() {
 }
 
 
-/* ==========================================
+/* =========================
    RESTART TEST
-========================================== */
+========================= */
 
-function restartTest() {
+function restartTest(){
 
-    window.location.reload();
-
-}
-
-
-/* ==========================================
-   HTML SECURITY
-========================================== */
-
-function escapeHTML(text) {
-
-    const div =
-        document.createElement("div");
-
-    div.textContent = text;
-
-    return div.innerHTML;
+    location.reload();
 
 }
 
 </script>
 
-
 </body>
-
 </html>
 ```
