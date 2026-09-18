@@ -1,338 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Govt Exam Preparation | SSC, Banking & Railway</title>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Govt Exam Preparation - SSC, Banking & Railway</title>
 
 <meta name="description"
-content="Free government exam preparation website for SSC, Banking and Railway exams. Study notes, GK, current affairs, MCQs, daily quizzes and mock tests.">
-
-<meta name="keywords"
-content="SSC preparation, banking preparation, railway preparation, government exam preparation, SSC notes, banking notes, railway notes, mock test, daily quiz, current affairs">
-
-<meta name="robots" content="index, follow">
+content="Free government exam preparation website for SSC, Banking and Railway exams. Study notes, MCQs, current affairs, mock tests and leaderboard.">
 
 <style>
 
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
+* {
+    box-sizing: border-box;
 }
 
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f4f6f9;
-    color:#222;
-    line-height:1.6;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #222;
 }
+
 
 /* HEADER */
 
-header{
-    background:#173b75;
-    color:white;
-    text-align:center;
-    padding:35px 20px;
+header {
+    background: #173b75;
+    color: white;
+    text-align: center;
+    padding: 35px 15px;
 }
 
-header h1{
-    font-size:32px;
-    margin-bottom:8px;
+header h1 {
+    margin: 0;
+    font-size: 34px;
 }
 
-header p{
-    font-size:17px;
+header p {
+    margin: 12px 0 0;
+    font-size: 17px;
 }
+
 
 /* NAVIGATION */
 
-nav{
-    background:#0d2852;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    padding:10px;
-    gap:5px;
+nav {
+    background: #0d2852;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    padding:10px 14px;
-    border-radius:5px;
-    font-size:14px;
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 14px;
+    border-radius: 5px;
+    font-size: 14px;
 }
 
-nav a:hover{
-    background:#173b75;
+nav a:hover {
+    background: #173b75;
 }
+
+
+/* MAIN */
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px 15px;
+}
+
 
 /* HERO */
 
-.hero{
-    max-width:1100px;
-    margin:30px auto;
-    padding:40px 25px;
-    background:white;
-    border-radius:12px;
-    text-align:center;
-    box-shadow:0 3px 12px rgba(0,0,0,0.08);
+.hero {
+    background: white;
+    text-align: center;
+    padding: 35px 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
 }
 
-.hero h2{
-    color:#173b75;
-    font-size:28px;
-    margin-bottom:12px;
+.hero h2 {
+    margin-top: 0;
+    color: #173b75;
+    font-size: 28px;
 }
 
-.hero p{
-    max-width:800px;
-    margin:0 auto 22px;
-    color:#555;
+.hero p {
+    line-height: 1.6;
+    color: #555;
 }
 
-.button{
-    display:inline-block;
-    background:#173b75;
-    color:white;
-    text-decoration:none;
-    padding:12px 22px;
-    margin:5px;
-    border-radius:6px;
-    font-weight:bold;
+.main-button {
+    display: inline-block;
+    background: #173b75;
+    color: white;
+    text-decoration: none;
+    padding: 13px 24px;
+    border-radius: 7px;
+    margin: 8px 5px;
+    font-weight: bold;
 }
 
-.button:hover{
-    background:#0d2852;
+.main-button:hover {
+    opacity: 0.9;
 }
+
 
 /* SECTION */
 
-.container{
-    max-width:1100px;
-    margin:30px auto;
-    padding:0 20px;
+.section-title {
+    text-align: center;
+    color: #173b75;
+    margin: 30px 0 18px;
 }
 
-.section-title{
-    text-align:center;
-    color:#173b75;
-    margin-bottom:20px;
-    font-size:25px;
-}
 
 /* CARDS */
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
 }
 
-.card{
-    background:white;
-    padding:25px 20px;
-    border-radius:10px;
-    text-align:center;
-    box-shadow:0 3px 10px rgba(0,0,0,0.08);
+.card {
+    background: white;
+    padding: 22px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+    text-align: center;
 }
 
-.card h3{
-    color:#173b75;
-    margin-bottom:10px;
+.card h3 {
+    color: #173b75;
+    margin-top: 0;
 }
 
-.card p{
-    color:#666;
-    font-size:14px;
-    margin-bottom:15px;
+.card p {
+    color: #666;
+    line-height: 1.5;
 }
 
-.card a{
-    display:inline-block;
-    background:#173b75;
-    color:white;
-    text-decoration:none;
-    padding:9px 16px;
-    border-radius:5px;
-    font-size:14px;
+.card a {
+    display: inline-block;
+    margin-top: 8px;
+    background: #173b75;
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 6px;
 }
 
-/* EXAM BOXES */
-
-.exam-box{
-    background:white;
-    border-radius:10px;
-    padding:25px;
-    margin-bottom:20px;
-    box-shadow:0 3px 10px rgba(0,0,0,0.07);
-}
-
-.exam-box h3{
-    color:#173b75;
-    margin-bottom:10px;
-}
-
-.exam-box p{
-    color:#555;
-    margin-bottom:15px;
-}
 
 /* FEATURES */
 
-.features{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
+.features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
 }
 
-.feature{
-    background:white;
-    padding:20px;
-    text-align:center;
-    border-radius:8px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+.feature {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
 }
 
-.feature h3{
-    color:#173b75;
-    margin-bottom:5px;
+.feature-icon {
+    font-size: 32px;
 }
+
 
 /* STUDY MATERIAL */
 
-.material-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
+.material-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
 }
 
-.material{
-    background:white;
-    padding:18px;
-    border-radius:8px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.06);
+.material-list a {
+    background: white;
+    padding: 15px;
+    border-radius: 7px;
+    text-decoration: none;
+    color: #173b75;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
-.material h3{
-    color:#173b75;
-    margin-bottom:8px;
+.material-list a:hover {
+    background: #eef3fb;
 }
 
-.material a{
-    color:#173b75;
-    text-decoration:none;
-    font-weight:bold;
-}
 
 /* CTA */
 
-.cta{
-    background:#173b75;
-    color:white;
-    text-align:center;
-    padding:40px 20px;
-    margin-top:40px;
+.cta {
+    background: #173b75;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    border-radius: 12px;
+    margin-top: 30px;
 }
 
-.cta h2{
-    margin-bottom:10px;
+.cta h2 {
+    margin-top: 0;
 }
 
-.cta p{
-    margin-bottom:20px;
+.cta-button {
+    display: inline-block;
+    background: white;
+    color: #173b75;
+    text-decoration: none;
+    padding: 13px 25px;
+    border-radius: 7px;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
-.cta .button{
-    background:white;
-    color:#173b75;
-}
 
 /* FOOTER */
 
-footer{
-    background:#0d2852;
-    color:white;
-    text-align:center;
-    padding:25px 15px;
-    margin-top:0;
+footer {
+    background: #0d2852;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+    margin-top: 35px;
 }
 
-footer a{
-    color:white;
-    text-decoration:none;
-    margin:0 8px;
-    font-size:14px;
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 7px;
 }
 
-footer p{
-    margin-top:12px;
-    font-size:13px;
-}
 
 /* MOBILE */
 
-@media(max-width:800px){
+@media (max-width: 800px) {
 
-    header h1{
-        font-size:25px;
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .cards{
-        grid-template-columns:1fr;
+    .features {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .features{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .material-grid{
-        grid-template-columns:1fr;
-    }
-
-    nav a{
-        font-size:13px;
-        padding:8px 10px;
+    .material-list {
+        grid-template-columns: repeat(2, 1fr);
     }
 
 }
 
-@media(max-width:500px){
+@media (max-width: 550px) {
 
-    header{
-        padding:25px 15px;
+    header h1 {
+        font-size: 26px;
     }
 
-    header h1{
-        font-size:22px;
+    header p {
+        font-size: 15px;
     }
 
-    header p{
-        font-size:14px;
+    .grid,
+    .features,
+    .material-list {
+        grid-template-columns: 1fr;
     }
 
-    .hero{
-        margin:20px 10px;
-        padding:28px 15px;
-    }
-
-    .hero h2{
-        font-size:22px;
-    }
-
-    .features{
-        grid-template-columns:1fr;
+    nav a {
+        font-size: 13px;
+        padding: 8px 10px;
     }
 
 }
 
 </style>
+
 </head>
 
+
 <body>
+
 
 <!-- HEADER -->
 
@@ -340,7 +306,9 @@ footer p{
 
 <h1>Govt Exam Preparation</h1>
 
-<p>Free Preparation for SSC, Banking & Railway Exams</p>
+<p>
+Free Preparation for SSC, Banking & Railway Exams
+</p>
 
 </header>
 
@@ -350,284 +318,351 @@ footer p{
 <nav>
 
 <a href="index.html">Home</a>
+
 <a href="ssc.html">SSC</a>
+
 <a href="banking.html">Banking</a>
+
 <a href="railway.html">Railway</a>
+
 <a href="notes.html">Study Material</a>
+
 <a href="mcq.html">MCQ</a>
+
 <a href="current-affairs.html">Current Affairs</a>
-<a href="daily-quiz.html">Daily Quiz</a>
+
 <a href="mock-test.html">Mock Test</a>
+
 <a href="leaderboard.html">Leaderboard</a>
 
 </nav>
+
+
+<main class="container">
 
 
 <!-- HERO -->
 
 <section class="hero">
 
-<h2>Prepare for Government Exams for Free</h2>
+<h2>Prepare Smarter. Practice Better. Achieve Your Goal.</h2>
 
 <p>
-Welcome to Govt Exam Preparation — a free learning platform for students preparing for SSC, Banking and Railway examinations. Access study notes, MCQs, current affairs, daily quizzes and mock tests in one place.
+Get free study materials, MCQs, current affairs,
+mock tests and exam preparation resources
+for SSC, Banking and Railway examinations.
 </p>
 
-<a class="button" href="mock-test.html">Start Mock Test</a>
+<a class="main-button"
+href="mock-test.html">
+📝 Start Mock Test
+</a>
 
-<a class="button" href="daily-quiz.html">Take Daily Quiz</a>
+<a class="main-button"
+href="notes.html">
+📚 Study Material
+</a>
 
 </section>
 
 
-<!-- EXAM CATEGORIES -->
+<!-- EXAM CARDS -->
 
-<div class="container">
+<h2 class="section-title">
+Choose Your Exam
+</h2>
 
-<h2 class="section-title">Choose Your Exam</h2>
 
-<div class="cards">
-
-<div class="card">
-
-<h3>SSC Exams</h3>
-
-<p>
-Prepare for SSC exams with General Knowledge, English, Reasoning, Quantitative Aptitude, History, Geography, Polity and more.
-</p>
-
-<a href="ssc.html">SSC Preparation</a>
-
-</div>
+<div class="grid">
 
 
 <div class="card">
 
-<h3>Banking Exams</h3>
+<h3>🎯 SSC Exams</h3>
 
 <p>
-Study important subjects and practice questions for Banking examinations with useful notes and mock tests.
+Prepare for SSC CGL, CHSL,
+MTS, GD and other SSC examinations.
 </p>
 
-<a href="banking.html">Banking Preparation</a>
+<a href="ssc.html">
+Start SSC Preparation
+</a>
 
 </div>
 
 
 <div class="card">
 
-<h3>Railway Exams</h3>
+<h3>🏦 Banking Exams</h3>
 
 <p>
-Prepare for Railway examinations with General Science, Mathematics, Reasoning, GK, Current Affairs and practice tests.
+Prepare for IBPS, SBI, RBI and
+other banking examinations.
 </p>
 
-<a href="railway.html">Railway Preparation</a>
+<a href="banking.html">
+Start Banking Preparation
+</a>
 
 </div>
 
+
+<div class="card">
+
+<h3>🚆 Railway Exams</h3>
+
+<p>
+Prepare for RRB NTPC, Group D
+and other Railway examinations.
+</p>
+
+<a href="railway.html">
+Start Railway Preparation
+</a>
+
 </div>
+
 
 </div>
 
 
 <!-- FEATURES -->
 
-<div class="container">
+<h2 class="section-title">
+What You Get
+</h2>
 
-<h2 class="section-title">What You Can Study</h2>
 
 <div class="features">
 
-<div class="feature">
-<h3>📚 Notes</h3>
-<p>Important exam study material</p>
-</div>
 
 <div class="feature">
-<h3>❓ MCQs</h3>
-<p>Practice multiple choice questions</p>
+
+<div class="feature-icon">📚</div>
+
+<h3>Study Notes</h3>
+
+<p>
+Important exam topics in simple language.
+</p>
+
 </div>
+
 
 <div class="feature">
-<h3>📰 Current Affairs</h3>
-<p>Important current affairs preparation</p>
+
+<div class="feature-icon">❓</div>
+
+<h3>MCQs</h3>
+
+<p>
+Practice objective questions for exams.
+</p>
+
 </div>
+
 
 <div class="feature">
-<h3>📝 Mock Tests</h3>
-<p>Test your exam preparation</p>
-</div>
+
+<div class="feature-icon">📰</div>
+
+<h3>Current Affairs</h3>
+
+<p>
+Stay updated with important events.
+</p>
 
 </div>
+
+
+<div class="feature">
+
+<div class="feature-icon">⏱️</div>
+
+<h3>Mock Tests</h3>
+
+<p>
+Test your preparation with timed exams.
+</p>
+
+</div>
+
 
 </div>
 
 
 <!-- STUDY MATERIAL -->
 
-<div class="container">
-
-<h2 class="section-title">Popular Study Material</h2>
-
-<div class="material-grid">
-
-<div class="material">
-<h3>History</h3>
-<a href="ancient-history.html">Ancient History</a><br>
-<a href="medieval-history.html">Medieval History</a><br>
-<a href="modern-history.html">Modern History</a>
-</div>
+<h2 class="section-title">
+Popular Study Material
+</h2>
 
 
-<div class="material">
-<h3>Indian Polity</h3>
-<p>Important Indian Constitution and Polity topics.</p>
-<a href="polity.html">Read Polity Notes →</a>
-</div>
+<div class="material-list">
 
+<a href="akbar.html">
+📖 Akbar
+</a>
 
-<div class="material">
-<h3>Geography</h3>
-<p>Important Geography topics for competitive examinations.</p>
-<a href="geography.html">Read Geography Notes →</a>
-</div>
+<a href="mughal-empire.html">
+📖 Mughal Empire
+</a>
 
+<a href="modern-history.html">
+📖 Modern History
+</a>
 
-<div class="material">
-<h3>Indian Economy</h3>
-<p>Important economic concepts and examination topics.</p>
-<a href="economics.html">Read Economy Notes →</a>
-</div>
+<a href="ancient-history.html">
+📖 Ancient History
+</a>
 
+<a href="geography.html">
+🌍 Geography
+</a>
 
-<div class="material">
-<h3>General Science</h3>
-<p>Physics, Chemistry and Biology preparation.</p>
-<a href="general-science.html">Read Science Notes →</a>
-</div>
+<a href="polity.html">
+⚖️ Indian Polity
+</a>
 
+<a href="economics.html">
+💰 Indian Economy
+</a>
 
-<div class="material">
-<h3>Computer Awareness</h3>
-<p>Important computer awareness questions and topics.</p>
-<a href="computer-awareness.html">Read Computer Notes →</a>
-</div>
+<a href="general-science.html">
+🔬 General Science
+</a>
 
+<a href="computer-awareness.html">
+💻 Computer Awareness
+</a>
 
-<div class="material">
-<h3>English</h3>
-<p>Improve English for SSC and Banking examinations.</p>
-<a href="english.html">Read English Notes →</a>
-</div>
+<a href="reasoning.html">
+🧠 Reasoning
+</a>
 
+<a href="quantitative-aptitude.html">
+🔢 Quantitative Aptitude
+</a>
 
-<div class="material">
-<h3>Quantitative Aptitude</h3>
-<p>Practice important mathematics and aptitude topics.</p>
-<a href="quantitative-aptitude.html">Read Quantitative Aptitude →</a>
-</div>
+<a href="english.html">
+📘 English
+</a>
 
+<a href="current-affairs.html">
+📰 Current Affairs
+</a>
 
-<div class="material">
-<h3>Akbar</h3>
-<p>Important facts and notes about Mughal Emperor Akbar.</p>
-<a href="akbar.html">Read Akbar Notes →</a>
-</div>
-
-</div>
+<a href="daily-quiz.html">
+🎯 Daily Quiz
+</a>
 
 </div>
 
 
-<!-- PRACTICE SECTION -->
+<!-- QUICK ACCESS -->
 
-<div class="container">
+<h2 class="section-title">
+Quick Access
+</h2>
 
-<h2 class="section-title">Practice Every Day</h2>
 
-<div class="exam-box">
+<div class="grid">
 
-<h3>Daily Quiz</h3>
+
+<div class="card">
+
+<h3>📝 Mock Test</h3>
 
 <p>
-Challenge yourself every day with practice questions designed for competitive examination preparation.
+Take the 50-question timed mock test
+and check your performance.
 </p>
 
-<a class="button" href="daily-quiz.html">Start Daily Quiz</a>
+<a href="mock-test.html">
+Take Test
+</a>
 
 </div>
 
 
-<div class="exam-box">
+<div class="card">
 
-<h3>Mock Test</h3>
+<h3>🏆 Leaderboard</h3>
 
 <p>
-Take a mock examination, check your score and percentage, and see your performance on the leaderboard.
+See mock test scores and compare
+your performance.
 </p>
 
-<a class="button" href="mock-test.html">Start Mock Test</a>
-
-<a class="button" href="leaderboard.html">View Leaderboard</a>
+<a href="leaderboard.html">
+View Leaderboard
+</a>
 
 </div>
 
 
-<div class="exam-box">
+<div class="card">
 
-<h3>Current Affairs</h3>
+<h3>📰 Current Affairs</h3>
 
 <p>
-Stay updated with important current affairs useful for SSC, Banking and Railway examinations.
+Read important current affairs
+for competitive examinations.
 </p>
 
-<a class="button" href="current-affairs.html">Read Current Affairs</a>
+<a href="current-affairs.html">
+Read Current Affairs
+</a>
 
 </div>
 
+
 </div>
 
 
-<!-- CALL TO ACTION -->
+<!-- CTA -->
 
 <section class="cta">
 
-<h2>Start Your Government Exam Preparation Today</h2>
+<h2>Start Your Exam Preparation Today</h2>
 
 <p>
-Study regularly, practice questions and improve your performance with free resources.
+Study regularly, practice MCQs and
+test yourself with mock examinations.
 </p>
 
-<a class="button" href="notes.html">Explore Study Material</a>
-
-<a class="button" href="mock-test.html">Take Mock Test</a>
+<a class="cta-button"
+href="mock-test.html">
+Start Free Mock Test
+</a>
 
 </section>
+
+
+</main>
 
 
 <!-- FOOTER -->
 
 <footer>
 
-<div>
-
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-<a href="privacy.html">Privacy Policy</a>
-
-</div>
-
 <p>
-© 2026 Govt Exam Preparation. All Rights Reserved.
+© 2026 Govt Exam Preparation
 </p>
 
 <p>
-Free educational resources for SSC, Banking and Railway exam preparation.
+
+<a href="about.html">About</a>
+
+<a href="contact.html">Contact</a>
+
+<a href="privacy.html">Privacy</a>
+
 </p>
 
 </footer>
+
 
 </body>
 </html>
