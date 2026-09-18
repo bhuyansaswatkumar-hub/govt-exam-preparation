@@ -1,510 +1,819 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Current Affairs | SSC & Banking</title>
 
+<meta name="description"
+content="Latest current affairs for SSC, Banking and Railway exams. Practice important national, international, banking, economy, sports and government current affairs.">
+
 <style>
-body{
-    font-family:Arial,sans-serif;
-    margin:0;
-    background:#f4f6f8;
-    color:#222;
-    line-height:1.6;
+
+* {
+    box-sizing: border-box;
 }
-header{
-    background:#1e3a8a;
-    color:white;
-    padding:25px 15px;
-    text-align:center;
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #222;
 }
-header h1{margin:0;font-size:30px;}
-header p{margin:8px 0 0;}
-.container{
-    max-width:1000px;
-    margin:auto;
-    padding:20px;
+
+/* HEADER */
+
+header {
+    background: #173b75;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
 }
-.card{
-    background:white;
-    padding:20px;
-    margin:18px 0;
-    border-radius:10px;
-    box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
 }
-h2{
-    color:#1e3a8a;
-    border-bottom:2px solid #ddd;
-    padding-bottom:8px;
+
+header p {
+    margin: 8px 0 0;
 }
-h3{color:#333;}
-ul{padding-left:25px;}
-.question{
-    background:#f8fafc;
-    padding:15px;
-    margin:12px 0;
-    border-left:4px solid #1e3a8a;
+
+/* NAVIGATION */
+
+nav {
+    background: #0d2852;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
 }
-.answer{
-    font-weight:bold;
-    color:#15803d;
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 9px 13px;
+    border-radius: 5px;
+    font-size: 14px;
 }
-.btn{
-    display:inline-block;
-    background:#1e3a8a;
-    color:white;
-    padding:10px 16px;
-    margin:5px;
-    text-decoration:none;
-    border-radius:6px;
+
+nav a:hover {
+    background: #173b75;
 }
-footer{
-    text-align:center;
-    background:#1e3a8a;
-    color:white;
-    padding:20px;
-    margin-top:30px;
+
+/* CONTAINER */
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 25px 15px;
 }
+
+/* INTRO */
+
+.intro {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
+
+.intro h2 {
+    color: #173b75;
+    margin-top: 0;
+}
+
+.intro p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* CATEGORY */
+
+.category {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #173b75;
+    border-left: 5px solid #173b75;
+    padding-left: 12px;
+}
+
+/* NEWS CARD */
+
+.news-card {
+    background: white;
+    padding: 22px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+}
+
+.news-card h3 {
+    margin-top: 0;
+    color: #173b75;
+}
+
+.date {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.news-card p {
+    line-height: 1.6;
+    color: #444;
+}
+
+/* TAG */
+
+.tag {
+    display: inline-block;
+    background: #eef3fb;
+    color: #173b75;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* ONE LINERS */
+
+.one-liners {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+}
+
+.one-liners li {
+    margin-bottom: 13px;
+    line-height: 1.5;
+}
+
+/* MCQ */
+
+.mcq-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+}
+
+.mcq-card h3 {
+    color: #173b75;
+}
+
+.option {
+    background: #f7f8fa;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+}
+
+.answer {
+    margin-top: 12px;
+    padding: 12px;
+    background: #eef7ee;
+    border-left: 4px solid #198754;
+    display: none;
+}
+
+.show-answer {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    background: #173b75;
+    color: white;
+    cursor: pointer;
+}
+
+.show-answer:hover {
+    opacity: 0.9;
+}
+
+/* LINKS */
+
+.links {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 25px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+}
+
+.links a {
+    display: inline-block;
+    margin: 7px;
+    padding: 10px 15px;
+    background: #173b75;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+/* FOOTER */
+
+footer {
+    background: #0d2852;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+    margin-top: 35px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 7px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    .container {
+        padding: 15px 10px;
+    }
+
+    .news-card,
+    .mcq-card,
+    .one-liners,
+    .links,
+    .intro {
+        padding: 18px;
+    }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
+
 <h1>Current Affairs</h1>
-<p>SSC • Banking • Railway • Competitive Exams</p>
+
+<p>SSC • Banking • Railway Exam Preparation</p>
+
 </header>
 
-<div class="container">
 
-<div class="card">
-<h2>📚 Important Current Affairs Topics</h2>
+<!-- NAVIGATION -->
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="ssc.html">SSC</a>
+
+<a href="banking.html">Banking</a>
+
+<a href="railway.html">Railway</a>
+
+<a href="notes.html">Study Material</a>
+
+<a href="mcq.html">MCQ</a>
+
+<a href="current-affairs.html">Current Affairs</a>
+
+<a href="daily-quiz.html">Daily Quiz</a>
+
+<a href="mock-test.html">Mock Test</a>
+
+<a href="leaderboard.html">Leaderboard</a>
+
+</nav>
+
+
+<main class="container">
+
+
+<!-- INTRO -->
+
+<section class="intro">
+
+<h2>📰 Latest Current Affairs</h2>
+
+<p>
+Important current affairs for SSC, Banking and Railway
+competitive examinations.
+</p>
+
+<p>
+<strong>Updated: September 2026</strong>
+</p>
+
+</section>
+
+
+<!-- NATIONAL -->
+
+<h2 class="category">
+🇮🇳 National Current Affairs
+</h2>
+
+
+<div class="news-card">
+
+<span class="tag">National</span>
+
+<h3>India Highlights Semiconductor Development</h3>
+
+<div class="date">
+17 September 2026
+</div>
+
+<p>
+The Press Information Bureau published a backgrounder titled
+<strong>“India Building Semiconductor Future”</strong> on
+17 September 2026, highlighting India's semiconductor
+development efforts.
+</p>
+
+</div>
+
+
+<div class="news-card">
+
+<span class="tag">Government</span>
+
+<h3>Bankers' Books Evidence Act, 2026</h3>
+
+<div class="date">
+11 September 2026
+</div>
+
+<p>
+The Press Information Bureau reported that the
+<strong>Bankers' Books Evidence Act, 2026</strong>
+is scheduled to come into force from
+<strong>1 October 2026</strong>.
+</p>
+
+</div>
+
+
+<!-- BANKING -->
+
+<h2 class="category">
+🏦 Banking & Economy
+</h2>
+
+
+<div class="news-card">
+
+<span class="tag">Banking</span>
+
+<h3>UPI Transactions Update</h3>
+
+<div class="date">
+15 September 2026
+</div>
+
+<p>
+According to a PIB release, UPI continues to remain free
+for peer-to-peer transactions and for 96% of merchant
+transactions.
+</p>
+
+</div>
+
+
+<div class="news-card">
+
+<span class="tag">Financial Sector</span>
+
+<h3>GIFT IFSC Banking Activity</h3>
+
+<div class="date">
+2 September 2026
+</div>
+
+<p>
+PIB reported that GIFT IFSC mobilised more than
+<strong>$52.8 billion</strong> under the RBI's FCNR(B)
+Swap Facility, along with significant external commercial
+borrowings and bond listings by banks in IFSC exchanges.
+</p>
+
+</div>
+
+
+<!-- SPORTS -->
+
+<h2 class="category">
+🏆 Sports Current Affairs
+</h2>
+
+
+<div class="news-card">
+
+<span class="tag">Sports</span>
+
+<h3>Indian Women's Cricket Team Wins Asia Cup</h3>
+
+<div class="date">
+14 September 2026
+</div>
+
+<p>
+The Prime Minister's Office reported that the Prime Minister
+congratulated the Indian Women's Cricket Team on winning
+the Asia Cup.
+</p>
+
+</div>
+
+
+<div class="news-card">
+
+<span class="tag">Hockey</span>
+
+<h3>Indian Junior Men Win Asia Cup</h3>
+
+<div class="date">
+13 September 2026
+</div>
+
+<p>
+The Prime Minister's Office reported congratulations to the
+Indian Junior Men's Hockey Team for winning the Asia Cup.
+</p>
+
+</div>
+
+
+<!-- INTERNATIONAL -->
+
+<h2 class="category">
+🌍 International Affairs
+</h2>
+
+
+<div class="news-card">
+
+<span class="tag">BRICS</span>
+
+<h3>BRICS Remains an Important Current Affairs Topic</h3>
+
+<div class="date">
+September 2026
+</div>
+
+<p>
+PIB published a BRICS backgrounder in September 2026.
+BRICS-related developments are important topics for
+General Awareness preparation.
+</p>
+
+</div>
+
+
+<!-- GOVERNMENT SCHEMES -->
+
+<h2 class="category">
+🏛️ Government Schemes & Programmes
+</h2>
+
+
+<div class="news-card">
+
+<span class="tag">Government Programme</span>
+
+<h3>PMAY-U: Housing and Inclusion</h3>
+
+<div class="date">
+16 September 2026
+</div>
+
+<p>
+PIB published a backgrounder on
+<strong>PMAY-U</strong>, covering housing, inclusion
+and empowerment.
+</p>
+
+</div>
+
+
+<div class="news-card">
+
+<span class="tag">Youth</span>
+
+<h3>Nasha Mukt Yuva Abhiyan</h3>
+
+<div class="date">
+17 September 2026
+</div>
+
+<p>
+PIB reported that the nationwide
+<strong>Rashtriya Sankalp Samaroh</strong> marked the
+commencement of the 100 Weeks Nasha Mukt Yuva Abhiyan.
+</p>
+
+</div>
+
+
+<!-- ONE LINERS -->
+
+<h2 class="category">
+📚 Important One-Liners
+</h2>
+
+
+<div class="one-liners">
 
 <ul>
-<li>National Affairs</li>
-<li>International Affairs</li>
-<li>Government Schemes</li>
-<li>Banking & Economy</li>
-<li>Appointments</li>
-<li>Awards & Honours</li>
-<li>Sports</li>
-<li>Science & Technology</li>
-<li>Important Days</li>
-<li>Books & Authors</li>
-<li>Defence</li>
-<li>Summits & Conferences</li>
+
+<li>
+India's semiconductor development was highlighted in a
+PIB backgrounder dated 17 September 2026.
+</li>
+
+<li>
+The Bankers' Books Evidence Act, 2026 is scheduled to
+come into force on 1 October 2026.
+</li>
+
+<li>
+UPI remains free for peer-to-peer transactions and
+96% of merchant transactions, according to PIB.
+</li>
+
+<li>
+GIFT IFSC has been highlighted as an international
+banking hub in recent government updates.
+</li>
+
+<li>
+The Indian Women's Cricket Team won the Asia Cup,
+according to the Prime Minister's Office.
+</li>
+
+<li>
+The Indian Junior Men's Hockey Team won the Asia Cup.
+</li>
+
+<li>
+PMAY-U is a major government programme related to
+urban housing.
+</li>
+
+<li>
+The 100 Weeks Nasha Mukt Yuva Abhiyan commenced with
+a nationwide Rashtriya Sankalp Samaroh.
+</li>
+
 </ul>
+
 </div>
 
-<div class="card">
-<h2>🇮🇳 National Affairs</h2>
 
-<ul>
-<li>Government policies and major national decisions are important for competitive examinations.</li>
-<li>Important bills, acts, committees and government programmes should be revised regularly.</li>
-<li>Major national awards and important appointments are frequently asked in exams.</li>
-<li>Important developments related to states and the central government should be followed.</li>
-</ul>
-</div>
+<!-- MCQs -->
 
-<div class="card">
-<h2>🌍 International Affairs</h2>
+<h2 class="category">
+❓ Current Affairs MCQs
+</h2>
 
-<ul>
-<li>Important international summits and conferences.</li>
-<li>Relations between India and other countries.</li>
-<li>International organisations such as United Nations, IMF, World Bank and WTO.</li>
-<li>Important global agreements and international developments.</li>
-</ul>
-</div>
 
-<div class="card">
-<h2>🏛️ Government Schemes</h2>
+<div class="mcq-card">
 
-<ul>
-<li>Pradhan Mantri Jan Dhan Yojana</li>
-<li>Pradhan Mantri Awas Yojana</li>
-<li>Pradhan Mantri Ujjwala Yojana</li>
-<li>Ayushman Bharat</li>
-<li>PM-KISAN</li>
-<li>Skill India Mission</li>
-<li>Digital India</li>
-<li>Make in India</li>
-<li>Startup India</li>
-<li>Swachh Bharat Mission</li>
-</ul>
-</div>
+<h3>
+1. From which date is the Bankers' Books Evidence Act,
+2026 scheduled to come into force?
+</h3>
 
-<div class="card">
-<h2>🏦 Banking & Economy</h2>
+<div class="option">A. 1 September 2026</div>
 
-<ul>
-<li>Reserve Bank of India (RBI) is India's central bank.</li>
-<li>Repo Rate is the rate at which RBI lends money to commercial banks.</li>
-<li>Reverse Repo Rate is the rate at which RBI borrows money from commercial banks.</li>
-<li>Inflation refers to a sustained rise in the general price level.</li>
-<li>GDP stands for Gross Domestic Product.</li>
-<li>SEBI regulates the securities market in India.</li>
-<li>NABARD focuses on agriculture and rural development.</li>
-</ul>
-</div>
+<div class="option">B. 1 October 2026</div>
 
-<div class="card">
-<h2>🏆 Awards & Honours</h2>
+<div class="option">C. 1 November 2026</div>
 
-<ul>
-<li>Bharat Ratna is India's highest civilian award.</li>
-<li>Padma Vibhushan is one of India's major civilian honours.</li>
-<li>Padma Bhushan and Padma Shri are important civilian awards.</li>
-<li>Nobel Prize is awarded in several fields including Physics, Chemistry, Medicine, Literature and Peace.</li>
-</ul>
-</div>
+<div class="option">D. 1 December 2026</div>
 
-<div class="card">
-<h2>🏅 Sports</h2>
+<button class="show-answer"
+onclick="showAnswer('answer1')">
+Show Answer
+</button>
 
-<ul>
-<li>Revise winners of major international tournaments.</li>
-<li>Remember important sports awards and records.</li>
-<li>Important tournaments include Olympics, Asian Games, Commonwealth Games and World Cups.</li>
-<li>Questions may be asked about players, teams, venues and winners.</li>
-</ul>
-</div>
+<div id="answer1" class="answer">
 
-<div class="card">
-<h2>🔬 Science & Technology</h2>
+<strong>Answer: B. 1 October 2026</strong>
 
-<ul>
-<li>India's space programme is managed by ISRO.</li>
-<li>Chandrayaan missions are India's major lunar exploration missions.</li>
-<li>Aditya-L1 is India's mission to study the Sun.</li>
-<li>Artificial Intelligence, biotechnology, quantum technology and semiconductor technology are important examination topics.</li>
-</ul>
-</div>
-
-<div class="card">
-<h2>📅 Important Days</h2>
-
-<ul>
-<li>26 January – Republic Day</li>
-<li>28 February – National Science Day</li>
-<li>8 March – International Women's Day</li>
-<li>22 April – Earth Day</li>
-<li>1 May – International Labour Day</li>
-<li>5 June – World Environment Day</li>
-<li>21 June – International Yoga Day</li>
-<li>15 August – Independence Day</li>
-<li>5 September – Teachers' Day</li>
-<li>2 October – Gandhi Jayanti</li>
-<li>14 November – Children's Day</li>
-<li>26 November – Constitution Day</li>
-</ul>
-</div>
-
-<div class="card">
-<h2>❓ Current Affairs MCQs</h2>
-
-<div class="question">
-<b>1. What is the central bank of India?</b><br>
-A) SBI<br>
-B) RBI<br>
-C) SEBI<br>
-D) NABARD<br>
-<span class="answer">Answer: B) RBI</span>
-</div>
-
-<div class="question">
-<b>2. What does GDP stand for?</b><br>
-A) Gross Domestic Product<br>
-B) General Domestic Price<br>
-C) Gross Development Plan<br>
-D) Government Development Product<br>
-<span class="answer">Answer: A) Gross Domestic Product</span>
-</div>
-
-<div class="question">
-<b>3. Which organisation regulates the securities market in India?</b><br>
-A) RBI<br>
-B) SEBI<br>
-C) NABARD<br>
-D) SBI<br>
-<span class="answer">Answer: B) SEBI</span>
-</div>
-
-<div class="question">
-<b>4. Which organisation is India's space agency?</b><br>
-A) DRDO<br>
-B) ISRO<br>
-C) NASA<br>
-D) ESA<br>
-<span class="answer">Answer: B) ISRO</span>
-</div>
-
-<div class="question">
-<b>5. When is India's Republic Day celebrated?</b><br>
-A) 15 August<br>
-B) 26 January<br>
-C) 2 October<br>
-D) 14 November<br>
-<span class="answer">Answer: B) 26 January</span>
-</div>
-
-<div class="question">
-<b>6. When is World Environment Day observed?</b><br>
-A) 5 June<br>
-B) 21 June<br>
-C) 22 April<br>
-D) 1 May<br>
-<span class="answer">Answer: A) 5 June</span>
-</div>
-
-<div class="question">
-<b>7. Which organisation is associated with rural development and agriculture finance?</b><br>
-A) NABARD<br>
-B) SEBI<br>
-C) ISRO<br>
-D) UPSC<br>
-<span class="answer">Answer: A) NABARD</span>
-</div>
-
-<div class="question">
-<b>8. What is India's highest civilian award?</b><br>
-A) Padma Shri<br>
-B) Padma Bhushan<br>
-C) Bharat Ratna<br>
-D) Arjuna Award<br>
-<span class="answer">Answer: C) Bharat Ratna</span>
-</div>
-
-<div class="question">
-<b>9. International Yoga Day is observed on:</b><br>
-A) 5 June<br>
-B) 21 June<br>
-C) 15 August<br>
-D) 2 October<br>
-<span class="answer">Answer: B) 21 June</span>
-</div>
-
-<div class="question">
-<b>10. Teachers' Day in India is celebrated on:</b><br>
-A) 5 September<br>
-B) 14 November<br>
-C) 26 November<br>
-D) 28 February<br>
-<span class="answer">Answer: A) 5 September</span>
-</div>
-
-<div class="question">
-<b>11. Which rate is associated with RBI lending money to commercial banks?</b><br>
-A) Repo Rate<br>
-B) Bank Deposit Rate<br>
-C) Savings Rate<br>
-D) Tax Rate<br>
-<span class="answer">Answer: A) Repo Rate</span>
-</div>
-
-<div class="question">
-<b>12. Which mission studied the Moon?</b><br>
-A) Aditya-L1<br>
-B) Chandrayaan<br>
-C) Mangalyaan<br>
-D) Gaganyaan<br>
-<span class="answer">Answer: B) Chandrayaan</span>
-</div>
-
-<div class="question">
-<b>13. Which mission is associated with studying the Sun?</b><br>
-A) Chandrayaan<br>
-B) Aditya-L1<br>
-C) Mangalyaan<br>
-D) PSLV<br>
-<span class="answer">Answer: B) Aditya-L1</span>
-</div>
-
-<div class="question">
-<b>14. Constitution Day of India is observed on:</b><br>
-A) 26 January<br>
-B) 15 August<br>
-C) 26 November<br>
-D) 2 October<br>
-<span class="answer">Answer: C) 26 November</span>
-</div>
-
-<div class="question">
-<b>15. Children's Day in India is celebrated on:</b><br>
-A) 14 November<br>
-B) 5 September<br>
-C) 2 October<br>
-D) 15 August<br>
-<span class="answer">Answer: A) 14 November</span>
-</div>
-
-<div class="question">
-<b>16. Which organisation is responsible for monetary policy in India?</b><br>
-A) RBI<br>
-B) SEBI<br>
-C) UPSC<br>
-D) NITI Aayog<br>
-<span class="answer">Answer: A) RBI</span>
-</div>
-
-<div class="question">
-<b>17. Earth Day is observed on:</b><br>
-A) 22 April<br>
-B) 5 June<br>
-C) 21 June<br>
-D) 1 May<br>
-<span class="answer">Answer: A) 22 April</span>
-</div>
-
-<div class="question">
-<b>18. National Science Day in India is observed on:</b><br>
-A) 28 February<br>
-B) 5 June<br>
-C) 15 August<br>
-D) 26 January<br>
-<span class="answer">Answer: A) 28 February</span>
-</div>
-
-<div class="question">
-<b>19. Which award is associated with outstanding achievements in sports in India?</b><br>
-A) Arjuna Award<br>
-B) Bharat Ratna only<br>
-C) Padma Shri only<br>
-D) Nobel Prize<br>
-<span class="answer">Answer: A) Arjuna Award</span>
-</div>
-
-<div class="question">
-<b>20. Which organisation is responsible for India's defence research?</b><br>
-A) DRDO<br>
-B) ISRO<br>
-C) SEBI<br>
-D) NABARD<br>
-<span class="answer">Answer: A) DRDO</span>
-</div>
-
-<div class="question">
-<b>21. Which institution is India's central monetary authority?</b><br>
-A) RBI<br>
-B) SBI<br>
-C) LIC<br>
-D) SEBI<br>
-<span class="answer">Answer: A) RBI</span>
-</div>
-
-<div class="question">
-<b>22. Digital India is primarily associated with:</b><br>
-A) Digital transformation<br>
-B) Agriculture only<br>
-C) Defence only<br>
-D) Sports only<br>
-<span class="answer">Answer: A) Digital transformation</span>
-</div>
-
-<div class="question">
-<b>23. Startup India promotes:</b><br>
-A) Entrepreneurship and startups<br>
-B) Space research only<br>
-C) Sports only<br>
-D) Tourism only<br>
-<span class="answer">Answer: A) Entrepreneurship and startups</span>
-</div>
-
-<div class="question">
-<b>24. Make in India mainly promotes:</b><br>
-A) Manufacturing and investment<br>
-B) Sports<br>
-C) Banking exams<br>
-D) Tourism only<br>
-<span class="answer">Answer: A) Manufacturing and investment</span>
-</div>
-
-<div class="question">
-<b>25. Which day is celebrated as India's Independence Day?</b><br>
-A) 26 January<br>
-B) 15 August<br>
-C) 2 October<br>
-D) 14 November<br>
-<span class="answer">Answer: B) 15 August</span>
-</div>
-
-<div class="question">
-<b>26. Gandhi Jayanti is observed on:</b><br>
-A) 2 October<br>
-B) 15 August<br>
-C) 26 January<br>
-D) 5 September<br>
-<span class="answer">Answer: A) 2 October</span>
-</div>
-
-<div class="question">
-<b>27. Which organisation regulates India's securities market?</b><br>
-A) SEBI<br>
-B) RBI<br>
-C) NABARD<br>
-D) ISRO<br>
-<span class="answer">Answer: A) SEBI</span>
-</div>
-
-<div class="question">
-<b>28. Which organisation is associated with agriculture and rural development finance?</b><br>
-A) NABARD<br>
-B) DRDO<br>
-C) ISRO<br>
-D) SEBI<br>
-<span class="answer">Answer: A) NABARD</span>
-</div>
-
-<div class="question">
-<b>29. Which field is associated with Artificial Intelligence?</b><br>
-A) Computer Science<br>
-B) Agriculture only<br>
-C) Geography only<br>
-D) History only<br>
-<span class="answer">Answer: A) Computer Science</span>
-</div>
-
-<div class="question">
-<b>30. Which organisation conducts India's major civil service examinations?</b><br>
-A) UPSC<br>
-B) RBI<br>
-C) SEBI<br>
-D) ISRO<br>
-<span class="answer">Answer: A) UPSC</span>
 </div>
 
 </div>
 
-<div class="card">
-<h2>⚡ Quick Revision Strategy</h2>
 
-<ul>
-<li>Read current affairs for 15–20 minutes every day.</li>
-<li>Make short notes of important appointments, awards and schemes.</li>
-<li>Revise banking and economy regularly for banking examinations.</li>
-<li>Practice MCQs after completing each topic.</li>
-<li>Revise the previous 6–12 months before the examination.</li>
-</ul>
+<div class="mcq-card">
+
+<h3>
+2. Which payment system was reported by PIB as remaining
+free for peer-to-peer transactions?
+</h3>
+
+<div class="option">A. NEFT</div>
+
+<div class="option">B. RTGS</div>
+
+<div class="option">C. UPI</div>
+
+<div class="option">D. IMPS</div>
+
+<button class="show-answer"
+onclick="showAnswer('answer2')">
+Show Answer
+</button>
+
+<div id="answer2" class="answer">
+
+<strong>Answer: C. UPI</strong>
+
 </div>
 
-<div class="card">
-<h2>🔗 Website Navigation</h2>
+</div>
 
-<a href="index.html" class="btn">Home</a>
-<a href="study-material.html" class="btn">Study Material</a>
-<a href="mock-test.html" class="btn">Mock Test</a>
+
+<div class="mcq-card">
+
+<h3>
+3. Which Indian team was congratulated for winning the
+Asia Cup in the September 2026 update?
+</h3>
+
+<div class="option">A. Indian Women's Cricket Team</div>
+
+<div class="option">B. Indian Men's Football Team</div>
+
+<div class="option">C. Indian Men's Hockey Team</div>
+
+<div class="option">D. Indian Women's Hockey Team</div>
+
+<button class="show-answer"
+onclick="showAnswer('answer3')">
+Show Answer
+</button>
+
+<div id="answer3" class="answer">
+
+<strong>Answer: A. Indian Women's Cricket Team</strong>
+
 </div>
 
 </div>
+
+
+<div class="mcq-card">
+
+<h3>
+4. Which sector was highlighted in the PIB backgrounder
+titled "India Building Semiconductor Future"?
+</h3>
+
+<div class="option">A. Textile sector</div>
+
+<div class="option">B. Semiconductor sector</div>
+
+<div class="option">C. Tourism sector</div>
+
+<div class="option">D. Fisheries sector</div>
+
+<button class="show-answer"
+onclick="showAnswer('answer4')">
+Show Answer
+</button>
+
+<div id="answer4" class="answer">
+
+<strong>Answer: B. Semiconductor sector</strong>
+
+</div>
+
+</div>
+
+
+<div class="mcq-card">
+
+<h3>
+5. What does PMAY-U primarily relate to?
+</h3>
+
+<div class="option">A. Urban housing</div>
+
+<div class="option">B. Crop insurance</div>
+
+<div class="option">C. Railway recruitment</div>
+
+<div class="option">D. Digital payments</div>
+
+<button class="show-answer"
+onclick="showAnswer('answer5')">
+Show Answer
+</button>
+
+<div id="answer5" class="answer">
+
+<strong>Answer: A. Urban housing</strong>
+
+</div>
+
+</div>
+
+
+<!-- PRACTICE LINKS -->
+
+<div class="links">
+
+<h2>🎯 Continue Your Preparation</h2>
+
+<a href="daily-quiz.html">
+Daily Quiz
+</a>
+
+<a href="mock-test.html">
+Mock Test
+</a>
+
+<a href="mcq.html">
+MCQ Practice
+</a>
+
+<a href="leaderboard.html">
+Leaderboard
+</a>
+
+<a href="notes.html">
+Study Material
+</a>
+
+</div>
+
+
+</main>
+
+
+<!-- FOOTER -->
 
 <footer>
-<p>© 2026 Government Exam Preparation</p>
-<p>SSC • Banking • Competitive Exams</p>
+
+<p>
+© 2026 Govt Exam Preparation
+</p>
+
+<p>
+
+<a href="about.html">About</a>
+
+<a href="contact.html">Contact</a>
+
+<a href="privacy.html">Privacy</a>
+
+</p>
+
 </footer>
 
+
+<script>
+
+function showAnswer(id) {
+
+    const answer = document.getElementById(id);
+
+    if (answer.style.display === "block") {
+
+        answer.style.display = "none";
+
+    } else {
+
+        answer.style.display = "block";
+
+    }
+
+}
+
+</script>
+
+
 </body>
+
 </html>
-```
