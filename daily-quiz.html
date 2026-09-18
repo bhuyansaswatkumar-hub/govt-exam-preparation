@@ -1,325 +1,904 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Daily Quiz | SSC & Banking</title>
 
+<meta name="description"
+content="Free daily quiz for SSC, Banking and Railway exam preparation. Practice 10 important questions and check your score instantly.">
+
 <style>
-body{
-    font-family:Arial,sans-serif;
-    margin:0;
-    background:#f4f6f8;
-    color:#222;
+
+* {
+    box-sizing: border-box;
 }
 
-header{
-    background:#17365d;
-    color:white;
-    padding:25px;
-    text-align:center;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #222;
 }
 
-.container{
-    max-width:900px;
-    margin:25px auto;
-    padding:20px;
+/* HEADER */
+
+header {
+    background: #173b75;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
 }
 
-.quiz-box{
-    background:white;
-    padding:20px;
-    margin-bottom:20px;
-    border-radius:10px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+header h1 {
+    margin: 0;
+    font-size: 30px;
 }
 
-.question{
-    font-size:18px;
-    font-weight:bold;
-    margin-bottom:15px;
+header p {
+    margin: 8px 0 0;
 }
 
-label{
-    display:block;
-    background:#f1f3f5;
-    padding:12px;
-    margin:8px 0;
-    border-radius:6px;
-    cursor:pointer;
+/* NAVIGATION */
+
+nav {
+    background: #0d2852;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
 }
 
-label:hover{
-    background:#e2e6ea;
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 9px 13px;
+    border-radius: 5px;
+    font-size: 14px;
 }
 
-button{
-    background:#17365d;
-    color:white;
-    border:none;
-    padding:14px 25px;
-    font-size:17px;
-    border-radius:6px;
-    cursor:pointer;
+nav a:hover {
+    background: #173b75;
 }
 
-button:hover{
-    background:#0d2542;
+/* CONTAINER */
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 25px 15px;
 }
 
-#result{
-    margin-top:25px;
-    padding:20px;
-    background:white;
-    border-radius:10px;
-    font-size:20px;
-    font-weight:bold;
-    text-align:center;
+/* CARD */
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
 }
 
-.review{
-    background:white;
-    padding:20px;
-    margin-top:20px;
-    border-radius:10px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+/* INTRO */
+
+.intro {
+    text-align: center;
 }
 
-.correct{
-    color:green;
-    font-weight:bold;
+.intro h2 {
+    color: #173b75;
 }
 
-.wrong{
-    color:red;
-    font-weight:bold;
+.intro p {
+    line-height: 1.6;
+    color: #555;
 }
 
-.nav{
-    text-align:center;
-    margin:30px 0;
+/* QUESTION */
+
+.question {
+    margin-bottom: 30px;
 }
 
-.nav a{
-    text-decoration:none;
-    background:#17365d;
-    color:white;
-    padding:10px 15px;
-    margin:5px;
-    border-radius:5px;
-    display:inline-block;
+.question h3 {
+    line-height: 1.5;
+    color: #173b75;
 }
+
+.option {
+    display: block;
+    background: #f7f8fa;
+    border: 1px solid #ddd;
+    padding: 13px;
+    margin: 9px 0;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.option:hover {
+    background: #eef3fb;
+}
+
+.option input {
+    margin-right: 8px;
+}
+
+/* BUTTON */
+
+button {
+    display: block;
+    width: 100%;
+    border: none;
+    background: #173b75;
+    color: white;
+    padding: 14px;
+    font-size: 17px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* RESULT */
+
+.result {
+    text-align: center;
+    display: none;
+}
+
+.result h2 {
+    color: #173b75;
+}
+
+.score {
+    font-size: 45px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.message {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* REVIEW */
+
+.review {
+    margin-top: 20px;
+}
+
+.review-item {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border-left: 5px solid #ccc;
+    background: #f7f8fa;
+}
+
+.correct {
+    border-left-color: #198754;
+}
+
+.wrong {
+    border-left-color: #dc3545;
+}
+
+.review-item p {
+    margin: 7px 0;
+}
+
+/* FOOTER */
+
+footer {
+    background: #0d2852;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+    margin-top: 30px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 7px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    .container {
+        padding: 15px 10px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
-    <h1>Daily Quiz</h1>
-    <p>SSC & Banking Exam Preparation</p>
+
+<h1>Daily Quiz</h1>
+
+<p>SSC • Banking • Railway Exam Preparation</p>
+
 </header>
 
-<div class="container">
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="ssc.html">SSC</a>
+
+<a href="banking.html">Banking</a>
+
+<a href="railway.html">Railway</a>
+
+<a href="notes.html">Study Material</a>
+
+<a href="mcq.html">MCQ</a>
+
+<a href="current-affairs.html">Current Affairs</a>
+
+<a href="mock-test.html">Mock Test</a>
+
+<a href="leaderboard.html">Leaderboard</a>
+
+</nav>
+
+
+<main class="container">
+
+
+<!-- INTRO -->
+
+<div class="card intro">
+
+<h2>🎯 Today's Daily Quiz</h2>
+
+<p>
+Test your knowledge with these 10 questions
+for SSC, Banking and Railway examinations.
+</p>
+
+<p>
+<strong>10 Questions • Instant Result • Free Practice</strong>
+</p>
+
+</div>
+
+
+<!-- QUIZ -->
+
+<div class="card">
 
 <form id="quizForm">
 
-<div class="quiz-box">
-<div class="question">1. Who founded the Mughal Empire in India?</div>
-<label><input type="radio" name="q1" value="A"> Akbar</label>
-<label><input type="radio" name="q1" value="B"> Babur</label>
-<label><input type="radio" name="q1" value="C"> Humayun</label>
-<label><input type="radio" name="q1" value="D"> Shah Jahan</label>
+
+<!-- QUESTION 1 -->
+
+<div class="question">
+
+<h3>1. Who is known as the Father of the Indian Constitution?</h3>
+
+<label class="option">
+<input type="radio" name="q1" value="A">
+Jawaharlal Nehru
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="B">
+Dr. B. R. Ambedkar
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="C">
+Mahatma Gandhi
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="D">
+Sardar Patel
+</label>
+
 </div>
 
-<div class="quiz-box">
-<div class="question">2. What is the capital of India?</div>
-<label><input type="radio" name="q2" value="A"> Mumbai</label>
-<label><input type="radio" name="q2" value="B"> Kolkata</label>
-<label><input type="radio" name="q2" value="C"> New Delhi</label>
-<label><input type="radio" name="q2" value="D"> Chennai</label>
+
+<!-- QUESTION 2 -->
+
+<div class="question">
+
+<h3>2. What is the capital of India?</h3>
+
+<label class="option">
+<input type="radio" name="q2" value="A">
+Mumbai
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="B">
+Kolkata
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="C">
+New Delhi
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="D">
+Chennai
+</label>
+
 </div>
 
-<div class="quiz-box">
-<div class="question">3. Which Article of the Indian Constitution deals with Fundamental Rights?</div>
-<label><input type="radio" name="q3" value="A"> Articles 12–35</label>
-<label><input type="radio" name="q3" value="B"> Articles 36–51</label>
-<label><input type="radio" name="q3" value="C"> Articles 52–78</label>
-<label><input type="radio" name="q3" value="D"> Articles 79–100</label>
+
+<!-- QUESTION 3 -->
+
+<div class="question">
+
+<h3>3. Which planet is known as the Red Planet?</h3>
+
+<label class="option">
+<input type="radio" name="q3" value="A">
+Earth
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="B">
+Mars
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="C">
+Jupiter
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="D">
+Venus
+</label>
+
 </div>
 
-<div class="quiz-box">
-<div class="question">4. What is the currency of India?</div>
-<label><input type="radio" name="q4" value="A"> Dollar</label>
-<label><input type="radio" name="q4" value="B"> Rupee</label>
-<label><input type="radio" name="q4" value="C"> Pound</label>
-<label><input type="radio" name="q4" value="D"> Yen</label>
+
+<!-- QUESTION 4 -->
+
+<div class="question">
+
+<h3>4. What is the currency of Japan?</h3>
+
+<label class="option">
+<input type="radio" name="q4" value="A">
+Yuan
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="B">
+Won
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="C">
+Yen
+</label>
+
+<label class="option">
+<input type="radio" name="q4" value="D">
+Dollar
+</label>
+
 </div>
 
-<div class="quiz-box">
-<div class="question">5. Which planet is known as the Red Planet?</div>
-<label><input type="radio" name="q5" value="A"> Venus</label>
-<label><input type="radio" name="q5" value="B"> Jupiter</label>
-<label><input type="radio" name="q5" value="C"> Mars</label>
-<label><input type="radio" name="q5" value="D"> Saturn</label>
+
+<!-- QUESTION 5 -->
+
+<div class="question">
+
+<h3>5. Which gas is most abundant in Earth's atmosphere?</h3>
+
+<label class="option">
+<input type="radio" name="q5" value="A">
+Oxygen
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="B">
+Nitrogen
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="C">
+Carbon Dioxide
+</label>
+
+<label class="option">
+<input type="radio" name="q5" value="D">
+Hydrogen
+</label>
+
 </div>
 
-<div class="quiz-box">
-<div class="question">6. Which gas is most abundant in Earth's atmosphere?</div>
-<label><input type="radio" name="q6" value="A"> Oxygen</label>
-<label><input type="radio" name="q6" value="B"> Nitrogen</label>
-<label><input type="radio" name="q6" value="C"> Carbon Dioxide</label>
-<label><input type="radio" name="q6" value="D"> Hydrogen</label>
+
+<!-- QUESTION 6 -->
+
+<div class="question">
+
+<h3>6. What is the full form of RBI?</h3>
+
+<label class="option">
+<input type="radio" name="q6" value="A">
+Reserve Bank of India
+</label>
+
+<label class="option">
+<input type="radio" name="q6" value="B">
+Regional Bank of India
+</label>
+
+<label class="option">
+<input type="radio" name="q6" value="C">
+Rural Bank of India
+</label>
+
+<label class="option">
+<input type="radio" name="q6" value="D">
+Royal Bank of India
+</label>
+
 </div>
 
-<div class="quiz-box">
-<div class="question">7. Who is known as the Father of the Indian Constitution?</div>
-<label><input type="radio" name="q7" value="A"> Mahatma Gandhi</label>
-<label><input type="radio" name="q7" value="B"> Jawaharlal Nehru</label>
-<label><input type="radio" name="q7" value="C"> Dr. B. R. Ambedkar</label>
-<label><input type="radio" name="q7" value="D"> Sardar Patel</label>
+
+<!-- QUESTION 7 -->
+
+<div class="question">
+
+<h3>7. Which is the largest ocean in the world?</h3>
+
+<label class="option">
+<input type="radio" name="q7" value="A">
+Atlantic Ocean
+</label>
+
+<label class="option">
+<input type="radio" name="q7" value="B">
+Indian Ocean
+</label>
+
+<label class="option">
+<input type="radio" name="q7" value="C">
+Pacific Ocean
+</label>
+
+<label class="option">
+<input type="radio" name="q7" value="D">
+Arctic Ocean
+</label>
+
 </div>
 
-<div class="quiz-box">
-<div class="question">8. Which is the largest state in India by area?</div>
-<label><input type="radio" name="q8" value="A"> Odisha</label>
-<label><input type="radio" name="q8" value="B"> Maharashtra</label>
-<label><input type="radio" name="q8" value="C"> Rajasthan</label>
-<label><input type="radio" name="q8" value="D"> Madhya Pradesh</label>
+
+<!-- QUESTION 8 -->
+
+<div class="question">
+
+<h3>8. Which city is known as the Pink City of India?</h3>
+
+<label class="option">
+<input type="radio" name="q8" value="A">
+Jaipur
+</label>
+
+<label class="option">
+<input type="radio" name="q8" value="B">
+Jodhpur
+</label>
+
+<label class="option">
+<input type="radio" name="q8" value="C">
+Agra
+</label>
+
+<label class="option">
+<input type="radio" name="q8" value="D">
+Udaipur
+</label>
+
 </div>
 
-<div class="quiz-box">
-<div class="question">9. What does CPU stand for?</div>
-<label><input type="radio" name="q9" value="A"> Central Processing Unit</label>
-<label><input type="radio" name="q9" value="B"> Computer Processing Utility</label>
-<label><input type="radio" name="q9" value="C"> Central Program Unit</label>
-<label><input type="radio" name="q9" value="D"> Computer Program Unit</label>
+
+<!-- QUESTION 9 -->
+
+<div class="question">
+
+<h3>9. Which Article of the Indian Constitution guarantees equality before law?</h3>
+
+<label class="option">
+<input type="radio" name="q9" value="A">
+Article 12
+</label>
+
+<label class="option">
+<input type="radio" name="q9" value="B">
+Article 14
+</label>
+
+<label class="option">
+<input type="radio" name="q9" value="C">
+Article 19
+</label>
+
+<label class="option">
+<input type="radio" name="q9" value="D">
+Article 21
+</label>
+
 </div>
 
-<div class="quiz-box">
-<div class="question">10. Which bank is known as the central bank of India?</div>
-<label><input type="radio" name="q10" value="A"> SBI</label>
-<label><input type="radio" name="q10" value="B"> RBI</label>
-<label><input type="radio" name="q10" value="C"> PNB</label>
-<label><input type="radio" name="q10" value="D"> Bank of Baroda</label>
+
+<!-- QUESTION 10 -->
+
+<div class="question">
+
+<h3>10. What is the national animal of India?</h3>
+
+<label class="option">
+<input type="radio" name="q10" value="A">
+Lion
+</label>
+
+<label class="option">
+<input type="radio" name="q10" value="B">
+Elephant
+</label>
+
+<label class="option">
+<input type="radio" name="q10" value="C">
+Tiger
+</label>
+
+<label class="option">
+<input type="radio" name="q10" value="D">
+Leopard
+</label>
+
 </div>
 
-<button type="button" onclick="checkQuiz()">Submit Quiz</button>
+
+<button type="button" onclick="submitQuiz()">
+Submit Daily Quiz
+</button>
+
 
 </form>
 
-<div id="result"></div>
+</div>
+
+
+<!-- RESULT -->
+
+<div id="result" class="card result">
+
+<h2>🎉 Quiz Completed!</h2>
+
+<div class="score">
+
+<span id="score">0</span>/10
+
+</div>
+
+<div class="message"
+id="message">
+</div>
+
+<p>
+Correct Answers:
+<strong id="correct">0</strong>
+</p>
+
+<p>
+Wrong Answers:
+<strong id="wrong">0</strong>
+</p>
+
+<p>
+Percentage:
+<strong id="percentage">0%</strong>
+</p>
+
+</div>
+
+
+<!-- REVIEW -->
+
+<div id="reviewCard"
+class="card review"
+style="display:none;">
+
+<h2>📖 Answer Review</h2>
 
 <div id="review"></div>
 
-<div class="nav">
-<a href="index.html">Home</a>
-<a href="study-material.html">Study Material</a>
-<a href="mock-test.html">Mock Test</a>
 </div>
 
-</div>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 Govt Exam Preparation
+</p>
+
+<p>
+
+<a href="about.html">About</a>
+
+<a href="contact.html">Contact</a>
+
+<a href="privacy.html">Privacy</a>
+
+</p>
+
+</footer>
+
 
 <script>
 
-function checkQuiz(){
 
-let answers = {
-q1:"B",
-q2:"C",
-q3:"A",
-q4:"B",
-q5:"C",
-q6:"B",
-q7:"C",
-q8:"C",
-q9:"A",
-q10:"B"
+/* ================================
+   CORRECT ANSWERS
+================================ */
+
+const answers = {
+
+q1: "B",
+
+q2: "C",
+
+q3: "B",
+
+q4: "C",
+
+q5: "B",
+
+q6: "A",
+
+q7: "C",
+
+q8: "A",
+
+q9: "B",
+
+q10: "C"
+
 };
 
-let questions = {
-q1:"Who founded the Mughal Empire in India?",
-q2:"What is the capital of India?",
-q3:"Which Article of the Indian Constitution deals with Fundamental Rights?",
-q4:"What is the currency of India?",
-q5:"Which planet is known as the Red Planet?",
-q6:"Which gas is most abundant in Earth's atmosphere?",
-q7:"Who is known as the Father of the Indian Constitution?",
-q8:"Which is the largest state in India by area?",
-q9:"What does CPU stand for?",
-q10:"Which bank is known as the central bank of India?"
+
+/* ================================
+   QUESTIONS FOR REVIEW
+================================ */
+
+const questionText = {
+
+q1: "Who is known as the Father of the Indian Constitution?",
+
+q2: "What is the capital of India?",
+
+q3: "Which planet is known as the Red Planet?",
+
+q4: "What is the currency of Japan?",
+
+q5: "Which gas is most abundant in Earth's atmosphere?",
+
+q6: "What is the full form of RBI?",
+
+q7: "Which is the largest ocean in the world?",
+
+q8: "Which city is known as the Pink City of India?",
+
+q9: "Which Article of the Indian Constitution guarantees equality before law?",
+
+q10: "What is the national animal of India?"
+
 };
 
-let correctText = {
-q1:"Babur",
-q2:"New Delhi",
-q3:"Articles 12–35",
-q4:"Rupee",
-q5:"Mars",
-q6:"Nitrogen",
-q7:"Dr. B. R. Ambedkar",
-q8:"Rajasthan",
-q9:"Central Processing Unit",
-q10:"RBI"
-};
 
-let score = 0;
-let reviewHTML = "<div class='review'><h2>📖 Answer Review</h2>";
+/* ================================
+   SUBMIT QUIZ
+================================ */
 
-for(let q in answers){
+function submitQuiz() {
 
-let selected = document.querySelector(
-'input[name="' + q + '"]:checked'
-);
+    let correct = 0;
 
-if(selected && selected.value === answers[q]){
+    let answered = 0;
 
-score++;
+    let reviewHTML = "";
 
-reviewHTML +=
-"<p class='correct'>✔️ " +
-questions[q] +
-"<br>Correct Answer: " +
-correctText[q] +
-"</p>";
 
-}else{
+    for (let i = 1; i <= 10; i++) {
 
-let yourAnswer = selected
-? selected.parentElement.innerText
-: "Not answered";
+        const questionName = "q" + i;
 
-reviewHTML +=
-"<p class='wrong'>❌ " +
-questions[q] +
-"<br>Your Answer: " +
-yourAnswer +
-"<br>Correct Answer: " +
-correctText[q] +
-"</p>";
+        const selected =
+            document.querySelector(
+                'input[name="' +
+                questionName +
+                '"]:checked'
+            );
+
+
+        let userAnswer =
+            selected
+            ? selected.value
+            : "Not answered";
+
+
+        if (selected) {
+
+            answered++;
+
+        }
+
+
+        const correctAnswer =
+            answers[questionName];
+
+
+        const isCorrect =
+            userAnswer === correctAnswer;
+
+
+        if (isCorrect) {
+
+            correct++;
+
+        }
+
+
+        const itemClass =
+            isCorrect
+            ? "correct"
+            : "wrong";
+
+
+        reviewHTML += `
+
+            <div class="review-item ${itemClass}">
+
+                <strong>
+                    ${i}. ${questionText[questionName]}
+                </strong>
+
+                <p>
+                    Your answer:
+                    ${userAnswer}
+                </p>
+
+                <p>
+                    Correct answer:
+                    ${correctAnswer}
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+
+    const wrong =
+        10 - correct;
+
+
+    const percentage =
+        ((correct / 10) * 100).toFixed(1);
+
+
+    document.getElementById("score")
+        .textContent = correct;
+
+
+    document.getElementById("correct")
+        .textContent = correct;
+
+
+    document.getElementById("wrong")
+        .textContent = wrong;
+
+
+    document.getElementById("percentage")
+        .textContent = percentage + "%";
+
+
+    let message;
+
+
+    if (percentage >= 80) {
+
+        message =
+            "Excellent! Keep up the great preparation. 🎯";
+
+    }
+
+    else if (percentage >= 60) {
+
+        message =
+            "Good job! Keep practicing regularly. 👍";
+
+    }
+
+    else if (percentage >= 40) {
+
+        message =
+            "Good attempt. More practice will help you improve. 📚";
+
+    }
+
+    else {
+
+        message =
+            "Keep studying and try again. You can improve! 💪";
+
+    }
+
+
+    document.getElementById("message")
+        .textContent = message;
+
+
+    document.getElementById("result")
+        .style.display = "block";
+
+
+    document.getElementById("review")
+        .innerHTML = reviewHTML;
+
+
+    document.getElementById("reviewCard")
+        .style.display = "block";
+
+
+    document.getElementById("result")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
 
 }
 
-}
-
-let percentage = (score / 10) * 100;
-
-document.getElementById("result").innerHTML =
-"🎯 Your Score: " + score + " / 10<br>" +
-"📊 Percentage: " + percentage + "%";
-
-reviewHTML += "</div>";
-
-document.getElementById("review").innerHTML = reviewHTML;
-
-window.scrollTo({
-top:document.body.scrollHeight,
-behavior:"smooth"
-});
-
-}
 
 </script>
 
+
 </body>
+
 </html>
