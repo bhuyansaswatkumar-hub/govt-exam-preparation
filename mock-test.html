@@ -7,7 +7,7 @@
 <title>Mock Test | SSC & Banking</title>
 
 <meta name="description"
-content="Free SSC and Banking Mock Test with 50 questions, timer, score and leaderboard.">
+content="Free 50-question SSC and Banking mock test with 30-minute timer, score, percentage and leaderboard.">
 
 <style>
 * {
@@ -24,95 +24,114 @@ body {
 header {
     background: #173b75;
     color: white;
-    padding: 20px;
+    padding: 25px 15px;
     text-align: center;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 28px;
+    margin: 0 0 8px;
 }
 
 header p {
-    margin: 8px 0 0;
+    margin: 0;
+}
+
+nav {
+    background: #0d2852;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 14px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    background: #173b75;
 }
 
 .container {
     max-width: 950px;
     margin: 25px auto;
-    padding: 15px;
+    padding: 0 15px;
 }
 
 .card {
     background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    padding: 20px;
     margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-input {
+.student-box label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.student-box input {
     width: 100%;
-    padding: 13px;
-    font-size: 16px;
+    padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 7px;
-    margin: 10px 0 15px;
-}
-
-button {
-    border: none;
-    padding: 12px 20px;
-    border-radius: 7px;
+    border-radius: 6px;
     font-size: 16px;
-    cursor: pointer;
-    background: #173b75;
-    color: white;
 }
 
-button:hover {
-    opacity: 0.9;
-}
-
-.start-btn {
-    width: 100%;
-    font-size: 18px;
-    margin-top: 10px;
-}
-
-.timer {
+.timer-box {
+    position: sticky;
+    top: 0;
+    z-index: 10;
     background: #fff3cd;
     border: 1px solid #ffe69c;
-    padding: 12px;
+    padding: 14px;
     border-radius: 8px;
     text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
-.question-box h2 {
-    font-size: 20px;
+.timer-box strong {
+    font-size: 24px;
+}
+
+.progress {
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+.question {
+    display: none;
+    padding: 10px 0 20px;
+}
+
+.question.active {
+    display: block;
+}
+
+.question h3 {
+    color: #173b75;
     line-height: 1.5;
 }
 
 .option {
     display: block;
-    background: #f7f8fa;
+    padding: 12px;
+    margin: 8px 0;
     border: 1px solid #ddd;
-    padding: 13px;
-    margin: 10px 0;
     border-radius: 7px;
     cursor: pointer;
 }
 
 .option:hover {
-    background: #eef3fb;
+    background: #f1f4f9;
 }
 
 .option input {
-    width: auto;
-    margin: 0 8px 0 0;
+    margin-right: 8px;
 }
 
 .navigation {
@@ -122,24 +141,50 @@ button:hover {
     margin-top: 20px;
 }
 
+.nav-btn,
+.submit-btn {
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.nav-btn {
+    background: #173b75;
+    color: white;
+}
+
+.nav-btn:hover {
+    background: #0d2852;
+}
+
+.submit-btn {
+    background: #198754;
+    color: white;
+}
+
+.submit-btn:hover {
+    background: #146c43;
+}
+
 .question-grid {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    gap: 7px;
-    margin-top: 20px;
+    gap: 6px;
+    margin-top: 15px;
 }
 
 .question-number {
+    border: 1px solid #bbb;
+    background: white;
     padding: 8px 4px;
-    background: #eee;
-    color: #222;
-    text-align: center;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 13px;
+    text-align: center;
 }
 
-.question-number.current {
+.question-number.active {
     background: #173b75;
     color: white;
 }
@@ -150,56 +195,42 @@ button:hover {
 }
 
 .result {
+    display: none;
     text-align: center;
 }
 
 .result h2 {
     color: #173b75;
-    font-size: 28px;
 }
 
-.score {
-    font-size: 42px;
+.score-box {
+    font-size: 28px;
     font-weight: bold;
     margin: 15px 0;
 }
 
-.result-box {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin: 20px 0;
-}
-
-.result-item {
-    background: #f4f6f8;
-    padding: 18px;
-    border-radius: 8px;
-}
-
-.result-item strong {
-    display: block;
-    font-size: 24px;
-    margin-bottom: 5px;
+.review {
+    text-align: left;
+    margin-top: 25px;
 }
 
 .review-item {
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin: 12px 0;
-    border-radius: 8px;
+    padding: 13px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    background: #f4f6f8;
 }
 
 .correct {
-    border-left: 5px solid #198754;
+    border-left: 5px solid green;
 }
 
 .wrong {
-    border-left: 5px solid #dc3545;
+    border-left: 5px solid red;
 }
 
-.hidden {
-    display: none;
+.unanswered {
+    border-left: 5px solid orange;
 }
 
 .status {
@@ -207,29 +238,50 @@ button:hover {
     font-weight: bold;
 }
 
+.links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.links a {
+    background: #173b75;
+    color: white;
+    text-decoration: none;
+    padding: 11px 16px;
+    border-radius: 6px;
+}
+
+footer {
+    background: #173b75;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
 @media (max-width: 600px) {
 
-    .container {
-        padding: 10px;
+    header h1 {
+        font-size: 24px;
     }
 
     .card {
-        padding: 18px;
+        padding: 15px;
     }
 
     .question-grid {
         grid-template-columns: repeat(5, 1fr);
     }
 
-    .result-box {
-        grid-template-columns: 1fr;
-    }
-
     .navigation {
         flex-direction: column;
     }
 
-    button {
+    .nav-btn,
+    .submit-btn {
         width: 100%;
     }
 }
@@ -239,157 +291,153 @@ button:hover {
 <body>
 
 <header>
-    <h1>SSC & Banking Mock Test</h1>
-    <p>50 Questions • 30 Minutes • Free Test</p>
+    <h1>📝 Mock Test</h1>
+    <p>SSC & Banking Exam Preparation</p>
 </header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="ssc.html">SSC</a>
+    <a href="banking.html">Banking</a>
+    <a href="railway.html">Railway</a>
+    <a href="notes.html">Notes</a>
+    <a href="mcq.html">MCQ</a>
+    <a href="mock-test.html">Mock Test</a>
+    <a href="current-affairs.html">Current Affairs</a>
+    <a href="daily-quiz.html">Daily Quiz</a>
+    <a href="leaderboard.html">Leaderboard</a>
+</nav>
 
 <div class="container">
 
-<!-- START SCREEN -->
-
-<div id="startScreen" class="card">
-
-    <h2>Start Mock Test</h2>
-
-    <p>
-        Enter your name before starting the test.
-    </p>
-
-    <input
-        type="text"
-        id="studentName"
-        placeholder="Enter your name"
-        maxlength="50"
-    >
-
-    <button class="start-btn" onclick="startTest()">
-        Start Test
-    </button>
-
-</div>
-
-
-<!-- TEST SCREEN -->
-
-<div id="testScreen" class="hidden">
-
-    <div class="timer">
-        ⏱️ Time Remaining:
-        <span id="timer">30:00</span>
-    </div>
-
     <div class="card">
 
-        <div id="questionBox" class="question-box"></div>
+        <h2>50-Question Mock Test</h2>
 
-        <div class="navigation">
+        <p>
+            Time: <strong>30 minutes</strong> |
+            Total Questions: <strong>50</strong>
+        </p>
 
-            <button onclick="previousQuestion()">
-                ← Previous
-            </button>
+        <div class="student-box">
 
-            <button onclick="nextQuestion()">
-                Next →
-            </button>
+            <label for="studentName">
+                Enter Your Name
+            </label>
 
-        </div>
-
-        <button
-            id="submitButton"
-            onclick="finishTest()"
-            style="display:none; margin-top:15px; background:#198754;">
-            Submit Test
-        </button>
-
-    </div>
-
-    <div class="card">
-
-        <h3>Question Navigation</h3>
-
-        <div id="questionGrid" class="question-grid"></div>
-
-    </div>
-
-</div>
-
-
-<!-- RESULT SCREEN -->
-
-<div id="resultScreen" class="hidden">
-
-    <div class="card result">
-
-        <h2>Test Completed 🎉</h2>
-
-        <p id="studentResult"></p>
-
-        <div class="score">
-            <span id="finalScore">0</span>/50
-        </div>
-
-        <div class="result-box">
-
-            <div class="result-item">
-                <strong id="correctCount">0</strong>
-                Correct
-            </div>
-
-            <div class="result-item">
-                <strong id="wrongCount">0</strong>
-                Wrong
-            </div>
-
-            <div class="result-item">
-                <strong id="percentage">0%</strong>
-                Percentage
-            </div>
+            <input
+                type="text"
+                id="studentName"
+                placeholder="Enter your name"
+            >
 
         </div>
 
-        <p id="performanceMessage"></p>
+        <div class="timer-box">
+            ⏱️ Time Remaining:
+            <strong id="timer">30:00</strong>
 
-        <div id="submitStatus" class="status"></div>
+            <div class="progress" id="progress">
+                Question 1 of 50
+            </div>
+        </div>
 
-        <br>
-
-        <button onclick="viewLeaderboard()">
-            🏆 View Leaderboard
-        </button>
-
-        <button onclick="location.reload()" style="margin-left:8px;">
-            🔄 Retake Test
-        </button>
+        <div class="question-grid" id="questionGrid"></div>
 
     </div>
 
 
     <div class="card">
 
-        <h2>Answer Review</h2>
+        <form id="mockTestForm">
 
-        <div id="review"></div>
+            <div id="questionsContainer"></div>
+
+            <div class="navigation">
+
+                <button
+                    type="button"
+                    class="nav-btn"
+                    id="previousBtn"
+                >
+                    ← Previous
+                </button>
+
+                <button
+                    type="button"
+                    class="nav-btn"
+                    id="nextBtn"
+                >
+                    Next →
+                </button>
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                    id="submitBtn"
+                    style="display:none;"
+                >
+                    Submit Test
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <div class="card result" id="result">
+
+        <h2>🎉 Mock Test Result</h2>
+
+        <div class="score-box" id="scoreText"></div>
+
+        <p id="correctText"></p>
+
+        <p id="wrongText"></p>
+
+        <p id="unansweredText"></p>
+
+        <p id="percentageText"></p>
+
+        <div class="status" id="submissionStatus"></div>
+
+        <div class="links">
+
+            <a href="leaderboard.html">
+                🏆 View Leaderboard
+            </a>
+
+            <a href="mock-test.html">
+                🔄 Retake Test
+            </a>
+
+        </div>
+
+        <div class="review">
+
+            <h3>Answer Review</h3>
+
+            <div id="reviewContainer"></div>
+
+        </div>
 
     </div>
 
 </div>
 
-</div>
+
+<footer>
+    © 2026 Govt Exam Preparation | SSC & Banking
+</footer>
 
 
 <script>
 
-/* ================================
-   GOOGLE APPS SCRIPT URL
-================================ */
-
-const SCRIPT_URL =
+const GOOGLE_SCRIPT_URL =
 "https://script.google.com/macros/s/AKfycbxV1CyjtjBJJlpvIJxEx37AsBms2rStoPck9kcvD9uaN5UpgoTkKT0Y4EQWr77onNNx/exec";
 
-
-/* ================================
-   QUESTIONS
-================================ */
 
 const questions = [
 
@@ -399,174 +447,9 @@ options: [
 "Jawaharlal Nehru",
 "Dr. B. R. Ambedkar",
 "Mahatma Gandhi",
-"Dr. Rajendra Prasad"
+"Rajendra Prasad"
 ],
-answer: 1
-},
-
-{
-q: "What is the capital of India?",
-options: [
-"Mumbai",
-"Kolkata",
-"New Delhi",
-"Chennai"
-],
-answer: 2
-},
-
-{
-q: "Which planet is known as the Red Planet?",
-options: [
-"Earth",
-"Mars",
-"Jupiter",
-"Venus"
-],
-answer: 1
-},
-
-{
-q: "Who was the first President of India?",
-options: [
-"Dr. Rajendra Prasad",
-"Dr. S. Radhakrishnan",
-"Jawaharlal Nehru",
-"Zakir Hussain"
-],
-answer: 0
-},
-
-{
-q: "Which is the largest Indian state by area?",
-options: [
-"Madhya Pradesh",
-"Maharashtra",
-"Rajasthan",
-"Uttar Pradesh"
-],
-answer: 2
-},
-
-{
-q: "What is the currency of Japan?",
-options: [
-"Yuan",
-"Won",
-"Yen",
-"Dollar"
-],
-answer: 2
-},
-
-{
-q: "Which gas is most abundant in Earth's atmosphere?",
-options: [
-"Oxygen",
-"Nitrogen",
-"Carbon Dioxide",
-"Hydrogen"
-],
-answer: 1
-},
-
-{
-q: "Who wrote the Indian National Anthem?",
-options: [
-"Bankim Chandra Chattopadhyay",
-"Rabindranath Tagore",
-"Sarojini Naidu",
-"Subhash Chandra Bose"
-],
-answer: 1
-},
-
-{
-q: "Which is the longest river in India?",
-options: [
-"Yamuna",
-"Ganga",
-"Godavari",
-"Narmada"
-],
-answer: 1
-},
-
-{
-q: "What does ATM stand for?",
-options: [
-"Automatic Transfer Machine",
-"Automated Teller Machine",
-"Auto Transaction Machine",
-"Automated Transfer Money"
-],
-answer: 1
-},
-
-{
-q: "Which institution issues currency notes in India?",
-options: [
-"SBI",
-"RBI",
-"SEBI",
-"Finance Ministry"
-],
-answer: 1
-},
-
-{
-q: "What is the full form of RBI?",
-options: [
-"Reserve Bank of India",
-"Regional Bank of India",
-"Royal Bank of India",
-"Rural Bank of India"
-],
-answer: 0
-},
-
-{
-q: "What is the smallest prime number?",
-options: [
-"0",
-"1",
-"2",
-"3"
-],
-answer: 2
-},
-
-{
-q: "How many Fundamental Rights are currently guaranteed by the Indian Constitution?",
-options: [
-"5",
-"6",
-"7",
-"8"
-],
-answer: 1
-},
-
-{
-q: "Which vitamin is mainly produced in the skin through sunlight exposure?",
-options: [
-"Vitamin A",
-"Vitamin B",
-"Vitamin C",
-"Vitamin D"
-],
-answer: 3
-},
-
-{
-q: "Which organ primarily filters waste from the blood?",
-options: [
-"Heart",
-"Liver",
-"Kidney",
-"Lungs"
-],
-answer: 2
+correct: 1
 },
 
 {
@@ -577,216 +460,95 @@ options: [
 "Pacific Ocean",
 "Arctic Ocean"
 ],
-answer: 2
+correct: 2
 },
 
 {
-q: "Which city is known as the Pink City of India?",
+q: "How many Fundamental Rights are currently guaranteed by the Indian Constitution?",
 options: [
-"Jaipur",
-"Jodhpur",
-"Udaipur",
-"Agra"
+"5",
+"6",
+"7",
+"8"
 ],
-answer: 0
+correct: 1
 },
 
 {
-q: "Which Article of the Indian Constitution guarantees equality before law?",
+q: "What is the chemical symbol for gold?",
 options: [
-"Article 12",
-"Article 14",
-"Article 19",
-"Article 21"
+"Ag",
+"Fe",
+"Au",
+"Cu"
 ],
-answer: 1
+correct: 2
 },
 
 {
-q: "What is the national animal of India?",
-options: [
-"Lion",
-"Tiger",
-"Elephant",
-"Leopard"
-],
-answer: 1
-},
-
-{
-q: "Which is the largest continent?",
-options: [
-"Africa",
-"Europe",
-"Asia",
-"North America"
-],
-answer: 2
-},
-
-{
-q: "Who was the first Prime Minister of India?",
-options: [
-"Mahatma Gandhi",
-"Jawaharlal Nehru",
-"Sardar Patel",
-"Dr. Rajendra Prasad"
-],
-answer: 1
-},
-
-{
-q: "Which bank is known as the central bank of India?",
-options: [
-"SBI",
-"PNB",
-"RBI",
-"Bank of Baroda"
-],
-answer: 2
-},
-
-{
-q: "What is the full form of GDP?",
-options: [
-"Gross Domestic Product",
-"General Domestic Product",
-"Gross Development Product",
-"General Development Plan"
-],
-answer: 0
-},
-
-{
-q: "Which is the largest planet in our solar system?",
-options: [
-"Earth",
-"Saturn",
-"Jupiter",
-"Neptune"
-],
-answer: 2
-},
-
-{
-q: "Which Indian state has the longest coastline?",
-options: [
-"Odisha",
-"Gujarat",
-"Maharashtra",
-"Kerala"
-],
-answer: 1
-},
-
-{
-q: "Who discovered the sea route to India from Europe?",
-options: [
-"Christopher Columbus",
-"Vasco da Gama",
-"Ferdinand Magellan",
-"Marco Polo"
-],
-answer: 1
-},
-
-{
-q: "Which metal is liquid at room temperature?",
-options: [
-"Iron",
-"Mercury",
-"Copper",
-"Aluminium"
-],
-answer: 1
-},
-
-{
-q: "Which is the national flower of India?",
-options: [
-"Rose",
-"Lily",
-"Lotus",
-"Sunflower"
-],
-answer: 2
-},
-
-{
-q: "Which Article deals with protection of life and personal liberty?",
-options: [
-"Article 14",
-"Article 19",
-"Article 21",
-"Article 32"
-],
-answer: 2
-},
-
-{
-q: "What is the full form of SBI?",
+q: "Which institution is the central bank of India?",
 options: [
 "State Bank of India",
-"State Banking Institution",
-"Standard Bank of India",
-"State Business of India"
+"Reserve Bank of India",
+"Punjab National Bank",
+"Bank of India"
 ],
-answer: 0
+correct: 1
 },
 
 {
-q: "Which organization conducts the SSC examinations?",
+q: "What does CPU stand for?",
 options: [
-"Staff Selection Commission",
-"State Selection Commission",
-"Service Selection Council",
-"Staff Service Commission"
+"Central Processing Unit",
+"Central Power Unit",
+"Computer Processing Utility",
+"Control Processing Unit"
 ],
-answer: 0
+correct: 0
 },
 
 {
-q: "Which is the smallest continent?",
+q: "Choose the synonym of 'Rapid'.",
 options: [
-"Europe",
-"Australia",
-"Antarctica",
-"South America"
+"Slow",
+"Fast",
+"Weak",
+"Late"
 ],
-answer: 1
+correct: 1
 },
 
 {
-q: "Which planet is closest to the Sun?",
+q: "What is 25% of 200?",
 options: [
-"Venus",
-"Earth",
-"Mercury",
-"Mars"
+"25",
+"40",
+"50",
+"75"
 ],
-answer: 2
+correct: 2
 },
 
 {
-q: "What is the SI unit of force?",
+q: "Find the next number: 2, 4, 8, 16, ?",
 options: [
-"Joule",
-"Watt",
-"Newton",
-"Pascal"
+"24",
+"30",
+"32",
+"36"
 ],
-answer: 2
+correct: 2
 },
 
 {
-q: "Which Indian state is famous for the Konark Sun Temple?",
+q: "What does RRB stand for?",
 options: [
-"West Bengal",
-"Odisha",
-"Bihar",
-"Jharkhand"
+"Railway Recruitment Board",
+"Regional Railway Bank",
+"Railway Registration Bureau",
+"Rapid Railway Board"
 ],
-answer: 1
+correct: 0
 },
 
 {
@@ -797,714 +559,875 @@ options: [
 "Bindusara",
 "Harsha"
 ],
-answer: 1
+correct: 1
 },
 
 {
-q: "Which is the largest desert in India?",
+q: "Which Indian state has the longest coastline?",
 options: [
-"Thar Desert",
-"Rann of Kutch",
-"Cold Desert",
-"Deccan Desert"
+"Maharashtra",
+"Odisha",
+"Gujarat",
+"Kerala"
 ],
-answer: 0
+correct: 2
 },
 
 {
-q: "Which blood group is known as the universal donor?",
+q: "Who is the constitutional head of the Union Government of India?",
 options: [
-"A positive",
-"B positive",
-"AB positive",
-"O negative"
+"Prime Minister",
+"President",
+"Chief Justice",
+"Home Minister"
 ],
-answer: 3
+correct: 1
 },
 
 {
-q: "Which is the hardest natural substance?",
+q: "Which gas is most abundant in Earth's atmosphere?",
 options: [
-"Gold",
-"Iron",
-"Diamond",
-"Silver"
+"Oxygen",
+"Carbon Dioxide",
+"Nitrogen",
+"Hydrogen"
 ],
-answer: 2
+correct: 2
 },
 
 {
-q: "What is the full form of CPU?",
+q: "Which is the central bank of India?",
 options: [
-"Central Processing Unit",
-"Computer Processing Unit",
-"Central Program Unit",
-"Computer Program Utility"
+"SBI",
+"RBI",
+"SEBI",
+"NABARD"
 ],
-answer: 0
+correct: 1
 },
 
 {
-q: "Which language is primarily used to structure web pages?",
+q: "Which device is mainly used to enter text into a computer?",
 options: [
-"HTML",
-"Python",
-"Java",
-"SQL"
+"Monitor",
+"Keyboard",
+"Printer",
+"Speaker"
 ],
-answer: 0
+correct: 1
 },
 
 {
-q: "Which is the largest public sector bank in India by assets?",
+q: "Choose the antonym of 'Ancient'.",
+options: [
+"Old",
+"Modern",
+"Historic",
+"Past"
+],
+correct: 1
+},
+
+{
+q: "What is 40 ÷ 5?",
+options: [
+"6",
+"7",
+"8",
+"9"
+],
+correct: 2
+},
+
+{
+q: "Which is the odd one out?",
+options: [
+"Apple",
+"Mango",
+"Carrot",
+"Banana"
+],
+correct: 2
+},
+
+{
+q: "What does IRCTC stand for?",
+options: [
+"Indian Railway Catering and Tourism Corporation",
+"Indian Rail Cargo and Travel Company",
+"Indian Railway Central Tourism Corporation",
+"Indian Railway Catering and Transport Company"
+],
+correct: 0
+},
+
+{
+q: "Who was the first Mughal emperor?",
+options: [
+"Akbar",
+"Babur",
+"Humayun",
+"Shah Jahan"
+],
+correct: 1
+},
+
+{
+q: "Which is the highest mountain in the world?",
+options: [
+"K2",
+"Mount Everest",
+"Kangchenjunga",
+"Makalu"
+],
+correct: 1
+},
+
+{
+q: "Fundamental Duties are mentioned in which part of the Constitution?",
+options: [
+"Part III",
+"Part IV",
+"Part IV-A",
+"Part V"
+],
+correct: 2
+},
+
+{
+q: "Which organ pumps blood throughout the human body?",
+options: [
+"Lungs",
+"Brain",
+"Heart",
+"Kidney"
+],
+correct: 2
+},
+
+{
+q: "What does ATM stand for?",
+options: [
+"Automatic Transfer Machine",
+"Automated Teller Machine",
+"Any Time Money",
+"Automated Transaction Method"
+],
+correct: 1
+},
+
+{
+q: "Which keyboard shortcut is used for Copy?",
+options: [
+"Ctrl + X",
+"Ctrl + C",
+"Ctrl + V",
+"Ctrl + Z"
+],
+correct: 1
+},
+
+{
+q: "Choose the correctly spelled word.",
+options: [
+"Govarnment",
+"Government",
+"Governmant",
+"Govornment"
+],
+correct: 1
+},
+
+{
+q: "What is the average of 10 and 20?",
+options: [
+"10",
+"12",
+"15",
+"20"
+],
+correct: 2
+},
+
+{
+q: "If CAT is coded as DBU, how is DOG coded?",
+options: [
+"EPH",
+"EPG",
+"FOH",
+"DPG"
+],
+correct: 0
+},
+
+{
+q: "What does PNR stand for in Indian Railways?",
+options: [
+"Passenger Name Record",
+"Passenger Number Register",
+"Personal Name Record",
+"Passenger National Record"
+],
+correct: 0
+},
+
+{
+q: "Who was the first President of India?",
+options: [
+"Dr. Rajendra Prasad",
+"Dr. S. Radhakrishnan",
+"Jawaharlal Nehru",
+"Zakir Husain"
+],
+correct: 0
+},
+
+{
+q: "Which planet is known as the Red Planet?",
+options: [
+"Venus",
+"Earth",
+"Mars",
+"Jupiter"
+],
+correct: 2
+},
+
+{
+q: "Which Article deals with equality before law?",
+options: [
+"Article 12",
+"Article 14",
+"Article 19",
+"Article 21"
+],
+correct: 1
+},
+
+{
+q: "Which is the smallest prime number?",
+options: [
+"0",
+"1",
+"2",
+"3"
+],
+correct: 2
+},
+
+{
+q: "What is 15 × 6?",
+options: [
+"80",
+"90",
+"100",
+"110"
+],
+correct: 1
+},
+
+{
+q: "Which river is known as the longest river in India?",
+options: [
+"Yamuna",
+"Ganga",
+"Godavari",
+"Narmada"
+],
+correct: 1
+},
+
+{
+q: "Who wrote the national anthem of India?",
+options: [
+"Bankim Chandra Chattopadhyay",
+"Rabindranath Tagore",
+"Sarojini Naidu",
+"Subhash Chandra Bose"
+],
+correct: 1
+},
+
+{
+q: "Which bank is known as the largest public sector bank in India?",
 options: [
 "Punjab National Bank",
 "Bank of Baroda",
 "State Bank of India",
 "Canara Bank"
 ],
-answer: 2
+correct: 2
 },
 
 {
-q: "What is the full form of NEFT?",
+q: "What is the square of 12?",
 options: [
-"National Electronic Funds Transfer",
-"National Easy Funds Transfer",
-"New Electronic Funds Transaction",
-"National Exchange Fund Transfer"
+"124",
+"132",
+"144",
+"154"
 ],
-answer: 0
+correct: 2
 },
 
 {
-q: "Which body regulates the securities market in India?",
+q: "Which vitamin is mainly obtained from sunlight?",
 options: [
-"RBI",
-"SEBI",
-"IRDAI",
-"NPCI"
+"Vitamin A",
+"Vitamin B",
+"Vitamin C",
+"Vitamin D"
 ],
-answer: 1
+correct: 3
 },
 
 {
-q: "What is the full form of UPI?",
+q: "Which metal is liquid at room temperature?",
 options: [
-"Unified Payments Interface",
-"Universal Payment India",
-"Unified Payment Internet",
-"Universal Payments Interface"
+"Iron",
+"Mercury",
+"Copper",
+"Aluminium"
 ],
-answer: 0
+correct: 1
 },
 
 {
-q: "Which Indian city is called the Silicon Valley of India?",
+q: "What is the capital of Rajasthan?",
 options: [
-"Hyderabad",
-"Pune",
-"Bengaluru",
-"Chennai"
+"Udaipur",
+"Jodhpur",
+"Jaipur",
+"Kota"
 ],
-answer: 2
+correct: 2
 },
 
 {
-q: "Which gas is essential for human respiration?",
+q: "Which part of the computer performs calculations?",
 options: [
-"Nitrogen",
-"Oxygen",
-"Carbon Dioxide",
-"Helium"
+"CPU",
+"Monitor",
+"Keyboard",
+"Mouse"
 ],
-answer: 1
+correct: 0
 },
 
 {
-q: "Which is the largest mammal in the world?",
+q: "Find the next number: 5, 10, 15, 20, ?",
 options: [
+"22",
+"25",
+"30",
+"35"
+],
+correct: 1
+},
+
+{
+q: "Which is the national animal of India?",
+options: [
+"Lion",
 "Elephant",
-"Blue Whale",
-"Giraffe",
-"Hippopotamus"
+"Tiger",
+"Leopard"
 ],
-answer: 1
+correct: 2
 },
 
 {
-q: "Who is known as the Iron Man of India?",
+q: "Who was the founder of the Mughal Empire in India?",
 options: [
-"Sardar Vallabhbhai Patel",
-"Subhash Chandra Bose",
-"Bhagat Singh",
-"Bal Gangadhar Tilak"
+"Akbar",
+"Babur",
+"Humayun",
+"Shah Jahan"
 ],
-answer: 0
+correct: 1
 },
 
 {
-q: "Which is the highest civilian award in India?",
+q: "Which organization conducts many central government recruitment examinations?",
 options: [
-"Padma Shri",
-"Padma Bhushan",
-"Padma Vibhushan",
-"Bharat Ratna"
+"UPSC",
+"SSC",
+"SEBI",
+"RBI"
 ],
-answer: 3
+correct: 1
+},
+
+{
+q: "What is 100 divided by 4?",
+options: [
+"20",
+"25",
+"30",
+"40"
+],
+correct: 1
+},
+
+{
+q: "Which is the largest state in India by area?",
+options: [
+"Madhya Pradesh",
+"Maharashtra",
+"Rajasthan",
+"Uttar Pradesh"
+],
+correct: 2
+},
+
+{
+q: "What does GDP stand for?",
+options: [
+"Gross Domestic Product",
+"General Domestic Product",
+"Gross Development Plan",
+"General Development Product"
+],
+correct: 0
+},
+
+{
+q: "Which instrument is used to measure temperature?",
+options: [
+"Barometer",
+"Thermometer",
+"Hygrometer",
+"Speedometer"
+],
+correct: 1
 }
 
 ];
 
 
-/* ================================
-   VARIABLES
-================================ */
-
 let currentQuestion = 0;
-
-let answers = new Array(questions.length).fill(null);
-
-let studentName = "";
-
+let submitted = false;
 let timeLeft = 30 * 60;
-
 let timerInterval;
 
 
-/* ================================
-   START TEST
-================================ */
+const questionsContainer =
+document.getElementById("questionsContainer");
 
-function startTest() {
-
-    const nameInput =
-        document.getElementById("studentName").value.trim();
-
-    if (!nameInput) {
-
-        alert("Please enter your name.");
-
-        return;
-    }
-
-    studentName = nameInput;
-
-    document.getElementById("startScreen")
-        .classList.add("hidden");
-
-    document.getElementById("testScreen")
-        .classList.remove("hidden");
-
-    currentQuestion = 0;
-
-    answers = new Array(questions.length).fill(null);
-
-    renderQuestion();
-
-    renderQuestionGrid();
-
-    startTimer();
-}
+const questionGrid =
+document.getElementById("questionGrid");
 
 
-/* ================================
-   TIMER
-================================ */
+/* CREATE QUESTIONS */
 
-function startTimer() {
+questions.forEach(function(item, index) {
 
-    updateTimer();
+    let html = `
+        <div class="question" id="question-${index}">
 
-    timerInterval = setInterval(function() {
+            <h3>
+                ${index + 1}. ${item.q}
+            </h3>
+    `;
 
-        timeLeft--;
-
-        updateTimer();
-
-        if (timeLeft <= 0) {
-
-            clearInterval(timerInterval);
-
-            alert("Time is over. Your test will be submitted.");
-
-            finishTest();
-
-        }
-
-    }, 1000);
-}
-
-
-function updateTimer() {
-
-    const minutes =
-        Math.floor(timeLeft / 60);
-
-    const seconds =
-        timeLeft % 60;
-
-    document.getElementById("timer").textContent =
-        String(minutes).padStart(2, "0") +
-        ":" +
-        String(seconds).padStart(2, "0");
-}
-
-
-/* ================================
-   SHOW QUESTION
-================================ */
-
-function renderQuestion() {
-
-    const question =
-        questions[currentQuestion];
-
-    let html = "";
-
-    html +=
-        "<h2>Question " +
-        (currentQuestion + 1) +
-        " of " +
-        questions.length +
-        "</h2>";
-
-    html +=
-        "<h2>" +
-        question.q +
-        "</h2>";
-
-    question.options.forEach(function(option, index) {
-
-        const checked =
-            answers[currentQuestion] === index
-            ? "checked"
-            : "";
+    item.options.forEach(function(option, optionIndex) {
 
         html += `
             <label class="option">
+
                 <input
                     type="radio"
-                    name="answer"
-                    value="${index}"
-                    ${checked}
-                    onchange="selectAnswer(${index})"
+                    name="q${index}"
+                    value="${optionIndex}"
+                    onchange="markAnswered(${index})"
                 >
+
                 ${option}
+
             </label>
         `;
 
     });
 
-    document.getElementById("questionBox").innerHTML = html;
+    html += `</div>`;
 
-    updateNavigation();
-
-}
+    questionsContainer.innerHTML += html;
 
 
-/* ================================
-   SELECT ANSWER
-================================ */
+    questionGrid.innerHTML += `
+        <button
+            type="button"
+            class="question-number"
+            id="number-${index}"
+            onclick="goToQuestion(${index})"
+        >
+            ${index + 1}
+        </button>
+    `;
 
-function selectAnswer(index) {
-
-    answers[currentQuestion] = index;
-
-    renderQuestionGrid();
-
-    updateNavigation();
-}
+});
 
 
-/* ================================
-   NEXT
-================================ */
+/* SHOW QUESTION */
 
-function nextQuestion() {
+function showQuestion(index) {
 
-    if (answers[currentQuestion] === null) {
-
-        alert("Please select an answer first.");
-
-        return;
+    if (index < 0) {
+        index = 0;
     }
 
-    if (currentQuestion < questions.length - 1) {
-
-        currentQuestion++;
-
-        renderQuestion();
-
-        renderQuestionGrid();
-
+    if (index >= questions.length) {
+        index = questions.length - 1;
     }
-
-}
-
-
-/* ================================
-   PREVIOUS
-================================ */
-
-function previousQuestion() {
-
-    if (currentQuestion > 0) {
-
-        currentQuestion--;
-
-        renderQuestion();
-
-        renderQuestionGrid();
-
-    }
-
-}
-
-
-/* ================================
-   QUESTION GRID
-================================ */
-
-function renderQuestionGrid() {
-
-    let html = "";
-
-    questions.forEach(function(_, index) {
-
-        let classes = "question-number";
-
-        if (index === currentQuestion) {
-
-            classes += " current";
-
-        }
-
-        if (answers[index] !== null) {
-
-            classes += " answered";
-
-        }
-
-        html += `
-            <div
-                class="${classes}"
-                onclick="goToQuestion(${index})">
-                ${index + 1}
-            </div>
-        `;
-
-    });
-
-    document.getElementById("questionGrid").innerHTML =
-        html;
-}
-
-
-function goToQuestion(index) {
 
     currentQuestion = index;
 
-    renderQuestion();
+    document.querySelectorAll(".question")
+    .forEach(function(question) {
+        question.classList.remove("active");
+    });
 
-    renderQuestionGrid();
+    document.getElementById(
+        "question-" + index
+    ).classList.add("active");
 
-}
+
+    document.querySelectorAll(".question-number")
+    .forEach(function(button) {
+        button.classList.remove("active");
+    });
+
+    document.getElementById(
+        "number-" + index
+    ).classList.add("active");
 
 
-/* ================================
-   NAVIGATION
-================================ */
+    document.getElementById(
+        "progress"
+    ).textContent =
+    `Question ${index + 1} of ${questions.length}`;
 
-function updateNavigation() {
 
-    const submitButton =
-        document.getElementById("submitButton");
+    document.getElementById(
+        "previousBtn"
+    ).style.display =
+    index === 0 ? "none" : "inline-block";
 
-    if (currentQuestion === questions.length - 1) {
 
-        submitButton.style.display = "block";
+    if (index === questions.length - 1) {
+
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "none";
+
+        document.getElementById(
+            "submitBtn"
+        ).style.display = "inline-block";
 
     } else {
 
-        submitButton.style.display = "none";
+        document.getElementById(
+            "nextBtn"
+        ).style.display = "inline-block";
+
+        document.getElementById(
+            "submitBtn"
+        ).style.display = "none";
 
     }
 
 }
 
 
-/* ================================
-   FINISH TEST
-================================ */
+/* NEXT */
 
-function finishTest() {
+document.getElementById(
+    "nextBtn"
+).addEventListener(
+    "click",
+    function() {
 
-    clearInterval(timerInterval);
+        if (currentQuestion < questions.length - 1) {
 
-    let correct = 0;
-
-    answers.forEach(function(answer, index) {
-
-        if (answer === questions[index].answer) {
-
-            correct++;
+            showQuestion(
+                currentQuestion + 1
+            );
 
         }
 
-    });
-
-    const wrong =
-        questions.length - correct;
-
-    const percentage =
-        ((correct / questions.length) * 100)
-        .toFixed(1);
-
-    document.getElementById("testScreen")
-        .classList.add("hidden");
-
-    document.getElementById("resultScreen")
-        .classList.remove("hidden");
-
-    document.getElementById("studentResult")
-        .textContent =
-        "Well done, " + studentName + "!";
-
-    document.getElementById("finalScore")
-        .textContent = correct;
-
-    document.getElementById("correctCount")
-        .textContent = correct;
-
-    document.getElementById("wrongCount")
-        .textContent = wrong;
-
-    document.getElementById("percentage")
-        .textContent = percentage + "%";
+    }
+);
 
 
-    let message = "";
+/* PREVIOUS */
 
-    if (percentage >= 80) {
+document.getElementById(
+    "previousBtn"
+).addEventListener(
+    "click",
+    function() {
 
-        message =
-            "Excellent performance! Keep preparing consistently.";
+        if (currentQuestion > 0) {
 
-    } else if (percentage >= 60) {
+            showQuestion(
+                currentQuestion - 1
+            );
 
-        message =
-            "Good performance. Keep practicing to improve further.";
-
-    } else if (percentage >= 40) {
-
-        message =
-            "You are making progress. More practice will help.";
-
-    } else {
-
-        message =
-            "Keep studying and practice regularly. You can improve.";
+        }
 
     }
-
-    document.getElementById("performanceMessage")
-        .textContent = message;
+);
 
 
-    saveLocalResult(
-        correct,
-        percentage
-    );
+/* QUESTION NAVIGATION */
 
-    submitScore(
-        correct,
-        percentage
-    );
+function goToQuestion(index) {
 
-    createReview();
+    if (submitted) {
+        return;
+    }
+
+    showQuestion(index);
+}
+
+
+/* MARK ANSWERED */
+
+function markAnswered(index) {
+
+    document.getElementById(
+        "number-" + index
+    ).classList.add("answered");
 
 }
 
 
-/* ================================
-   LOCAL STORAGE
-================================ */
+/* SEND SCORE */
 
-function saveLocalResult(score, percentage) {
+function sendScoreToGoogle(
+    name,
+    score,
+    percentage
+) {
 
-    const result = {
-
-        name: studentName,
-
-        score: score,
-
-        total: questions.length,
-
-        percentage: Number(percentage),
-
-        date: new Date().toISOString()
-
-    };
-
-
-    localStorage.setItem(
-        "examPrepCurrentUser",
-        JSON.stringify(result)
-    );
-
-
-    let leaderboard = [];
-
-    try {
-
-        leaderboard =
-            JSON.parse(
-                localStorage.getItem(
-                    "examPrepLeaderboard"
-                )
-            ) || [];
-
-    } catch (error) {
-
-        leaderboard = [];
-
-    }
-
-
-    leaderboard.push(result);
-
-
-    localStorage.setItem(
-        "examPrepLeaderboard",
-        JSON.stringify(leaderboard)
-    );
-
-}
-
-
-/* ================================
-   GOOGLE SHEETS SUBMISSION
-================================ */
-
-function submitScore(score, percentage) {
-
-    const status =
-        document.getElementById("submitStatus");
-
-    status.textContent =
-        "Submitting your score...";
-
-
-    const data = {
-
-        name: studentName,
-
-        score: score,
-
-        percentage: Number(percentage)
-
-    };
-
-
-    fetch(
-        SCRIPT_URL,
+    return fetch(
+        GOOGLE_SCRIPT_URL,
         {
             method: "POST",
             mode: "no-cors",
             headers: {
                 "Content-Type":
-                    "text/plain;charset=utf-8"
+                "text/plain;charset=utf-8"
             },
-            body: JSON.stringify(data)
-        }
-    )
-    .then(function() {
+            body: JSON.stringify({
 
-        status.textContent =
+                name: name,
+
+                score: score,
+
+                percentage: percentage,
+
+                exam: "Mock Test",
+
+                total: 50
+
+            })
+        }
+    );
+
+}
+
+
+/* SUBMIT */
+
+document.getElementById(
+    "mockTestForm"
+).addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+        if (submitted) {
+            return;
+        }
+
+
+        const nameInput =
+        document.getElementById(
+            "studentName"
+        );
+
+
+        const name =
+        nameInput.value.trim();
+
+
+        if (!name) {
+
+            alert(
+                "Please enter your name before submitting."
+            );
+
+            nameInput.focus();
+
+            return;
+
+        }
+
+
+        submitted = true;
+
+
+        clearInterval(timerInterval);
+
+
+        let score = 0;
+        let wrong = 0;
+        let unanswered = 0;
+
+
+        questions.forEach(
+            function(item, index) {
+
+                const selected =
+                document.querySelector(
+                    `input[name="q${index}"]:checked`
+                );
+
+
+                if (!selected) {
+
+                    unanswered++;
+
+                } else {
+
+                    const answer =
+                    Number(selected.value);
+
+
+                    if (
+                        answer === item.correct
+                    ) {
+
+                        score++;
+
+                    } else {
+
+                        wrong++;
+
+                    }
+
+                }
+
+            }
+        );
+
+
+        const total =
+        questions.length;
+
+
+        const percentage =
+        ((score / total) * 100)
+        .toFixed(2);
+
+
+        document.getElementById(
+            "scoreText"
+        ).textContent =
+        `Score: ${score} / ${total}`;
+
+
+        document.getElementById(
+            "correctText"
+        ).textContent =
+        `Correct Answers: ${score}`;
+
+
+        document.getElementById(
+            "wrongText"
+        ).textContent =
+        `Wrong Answers: ${wrong}`;
+
+
+        document.getElementById(
+            "unansweredText"
+        ).textContent =
+        `Unanswered: ${unanswered}`;
+
+
+        document.getElementById(
+            "percentageText"
+        ).textContent =
+        `Percentage: ${percentage}%`;
+
+
+        document.getElementById(
+            "result"
+        ).style.display = "block";
+
+
+        document.getElementById(
+            "submissionStatus"
+        ).textContent =
+        "⏳ Sending score to leaderboard...";
+
+
+        document.getElementById(
+            "result"
+        ).scrollIntoView({
+            behavior: "smooth"
+        });
+
+
+        /* LOCAL STORAGE */
+
+        localStorage.setItem(
+            "mockTestLastResult",
+            JSON.stringify({
+
+                name: name,
+
+                score: score,
+
+                total: total,
+
+                percentage: percentage,
+
+                exam: "Mock Test"
+
+            })
+        );
+
+
+        /* SEND TO GOOGLE */
+
+        sendScoreToGoogle(
+            name,
+            score,
+            percentage
+        )
+        .then(function() {
+
+            document.getElementById(
+                "submissionStatus"
+            ).textContent =
             "✅ Score submitted to leaderboard.";
 
-    })
-    .catch(function(error) {
+        })
+        .catch(function(error) {
 
-        console.error(error);
+            console.error(error);
 
-        status.textContent =
+            document.getElementById(
+                "submissionStatus"
+            ).textContent =
             "⚠️ Score saved locally. Please check your internet connection.";
 
-    });
-
-}
+        });
 
 
-/* ================================
-   REVIEW
-================================ */
+        /* REVIEW */
 
-function createReview() {
-
-    let html = "";
-
-    questions.forEach(function(question, index) {
-
-        const userAnswer =
-            answers[index];
-
-        const correctAnswer =
-            question.answer;
-
-        const isCorrect =
-            userAnswer === correctAnswer;
-
-
-        html += `
-            <div class="review-item ${
-                isCorrect ? "correct" : "wrong"
-            }">
-
-                <strong>
-                    ${index + 1}. ${question.q}
-                </strong>
-
-                <p>
-                    Your answer:
-                    ${
-                        userAnswer !== null
-                        ? question.options[userAnswer]
-                        : "Not answered"
-                    }
-                </p>
-
-                <p>
-                    Correct answer:
-                    <strong>
-                        ${question.options[correctAnswer]}
-                    </strong>
-                </p>
-
-            </div>
-        `;
-
-    });
-
-    document.getElementById("review").innerHTML =
-        html;
-
-}
-
-
-/* ================================
-   LEADERBOARD
-================================ */
-
-function viewLeaderboard() {
-
-    window.location.href =
-        "leaderboard.html";
-
-}
-
-</script>
-
-</body>
-</html>
+        let review
