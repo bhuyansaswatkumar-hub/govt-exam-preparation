@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mock Test 2 | SSC & Banking</title>
+
+<meta name="description"
+content="SSC and Banking Mock Test 2 with 50 practice questions, instant score, performance and leaderboard.">
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+}
+
+header {
+    background: #173b75;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 30px;
+}
+
+header p {
+    margin: 8px 0 0;
+}
+
+nav {
+    background: #0d2852;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 15px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    background: #173b75;
+}
+
+.container {
+    max-width: 900px;
+    margin: 25px auto;
+    padding: 0 15px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+h2 {
+    color: #173b75;
+}
+
+.info {
+    background: #eef4ff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+.question {
+    margin-bottom: 25px;
+    padding: 18px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border-left: 4px solid #173b75;
+}
+
+.question p {
+    font-weight: bold;
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    padding: 9px;
+    margin: 5px 0;
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+label:hover {
+    background: #eef4ff;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: #173b75;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0d2852;
+}
+
+button:disabled {
+    background: #777;
+    cursor: not-allowed;
+}
+
+#result {
+    display: none;
+}
+
+.result-box {
+    text-align: center;
+    background: #eef4ff;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.score {
+    font-size: 45px;
+    font-weight: bold;
+    color: #173b75;
+}
+
+.result-item {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+    background: #173b75;
+    padding: 12px 18px;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+.links a.green {
+    background: #198754;
+}
+
+.links a.orange {
+    background: #f39c12;
+}
+
+.review {
+    margin-top: 25px;
+}
+
+.review-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.correct {
+    background: #d4edda;
+}
+
+.wrong {
+    background: #f8d7da;
+}
+
+.unanswered {
+    background: #e2e3e5;
+}
+
+footer {
+    background: #173b75;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+@media(max-width:600px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    nav a {
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .score {
+        font-size: 38px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>SSC & Banking Exam Preparation</h1>
+    <p>Mock Test 2 — 50 Questions</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="ssc.html">SSC</a>
+    <a href="banking.html">Banking</a>
+    <a href="notes.html">Notes</a>
+    <a href="mcq.html">MCQ</a>
+    <a href="mock-test.html">Mock Test 1</a>
+    <a href="mock-test-2.html">Mock Test 2</a>
+    <a href="performance.html">Performance</a>
+    <a href="leaderboard.html">Leaderboard</a>
+</nav>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Mock Test 2</h2>
+
+<div class="info">
+    <strong>Total Questions:</strong> 50<br>
+    <strong>Total Marks:</strong> 50<br>
+    <strong>Time:</strong> Practice Mode<br>
+    <strong>Type:</strong> SSC & Banking
+</div>
+
+<label for="studentName">
+    <strong>Enter Your Name:</strong>
+</label>
+
+<input
+    type="text"
+    id="studentName"
+    placeholder="Enter your full name"
+    autocomplete="name"
+>
+
+</div>
+
+
+<form id="quizForm">
+
+<div id="questions"></div>
+
+<div class="card">
+<button type="submit" id="submitBtn">
+    Submit Mock Test 2
+</button>
+</div>
+
+</form>
+
+
+<div class="card" id="result">
+
+<h2>🎉 Mock Test 2 Result</h2>
+
+<div class="result-box">
+
+<div class="score">
+    <span id="score">0</span> / 50
+</div>
+
+<div class="result-item">
+    ✅ Correct: <strong id="correct">0</strong>
+</div>
+
+<div class="result-item">
+    ❌ Wrong: <strong id="wrong">0</strong>
+</div>
+
+<div class="result-item">
+    ⏳ Unanswered: <strong id="unanswered">0</strong>
+</div>
+
+<div class="result-item">
+    📊 Percentage: <strong id="percentage">0%</strong>
+</div>
+
+</div>
+
+
+<div class="links">
+
+<a class="green" href="performance.html">
+    📊 View Performance
+</a>
+
+<a class="orange" href="leaderboard.html">
+    🏆 View Leaderboard
+</a>
+
+<a href="mock-test-2.html">
+    🔄 Retake Test
+</a>
+
+</div>
+
+
+<div class="review">
+
+<h2>📝 Answer Review</h2>
+
+<div id="reviewContent"></div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<footer>
+© 2026 SSC & Banking Exam Preparation
+</footer>
+
+
+<script>
+
+const questions = [
+
+{
+q:"Who is known as the Father of the Indian Constitution?",
+options:["Mahatma Gandhi","Dr. B. R. Ambedkar","Jawaharlal Nehru","Sardar Patel"],
+answer:1
+},
+
+{
+q:"What is the capital of India?",
+options:["Mumbai","New Delhi","Kolkata","Chennai"],
+answer:1
+},
+
+{
+q:"Which is the largest planet in our Solar System?",
+options:["Earth","Mars","Jupiter","Saturn"],
+answer:2
+},
+
+{
+q:"Who was the first President of India?",
+options:["Dr. Rajendra Prasad","Dr. S. Radhakrishnan","Zakir Husain","V. V. Giri"],
+answer:0
+},
+
+{
+q:"Which river is known as the Sorrow of Bihar?",
+options:["Ganga","Kosi","Yamuna","Godavari"],
+answer:1
+},
+
+{
+q:"What is the currency of Japan?",
+options:["Won","Dollar","Yen","Euro"],
+answer:2
+},
+
+{
+q:"Which gas is most abundant in Earth's atmosphere?",
+options:["Oxygen","Nitrogen","Carbon dioxide","Hydrogen"],
+answer:1
+},
+
+{
+q:"Who wrote the Indian national anthem?",
+options:["Bankim Chandra Chattopadhyay","Rabindranath Tagore","Sarojini Naidu","Subhas Chandra Bose"],
+answer:1
+},
+
+{
+q:"Which vitamin is mainly produced in the skin through sunlight?",
+options:["Vitamin A","Vitamin B","Vitamin C","Vitamin D"],
+answer:3
+},
+
+{
+q:"Which is the smallest state of India by area?",
+options:["Goa","Sikkim","Tripura","Mizoram"],
+answer:0
+},
+
+{
+q:"Who founded the Maurya Empire?",
+options:["Ashoka","Chandragupta Maurya","Bindusara","Harsha"],
+answer:1
+},
+
+{
+q:"The Battle of Plassey was fought in which year?",
+options:["1757","1764","1857","1748"],
+answer:0
+},
+
+{
+q:"Who was the first Indian to win a Nobel Prize?",
+options:["C. V. Raman","Rabindranath Tagore","Amartya Sen","Mother Teresa"],
+answer:1
+},
+
+{
+q:"Which article deals with equality before law?",
+options:["Article 12","Article 14","Article 19","Article 21"],
+answer:1
+},
+
+{
+q:"The maximum strength of the Lok Sabha is?",
+options:["545","552","550","500"],
+answer:1
+},
+
+{
+q:"Which state is called the Land of Rising Sun in India?",
+options:["Arunachal Pradesh","Assam","Sikkim","Manipur"],
+answer:0
+},
+
+{
+q:"Which is the longest river in India?",
+options:["Yamuna","Ganga","Godavari","Narmada"],
+answer:1
+},
+
+{
+q:"Who discovered the electron?",
+options:["J. J. Thomson","Rutherford","Bohr","Newton"],
+answer:0
+},
+
+{
+q:"What is the SI unit of force?",
+options:["Joule","Watt","Newton","Pascal"],
+answer:2
+},
+
+{
+q:"Which metal is liquid at room temperature?",
+options:["Iron","Mercury","Copper","Aluminium"],
+answer:1
+},
+
+{
+q:"What is the full form of RBI?",
+options:[
+"Reserve Bank of India",
+"Regional Bank of India",
+"Reserve Banking Institution",
+"Rural Bank of India"
+],
+answer:0
+},
+
+{
+q:"Where is the headquarters of RBI?",
+options:["New Delhi","Mumbai","Kolkata","Chennai"],
+answer:1
+},
+
+{
+q:"Which institution issues currency notes in India?",
+options:[
+"State Bank of India",
+"Reserve Bank of India",
+"Ministry of Finance",
+"NITI Aayog"
+],
+answer:1
+},
+
+{
+q:"What is the full form of ATM?",
+options:[
+"Automatic Transfer Machine",
+"Automated Teller Machine",
+"Any Time Money",
+"Automated Transaction Method"
+],
+answer:1
+},
+
+{
+q:"What is the full form of NEFT?",
+options:[
+"National Electronic Funds Transfer",
+"National Exchange Fund Transfer",
+"New Electronic Fund Technology",
+"National Economic Funds Transaction"
+],
+answer:0
+},
+
+{
+q:"What is the full form of RTGS?",
+options:[
+"Real Time Gross Settlement",
+"Rapid Transfer Gross System",
+"Real Transfer Government System",
+"Reserve Transfer Gross Settlement"
+],
+answer:0
+},
+
+{
+q:"Which bank is known as the largest public sector bank in India?",
+options:[
+"Punjab National Bank",
+"Bank of Baroda",
+"State Bank of India",
+"Canara Bank"
+],
+answer:2
+},
+
+{
+q:"What does KYC stand for?",
+options:[
+"Know Your Customer",
+"Keep Your Cash",
+"Know Your Credit",
+"Key Your Customer"
+],
+answer:0
+},
+
+{
+q:"What is a savings account mainly used for?",
+options:[
+"Saving money and earning interest",
+"Only taking loans",
+"Trading shares",
+"Issuing currency"
+],
+answer:0
+},
+
+{
+q:"Which organization regulates the securities market in India?",
+options:["RBI","SEBI","IRDAI","NABARD"],
+answer:1
+},
+
+{
+q:"Which organization regulates the insurance sector in India?",
+options:["SEBI","RBI","IRDAI","PFRDA"],
+answer:2
+},
+
+{
+q:"Which organization regulates pension funds in India?",
+options:["PFRDA","SEBI","RBI","NABARD"],
+answer:0
+},
+
+{
+q:"What does GDP stand for?",
+options:[
+"Gross Domestic Product",
+"General Domestic Production",
+"Gross Development Plan",
+"Government Domestic Product"
+],
+answer:0
+},
+
+{
+q:"Which tax replaced many indirect taxes in India in 2017?",
+options:["GST","VAT","CST","MAT"],
+answer:0
+},
+
+{
+q:"What is the full form of GST?",
+options:[
+"Goods and Services Tax",
+"General Sales Tax",
+"Government Service Tax",
+"Goods Supply Tax"
+],
+answer:0
+},
+
+{
+q:"Which is a direct tax in India?",
+options:["GST","Income Tax","Customs Duty","Excise Duty"],
+answer:1
+},
+
+{
+q:"What is inflation?",
+options:[
+"Fall in prices",
+"General rise in prices",
+"Rise in production only",
+"Fall in income"
+],
+answer:1
+},
+
+{
+q:"Which bank is called the banker to the government of India?",
+options:[
+"SBI",
+"RBI",
+"PNB",
+"Bank of Baroda"
+],
+answer:1
+},
+
+{
+q:"What is the full form of EMI?",
+options:[
+"Equated Monthly Instalment",
+"Electronic Money Investment",
+"Equal Money Interest",
+"Estimated Monthly Income"
+],
+answer:0
+},
+
+{
+q:"What does IFSC stand for?",
+options:[
+"Indian Financial System Code",
+"International Financial Service Code",
+"Indian Finance Service Corporation",
+"Internal Fund Settlement Code"
+],
+answer:0
+},
+
+{
+q:"Which number system uses only 0 and 1?",
+options:[
+"Decimal",
+"Binary",
+"Octal",
+"Hexadecimal"
+],
+answer:1
+},
+
+{
+q:"What is the brain of a computer called?",
+options:[
+"Monitor",
+"CPU",
+"Keyboard",
+"Printer"
+],
+answer:1
+},
+
+{
+q:"Which shortcut is used to copy selected text?",
+options:[
+"Ctrl + X",
+"Ctrl + C",
+"Ctrl + V",
+"Ctrl + Z"
+],
+answer:1
+},
+
+{
+q:"Which shortcut is used to paste text?",
+options:[
+"Ctrl + P",
+"Ctrl + C",
+"Ctrl + V",
+"Ctrl + S"
+],
+answer:2
+},
+
+{
+q:"What is 25% of 200?",
+options:["25","40","50","75"],
+answer:2
+},
+
+{
+q:"If 10 + 20 = 30, then 30 + 40 = ?",
+options:["60","70","80","90"],
+answer:1
+},
+
+{
+q:"What is the square of 12?",
+options:["124","144","154","164"],
+answer:1
+},
+
+{
+q:"Which number comes next: 2, 4, 8, 16, ?",
+options:["20","24","32","36"],
+answer:2
+},
+
+{
+q:"What is the average of 10 and 20?",
+options:["10","15","20","25"],
+answer:1
+},
+
+{
+q:"If a train travels 60 km in 1 hour, how far will it travel in 3 hours?",
+options:["120 km","150 km","180 km","200 km"],
+answer:2
+}
+
+];
+
+
+const questionsContainer =
+document.getElementById("questions");
+
+
+questions.forEach(function(item,index) {
+
+    let html = `
+    <div class="question">
+
+        <p>
+        ${index + 1}. ${item.q}
+        </p>
+    `;
+
+    item.options.forEach(function(option,optIndex) {
+
+        html += `
+        <label>
+            <input
+                type="radio"
+                name="q${index}"
+                value="${optIndex}"
+            >
+            ${option}
+        </label>
+        `;
+
+    });
+
+    html += `</div>`;
+
+    questionsContainer.innerHTML += html;
+
+});
+
+
+document.getElementById("quizForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+
+    const name =
+    document.getElementById("studentName")
+    .value.trim();
+
+
+    if (!name) {
+
+        alert("Please enter your name before submitting.");
+        document.getElementById("studentName").focus();
+        return;
+
+    }
+
+
+    let score = 0;
+    let correct = 0;
+    let wrong = 0;
+    let unanswered = 0;
+
+    let reviewHTML = "";
+
+
+    questions.forEach(function(item,index) {
+
+        const selected =
+        document.querySelector(
+            `input[name="q${index}"]:checked`
+        );
+
+
+        let selectedAnswer = null;
+
+
+        if (selected) {
+
+            selectedAnswer =
+            Number(selected.value);
+
+        }
+
+
+        if (selectedAnswer === null) {
+
+            unanswered++;
+
+            reviewHTML += `
+            <div class="review-item unanswered">
+                <strong>Q${index + 1}:</strong>
+                Not Answered<br>
+                <strong>Correct Answer:</strong>
+                ${item.options[item.answer]}
+            </div>
+            `;
+
+        }
+
+        else if (selectedAnswer === item.answer) {
+
+            score++;
+            correct++;
+
+            reviewHTML += `
+            <div class="review-item correct">
+                <strong>Q${index + 1}:</strong>
+                ✅ Correct<br>
+                <strong>Answer:</strong>
+                ${item.options[item.answer]}
+            </div>
+            `;
+
+        }
+
+        else {
+
+            wrong++;
+
+            reviewHTML += `
+            <div class="review-item wrong">
+                <strong>Q${index + 1}:</strong>
+                ❌ Wrong<br>
+                <strong>Your Answer:</strong>
+                ${item.options[selectedAnswer]}<br>
+                <strong>Correct Answer:</strong>
+                ${item.options[item.answer]}
+            </div>
+            `;
+
+        }
+
+    });
+
+
+    const percentage =
+    ((score / questions.length) * 100)
+    .toFixed(2);
+
+
+    document.getElementById("score")
+    .textContent = score;
+
+
+    document.getElementById("correct")
+    .textContent = correct;
+
+
+    document.getElementById("wrong")
+    .textContent = wrong;
+
+
+    document.getElementById("unanswered")
+    .textContent = unanswered;
+
+
+    document.getElementById("percentage")
+    .textContent = percentage + "%";
+
+
+    document.getElementById("reviewContent")
+    .innerHTML = reviewHTML;
+
+
+    /*
+       Save the result so the existing
+       Performance page can use it.
+    */
+
+    const result = {
+
+        testName: "Mock Test 2",
+
+        name: name,
+
+        score: score,
+
+        correct: correct,
+
+        wrong: wrong,
+
+        unanswered: unanswered,
+
+        percentage: Number(percentage),
+
+        total: questions.length,
+
+        date: new Date().toISOString()
+
+    };
+
+
+    localStorage.setItem(
+        "mockTestLastResult",
+        JSON.stringify(result)
+    );
+
+
+    localStorage.setItem(
+        "mockTestName",
+        name
+    );
+
+
+    localStorage.setItem(
+        "mockTestScore",
+        score
+    );
+
+
+    localStorage.setItem(
+        "mockTestPercentage",
+        percentage
+    );
+
+
+    localStorage.setItem(
+        "examPrepCurrentUser",
+        name
+    );
+
+
+    /*
+       Submit score to Google Sheets
+    */
+
+    const APPS_SCRIPT_URL =
+    "https://script.google.com/macros/s/AKfycbxV1CyjtjBJJlpvIJxEx37AsBms2rStoPck9kcvD9uaN5UpgoTkKT0Y4EQWr77onNNx/exec";
+
+
+    const data = {
+
+        name: name,
+
+        testName: "Mock Test 2",
+
+        score: score,
+
+        percentage: Number(percentage)
+
+    };
+
+
+    fetch(APPS_SCRIPT_URL, {
+
+        method: "POST",
+
+        mode: "no-cors",
+
+        headers: {
+            "Content-Type": "text/plain;charset=utf-8"
+        },
+
+        body: JSON.stringify(data)
+
+    })
+    .then(function() {
+
+        console.log("Score submitted.");
+
+    })
+    .catch(function(error) {
+
+        console.log("Submission error:", error);
+
+    });
+
+
+    document.getElementById("result")
+    .style.display = "block";
+
+
+    document.getElementById("submitBtn")
+    .disabled = true;
+
+
+    document.getElementById("result")
+    .scrollIntoView({
+        behavior: "smooth"
+    });
+
+});
+
+</script>
+
+</body>
+</html>
