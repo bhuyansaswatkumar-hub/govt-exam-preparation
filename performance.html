@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Student Performance | SSC & Banking</title>
+<title>Performance | SSC & Banking</title>
 
 <meta name="description"
-content="Check your SSC and Banking exam performance, scores, average percentage and test history.">
+content="Check your SSC and Banking mock test performance, score, percentage and progress.">
 
 <style>
 * {
@@ -24,161 +24,139 @@ body {
 header {
     background: #173b75;
     color: white;
-    padding: 25px 15px;
+    padding: 22px 15px;
     text-align: center;
 }
 
 header h1 {
-    margin: 0 0 8px;
-    font-size: 30px;
+    margin: 0;
+    font-size: 28px;
 }
 
 header p {
-    margin: 0;
+    margin: 8px 0 0;
     font-size: 15px;
 }
 
+nav {
+    background: #0d2852;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 13px 16px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    background: #173b75;
+}
+
 .container {
-    max-width: 1100px;
+    max-width: 1000px;
     margin: 25px auto;
     padding: 0 15px;
 }
 
-.search-box {
+.card {
     background: white;
-    padding: 20px;
+    padding: 25px;
+    margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    margin-bottom: 20px;
 }
 
-.search-box h2 {
+.card h2 {
     margin-top: 0;
     color: #173b75;
+}
+
+.performance-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.stat {
+    background: #f4f6f8;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.stat h3 {
+    margin: 0 0 10px;
+    color: #173b75;
+    font-size: 16px;
+}
+
+.stat p {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 input {
     width: 100%;
     padding: 13px;
+    margin: 8px 0 15px;
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 16px;
-    margin-bottom: 10px;
 }
 
 button {
     background: #173b75;
     color: white;
     border: none;
-    padding: 12px 20px;
+    padding: 13px 20px;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 button:hover {
     background: #0d2852;
 }
 
-.status {
-    margin-top: 10px;
-    font-size: 14px;
+.message {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 6px;
+    display: none;
 }
 
-.stats {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    margin-bottom: 25px;
+.success {
+    background: #e8f5e9;
+    color: #2e7d32;
 }
 
-.stat-card {
-    background: white;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-
-.stat-card h3 {
-    margin: 0 0 10px;
-    color: #555;
-    font-size: 15px;
-}
-
-.stat-card .number {
-    font-size: 28px;
-    font-weight: bold;
-    color: #173b75;
-}
-
-.section {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    margin-bottom: 20px;
-}
-
-.section h2 {
-    color: #173b75;
-    margin-top: 0;
-}
-
-.table-container {
-    overflow-x: auto;
+.error {
+    background: #ffebee;
+    color: #c62828;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 650px;
+    margin-top: 15px;
+}
+
+th,
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
 }
 
 th {
     background: #173b75;
     color: white;
-    padding: 12px;
-    text-align: left;
-}
-
-td {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-}
-
-tr:hover {
-    background: #f5f7fb;
-}
-
-.no-data {
-    text-align: center;
-    padding: 25px;
-    color: #666;
-}
-
-.performance-bar {
-    width: 100%;
-    height: 12px;
-    background: #ddd;
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-.performance-fill {
-    height: 100%;
-    background: #173b75;
-    border-radius: 20px;
-}
-
-.message {
-    background: #fff3cd;
-    border: 1px solid #ffe69c;
-    color: #664d03;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    display: none;
 }
 
 footer {
@@ -189,32 +167,22 @@ footer {
     margin-top: 30px;
 }
 
-footer a {
-    color: white;
-    text-decoration: none;
+footer p {
+    margin: 5px;
+    font-size: 14px;
 }
 
-@media (max-width: 800px) {
-    .stats {
-        grid-template-columns: repeat(2, 1fr);
+@media (max-width: 700px) {
+    .performance-box {
+        grid-template-columns: 1fr;
     }
-}
 
-@media (max-width: 500px) {
+    nav a {
+        padding: 10px;
+        font-size: 13px;
+    }
+
     header h1 {
-        font-size: 24px;
-    }
-
-    .stats {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-    }
-
-    .stat-card {
-        padding: 15px 8px;
-    }
-
-    .stat-card .number {
         font-size: 23px;
     }
 }
@@ -224,14 +192,28 @@ footer a {
 <body>
 
 <header>
-    <h1>📊 Student Performance Dashboard</h1>
+    <h1>Performance Dashboard</h1>
     <p>SSC & Banking Exam Preparation</p>
 </header>
 
+<nav>
+    <a href="index.html">Home</a>
+    <a href="ssc.html">SSC</a>
+    <a href="banking.html">Banking</a>
+    <a href="notes.html">Notes</a>
+    <a href="mcq.html">MCQ</a>
+    <a href="mock-test.html">Mock Test</a>
+    <a href="leaderboard.html">Leaderboard</a>
+</nav>
+
 <div class="container">
 
-    <div class="search-box">
-        <h2>Find Your Performance</h2>
+    <div class="card">
+        <h2>Check Your Performance</h2>
+
+        <p>
+            Enter the name used while submitting your mock test score.
+        </p>
 
         <input
             type="text"
@@ -239,658 +221,187 @@ footer a {
             placeholder="Enter your name"
         >
 
-        <button onclick="loadPerformance()">
-            View My Performance
+        <button onclick="checkPerformance()">
+            Check Performance
         </button>
 
-        <div class="status" id="status"></div>
+        <div id="message" class="message"></div>
     </div>
 
-    <div class="message" id="message"></div>
+    <div class="card" id="resultCard" style="display:none;">
 
-    <div class="stats">
+        <h2>Your Performance</h2>
 
-        <div class="stat-card">
-            <h3>Total Tests</h3>
-            <div class="number" id="totalTests">0</div>
-        </div>
+        <p>
+            <strong>Name:</strong>
+            <span id="displayName">-</span>
+        </p>
 
-        <div class="stat-card">
-            <h3>Best Score</h3>
-            <div class="number" id="bestScore">0</div>
-        </div>
+        <div class="performance-box">
 
-        <div class="stat-card">
-            <h3>Average %</h3>
-            <div class="number" id="averagePercentage">0%</div>
-        </div>
+            <div class="stat">
+                <h3>Score</h3>
+                <p id="displayScore">0</p>
+            </div>
 
-        <div class="stat-card">
-            <h3>MCQ Tests</h3>
-            <div class="number" id="mcqTests">0</div>
+            <div class="stat">
+                <h3>Percentage</h3>
+                <p id="displayPercentage">0%</p>
+            </div>
+
+            <div class="stat">
+                <h3>Performance</h3>
+                <p id="displayPerformance">-</p>
+            </div>
+
         </div>
 
     </div>
 
-    <div class="section">
-        <h2>📈 Performance Overview</h2>
+    <div class="card">
+        <h2>Performance Guide</h2>
 
-        <p>
-            <strong>Mock Tests:</strong>
-            <span id="mockTests">0</span>
-        </p>
+        <table>
+            <tr>
+                <th>Percentage</th>
+                <th>Performance</th>
+            </tr>
 
-        <p>
-            <strong>MCQ Tests:</strong>
-            <span id="mcqCount">0</span>
-        </p>
+            <tr>
+                <td>80% - 100%</td>
+                <td>Excellent</td>
+            </tr>
 
-        <p>
-            <strong>Best Percentage:</strong>
-            <span id="bestPercentage">0%</span>
-        </p>
+            <tr>
+                <td>60% - 79%</td>
+                <td>Very Good</td>
+            </tr>
 
-        <div class="performance-bar">
-            <div
-                class="performance-fill"
-                id="performanceFill"
-                style="width:0%"
-            ></div>
-        </div>
+            <tr>
+                <td>40% - 59%</td>
+                <td>Good</td>
+            </tr>
+
+            <tr>
+                <td>Below 40%</td>
+                <td>Needs Improvement</td>
+            </tr>
+        </table>
     </div>
 
-    <div class="section">
+    <div class="card">
+        <h2>Improve Your Score</h2>
 
-        <h2>📝 Recent Test Attempts</h2>
+        <p>
+            Practice more MCQs, revise your study notes regularly,
+            and attempt mock tests to improve your speed and accuracy.
+        </p>
 
-        <div class="table-container">
+        <a href="mock-test.html">
+            <button>Take Mock Test</button>
+        </a>
 
-            <table>
-
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Exam</th>
-                        <th>Score</th>
-                        <th>Total</th>
-                        <th>Percentage</th>
-                        <th>Date</th>
-                    </tr>
-                </thead>
-
-                <tbody id="performanceTable">
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-        <div
-            class="no-data"
-            id="noData"
-        >
-            Enter your name above to view your performance.
-        </div>
-
+        <a href="leaderboard.html">
+            <button>View Leaderboard</button>
+        </a>
     </div>
 
 </div>
 
 <footer>
-
-    <p>
-        © 2026 SSC & Banking Exam Preparation
-    </p>
-
-    <p>
-        <a href="index.html">Home</a> |
-        <a href="mock-test.html">Mock Test</a> |
-        <a href="mcq.html">MCQ</a> |
-        <a href="leaderboard.html">Leaderboard</a>
-    </p>
-
+    <p>© 2026 Govt Exam Preparation</p>
+    <p>SSC & Banking Exam Preparation</p>
 </footer>
 
 <script>
 
-const GOOGLE_SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbxV1CyjtjBJJlpvIJxEx37AsBms2rStoPck9kcvD9uaN5UpgoTkKT0Y4EQWr77onNNx/exec";
+function checkPerformance() {
 
+    const nameInput = document.getElementById("studentName");
+    const name = nameInput.value.trim();
 
-let allResults = [];
+    const message = document.getElementById("message");
+    const resultCard = document.getElementById("resultCard");
 
-
-/* LOAD DATA FROM GOOGLE SHEETS */
-
-async function loadData() {
-
-    const status =
-        document.getElementById("status");
-
-    status.textContent =
-        "Loading performance data...";
-
-    try {
-
-        const response =
-            await fetch(GOOGLE_SCRIPT_URL);
-
-        const data =
-            await response.json();
-
-        if (!Array.isArray(data)) {
-
-            throw new Error(
-                "Invalid data received"
-            );
-
-        }
-
-        allResults = data;
-
-        status.textContent =
-            "Performance data loaded.";
-
-        return data;
-
-    } catch (error) {
-
-        console.error(error);
-
-        status.textContent =
-            "Unable to load performance data.";
-
-        return [];
-
-    }
-
-}
-
-
-/* VIEW PERFORMANCE */
-
-async function loadPerformance() {
-
-    const input =
-        document.getElementById("studentName");
-
-    const name =
-        input.value.trim();
-
-    const message =
-        document.getElementById("message");
-
-    if (!name) {
+    if (name === "") {
 
         message.style.display = "block";
+        message.className = "message error";
+        message.innerHTML = "Please enter your name.";
 
-        message.textContent =
-            "Please enter your name.";
+        resultCard.style.display = "none";
 
         return;
-
     }
 
-    message.style.display = "none";
+    /*
+      The mock test stores the latest result in localStorage.
+      This allows the Performance page to display the score
+      from the same browser.
+    */
 
-    if (allResults.length === 0) {
+    let score = localStorage.getItem("mockTestScore");
+    let percentage = localStorage.getItem("mockTestPercentage");
+    let savedName = localStorage.getItem("mockTestName");
 
-        await loadData();
-
-    }
-
-    const searchName =
-        name.toLowerCase();
-
-    const results =
-        allResults.filter(function(item) {
-
-            const itemName =
-                String(item.name || "")
-                .toLowerCase()
-                .trim();
-
-            return itemName === searchName;
-
-        });
-
-
-    if (results.length === 0) {
-
-        resetDashboard();
+    if (score === null || percentage === null) {
 
         message.style.display = "block";
+        message.className = "message error";
+        message.innerHTML =
+            "No mock test result found. Please complete a mock test first.";
 
-        message.textContent =
-            "No test results found for this name. Please enter the same name used during your test.";
+        resultCard.style.display = "none";
 
         return;
-
     }
 
+    if (savedName && savedName.toLowerCase() !== name.toLowerCase()) {
 
-    showDashboard(results);
+        message.style.display = "block";
+        message.className = "message error";
+        message.innerHTML =
+            "No result found for this name. Please enter the same name used in the Mock Test.";
 
-}
+        resultCard.style.display = "none";
 
-
-/* SHOW DASHBOARD */
-
-function showDashboard(results) {
-
-    document.getElementById("noData")
-        .style.display = "none";
-
-
-    /* TOTAL TESTS */
-
-    const totalTests =
-        results.length;
-
-    document.getElementById("totalTests")
-        .textContent = totalTests;
-
-
-    /* BEST SCORE */
-
-    let bestScore = 0;
-
-    results.forEach(function(item) {
-
-        const score =
-            Number(item.score) || 0;
-
-        if (score > bestScore) {
-
-            bestScore = score;
-
-        }
-
-    });
-
-
-    document.getElementById("bestScore")
-        .textContent = bestScore;
-
-
-    /* AVERAGE PERCENTAGE */
-
-    let percentageTotal = 0;
-
-    results.forEach(function(item) {
-
-        let percentage =
-            Number(item.percentage);
-
-        if (
-            isNaN(percentage) ||
-            percentage === 0
-        ) {
-
-            const score =
-                Number(item.score) || 0;
-
-            const total =
-                getTotal(item);
-
-            if (total > 0) {
-
-                percentage =
-                    (score / total) * 100;
-
-            }
-
-        }
-
-        percentageTotal += percentage;
-
-    });
-
-
-    const average =
-        percentageTotal / totalTests;
-
-
-    document.getElementById(
-        "averagePercentage"
-    ).textContent =
-        average.toFixed(1) + "%";
-
-
-    /* MCQ TESTS */
-
-    const mcqResults =
-        results.filter(function(item) {
-
-            return String(item.exam || "")
-                .toLowerCase()
-                .includes("mcq");
-
-        });
-
-
-    document.getElementById("mcqTests")
-        .textContent =
-        mcqResults.length;
-
-
-    document.getElementById("mcqCount")
-        .textContent =
-        mcqResults.length;
-
-
-    /* MOCK TESTS */
-
-    const mockResults =
-        results.filter(function(item) {
-
-            return !String(item.exam || "")
-                .toLowerCase()
-                .includes("mcq");
-
-        });
-
-
-    document.getElementById("mockTests")
-        .textContent =
-        mockResults.length;
-
-
-    /* BEST PERCENTAGE */
-
-    let bestPercentage = 0;
-
-    results.forEach(function(item) {
-
-        let percentage =
-            Number(item.percentage);
-
-        if (
-            isNaN(percentage) ||
-            percentage === 0
-        ) {
-
-            const score =
-                Number(item.score) || 0;
-
-            const total =
-                getTotal(item);
-
-            if (total > 0) {
-
-                percentage =
-                    (score / total) * 100;
-
-            }
-
-        }
-
-        if (percentage > bestPercentage) {
-
-            bestPercentage =
-                percentage;
-
-        }
-
-    });
-
-
-    document.getElementById(
-        "bestPercentage"
-    ).textContent =
-        bestPercentage.toFixed(1) + "%";
-
-
-    /* PERFORMANCE BAR */
-
-    const bar =
-        document.getElementById(
-            "performanceFill"
-        );
-
-    bar.style.width =
-        Math.min(bestPercentage, 100) + "%";
-
-
-    /* SORT NEWEST FIRST */
-
-    results.sort(function(a, b) {
-
-        const dateA =
-            new Date(a.date || 0);
-
-        const dateB =
-            new Date(b.date || 0);
-
-        return dateB - dateA;
-
-    });
-
-
-    /* TABLE */
-
-    const table =
-        document.getElementById(
-            "performanceTable"
-        );
-
-    table.innerHTML = "";
-
-
-    results.forEach(function(item, index) {
-
-        const score =
-            Number(item.score) || 0;
-
-        const total =
-            getTotal(item);
-
-        let percentage =
-            Number(item.percentage);
-
-        if (
-            isNaN(percentage) ||
-            percentage === 0
-        ) {
-
-            percentage =
-                total > 0
-                ? (score / total) * 100
-                : 0;
-
-        }
-
-
-        const exam =
-            item.exam ||
-            "Mock Test";
-
-
-        const date =
-            formatDate(item.date);
-
-
-        const row =
-            document.createElement("tr");
-
-
-        row.innerHTML = `
-
-            <td>${index + 1}</td>
-
-            <td>${escapeHtml(exam)}</td>
-
-            <td>
-                <strong>
-                    ${score}
-                </strong>
-            </td>
-
-            <td>${total}</td>
-
-            <td>
-                ${percentage.toFixed(1)}%
-            </td>
-
-            <td>${date}</td>
-
-        `;
-
-
-        table.appendChild(row);
-
-    });
-
-}
-
-
-/* GET TOTAL MARKS */
-
-function getTotal(item) {
-
-    const total =
-        Number(item.total);
-
-    if (
-        total &&
-        total > 0
-    ) {
-
-        return total;
-
+        return;
     }
 
+    score = Number(score);
+    percentage = Number(percentage);
 
-    const exam =
-        String(item.exam || "")
-        .toLowerCase();
+    let performance = "";
 
-
-    if (exam.includes("mcq")) {
-
-        return 30;
-
+    if (percentage >= 80) {
+        performance = "Excellent";
+    } else if (percentage >= 60) {
+        performance = "Very Good";
+    } else if (percentage >= 40) {
+        performance = "Good";
+    } else {
+        performance = "Needs Improvement";
     }
 
+    document.getElementById("displayName").textContent =
+        savedName || name;
 
-    return 50;
+    document.getElementById("displayScore").textContent =
+        score;
 
+    document.getElementById("displayPercentage").textContent =
+        percentage.toFixed(2) + "%";
+
+    document.getElementById("displayPerformance").textContent =
+        performance;
+
+    message.style.display = "block";
+    message.className = "message success";
+    message.innerHTML =
+        "Performance loaded successfully.";
+
+    resultCard.style.display = "block";
 }
-
-
-/* FORMAT DATE */
-
-function formatDate(dateValue) {
-
-    if (!dateValue) {
-
-        return "-";
-
-    }
-
-    const date =
-        new Date(dateValue);
-
-    if (isNaN(date.getTime())) {
-
-        return "-";
-
-    }
-
-    return date.toLocaleDateString(
-        "en-IN",
-        {
-            day: "2-digit",
-            month: "short",
-            year: "numeric"
-        }
-    );
-
-}
-
-
-/* RESET DASHBOARD */
-
-function resetDashboard() {
-
-    document.getElementById("totalTests")
-        .textContent = "0";
-
-    document.getElementById("bestScore")
-        .textContent = "0";
-
-    document.getElementById("averagePercentage")
-        .textContent = "0%";
-
-    document.getElementById("mcqTests")
-        .textContent = "0";
-
-    document.getElementById("mcqCount")
-        .textContent = "0";
-
-    document.getElementById("mockTests")
-        .textContent = "0";
-
-    document.getElementById("bestPercentage")
-        .textContent = "0%";
-
-    document.getElementById(
-        "performanceFill"
-    ).style.width = "0%";
-
-
-    document.getElementById(
-        "performanceTable"
-    ).innerHTML = "";
-
-    document.getElementById(
-        "noData"
-    ).style.display = "block";
-
-}
-
-
-/* BASIC HTML SAFETY */
-
-function escapeHtml(text) {
-
-    return String(text)
-
-        .replace(/&/g, "&amp;")
-
-        .replace(/</g, "&lt;")
-
-        .replace(/>/g, "&gt;")
-
-        .replace(/"/g, "&quot;")
-
-        .replace(/'/g, "&#039;");
-
-}
-
-
-/* ENTER KEY */
-
-document
-    .getElementById("studentName")
-    .addEventListener(
-        "keypress",
-        function(event) {
-
-            if (event.key === "Enter") {
-
-                loadPerformance();
-
-            }
-
-        }
-    );
-
-
-/* AUTO LOAD GOOGLE SHEETS DATA */
-
-loadData();
 
 </script>
 
