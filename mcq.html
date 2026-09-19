@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MCQ Practice | SSC & Banking</title>
+<title>MCQ Test | SSC & Banking</title>
+
+<meta name="description"
+content="Free 30-question MCQ test for SSC, Banking and Railway exam preparation.">
 
 <style>
 * {
@@ -14,146 +17,143 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f5f7fb;
+    background: #f4f6f8;
     color: #222;
 }
 
 header {
     background: #173b75;
     color: white;
-    text-align: center;
     padding: 25px 15px;
+    text-align: center;
 }
 
 header h1 {
     margin: 0 0 8px;
 }
 
+header p {
+    margin: 0;
+}
+
 nav {
     background: #0d2852;
-    text-align: center;
-    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 5px 10px;
-    display: inline-block;
+    padding: 12px 14px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    background: #173b75;
 }
 
 .container {
     max-width: 900px;
     margin: 25px auto;
-    padding: 15px;
+    padding: 0 15px;
 }
 
-.box {
+.card {
     background: white;
-    padding: 25px;
+    padding: 20px;
     margin-bottom: 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-.name-input {
+.student-box {
+    margin-bottom: 20px;
+}
+
+.student-box label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.student-box input {
     width: 100%;
-    max-width: 500px;
-    padding: 14px;
-    font-size: 16px;
+    padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 8px;
+    border-radius: 6px;
+    font-size: 16px;
 }
 
 .question {
-    background: white;
-    padding: 20px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 7px rgba(0,0,0,.07);
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
 }
 
 .question h3 {
+    margin-bottom: 15px;
     color: #173b75;
 }
 
 .option {
     display: block;
-    padding: 12px;
+    padding: 10px;
     margin: 7px 0;
-    background: #f5f7fb;
-    border-radius: 7px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
     cursor: pointer;
 }
 
 .option:hover {
-    background: #e8eef9;
+    background: #f1f4f9;
 }
 
-button {
+.option input {
+    margin-right: 8px;
+}
+
+.submit-btn {
+    width: 100%;
     background: #173b75;
     color: white;
-    border: 0;
-    padding: 15px 30px;
-    border-radius: 8px;
+    border: none;
+    padding: 14px;
+    border-radius: 7px;
     font-size: 17px;
     cursor: pointer;
 }
 
-button:hover {
+.submit-btn:hover {
     background: #0d2852;
 }
 
-button:disabled {
-    background: #777;
-    cursor: not-allowed;
-}
-
-.submit-area {
-    text-align: center;
-    margin: 30px 0;
-}
-
-#result {
+.result {
     display: none;
     text-align: center;
 }
 
-.score {
-    font-size: 40px;
+.result h2 {
+    color: #173b75;
+}
+
+.score-box {
+    font-size: 24px;
     font-weight: bold;
-    color: #173b75;
-}
-
-.stats {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.stat {
-    background: #f5f7fb;
-    padding: 15px 25px;
-    border-radius: 8px;
-}
-
-.stat strong {
-    display: block;
-    font-size: 25px;
-    color: #173b75;
+    margin: 15px 0;
 }
 
 .review {
+    margin-top: 20px;
     text-align: left;
-    margin-top: 25px;
 }
 
 .review-item {
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 8px;
-    background: #f5f7fb;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    background: #f4f6f8;
 }
 
 .correct {
@@ -168,23 +168,25 @@ button:disabled {
     border-left: 5px solid orange;
 }
 
+.status {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
 .links {
-    margin-top: 25px;
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .links a {
-    display: inline-block;
     background: #173b75;
     color: white;
     text-decoration: none;
-    padding: 12px 18px;
-    border-radius: 7px;
-    margin: 5px;
-}
-
-.status {
-    font-weight: bold;
-    margin-top: 15px;
+    padding: 11px 16px;
+    border-radius: 6px;
 }
 
 footer {
@@ -195,20 +197,14 @@ footer {
     margin-top: 40px;
 }
 
-@media(max-width:600px) {
-
-    .stats {
-        display: block;
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 24px;
     }
 
-    .stat {
-        margin: 8px;
+    .card {
+        padding: 15px;
     }
-
-    button {
-        width: 100%;
-    }
-
 }
 </style>
 </head>
@@ -216,8 +212,8 @@ footer {
 <body>
 
 <header>
-    <h1>SSC & Banking Exam Preparation</h1>
-    <p>MCQ Practice Test</p>
+    <h1>📝 MCQ Test</h1>
+    <p>SSC & Banking Exam Preparation</p>
 </header>
 
 <nav>
@@ -225,705 +221,782 @@ footer {
     <a href="ssc.html">SSC</a>
     <a href="banking.html">Banking</a>
     <a href="railway.html">Railway</a>
-    <a href="notes.html">Study Material</a>
+    <a href="notes.html">Notes</a>
     <a href="mcq.html">MCQ</a>
+    <a href="mock-test.html">Mock Test</a>
     <a href="current-affairs.html">Current Affairs</a>
     <a href="daily-quiz.html">Daily Quiz</a>
-    <a href="mock-test.html">Mock Test</a>
     <a href="leaderboard.html">Leaderboard</a>
 </nav>
 
 <div class="container">
 
-<div class="box">
+    <div class="card">
 
-    <h2>Enter Your Name</h2>
+        <h2>30 Questions MCQ Test</h2>
 
-    <input
-        type="text"
-        id="studentName"
-        class="name-input"
-        placeholder="Enter your name"
-        maxlength="50"
-    >
+        <p>
+            Answer all 30 questions and submit your test to see your score.
+        </p>
 
-</div>
+        <div class="student-box">
+            <label for="studentName">Enter Your Name</label>
 
-<div class="box">
-
-    <h2>📝 MCQ Practice Test</h2>
-
-    <p>30 Questions | SSC | Banking | Railway</p>
-
-    <p>Select one answer for each question.</p>
-
-</div>
-
-<form id="mcqForm">
-
-<div id="questions"></div>
-
-<div class="submit-area">
-
-    <button type="submit" id="submitBtn">
-        Submit MCQ Test
-    </button>
-
-</div>
-
-</form>
-
-<div id="result" class="box">
-
-    <h2>🎉 Your Result</h2>
-
-    <h3 id="resultName"></h3>
-
-    <div class="score">
-        <span id="score">0</span> / 30
-    </div>
-
-    <div class="stats">
-
-        <div class="stat">
-            <strong id="correct">0</strong>
-            Correct
+            <input
+                type="text"
+                id="studentName"
+                placeholder="Enter your name"
+            >
         </div>
 
-        <div class="stat">
-            <strong id="wrong">0</strong>
-            Wrong
-        </div>
+        <form id="mcqForm">
 
-        <div class="stat">
-            <strong id="unanswered">0</strong>
-            Unanswered
-        </div>
+            <div id="questionsContainer"></div>
 
-        <div class="stat">
-            <strong id="percentage">0%</strong>
-            Percentage
-        </div>
+            <button
+                type="submit"
+                class="submit-btn"
+            >
+                Submit Test
+            </button>
+
+        </form>
 
     </div>
 
-    <p id="message"></p>
 
-    <p id="submitStatus" class="status"></p>
+    <div class="card result" id="result">
 
-    <div class="review">
+        <h2>🎉 Test Result</h2>
 
-        <h2>📖 Answer Review</h2>
+        <div class="score-box" id="scoreText"></div>
 
-        <div id="review"></div>
+        <p id="correctText"></p>
+        <p id="wrongText"></p>
+        <p id="unansweredText"></p>
+        <p id="percentageText"></p>
+
+        <div class="status" id="submissionStatus"></div>
+
+        <div class="links">
+
+            <a href="leaderboard.html">
+                🏆 View Leaderboard
+            </a>
+
+            <a href="mcq.html">
+                🔄 Retake Test
+            </a>
+
+        </div>
+
+        <div class="review">
+
+            <h3>Answer Review</h3>
+
+            <div id="reviewContainer"></div>
+
+        </div>
 
     </div>
-
-    <div class="links">
-
-        <a href="leaderboard.html">🏆 Leaderboard</a>
-
-        <a href="mock-test.html">📝 Mock Test</a>
-
-        <a href="daily-quiz.html">📅 Daily Quiz</a>
-
-    </div>
-
-</div>
 
 </div>
 
 <footer>
-    © 2026 Govt Exam Preparation | SSC, Banking & Railway
+    © 2026 Govt Exam Preparation | SSC & Banking
 </footer>
 
 
 <script>
 
-/* =====================================================
-   GOOGLE APPS SCRIPT URL
-===================================================== */
-
 const GOOGLE_SCRIPT_URL =
 "https://script.google.com/macros/s/AKfycbxV1CyjtjBJJlpvIJxEx37AsBms2rStoPck9kcvD9uaN5UpgoTkKT0Y4EQWr77onNNx/exec";
 
 
-/* =====================================================
-   MCQ DATA
-===================================================== */
-
 const questions = [
 
 {
-q:"Who is known as the Father of the Indian Constitution?",
-a:["Mahatma Gandhi","Dr. B. R. Ambedkar","Jawaharlal Nehru","Sardar Patel"],
-c:1
+q: "Who is known as the Father of the Indian Constitution?",
+options: [
+"Jawaharlal Nehru",
+"Dr. B. R. Ambedkar",
+"Mahatma Gandhi",
+"Rajendra Prasad"
+],
+correct: 1
 },
 
 {
-q:"Which is the largest ocean in the world?",
-a:["Atlantic Ocean","Indian Ocean","Pacific Ocean","Arctic Ocean"],
-c:2
+q: "Which is the largest ocean in the world?",
+options: [
+"Atlantic Ocean",
+"Indian Ocean",
+"Pacific Ocean",
+"Arctic Ocean"
+],
+correct: 2
 },
 
 {
-q:"How many Fundamental Rights are currently guaranteed by the Indian Constitution?",
-a:["5","6","7","8"],
-c:1
+q: "How many Fundamental Rights are currently guaranteed by the Indian Constitution?",
+options: [
+"5",
+"6",
+"7",
+"8"
+],
+correct: 1
 },
 
 {
-q:"What is the chemical symbol for gold?",
-a:["Ag","Gd","Au","Go"],
-c:2
+q: "What is the chemical symbol for gold?",
+options: [
+"Ag",
+"Fe",
+"Au",
+"Cu"
+],
+correct: 2
 },
 
 {
-q:"What does RBI stand for?",
-a:["Reserve Bank of India","Rural Bank of India","Regional Bank of India","Revenue Bank of India"],
-c:0
+q: "Which institution is the central bank of India?",
+options: [
+"State Bank of India",
+"Reserve Bank of India",
+"Punjab National Bank",
+"Bank of India"
+],
+correct: 1
 },
 
 {
-q:"What does CPU stand for?",
-a:["Central Processing Unit","Central Program Unit","Computer Processing Utility","Control Processing Unit"],
-c:0
+q: "What does CPU stand for?",
+options: [
+"Central Processing Unit",
+"Central Power Unit",
+"Computer Processing Utility",
+"Control Processing Unit"
+],
+correct: 0
 },
 
 {
-q:"Choose the synonym of Rapid.",
-a:["Slow","Fast","Weak","Late"],
-c:1
+q: "Choose the synonym of 'Rapid'.",
+options: [
+"Slow",
+"Fast",
+"Weak",
+"Late"
+],
+correct: 1
 },
 
 {
-q:"What is 25% of 200?",
-a:["25","40","50","75"],
-c:2
+q: "What is 25% of 200?",
+options: [
+"25",
+"40",
+"50",
+"75"
+],
+correct: 2
 },
 
 {
-q:"Find the next number: 2, 4, 8, 16, ?",
-a:["20","24","32","36"],
-c:2
+q: "Find the next number: 2, 4, 8, 16, ?",
+options: [
+"24",
+"30",
+"32",
+"36"
+],
+correct: 2
 },
 
 {
-q:"What does RRB stand for?",
-a:["Railway Recruitment Board","Railway Registration Board","Railway Reservation Board","Railway Recruitment Bureau"],
-c:0
+q: "What does RRB stand for?",
+options: [
+"Railway Recruitment Board",
+"Regional Railway Bank",
+"Railway Registration Bureau",
+"Rapid Railway Board"
+],
+correct: 0
 },
 
 {
-q:"Who founded the Maurya Empire?",
-a:["Ashoka","Chandragupta Maurya","Harsha","Samudragupta"],
-c:1
+q: "Who founded the Maurya Empire?",
+options: [
+"Ashoka",
+"Chandragupta Maurya",
+"Bindusara",
+"Harsha"
+],
+correct: 1
 },
 
 {
-q:"Which Indian state has the longest coastline?",
-a:["Maharashtra","Tamil Nadu","Gujarat","Odisha"],
-c:2
+q: "Which Indian state has the longest coastline?",
+options: [
+"Maharashtra",
+"Odisha",
+"Gujarat",
+"Kerala"
+],
+correct: 2
 },
 
 {
-q:"Who is the constitutional head of the Union of India?",
-a:["Prime Minister","President","Chief Justice of India","Home Minister"],
-c:1
+q: "Who is the constitutional head of the Union Government of India?",
+options: [
+"Prime Minister",
+"President",
+"Chief Justice",
+"Home Minister"
+],
+correct: 1
 },
 
 {
-q:"Which gas is most abundant in Earth's atmosphere?",
-a:["Oxygen","Carbon dioxide","Nitrogen","Hydrogen"],
-c:2
+q: "Which gas is most abundant in Earth's atmosphere?",
+options: [
+"Oxygen",
+"Carbon Dioxide",
+"Nitrogen",
+"Hydrogen"
+],
+correct: 2
 },
 
 {
-q:"Which institution is the central bank of India?",
-a:["SBI","RBI","NABARD","SEBI"],
-c:1
+q: "Which is the central bank of India?",
+options: [
+"SBI",
+"RBI",
+"SEBI",
+"NABARD"
+],
+correct: 1
 },
 
 {
-q:"Which device is commonly used to enter text into a computer?",
-a:["Monitor","Keyboard","Speaker","Printer"],
-c:1
+q: "Which device is mainly used to enter text into a computer?",
+options: [
+"Monitor",
+"Keyboard",
+"Printer",
+"Speaker"
+],
+correct: 1
 },
 
 {
-q:"Choose the antonym of Ancient.",
-a:["Old","Modern","Historic","Former"],
-c:1
+q: "Choose the antonym of 'Ancient'.",
+options: [
+"Old",
+"Modern",
+"Historic",
+"Past"
+],
+correct: 1
 },
 
 {
-q:"What is 40 ÷ 5?",
-a:["5","6","8","10"],
-c:2
+q: "What is 40 ÷ 5?",
+options: [
+"6",
+"7",
+"8",
+"9"
+],
+correct: 2
 },
 
 {
-q:"Find the odd one out.",
-a:["Apple","Mango","Carrot","Banana"],
-c:2
+q: "Which is the odd one out?",
+options: [
+"Apple",
+"Mango",
+"Carrot",
+"Banana"
+],
+correct: 2
 },
 
 {
-q:"What is the full form of IRCTC?",
-a:[
+q: "What does IRCTC stand for?",
+options: [
 "Indian Railway Catering and Tourism Corporation",
-"Indian Railway Cargo and Travel Corporation",
-"Indian Railway Central Ticket Corporation",
+"Indian Rail Cargo and Travel Company",
+"Indian Railway Central Tourism Corporation",
 "Indian Railway Catering and Transport Company"
 ],
-c:0
+correct: 0
 },
 
 {
-q:"Who was the first Mughal emperor of India?",
-a:["Akbar","Babur","Humayun","Shah Jahan"],
-c:1
+q: "Who was the first Mughal emperor?",
+options: [
+"Akbar",
+"Babur",
+"Humayun",
+"Shah Jahan"
+],
+correct: 1
 },
 
 {
-q:"Which is the highest mountain peak in the world?",
-a:["K2","Mount Everest","Kanchenjunga","Nanda Devi"],
-c:1
+q: "Which is the highest mountain in the world?",
+options: [
+"K2",
+"Mount Everest",
+"Kangchenjunga",
+"Makalu"
+],
+correct: 1
 },
 
 {
-q:"Fundamental Duties are mentioned in which part of the Indian Constitution?",
-a:["Part III","Part IV","Part IV-A","Part V"],
-c:2
+q: "Fundamental Duties are mentioned in which part of the Constitution?",
+options: [
+"Part III",
+"Part IV",
+"Part IV-A",
+"Part V"
+],
+correct: 2
 },
 
 {
-q:"Which organ pumps blood throughout the human body?",
-a:["Brain","Liver","Heart","Kidney"],
-c:2
+q: "Which organ pumps blood throughout the human body?",
+options: [
+"Lungs",
+"Brain",
+"Heart",
+"Kidney"
+],
+correct: 2
 },
 
 {
-q:"What does ATM stand for?",
-a:["Automatic Transfer Machine","Automated Teller Machine","Automated Transfer Money","Account Teller Machine"],
-c:1
+q: "What does ATM stand for?",
+options: [
+"Automatic Transfer Machine",
+"Automated Teller Machine",
+"Any Time Money",
+"Automated Transaction Method"
+],
+correct: 1
 },
 
 {
-q:"Which shortcut is commonly used to copy selected text?",
-a:["Ctrl + X","Ctrl + C","Ctrl + V","Ctrl + Z"],
-c:1
+q: "Which keyboard shortcut is used for Copy?",
+options: [
+"Ctrl + X",
+"Ctrl + C",
+"Ctrl + V",
+"Ctrl + Z"
+],
+correct: 1
 },
 
 {
-q:"Choose the correct spelling.",
-a:["Goverment","Government","Govermentt","Governmant"],
-c:1
+q: "Choose the correctly spelled word.",
+options: [
+"Govarnment",
+"Government",
+"Governmant",
+"Govornment"
+],
+correct: 1
 },
 
 {
-q:"What is the average of 10 and 20?",
-a:["10","12","15","20"],
-c:2
+q: "What is the average of 10 and 20?",
+options: [
+"10",
+"12",
+"15",
+"20"
+],
+correct: 2
 },
 
 {
-q:"If CAT is coded as DBU, how is DOG coded?",
-a:["EPH","FPH","EOG","DPH"],
-c:0
+q: "If CAT is coded as DBU, how is DOG coded?",
+options: [
+"EPH",
+"EPG",
+"FOH",
+"DPG"
+],
+correct: 0
 },
 
 {
-q:"What does PNR commonly stand for in railway ticketing?",
-a:["Passenger Name Record","Passenger Number Register","Public Name Record","Passenger National Reservation"],
-c:0
+q: "What does PNR stand for in Indian Railways?",
+options: [
+"Passenger Name Record",
+"Passenger Number Register",
+"Personal Name Record",
+"Passenger National Record"
+],
+correct: 0
 }
 
 ];
 
 
-/* =====================================================
-   CREATE QUESTIONS
-===================================================== */
+const questionsContainer =
+document.getElementById("questionsContainer");
 
-const questionBox =
-document.getElementById("questions");
 
-questions.forEach(function(item,index){
+/* CREATE QUESTIONS */
 
-    let html = "";
+questions.forEach(function(item, index) {
 
-    html += '<div class="question">';
+    let html = `
+        <div class="question">
 
-    html += '<h3>' +
-        (index + 1) +
-        '. ' +
-        item.q +
-        '</h3>';
+            <h3>
+                ${index + 1}. ${item.q}
+            </h3>
+    `;
 
-    item.a.forEach(function(option,optionIndex){
+    item.options.forEach(function(option, optionIndex) {
 
-        html +=
-        '<label class="option">' +
+        html += `
+            <label class="option">
 
-        '<input type="radio" ' +
+                <input
+                    type="radio"
+                    name="q${index}"
+                    value="${optionIndex}"
+                >
 
-        'name="q' +
-        index +
-        '" ' +
+                ${option}
 
-        'value="' +
-        optionIndex +
-        '">' +
-
-        ' ' +
-
-        String.fromCharCode(65 + optionIndex) +
-
-        '. ' +
-
-        option +
-
-        '</label>';
+            </label>
+        `;
 
     });
 
-    html += '</div>';
+    html += `</div>`;
 
-    questionBox.innerHTML += html;
+    questionsContainer.innerHTML += html;
 
 });
 
 
-/* =====================================================
-   SEND SCORE TO GOOGLE SHEETS
-===================================================== */
+/* SEND SCORE TO GOOGLE SHEETS */
 
-function sendScoreToGoogle(name, score, percentage) {
+function sendScoreToGoogle(
+    name,
+    score,
+    percentage
+) {
 
-    const data = {
-
-        name: name,
-
-        score: score,
-
-        percentage: Number(percentage)
-
-    };
-
-
-    /*
-       no-cors is used because Google Apps Script
-       may not return normal browser CORS headers.
-
-       The POST request is still sent to the Apps Script.
-    */
-
-    fetch(
+    return fetch(
         GOOGLE_SCRIPT_URL,
         {
             method: "POST",
             mode: "no-cors",
             headers: {
-                "Content-Type": "text/plain;charset=utf-8"
+                "Content-Type":
+                "text/plain;charset=utf-8"
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify({
+
+                name: name,
+
+                score: score,
+
+                percentage: percentage,
+
+                exam: "MCQ",
+
+                total: 30
+
+            })
         }
-    )
-    .then(function(){
-
-        document.getElementById("submitStatus")
-        .textContent =
-        "✅ Score submitted to the leaderboard.";
-
-    })
-    .catch(function(error){
-
-        console.log("Score submission error:", error);
-
-        document.getElementById("submitStatus")
-        .textContent =
-        "⚠️ Result calculated, but score submission needs to be checked.";
-
-    });
+    );
 
 }
 
 
-/* =====================================================
-   SUBMIT TEST
-===================================================== */
+/* SUBMIT TEST */
 
-document.getElementById("mcqForm")
-.addEventListener("submit", function(event){
+document
+.getElementById("mcqForm")
+.addEventListener(
+    "submit",
+    function(event) {
 
-    event.preventDefault();
-
-
-    /* NAME */
-
-    const name =
-        document.getElementById("studentName")
-        .value
-        .trim();
+        event.preventDefault();
 
 
-    if(name === ""){
-
-        alert("Please enter your name first.");
-
-        document.getElementById("studentName").focus();
-
-        return;
-
-    }
+        const nameInput =
+        document.getElementById("studentName");
 
 
-    /* DISABLE BUTTON */
-
-    const submitBtn =
-        document.getElementById("submitBtn");
-
-    submitBtn.disabled = true;
-
-    submitBtn.textContent =
-        "Submitting...";
+        const name =
+        nameInput.value.trim();
 
 
-    let score = 0;
+        if (!name) {
 
-    let wrong = 0;
-
-    let unanswered = 0;
-
-    let reviewHTML = "";
-
-
-    /* CHECK QUESTIONS */
-
-    questions.forEach(function(item,index){
-
-        const selected =
-            document.querySelector(
-                'input[name="q' +
-                index +
-                '"]:checked'
+            alert(
+                "Please enter your name before submitting."
             );
 
+            nameInput.focus();
 
-        if(!selected){
-
-            unanswered++;
-
-            reviewHTML +=
-
-            '<div class="review-item unanswered">' +
-
-            '<strong>Question ' +
-            (index + 1) +
-            '</strong>' +
-
-            '<p>⭕ Not answered</p>' +
-
-            '<p>Correct answer: <strong>' +
-
-            String.fromCharCode(65 + item.c) +
-
-            '. ' +
-
-            item.a[item.c] +
-
-            '</strong></p>' +
-
-            '</div>';
-
+            return;
         }
 
-        else if(
-            Number(selected.value) === item.c
-        ){
 
-            score++;
-
-            reviewHTML +=
-
-            '<div class="review-item correct">' +
-
-            '<strong>Question ' +
-            (index + 1) +
-            '</strong>' +
-
-            '<p>✅ Correct</p>' +
-
-            '<p>Your answer: ' +
-
-            item.a[item.c] +
-
-            '</p>' +
-
-            '</div>';
-
-        }
-
-        else{
-
-            wrong++;
-
-            reviewHTML +=
-
-            '<div class="review-item wrong">' +
-
-            '<strong>Question ' +
-            (index + 1) +
-            '</strong>' +
-
-            '<p>❌ Wrong</p>' +
-
-            '<p>Your answer: ' +
-
-            item.a[Number(selected.value)] +
-
-            '</p>' +
-
-            '<p>Correct answer: <strong>' +
-
-            item.a[item.c] +
-
-            '</strong></p>' +
-
-            '</div>';
-
-        }
-
-    });
+        let score = 0;
+        let wrong = 0;
+        let unanswered = 0;
 
 
-    /* PERCENTAGE */
+        questions.forEach(
+            function(item, index) {
 
-    const percentage =
-        ((score / questions.length) * 100)
+                const selected =
+                document.querySelector(
+                    `input[name="q${index}"]:checked`
+                );
+
+
+                if (!selected) {
+
+                    unanswered++;
+
+                } else {
+
+                    const answer =
+                    Number(selected.value);
+
+
+                    if (
+                        answer === item.correct
+                    ) {
+
+                        score++;
+
+                    } else {
+
+                        wrong++;
+
+                    }
+
+                }
+
+            }
+        );
+
+
+        const total = questions.length;
+
+
+        const percentage =
+        ((score / total) * 100)
         .toFixed(2);
 
 
-    /* SHOW RESULT */
-
-    document.getElementById("resultName")
-        .textContent =
-        "Student: " + name;
-
-    document.getElementById("score")
-        .textContent =
-        score;
-
-    document.getElementById("correct")
-        .textContent =
-        score;
-
-    document.getElementById("wrong")
-        .textContent =
-        wrong;
-
-    document.getElementById("unanswered")
-        .textContent =
-        unanswered;
-
-    document.getElementById("percentage")
-        .textContent =
-        percentage + "%";
-
-    document.getElementById("review")
-        .innerHTML =
-        reviewHTML;
+        document.getElementById(
+            "scoreText"
+        ).textContent =
+        `Score: ${score} / ${total}`;
 
 
-    /* MESSAGE */
-
-    if(Number(percentage) >= 80){
-
-        document.getElementById("message")
-        .textContent =
-        "🎉 Excellent performance!";
-
-    }
-
-    else if(Number(percentage) >= 60){
-
-        document.getElementById("message")
-        .textContent =
-        "👍 Good performance! Keep practicing.";
-
-    }
-
-    else{
-
-        document.getElementById("message")
-        .textContent =
-        "📚 Keep studying and try again.";
-
-    }
+        document.getElementById(
+            "correctText"
+        ).textContent =
+        `Correct Answers: ${score}`;
 
 
-    /* SHOW RESULT */
-
-    document.getElementById("result")
-        .style.display =
-        "block";
-
-
-    /* SAVE LOCALLY */
-
-    const resultData = {
-
-        name: name,
-
-        score: score,
-
-        total: 30,
-
-        percentage: Number(percentage),
-
-        exam: "MCQ Practice",
-
-        date: new Date().toISOString()
-
-    };
+        document.getElementById(
+            "wrongText"
+        ).textContent =
+        `Wrong Answers: ${wrong}`;
 
 
-    localStorage.setItem(
-        "mcqLastResult",
-        JSON.stringify(resultData)
-    );
+        document.getElementById(
+            "unansweredText"
+        ).textContent =
+        `Unanswered: ${unanswered}`;
 
 
-    /* SEND TO GOOGLE SHEET */
+        document.getElementById(
+            "percentageText"
+        ).textContent =
+        `Percentage: ${percentage}%`;
 
-    document.getElementById("submitStatus")
-        .textContent =
+
+        const result =
+        document.getElementById("result");
+
+
+        result.style.display = "block";
+
+
+        document.getElementById(
+            "submissionStatus"
+        ).textContent =
         "⏳ Sending score to leaderboard...";
 
 
-    sendScoreToGoogle(
-        name,
-        score,
-        percentage
-    );
-
-
-    /* SCROLL */
-
-    document.getElementById("result")
-        .scrollIntoView({
+        result.scrollIntoView({
             behavior: "smooth"
         });
 
 
-    /* BUTTON */
+        /* SAVE LOCAL RESULT */
 
-    submitBtn.textContent =
+        localStorage.setItem(
+            "mcqLastResult",
+            JSON.stringify({
+
+                name: name,
+
+                score: score,
+
+                total: total,
+
+                percentage: percentage,
+
+                exam: "MCQ"
+
+            })
+        );
+
+
+        /* SEND TO GOOGLE */
+
+        sendScoreToGoogle(
+            name,
+            score,
+            percentage
+        )
+        .then(function() {
+
+            document.getElementById(
+                "submissionStatus"
+            ).textContent =
+            "✅ Score submitted to leaderboard.";
+
+        })
+        .catch(function(error) {
+
+            console.error(error);
+
+            document.getElementById(
+                "submissionStatus"
+            ).textContent =
+            "⚠️ Score saved locally. Please check your internet connection.";
+
+        });
+
+
+        /* REVIEW */
+
+        let reviewHTML = "";
+
+
+        questions.forEach(
+            function(item, index) {
+
+                const selected =
+                document.querySelector(
+                    `input[name="q${index}"]:checked`
+                );
+
+
+                let selectedText =
+                "Not answered";
+
+
+                let className =
+                "unanswered";
+
+
+                if (selected) {
+
+                    const selectedIndex =
+                    Number(selected.value);
+
+
+                    selectedText =
+                    item.options[selectedIndex];
+
+
+                    if (
+                        selectedIndex === item.correct
+                    ) {
+
+                        className =
+                        "correct";
+
+                    } else {
+
+                        className =
+                        "wrong";
+
+                    }
+
+                }
+
+
+                reviewHTML += `
+
+                    <div class="review-item ${className}">
+
+                        <strong>
+                            Q${index + 1}. ${item.q}
+                        </strong>
+
+                        <p>
+                            Your Answer:
+                            ${selectedText}
+                        </p>
+
+                        <p>
+                            Correct Answer:
+                            <strong>
+                                ${item.options[item.correct]}
+                            </strong>
+                        </p>
+
+                    </div>
+
+                `;
+
+            }
+        );
+
+
+        document.getElementById(
+            "reviewContainer"
+        ).innerHTML =
+        reviewHTML;
+
+
+        /* PREVENT SECOND SUBMISSION */
+
+        document.querySelector(
+            ".submit-btn"
+        ).disabled = true;
+
+        document.querySelector(
+            ".submit-btn"
+        ).textContent =
         "Test Submitted";
 
-});
-
+    }
+);
 
 </script>
 
