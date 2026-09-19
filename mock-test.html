@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,10 +8,9 @@
 <title>Mock Test | SSC & Banking</title>
 
 <meta name="description"
-content="Free SSC and Banking mock test with score submission and leaderboard.">
+content="Free SSC and Banking mock test with score submission, performance and leaderboard.">
 
 <style>
-
 * {
     box-sizing: border-box;
 }
@@ -255,9 +255,7 @@ footer {
     .submit-btn {
         width: 100%;
     }
-
 }
-
 </style>
 </head>
 
@@ -267,40 +265,27 @@ footer {
 
     <h1>SSC & Banking Exam Preparation</h1>
 
-    <p>Free Mock Test • Practice • Score • Leaderboard</p>
+    <p>Free Mock Test • Practice • Score • Performance • Leaderboard</p>
 
 </header>
-
 
 <nav>
 
     <a href="index.html">Home</a>
-
     <a href="ssc.html">SSC</a>
-
     <a href="banking.html">Banking</a>
-
     <a href="railway.html">Railway</a>
-
     <a href="notes.html">Notes</a>
-
     <a href="mcq.html">MCQ</a>
-
     <a href="current-affairs.html">Current Affairs</a>
-
     <a href="daily-quiz.html">Daily Quiz</a>
-
     <a href="mock-test.html">Mock Test</a>
-
+    <a href="performance.html">Performance</a>
     <a href="leaderboard.html">Leaderboard</a>
 
 </nav>
 
-
 <div class="container">
-
-
-    <!-- INTRO -->
 
     <div class="card">
 
@@ -321,8 +306,6 @@ footer {
     </div>
 
 
-    <!-- NAME -->
-
     <div class="card">
 
         <h2>👤 Enter Your Name</h2>
@@ -336,8 +319,6 @@ footer {
 
     </div>
 
-
-    <!-- QUESTIONS -->
 
     <form id="mockTestForm">
 
@@ -358,8 +339,6 @@ footer {
     </form>
 
 
-    <!-- RESULT -->
-
     <div id="result" class="card">
 
         <h2>🎉 Your Result</h2>
@@ -367,60 +346,43 @@ footer {
         <h3 id="resultName"></h3>
 
         <div class="score">
-
             <span id="score">0</span> / 50
-
         </div>
-
 
         <div class="stats">
 
             <div class="stat">
-
                 <strong id="correct">0</strong>
-
                 Correct
-
             </div>
 
-
             <div class="stat">
-
                 <strong id="wrong">0</strong>
-
                 Wrong
-
             </div>
 
-
             <div class="stat">
-
                 <strong id="unanswered">0</strong>
-
                 Unanswered
-
             </div>
 
-
             <div class="stat">
-
                 <strong id="percentage">0%</strong>
-
                 Percentage
-
             </div>
 
         </div>
-
 
         <p id="message"></p>
 
         <p id="submissionStatus"></p>
 
 
-        <!-- LINKS -->
-
         <div class="links">
+
+            <a href="performance.html">
+                📊 View Performance
+            </a>
 
             <a href="leaderboard.html">
                 🏆 View Leaderboard
@@ -437,8 +399,6 @@ footer {
         </div>
 
 
-        <!-- REVIEW -->
-
         <div class="review">
 
             <h2>📖 Answer Review</h2>
@@ -451,7 +411,6 @@ footer {
 
 </div>
 
-
 <footer>
 
     <p>
@@ -462,7 +421,6 @@ footer {
 
 
 <script>
-
 
 /* ==================================================
    GOOGLE APPS SCRIPT URL
@@ -1038,7 +996,6 @@ a: [
 ],
 c: 2
 }
-
 ];
 
 
@@ -1049,44 +1006,30 @@ c: 2
 const questionBox =
 document.getElementById("questions");
 
-
 questions.forEach(function(item, index) {
 
     let html = `
-
         <div class="question">
-
-            <h3>
-                ${index + 1}. ${item.q}
-            </h3>
-
+            <h3>${index + 1}. ${item.q}</h3>
     `;
-
 
     item.a.forEach(function(option, optionIndex) {
 
         html += `
-
             <label class="option">
-
                 <input
                     type="radio"
                     name="q${index}"
                     value="${optionIndex}"
                 >
-
                 ${String.fromCharCode(65 + optionIndex)}.
                 ${option}
-
             </label>
-
         `;
 
     });
 
-
     html += `</div>`;
-
 
     questionBox.innerHTML += html;
 
@@ -1097,11 +1040,7 @@ questions.forEach(function(item, index) {
    SEND SCORE TO GOOGLE SHEETS
 ================================================== */
 
-function sendScoreToGoogle(
-    name,
-    score,
-    percentage
-) {
+function sendScoreToGoogle(name, score, percentage) {
 
     return fetch(
         GOOGLE_SCRIPT_URL,
@@ -1117,20 +1056,14 @@ function sendScoreToGoogle(
             body: JSON.stringify({
 
                 name: name,
-
                 score: score,
-
                 percentage: percentage,
-
                 exam: "Mock Test",
-
                 total: 50
 
             })
-
         }
     );
-
 }
 
 
@@ -1140,385 +1073,368 @@ function sendScoreToGoogle(
 
 document
 .getElementById("mockTestForm")
-.addEventListener(
-    "submit",
-    function(event) {
+.addEventListener("submit", function(event) {
 
-        event.preventDefault();
+    event.preventDefault();
 
+    const nameInput =
+    document.getElementById("studentName");
 
-        const nameInput =
-        document.getElementById("studentName");
+    const name =
+    nameInput.value.trim();
 
+    if (!name) {
 
-        const name =
-        nameInput.value.trim();
+        alert("Please enter your name first.");
 
+        nameInput.focus();
 
-        if (!name) {
-
-            alert(
-                "Please enter your name first."
-            );
-
-            nameInput.focus();
-
-            return;
-
-        }
+        return;
+    }
 
 
-        let score = 0;
-
-        let wrong = 0;
-
-        let unanswered = 0;
+    let score = 0;
+    let wrong = 0;
+    let unanswered = 0;
 
 
-        questions.forEach(
-            function(item, index) {
+    questions.forEach(function(item, index) {
 
-                const selected =
-                document.querySelector(
-                    `input[name="q${index}"]:checked`
-                );
-
-
-                if (!selected) {
-
-                    unanswered++;
-
-                }
-
-                else {
-
-                    const answer =
-                    Number(selected.value);
-
-
-                    if (
-                        answer === item.c
-                    ) {
-
-                        score++;
-
-                    }
-
-                    else {
-
-                        wrong++;
-
-                    }
-
-                }
-
-            }
+        const selected =
+        document.querySelector(
+            `input[name="q${index}"]:checked`
         );
 
+        if (!selected) {
 
-        const total = questions.length;
+            unanswered++;
 
+        } else {
 
-        const percentage =
-        ((score / total) * 100)
-        .toFixed(2);
+            const answer =
+            Number(selected.value);
 
+            if (answer === item.c) {
 
-        /* SHOW RESULT */
+                score++;
 
-        document.getElementById(
-            "resultName"
-        ).textContent =
-        "Student: " + name;
+            } else {
 
-
-        document.getElementById(
-            "score"
-        ).textContent =
-        score;
-
-
-        document.getElementById(
-            "correct"
-        ).textContent =
-        score;
-
-
-        document.getElementById(
-            "wrong"
-        ).textContent =
-        wrong;
-
-
-        document.getElementById(
-            "unanswered"
-        ).textContent =
-        unanswered;
-
-
-        document.getElementById(
-            "percentage"
-        ).textContent =
-        percentage + "%";
-
-
-        if (Number(percentage) >= 80) {
-
-            document.getElementById(
-                "message"
-            ).textContent =
-            "🎉 Excellent performance!";
-
-        }
-
-        else if (Number(percentage) >= 60) {
-
-            document.getElementById(
-                "message"
-            ).textContent =
-            "👍 Good performance! Keep practicing.";
-
-        }
-
-        else {
-
-            document.getElementById(
-                "message"
-            ).textContent =
-            "📚 Keep studying and try again.";
-
-        }
-
-
-        /* REVIEW */
-
-        let reviewHTML = "";
-
-
-        questions.forEach(
-            function(item, index) {
-
-                const selected =
-                document.querySelector(
-                    `input[name="q${index}"]:checked`
-                );
-
-
-                if (!selected) {
-
-                    reviewHTML += `
-
-                        <div class="review-item unanswered">
-
-                            <strong>
-                                Question ${index + 1}
-                            </strong>
-
-                            <p>
-                                ⭕ Not answered
-                            </p>
-
-                            <p>
-                                Correct Answer:
-                                <strong>
-                                    ${item.a[item.c]}
-                                </strong>
-                            </p>
-
-                        </div>
-
-                    `;
-
-                    return;
-
-                }
-
-
-                const selectedIndex =
-                Number(selected.value);
-
-
-                if (
-                    selectedIndex === item.c
-                ) {
-
-                    reviewHTML += `
-
-                        <div class="review-item correct">
-
-                            <strong>
-                                Question ${index + 1}
-                            </strong>
-
-                            <p>✅ Correct</p>
-
-                            <p>
-                                Your Answer:
-                                ${item.a[selectedIndex]}
-                            </p>
-
-                        </div>
-
-                    `;
-
-                }
-
-                else {
-
-                    reviewHTML += `
-
-                        <div class="review-item wrong">
-
-                            <strong>
-                                Question ${index + 1}
-                            </strong>
-
-                            <p>❌ Wrong</p>
-
-                            <p>
-                                Your Answer:
-                                ${item.a[selectedIndex]}
-                            </p>
-
-                            <p>
-                                Correct Answer:
-                                <strong>
-                                    ${item.a[item.c]}
-                                </strong>
-                            </p>
-
-                        </div>
-
-                    `;
-
-                }
+                wrong++;
 
             }
-        );
+        }
+
+    });
 
 
-        document.getElementById(
-            "review"
-        ).innerHTML =
-        reviewHTML;
+    const total =
+    questions.length;
 
 
-        /* SHOW RESULT */
-
-        document.getElementById(
-            "result"
-        ).style.display =
-        "block";
+    const percentage =
+    ((score / total) * 100).toFixed(2);
 
 
-        /* SAVE LOCAL RESULT */
+    /* ==============================================
+       SHOW RESULT
+    ============================================== */
 
-        const resultData = {
+    document.getElementById("resultName")
+    .textContent =
+    "Student: " + name;
+
+
+    document.getElementById("score")
+    .textContent =
+    score;
+
+
+    document.getElementById("correct")
+    .textContent =
+    score;
+
+
+    document.getElementById("wrong")
+    .textContent =
+    wrong;
+
+
+    document.getElementById("unanswered")
+    .textContent =
+    unanswered;
+
+
+    document.getElementById("percentage")
+    .textContent =
+    percentage + "%";
+
+
+    if (Number(percentage) >= 80) {
+
+        document.getElementById("message")
+        .textContent =
+        "🎉 Excellent performance!";
+
+    }
+
+    else if (Number(percentage) >= 60) {
+
+        document.getElementById("message")
+        .textContent =
+        "👍 Good performance! Keep practicing.";
+
+    }
+
+    else {
+
+        document.getElementById("message")
+        .textContent =
+        "📚 Keep studying and try again.";
+
+    }
+
+
+    /* ==============================================
+       SAVE RESULT FOR PERFORMANCE PAGE
+    ============================================== */
+
+    localStorage.setItem(
+        "mockTestName",
+        name
+    );
+
+    localStorage.setItem(
+        "mockTestScore",
+        score
+    );
+
+    localStorage.setItem(
+        "mockTestPercentage",
+        percentage
+    );
+
+
+    /* ==============================================
+       SAVE COMPLETE RESULT
+    ============================================== */
+
+    const resultData = {
+
+        name: name,
+        score: score,
+        total: total,
+        percentage: percentage,
+        exam: "Mock Test",
+        date: new Date().toISOString()
+
+    };
+
+
+    localStorage.setItem(
+        "mockTestLastResult",
+        JSON.stringify(resultData)
+    );
+
+
+    localStorage.setItem(
+        "examPrepCurrentUser",
+        JSON.stringify({
+
+            id:
+            "local-" +
+            name.toLowerCase()
+            .replace(/\s+/g, "-"),
 
             name: name,
-
             score: score,
-
             total: total,
-
             percentage: percentage,
-
             exam: "Mock Test"
 
-        };
+        })
+    );
 
 
-        localStorage.setItem(
-            "mockTestLastResult",
-            JSON.stringify(resultData)
+    /* ==============================================
+       ANSWER REVIEW
+    ============================================== */
+
+    let reviewHTML = "";
+
+
+    questions.forEach(function(item, index) {
+
+        const selected =
+        document.querySelector(
+            `input[name="q${index}"]:checked`
         );
 
 
-        /* SAVE CURRENT USER */
+        if (!selected) {
 
-        localStorage.setItem(
-            "examPrepCurrentUser",
-            JSON.stringify({
+            reviewHTML += `
 
-                id:
-                "local-" +
-                name.toLowerCase()
-                .replace(/\s+/g, "-"),
+                <div class="review-item unanswered">
 
-                name: name,
+                    <strong>
+                        Question ${index + 1}
+                    </strong>
 
-                score: score,
+                    <p>⭕ Not answered</p>
 
-                total: total,
+                    <p>
+                        Correct Answer:
+                        <strong>
+                            ${item.a[item.c]}
+                        </strong>
+                    </p>
 
-                percentage: percentage,
+                </div>
 
-                exam: "Mock Test"
+            `;
 
-            })
-        );
+            return;
+        }
 
 
-        /* SEND TO GOOGLE */
+        const selectedIndex =
+        Number(selected.value);
+
+
+        if (selectedIndex === item.c) {
+
+            reviewHTML += `
+
+                <div class="review-item correct">
+
+                    <strong>
+                        Question ${index + 1}
+                    </strong>
+
+                    <p>✅ Correct</p>
+
+                    <p>
+                        Your Answer:
+                        ${item.a[selectedIndex]}
+                    </p>
+
+                </div>
+
+            `;
+
+        } else {
+
+            reviewHTML += `
+
+                <div class="review-item wrong">
+
+                    <strong>
+                        Question ${index + 1}
+                    </strong>
+
+                    <p>❌ Wrong</p>
+
+                    <p>
+                        Your Answer:
+                        ${item.a[selectedIndex]}
+                    </p>
+
+                    <p>
+                        Correct Answer:
+                        <strong>
+                            ${item.a[item.c]}
+                        </strong>
+                    </p>
+
+                </div>
+
+            `;
+
+        }
+
+    });
+
+
+    document.getElementById("review")
+    .innerHTML =
+    reviewHTML;
+
+
+    /* ==============================================
+       SHOW RESULT
+    ============================================== */
+
+    document.getElementById("result")
+    .style.display =
+    "block";
+
+
+    /* ==============================================
+       SEND SCORE TO GOOGLE SHEETS
+    ============================================== */
+
+    document.getElementById(
+        "submissionStatus"
+    ).textContent =
+    "⏳ Sending score to leaderboard...";
+
+
+    sendScoreToGoogle(
+        name,
+        score,
+        percentage
+    )
+
+    .then(function() {
 
         document.getElementById(
             "submissionStatus"
         ).textContent =
-        "⏳ Sending score to leaderboard...";
+        "✅ Score submitted to leaderboard.";
 
+    })
 
-        sendScoreToGoogle(
-            name,
-            score,
-            percentage
-        )
-        .then(function() {
+    .catch(function(error) {
 
-            document.getElementById(
-                "submissionStatus"
-            ).textContent =
-            "✅ Score submitted to leaderboard.";
-
-        })
-        .catch(function(error) {
-
-            console.error(error);
-
-            document.getElementById(
-                "submissionStatus"
-            ).textContent =
-            "⚠️ Score saved locally. Please check your internet connection.";
-
-        });
-
-
-        /* SCROLL TO RESULT */
+        console.error(error);
 
         document.getElementById(
-            "result"
-        ).scrollIntoView({
-            behavior: "smooth"
-        });
+            "submissionStatus"
+        ).textContent =
+        "⚠️ Score saved locally. Please check your internet connection.";
+
+    });
 
 
-        /* DISABLE SUBMIT */
+    /* ==============================================
+       SCROLL TO RESULT
+    ============================================== */
 
-        const submitButton =
-        document.getElementById(
-            "submitBtn"
-        );
+    document.getElementById("result")
+    .scrollIntoView({
+        behavior: "smooth"
+    });
 
 
-        submitButton.disabled = true;
+    /* ==============================================
+       DISABLE SUBMIT BUTTON
+    ============================================== */
+
+    const submitButton =
+    document.getElementById("submitBtn");
 
 
-        submitButton.textContent =
-        "Test Submitted";
+    submitButton.disabled = true;
 
-    }
-);
+
+    submitButton.textContent =
+    "Test Submitted";
+
+});
 
 </script>
 
 </body>
 </html>
+```
