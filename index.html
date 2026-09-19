@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Govt Exam Preparation - SSC, Banking & Railway</title>
+<title>Govt Exam Preparation - SSC & Banking</title>
 
 <meta name="description"
-content="Free government exam preparation for SSC, Banking and Railway exams. Study notes, MCQs, current affairs, daily quiz and mock tests.">
+content="Free government exam preparation for SSC and Banking exams with study notes, MCQs, current affairs, mock tests and performance tracking.">
 
 <style>
-
 * {
     box-sizing: border-box;
 }
@@ -25,41 +21,34 @@ body {
     color: #222;
 }
 
-/* HEADER */
-
 header {
     background: #173b75;
     color: white;
     text-align: center;
-    padding: 40px 15px;
+    padding: 35px 15px;
 }
 
 header h1 {
     margin: 0;
-    font-size: 36px;
+    font-size: 34px;
 }
 
 header p {
     margin: 10px 0 0;
-    font-size: 18px;
+    font-size: 17px;
 }
-
-/* NAVIGATION */
 
 nav {
     background: #0d2852;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 5px;
-    padding: 10px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    padding: 9px 13px;
-    border-radius: 5px;
+    padding: 13px 15px;
     font-size: 14px;
 }
 
@@ -67,53 +56,66 @@ nav a:hover {
     background: #173b75;
 }
 
-/* CONTAINER */
-
 .container {
     max-width: 1100px;
-    margin: auto;
-    padding: 30px 15px;
+    margin: 30px auto;
+    padding: 0 15px;
 }
-
-/* HERO */
 
 .hero {
     background: white;
     text-align: center;
-    padding: 40px 20px;
+    padding: 35px 20px;
     border-radius: 12px;
+    margin-bottom: 25px;
     box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-    margin-bottom: 30px;
 }
 
 .hero h2 {
     color: #173b75;
-    font-size: 30px;
+    font-size: 28px;
     margin-top: 0;
 }
 
 .hero p {
     color: #555;
-    font-size: 17px;
+    font-size: 16px;
     line-height: 1.6;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
 }
 
 .btn {
     display: inline-block;
+    text-decoration: none;
     background: #173b75;
     color: white;
-    text-decoration: none;
-    padding: 13px 22px;
+    padding: 13px 20px;
     border-radius: 7px;
-    margin: 8px;
     font-weight: bold;
 }
 
 .btn:hover {
-    opacity: 0.9;
+    background: #0d2852;
 }
 
-/* SECTION */
+.btn.green {
+    background: #198754;
+}
+
+.btn.orange {
+    background: #f39c12;
+}
+
+.btn.red {
+    background: #dc3545;
+}
 
 .section-title {
     text-align: center;
@@ -121,20 +123,17 @@ nav a:hover {
     margin: 35px 0 20px;
 }
 
-/* CARDS */
-
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 18px;
 }
 
 .card {
     background: white;
-    padding: 25px;
+    padding: 22px;
     border-radius: 12px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-    text-align: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
 }
 
 .card h3 {
@@ -143,83 +142,72 @@ nav a:hover {
 }
 
 .card p {
-    color: #555;
     line-height: 1.6;
+    color: #555;
 }
 
 .card a {
     display: inline-block;
     margin-top: 10px;
     color: #173b75;
-    text-decoration: none;
     font-weight: bold;
+    text-decoration: none;
 }
 
-.card a:hover {
-    text-decoration: underline;
+.mock-section {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-top: 25px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+    text-align: center;
 }
 
-/* FEATURES */
-
-.feature {
-    border-top: 4px solid #173b75;
+.mock-section h2 {
+    color: #173b75;
 }
 
-/* QUICK ACCESS */
+.mock-card {
+    display: inline-block;
+    width: 42%;
+    min-width: 280px;
+    vertical-align: top;
+    margin: 10px;
+    padding: 22px;
+    background: #f5f7fb;
+    border-radius: 10px;
+}
 
-.quick-links {
+.mock-card h3 {
+    color: #173b75;
+}
+
+.features {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
+    margin-top: 20px;
 }
 
-.quick-links a {
+.feature {
     background: white;
-    color: #173b75;
-    text-decoration: none;
-    padding: 20px 10px;
+    padding: 20px;
     text-align: center;
     border-radius: 10px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
-    font-weight: bold;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
 }
 
-.quick-links a:hover {
-    background: #eef3fb;
+.feature-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
 }
 
-/* CTA */
-
-.cta {
+footer {
     background: #173b75;
     color: white;
     text-align: center;
-    padding: 35px 20px;
-    border-radius: 12px;
-    margin-top: 35px;
-}
-
-.cta h2 {
-    margin-top: 0;
-}
-
-.cta p {
-    line-height: 1.6;
-}
-
-.cta .btn {
-    background: white;
-    color: #173b75;
-}
-
-/* FOOTER */
-
-footer {
-    background: #0d2852;
-    color: white;
-    text-align: center;
     padding: 25px 15px;
-    margin-top: 40px;
+    margin-top: 45px;
 }
 
 footer a {
@@ -228,504 +216,357 @@ footer a {
     margin: 0 8px;
 }
 
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* MOBILE */
-
 @media (max-width: 800px) {
 
     .grid {
-        grid-template-columns: 1fr;
-    }
-
-    .quick-links {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 600px) {
 
     header h1 {
-        font-size: 28px;
-    }
-
-    header p {
-        font-size: 16px;
-    }
-
-    .hero h2 {
         font-size: 25px;
     }
 
-    .container {
-        padding: 20px 10px;
+    header p {
+        font-size: 14px;
     }
 
-    .quick-links {
+    nav a {
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+
+    .grid {
         grid-template-columns: 1fr;
     }
 
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .mock-card {
+        width: 100%;
+        min-width: 0;
+        margin: 10px 0;
+    }
+
+    .hero h2 {
+        font-size: 23px;
+    }
 }
-
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- HEADER -->
-
 <header>
-
-<h1>Govt Exam Preparation</h1>
-
-<p>Free Preparation for SSC, Banking & Railway Exams</p>
-
+    <h1>Govt Exam Preparation</h1>
+    <p>Free SSC & Banking Exam Preparation</p>
 </header>
 
-
-<!-- NAVIGATION -->
-
 <nav>
-
-<a href="index.html">Home</a>
-
-<a href="ssc.html">SSC</a>
-
-<a href="banking.html">Banking</a>
-
-<a href="railway.html">Railway</a>
-
-<a href="notes.html">Study Material</a>
-
-<a href="mcq.html">MCQ</a>
-
-<a href="current-affairs.html">Current Affairs</a>
-
-<a href="daily-quiz.html">Daily Quiz</a>
-
-<a href="mock-test.html">Mock Test</a>
-
-<a href="leaderboard.html">Leaderboard</a>
-
-<a href="about.html">About</a>
-
-<a href="contact.html">Contact</a>
-
+    <a href="index.html">Home</a>
+    <a href="ssc.html">SSC</a>
+    <a href="banking.html">Banking</a>
+    <a href="railway.html">Railway</a>
+    <a href="notes.html">Notes</a>
+    <a href="mcq.html">MCQ</a>
+    <a href="current-affairs.html">Current Affairs</a>
+    <a href="mock-test.html">Mock Test 1</a>
+    <a href="mock-test-2.html">Mock Test 2</a>
+    <a href="performance.html">Performance</a>
+    <a href="leaderboard.html">Leaderboard</a>
 </nav>
 
 
-<main class="container">
+<div class="container">
+
+    <section class="hero">
+
+        <h2>Welcome to Govt Exam Preparation</h2>
+
+        <p>
+            Prepare for SSC, Banking and Railway examinations
+            with free study material, MCQs, current affairs,
+            mock tests and performance tracking.
+        </p>
+
+        <div class="buttons">
+
+            <a class="btn" href="ssc.html">
+                📚 SSC Preparation
+            </a>
+
+            <a class="btn" href="banking.html">
+                🏦 Banking Preparation
+            </a>
+
+            <a class="btn green" href="mock-test.html">
+                📝 Start Mock Test
+            </a>
+
+        </div>
+
+    </section>
 
 
-<!-- HERO -->
+    <h2 class="section-title">
+        📖 Study Material
+    </h2>
 
-<section class="hero">
+    <div class="grid">
 
-<h2>Prepare for Government Exams for FREE</h2>
+        <div class="card">
+            <h3>🏛️ History</h3>
+            <p>
+                Ancient History, Medieval History, Modern History,
+                Mughal Empire and important historical topics.
+            </p>
+            <a href="study-material.html">View Study Material →</a>
+        </div>
 
-<p>
-Study important topics, practice MCQs, attempt daily quizzes,
-read current affairs and take mock tests for SSC, Banking and Railway exams.
-</p>
+        <div class="card">
+            <h3>🌍 Geography</h3>
+            <p>
+                Important geography notes and topics for
+                SSC and Banking examinations.
+            </p>
+            <a href="geography.html">Study Geography →</a>
+        </div>
 
-<a class="btn" href="mock-test.html">
-Start Mock Test
-</a>
+        <div class="card">
+            <h3>⚖️ Polity</h3>
+            <p>
+                Indian Constitution, Fundamental Rights,
+                Parliament and important polity topics.
+            </p>
+            <a href="polity.html">Study Polity →</a>
+        </div>
 
-<a class="btn" href="daily-quiz.html">
-Take Daily Quiz
-</a>
+        <div class="card">
+            <h3>💰 Indian Economy</h3>
+            <p>
+                Important economy concepts and banking-related
+                economic topics for competitive exams.
+            </p>
+            <a href="economics.html">Study Economy →</a>
+        </div>
 
-<a class="btn" href="notes.html">
-Study Material
-</a>
+        <div class="card">
+            <h3>🔬 General Science</h3>
+            <p>
+                Physics, Chemistry, Biology and important
+                science questions for competitive exams.
+            </p>
+            <a href="general-science.html">Study Science →</a>
+        </div>
 
-</section>
+        <div class="card">
+            <h3>💻 Computer Awareness</h3>
+            <p>
+                Computer fundamentals, internet, hardware,
+                software and important computer questions.
+            </p>
+            <a href="computer-awareness.html">
+                Study Computer → 
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>🧠 Reasoning</h3>
+            <p>
+                Practice important reasoning concepts and
+                questions for SSC and Banking exams.
+            </p>
+            <a href="reasoning.html">Study Reasoning →</a>
+        </div>
+
+        <div class="card">
+            <h3>🔢 Quantitative Aptitude</h3>
+            <p>
+                Mathematics and quantitative aptitude topics
+                for competitive examinations.
+            </p>
+            <a href="quantitative-aptitude.html">
+                Study Quantitative Aptitude →
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>📖 English</h3>
+            <p>
+                English grammar, vocabulary and practice
+                material for SSC and Banking exams.
+            </p>
+            <a href="english.html">Study English →</a>
+        </div>
+
+    </div>
 
 
-<!-- EXAMS -->
-
-<h2 class="section-title">
-Choose Your Exam
-</h2>
+    <h2 class="section-title">
+        📝 Mock Tests
+    </h2>
 
 
-<div class="grid">
+    <section class="mock-section">
+
+        <h2>Practice Your Exam Skills</h2>
+
+        <p>
+            Take our free mock tests and check your score,
+            percentage and performance.
+        </p>
 
 
-<div class="card">
+        <div class="mock-card">
 
-<h3>SSC Exams</h3>
+            <h3>📝 Mock Test 1</h3>
 
-<p>
-Prepare for SSC CGL, CHSL, MTS, GD and other SSC examinations
-with notes, MCQs and mock tests.
-</p>
+            <p>
+                50 questions covering SSC & Banking topics.
+            </p>
 
-<a href="ssc.html">
-Start SSC Preparation →
-</a>
+            <a class="btn green" href="mock-test.html">
+                Start Mock Test 1
+            </a>
+
+        </div>
+
+
+        <div class="mock-card">
+
+            <h3>📝 Mock Test 2</h3>
+
+            <p>
+                50 new SSC & Banking practice questions.
+            </p>
+
+            <a class="btn orange" href="mock-test-2.html">
+                Start Mock Test 2
+            </a>
+
+        </div>
+
+
+        <div class="buttons">
+
+            <a class="btn" href="performance.html">
+                📊 View Performance
+            </a>
+
+            <a class="btn red" href="leaderboard.html">
+                🏆 View Leaderboard
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <h2 class="section-title">
+        🎯 What You Can Practice
+    </h2>
+
+
+    <div class="features">
+
+        <div class="feature">
+            <div class="feature-icon">📚</div>
+            <strong>Study Notes</strong>
+            <p>Important exam topics</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">❓</div>
+            <strong>MCQs</strong>
+            <p>Practice questions</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">📰</div>
+            <strong>Current Affairs</strong>
+            <p>Important updates</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">🏆</div>
+            <strong>Leaderboard</strong>
+            <p>Check your ranking</p>
+        </div>
+
+    </div>
+
+
+    <h2 class="section-title">
+        🔗 Quick Links
+    </h2>
+
+
+    <div class="card">
+
+        <div class="buttons">
+
+            <a class="btn" href="study-material.html">
+                📚 Study Material
+            </a>
+
+            <a class="btn" href="mcq.html">
+                ❓ MCQ Practice
+            </a>
+
+            <a class="btn" href="current-affairs.html">
+                📰 Current Affairs
+            </a>
+
+            <a class="btn" href="daily-quiz.html">
+                🎯 Daily Quiz
+            </a>
+
+            <a class="btn" href="mock-test.html">
+                📝 Mock Test 1
+            </a>
+
+            <a class="btn orange" href="mock-test-2.html">
+                📝 Mock Test 2
+            </a>
+
+            <a class="btn green" href="performance.html">
+                📊 Performance
+            </a>
+
+            <a class="btn red" href="leaderboard.html">
+                🏆 Leaderboard
+            </a>
+
+        </div>
+
+    </div>
 
 </div>
 
-
-<div class="card">
-
-<h3>Banking Exams</h3>
-
-<p>
-Prepare for IBPS, SBI, RBI and other banking examinations
-with useful study material and practice questions.
-</p>
-
-<a href="banking.html">
-Start Banking Preparation →
-</a>
-
-</div>
-
-
-<div class="card">
-
-<h3>Railway Exams</h3>
-
-<p>
-Prepare for RRB NTPC, Group D and other Railway examinations
-with important topics and practice material.
-</p>
-
-<a href="railway.html">
-Start Railway Preparation →
-</a>
-
-</div>
-
-
-</div>
-
-
-<!-- FEATURES -->
-
-<h2 class="section-title">
-What You Can Practice
-</h2>
-
-
-<div class="grid">
-
-
-<div class="card feature">
-
-<h3>📚 Study Notes</h3>
-
-<p>
-Read important notes for History, Geography, Polity,
-Economy, Science, Computer, Reasoning, English and more.
-</p>
-
-<a href="notes.html">
-View Study Material →
-</a>
-
-</div>
-
-
-<div class="card feature">
-
-<h3>📝 MCQ Practice</h3>
-
-<p>
-Practice multiple-choice questions designed for
-SSC, Banking and Railway examination preparation.
-</p>
-
-<a href="mcq.html">
-Practice MCQs →
-</a>
-
-</div>
-
-
-<div class="card feature">
-
-<h3>📰 Current Affairs</h3>
-
-<p>
-Stay updated with important current affairs and
-exam-relevant information.
-</p>
-
-<a href="current-affairs.html">
-Read Current Affairs →
-</a>
-
-</div>
-
-
-<div class="card feature">
-
-<h3>🎯 Daily Quiz</h3>
-
-<p>
-Test your knowledge every day with 10 questions
-and check your score instantly.
-</p>
-
-<a href="daily-quiz.html">
-Take Daily Quiz →
-</a>
-
-</div>
-
-
-<div class="card feature">
-
-<h3>⏱️ Mock Tests</h3>
-
-<p>
-Attempt a full mock test with a timer and check
-your score, percentage and performance.
-</p>
-
-<a href="mock-test.html">
-Start Mock Test →
-</a>
-
-</div>
-
-
-<div class="card feature">
-
-<h3>🏆 Leaderboard</h3>
-
-<p>
-Check your mock-test performance and compare
-your score on the leaderboard.
-</p>
-
-<a href="leaderboard.html">
-View Leaderboard →
-</a>
-
-</div>
-
-
-</div>
-
-
-<!-- POPULAR STUDY MATERIAL -->
-
-<h2 class="section-title">
-Popular Study Material
-</h2>
-
-
-<div class="grid">
-
-
-<div class="card">
-
-<h3>History</h3>
-
-<p>
-Ancient History, Medieval History, Mughal Empire,
-Akbar and Modern History.
-</p>
-
-<a href="notes.html">
-Study History →
-</a>
-
-</div>
-
-
-<div class="card">
-
-<h3>Geography</h3>
-
-<p>
-Important Indian and World Geography topics
-for competitive examinations.
-</p>
-
-<a href="geography.html">
-Study Geography →
-</a>
-
-</div>
-
-
-<div class="card">
-
-<h3>Indian Polity</h3>
-
-<p>
-Important Constitution, Articles, Parliament,
-President and other Polity topics.
-</p>
-
-<a href="polity.html">
-Study Polity →
-</a>
-
-</div>
-
-
-<div class="card">
-
-<h3>Indian Economy</h3>
-
-<p>
-Important economic concepts and topics
-for SSC and Banking examinations.
-</p>
-
-<a href="economics.html">
-Study Economy →
-</a>
-
-</div>
-
-
-<div class="card">
-
-<h3>General Science</h3>
-
-<p>
-Physics, Chemistry and Biology topics
-for competitive examination preparation.
-</p>
-
-<a href="general-science.html">
-Study Science →
-</a>
-
-</div>
-
-
-<div class="card">
-
-<h3>Computer Awareness</h3>
-
-<p>
-Important computer fundamentals and
-computer awareness questions.
-</p>
-
-<a href="computer-awareness.html">
-Study Computer →
-</a>
-
-</div>
-
-
-</div>
-
-
-<!-- QUICK ACCESS -->
-
-<h2 class="section-title">
-Quick Access
-</h2>
-
-
-<div class="quick-links">
-
-<a href="daily-quiz.html">
-🎯 Daily Quiz
-</a>
-
-<a href="mock-test.html">
-⏱️ Mock Test
-</a>
-
-<a href="leaderboard.html">
-🏆 Leaderboard
-</a>
-
-<a href="current-affairs.html">
-📰 Current Affairs
-</a>
-
-<a href="mcq.html">
-📝 MCQ Practice
-</a>
-
-<a href="notes.html">
-📚 Study Notes
-</a>
-
-<a href="reasoning.html">
-🧠 Reasoning
-</a>
-
-<a href="quantitative-aptitude.html">
-🔢 Quantitative Aptitude
-</a>
-
-<a href="english.html">
-📖 English
-</a>
-
-<a href="daily-quiz.html">
-🔥 Today's Quiz
-</a>
-
-</div>
-
-
-<!-- CTA -->
-
-<section class="cta">
-
-<h2>Start Your Preparation Today</h2>
-
-<p>
-Use our free study material, daily quiz, MCQs and mock tests
-to improve your government exam preparation.
-</p>
-
-<a class="btn" href="daily-quiz.html">
-Start Daily Quiz
-</a>
-
-<a class="btn" href="mock-test.html">
-Attempt Mock Test
-</a>
-
-</section>
-
-
-</main>
-
-
-<!-- FOOTER -->
 
 <footer>
 
-<p>
-© 2026 Govt Exam Preparation
-</p>
+    <p>
+        © 2026 Govt Exam Preparation
+    </p>
 
-<p>
-
-<a href="about.html">About</a>
-
-<a href="contact.html">Contact</a>
-
-<a href="privacy.html">Privacy</a>
-
-</p>
+    <p>
+        <a href="about.html">About</a>
+        |
+        <a href="contact.html">Contact</a>
+        |
+        <a href="privacy.html">Privacy Policy</a>
+    </p>
 
 </footer>
 
-
 </body>
-
 </html>
