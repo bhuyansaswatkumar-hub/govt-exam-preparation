@@ -1,31 +1,37 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Leaderboard | SSC & Banking</title>
 
 <meta name="description"
-content="SSC and Banking Exam Leaderboard. Check your mock test score, rank and performance.">
+content="SSC and Banking Exam Leaderboard. Check mock test scores, rankings and performance.">
 
 <style>
+
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background: #f4f6f8;
     color: #222;
 }
 
+/* HEADER */
+
 header {
     background: #173b75;
     color: white;
-    padding: 25px 15px;
     text-align: center;
+    padding: 28px 15px;
 }
 
 header h1 {
@@ -38,6 +44,8 @@ header p {
     font-size: 15px;
 }
 
+/* NAVIGATION */
+
 nav {
     background: #0d2852;
     display: flex;
@@ -48,7 +56,7 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
-    padding: 13px 15px;
+    padding: 12px 14px;
     font-size: 14px;
 }
 
@@ -56,17 +64,21 @@ nav a:hover {
     background: #173b75;
 }
 
+/* CONTAINER */
+
 .container {
-    max-width: 1100px;
+    max-width: 1050px;
     margin: 25px auto;
     padding: 0 15px;
 }
 
+/* CARDS */
+
 .card {
     background: white;
-    border-radius: 10px;
-    padding: 20px;
+    padding: 25px;
     margin-bottom: 20px;
+    border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
@@ -75,79 +87,139 @@ nav a:hover {
     color: #173b75;
 }
 
+/* STATUS */
+
+.status {
+    text-align: center;
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background: #eef3fb;
+    color: #173b75;
+    font-weight: bold;
+}
+
+/* TOP THREE */
+
 .top-three {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-bottom: 20px;
+    gap: 18px;
+    margin-bottom: 25px;
 }
 
 .top-card {
-    text-align: center;
-    padding: 20px;
-    border-radius: 10px;
-    background: #f8f9fb;
+    background: #fafbfd;
     border: 1px solid #ddd;
+    border-radius: 12px;
+    text-align: center;
+    padding: 22px 15px;
 }
 
-.top-card .rank {
-    font-size: 28px;
-    font-weight: bold;
+.top-card.first {
+    border: 2px solid #d4af37;
+}
+
+.top-card.second {
+    border: 2px solid #aaa;
+}
+
+.top-card.third {
+    border: 2px solid #b87333;
+}
+
+.medal {
+    font-size: 42px;
     margin-bottom: 8px;
 }
 
-.top-card .name {
-    font-size: 18px;
+.top-rank {
+    font-size: 20px;
     font-weight: bold;
     color: #173b75;
-    word-break: break-word;
 }
 
-.top-card .score {
-    margin-top: 8px;
-    font-size: 16px;
+.top-name {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
 }
 
-.search-box {
-    width: 100%;
-    padding: 13px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 15px;
-    margin-bottom: 15px;
+.top-score {
+    font-size: 28px;
+    font-weight: bold;
+    color: #173b75;
 }
 
-.table-wrapper {
+.top-percentage {
+    color: #555;
+    margin-top: 5px;
+}
+
+/* TABLE */
+
+.table-container {
     overflow-x: auto;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 700px;
+    margin-top: 10px;
 }
 
 th {
     background: #173b75;
     color: white;
-    padding: 12px;
-    text-align: left;
+    padding: 14px 10px;
+    text-align: center;
 }
 
 td {
-    padding: 12px;
+    padding: 13px 10px;
     border-bottom: 1px solid #ddd;
+    text-align: center;
 }
 
-tr:hover {
-    background: #f5f7fb;
-}
-
-.rank-number {
+td.name-cell {
+    text-align: left;
     font-weight: bold;
 }
 
-.score-cell {
+tr:nth-child(even) {
+    background: #f7f9fc;
+}
+
+tr:hover {
+    background: #eef3fb;
+}
+
+/* RANK */
+
+.rank {
+    font-weight: bold;
+    color: #173b75;
+}
+
+.rank-medal {
+    font-size: 21px;
+}
+
+/* TEST BADGE */
+
+.test-badge {
+    display: inline-block;
+    background: #eef3fb;
+    color: #173b75;
+    padding: 5px 9px;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* SCORE */
+
+.score {
     font-weight: bold;
     color: #173b75;
 }
@@ -156,433 +228,928 @@ tr:hover {
     font-weight: bold;
 }
 
-.exam-badge {
+/* BUTTONS */
+
+.buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn {
     display: inline-block;
-    padding: 5px 9px;
-    border-radius: 15px;
-    background: #eaf0ff;
-    color: #173b75;
-    font-size: 12px;
-    font-weight: bold;
-}
-
-.loading {
-    text-align: center;
-    padding: 25px;
-    color: #666;
-}
-
-.error {
-    text-align: center;
-    padding: 20px;
-    color: #b00020;
-    background: #fff0f0;
-    border-radius: 6px;
-}
-
-.refresh-btn {
     background: #173b75;
     color: white;
+    text-decoration: none;
+    padding: 13px 20px;
+    border-radius: 8px;
+    margin: 5px;
+    font-size: 15px;
     border: none;
-    padding: 11px 18px;
-    border-radius: 6px;
     cursor: pointer;
-    font-size: 14px;
 }
 
-.refresh-btn:hover {
+.btn:hover {
     background: #0d2852;
 }
 
-footer {
-    margin-top: 40px;
-    background: #173b75;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 14px;
+.btn.refresh {
+    background: #2d6a4f;
 }
 
-@media (max-width: 700px) {
+.btn.refresh:hover {
+    background: #1f4d39;
+}
 
-    header h1 {
-        font-size: 24px;
-    }
+/* EMPTY */
+
+.empty {
+    text-align: center;
+    padding: 30px;
+    color: #666;
+}
+
+/* ERROR */
+
+.error {
+    background: #fff0f0;
+    color: #b00020;
+    border: 1px solid #f0b5b5;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    display: none;
+}
+
+/* FOOTER */
+
+footer {
+    background: #0d2852;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+    margin-top: 40px;
+}
+
+/* MOBILE */
+
+@media (max-width: 750px) {
 
     .top-three {
         grid-template-columns: 1fr;
     }
 
-    nav a {
-        padding: 10px 8px;
-        font-size: 12px;
+    header h1 {
+        font-size: 25px;
     }
 
     .card {
-        padding: 15px;
+        padding: 18px;
     }
+
+    th,
+    td {
+        font-size: 13px;
+        padding: 10px 7px;
+    }
+
 }
+
+@media (max-width: 500px) {
+
+    nav a {
+        font-size: 12px;
+        padding: 9px 7px;
+    }
+
+    .top-name {
+        font-size: 18px;
+    }
+
+    .top-score {
+        font-size: 25px;
+    }
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- HEADER -->
+
 <header>
-    <h1>🏆 Leaderboard</h1>
-    <p>SSC & Banking Exam Preparation</p>
+
+    <h1>🏆 SSC & Banking Leaderboard</h1>
+
+    <p>
+        Mock Test Rankings & Student Performance
+    </p>
+
 </header>
 
+
+<!-- NAVIGATION -->
+
 <nav>
+
     <a href="index.html">Home</a>
+
     <a href="ssc.html">SSC</a>
+
     <a href="banking.html">Banking</a>
+
     <a href="railway.html">Railway</a>
+
     <a href="notes.html">Notes</a>
+
     <a href="mcq.html">MCQ</a>
-    <a href="mock-test.html">Mock Test</a>
+
     <a href="current-affairs.html">Current Affairs</a>
+
     <a href="daily-quiz.html">Daily Quiz</a>
+
+    <a href="mock-test.html">Mock Test</a>
+
+    <a href="performance.html">Performance</a>
+
     <a href="leaderboard.html">Leaderboard</a>
+
 </nav>
+
 
 <div class="container">
 
-    <div class="card">
-        <h2>🏆 Top Performers</h2>
 
-        <div id="topThree" class="top-three">
-            <div class="loading">Loading...</div>
-        </div>
-    </div>
+<!-- STATUS -->
 
-    <div class="card">
+<div
+    id="status"
+    class="status"
+>
+    🔄 Loading leaderboard...
+</div>
 
-        <h2>📊 All Scores</h2>
 
-        <input
-            type="text"
-            id="searchBox"
-            class="search-box"
-            placeholder="Search student name or exam..."
-        >
+<!-- ERROR -->
 
-        <button class="refresh-btn" onclick="loadLeaderboard()">
-            🔄 Refresh Leaderboard
-        </button>
+<div
+    id="error"
+    class="error"
+></div>
 
-        <div id="status" class="loading">
-            Loading leaderboard...
-        </div>
 
-        <div class="table-wrapper">
-            <table id="leaderboardTable" style="display:none;">
+<!-- TOP THREE -->
 
-                <thead>
-                    <tr>
-                        <th>Rank</th>
-                        <th>Student</th>
-                        <th>Exam</th>
-                        <th>Score</th>
-                        <th>Percentage</th>
-                        <th>Date</th>
-                    </tr>
-                </thead>
+<div
+    id="topSection"
+    class="card"
+    style="display:none;"
+>
 
-                <tbody id="leaderboardBody"></tbody>
+    <h2>🏆 Top Performers</h2>
 
-            </table>
-        </div>
+    <div
+        id="topThree"
+        class="top-three"
+    >
 
     </div>
 
 </div>
 
+
+<!-- FULL LEADERBOARD -->
+
+<div class="card">
+
+    <h2>📊 Complete Leaderboard</h2>
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Rank
+                    </th>
+
+                    <th>
+                        Student
+                    </th>
+
+                    <th>
+                        Test
+                    </th>
+
+                    <th>
+                        Score
+                    </th>
+
+                    <th>
+                        Percentage
+                    </th>
+
+                    <th>
+                        Date
+                    </th>
+
+                </tr>
+
+            </thead>
+
+            <tbody
+                id="leaderboardBody"
+            >
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <div
+        id="emptyMessage"
+        class="empty"
+        style="display:none;"
+    >
+        No scores have been submitted yet.
+    </div>
+
+</div>
+
+
+<!-- BUTTONS -->
+
+<div class="card">
+
+    <div class="buttons">
+
+        <button
+            class="btn refresh"
+            onclick="loadLeaderboard()"
+        >
+            🔄 Refresh Leaderboard
+        </button>
+
+        <a
+            href="performance.html"
+            class="btn"
+        >
+            📊 My Performance
+        </a>
+
+        <a
+            href="mock-test.html"
+            class="btn"
+        >
+            📝 Take Mock Test
+        </a>
+
+        <a
+            href="index.html"
+            class="btn"
+        >
+            🏠 Home
+        </a>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- FOOTER -->
+
 <footer>
-    © 2026 Govt Exam Preparation | SSC & Banking
+
+    <p>
+        © 2026 Govt Exam Preparation | SSC, Banking & Railway
+    </p>
+
 </footer>
+
 
 <script>
 
-const GOOGLE_SCRIPT_URL =
+/* =====================================================
+   GOOGLE APPS SCRIPT URL
+===================================================== */
+
+const API_URL =
 "https://script.google.com/macros/s/AKfycbxV1CyjtjBJJlpvIJxEx37AsBms2rStoPck9kcvD9uaN5UpgoTkKT0Y4EQWr77onNNx/exec";
 
-let leaderboardData = [];
+
+/*
+   IMPORTANT:
+   The URL above should be exactly the same
+   Google Apps Script deployment URL used
+   by your Mock Test.
+*/
 
 
-/* =========================
+/* =====================================================
    LOAD LEADERBOARD
-========================= */
+===================================================== */
 
 async function loadLeaderboard() {
 
-    const status = document.getElementById("status");
-    const table = document.getElementById("leaderboardTable");
-    const body = document.getElementById("leaderboardBody");
-    const topThree = document.getElementById("topThree");
+    const status =
+    document.getElementById("status");
 
-    status.className = "loading";
-    status.innerHTML = "Loading leaderboard...";
+    const errorBox =
+    document.getElementById("error");
 
-    table.style.display = "none";
+    const body =
+    document.getElementById("leaderboardBody");
+
+    const emptyMessage =
+    document.getElementById("emptyMessage");
+
+    const topSection =
+    document.getElementById("topSection");
+
+    const topThree =
+    document.getElementById("topThree");
+
+
+    status.style.display =
+    "block";
+
+    status.textContent =
+    "🔄 Loading leaderboard...";
+
+
+    errorBox.style.display =
+    "none";
+
+    body.innerHTML =
+    "";
+
+    topSection.style.display =
+    "none";
+
+    emptyMessage.style.display =
+    "none";
+
 
     try {
 
-        const response = await fetch(
-            GOOGLE_SCRIPT_URL + "?t=" + new Date().getTime()
+        const response =
+        await fetch(
+            API_URL + "?t=" + Date.now()
         );
 
+
         if (!response.ok) {
-            throw new Error("Network response failed");
+
+            throw new Error(
+                "Unable to connect to leaderboard."
+            );
+
         }
 
-        const data = await response.json();
 
-        if (!Array.isArray(data)) {
-            throw new Error("Invalid leaderboard data");
+        const data =
+        await response.json();
+
+
+        console.log(
+            "Leaderboard data:",
+            data
+        );
+
+
+        /*
+           The Apps Script may return:
+
+           [
+               [date, name, score, percentage]
+           ]
+
+           or
+
+           [
+               {
+                   date: "...",
+                   name: "...",
+                   score: 10,
+                   percentage: 20
+               }
+           ]
+
+           This code supports both.
+        */
+
+
+        let records =
+        normalizeData(data);
+
+
+        if (records.length === 0) {
+
+            status.textContent =
+            "📊 No scores submitted yet.";
+
+            emptyMessage.style.display =
+            "block";
+
+            return;
+
         }
 
-        leaderboardData = data;
 
-        displayTopThree(leaderboardData);
-        displayTable(leaderboardData);
+        /*
+           Sort highest score first.
+           If scores are equal, higher percentage first.
+        */
 
-        status.style.display = "none";
-        table.style.display = "table";
+        records.sort(
+            function(a, b) {
 
-    } catch (error) {
+                if (
+                    Number(b.score) !==
+                    Number(a.score)
+                ) {
+
+                    return (
+                        Number(b.score) -
+                        Number(a.score)
+                    );
+
+                }
+
+                return (
+                    Number(b.percentage) -
+                    Number(a.percentage)
+                );
+
+            }
+        );
+
+
+        /* Display Top 3 */
+
+        showTopThree(records);
+
+
+        /* Display Full Table */
+
+        records.forEach(
+            function(record, index) {
+
+                addTableRow(
+                    record,
+                    index + 1
+                );
+
+            }
+        );
+
+
+        status.textContent =
+        "✅ Leaderboard updated successfully";
+
+
+    }
+
+    catch (error) {
 
         console.error(error);
 
-        topThree.innerHTML = `
-            <div class="error">
-                Unable to load leaderboard.
-            </div>
-        `;
 
-        status.className = "error";
-        status.innerHTML =
-            "Unable to load scores. Please check the Apps Script deployment.";
+        status.textContent =
+        "⚠️ Unable to load leaderboard";
+
+
+        errorBox.textContent =
+        "Could not connect to the leaderboard. Please check your Google Apps Script deployment and try again.";
+
+
+        errorBox.style.display =
+        "block";
 
     }
+
 }
 
 
-/* =========================
-   TOP 3
-========================= */
+/* =====================================================
+   NORMALIZE DATA
+===================================================== */
 
-function displayTopThree(data) {
+function normalizeData(data) {
 
-    const topThree = document.getElementById("topThree");
+    let records = [];
 
-    if (!data || data.length === 0) {
 
-        topThree.innerHTML = `
-            <div class="loading">
-                No scores available yet.
-            </div>
-        `;
+    if (!Array.isArray(data)) {
 
-        return;
+        return records;
+
     }
 
-    const top = data.slice(0, 3);
 
-    let html = "";
+    data.forEach(
+        function(item) {
 
-    top.forEach(function(item, index) {
+            /*
+               ARRAY FORMAT
 
-        const rank = index + 1;
+               [date, name, score, percentage]
+            */
 
-        const name = escapeHTML(
-            item.name || "Student"
-        );
+            if (Array.isArray(item)) {
 
-        const score = Number(item.score) || 0;
+                /*
+                   Ignore possible header row.
+                */
 
-        const total = getTotal(item);
+                if (
+                    String(
+                        item[0]
+                    ).toLowerCase()
+                    === "timestamp"
+                ) {
 
-        const percentage = Number(item.percentage) || 0;
+                    return;
 
-        html += `
-            <div class="top-card">
-
-                <div class="rank">
-                    ${getMedal(rank)} #${rank}
-                </div>
-
-                <div class="name">
-                    ${name}
-                </div>
-
-                <div class="score">
-                    ${score} / ${total}
-                    <br>
-                    <strong>${percentage}%</strong>
-                </div>
-
-            </div>
-        `;
-    });
-
-    topThree.innerHTML = html;
-}
+                }
 
 
-/* =========================
-   TABLE
-========================= */
+                if (
+                    String(
+                        item[1] || ""
+                    ).toLowerCase()
+                    === "name"
+                ) {
 
-function displayTable(data) {
+                    return;
 
-    const body = document.getElementById("leaderboardBody");
-
-    body.innerHTML = "";
-
-    if (!data || data.length === 0) {
-
-        body.innerHTML = `
-            <tr>
-                <td colspan="6" style="text-align:center;">
-                    No scores available.
-                </td>
-            </tr>
-        `;
-
-        return;
-    }
-
-    data.forEach(function(item, index) {
-
-        const rank = index + 1;
-
-        const name = escapeHTML(
-            item.name || "Student"
-        );
-
-        const exam = escapeHTML(
-            item.exam || "Mock Test"
-        );
-
-        const score = Number(item.score) || 0;
-
-        const total = getTotal(item);
-
-        const percentage = Number(item.percentage) || 0;
-
-        const date = formatDate(item.date);
-
-        body.innerHTML += `
-
-            <tr>
-
-                <td class="rank-number">
-                    ${rank}
-                </td>
-
-                <td>
-                    ${name}
-                </td>
-
-                <td>
-                    <span class="exam-badge">
-                        ${exam}
-                    </span>
-                </td>
-
-                <td class="score-cell">
-                    ${score} / ${total}
-                </td>
-
-                <td class="percentage">
-                    ${percentage}%
-                </td>
-
-                <td>
-                    ${date}
-                </td>
-
-            </tr>
-
-        `;
-    });
-}
+                }
 
 
-/* =========================
-   SEARCH
-========================= */
+                const record = {
 
-document.getElementById("searchBox").addEventListener(
-    "input",
-    function() {
+                    date:
+                    item[0] || "",
 
-        const searchText =
-            this.value.toLowerCase().trim();
+                    name:
+                    item[1] || "Student",
 
-        const filtered =
-            leaderboardData.filter(function(item) {
+                    score:
+                    Number(
+                        item[2] || 0
+                    ),
 
-                const name =
-                    String(item.name || "")
-                    .toLowerCase();
+                    percentage:
+                    Number(
+                        item[3] || 0
+                    ),
 
-                const exam =
-                    String(item.exam || "")
-                    .toLowerCase();
+                    testName:
+                    item[4] ||
+                    "Mock Test"
 
-                return (
-                    name.includes(searchText) ||
-                    exam.includes(searchText)
+                };
+
+
+                /*
+                   Some Sheets layouts may have
+                   Test Name before Score.
+                */
+
+                if (
+                    typeof item[2] === "string" &&
+                    isNaN(Number(item[2])) &&
+                    !isNaN(Number(item[3]))
+                ) {
+
+                    record.testName =
+                    item[2] ||
+                    "Mock Test";
+
+                    record.score =
+                    Number(
+                        item[3] || 0
+                    );
+
+                    record.percentage =
+                    Number(
+                        item[4] || 0
+                    );
+
+                }
+
+
+                records.push(
+                    record
                 );
 
-            });
-
-        displayTable(filtered);
-    }
-);
+            }
 
 
-/* =========================
-   TOTAL MARKS
-========================= */
+            /*
+               OBJECT FORMAT
+            */
 
-function getTotal(item) {
+            else if (
+                item &&
+                typeof item === "object"
+            ) {
 
-    if (item.total && Number(item.total) > 0) {
-        return Number(item.total);
-    }
+                const name =
+                item.name ||
+                item.student ||
+                item.studentName ||
+                "Student";
 
-    const exam =
-        String(item.exam || "").toLowerCase();
 
-    if (
-        exam.includes("mcq")
-    ) {
-        return 30;
-    }
+                const score =
+                Number(
+                    item.score ||
+                    item.marks ||
+                    0
+                );
 
-    return 50;
+
+                const percentage =
+                Number(
+                    item.percentage ||
+                    0
+                );
+
+
+                const date =
+                item.date ||
+                item.timestamp ||
+                item.time ||
+                "";
+
+
+                const testName =
+                item.testName ||
+                item.test ||
+                item.exam ||
+                "Mock Test";
+
+
+                records.push({
+
+                    name:
+                    name,
+
+                    score:
+                    score,
+
+                    percentage:
+                    percentage,
+
+                    date:
+                    date,
+
+                    testName:
+                    testName
+
+                });
+
+            }
+
+        }
+    );
+
+
+    return records;
+
 }
 
 
-/* =========================
-   DATE FORMAT
-========================= */
+/* =====================================================
+   TOP THREE
+===================================================== */
+
+function showTopThree(records) {
+
+    const section =
+    document.getElementById(
+        "topSection"
+    );
+
+
+    const container =
+    document.getElementById(
+        "topThree"
+    );
+
+
+    container.innerHTML =
+    "";
+
+
+    const top =
+    records.slice(
+        0,
+        3
+    );
+
+
+    if (top.length === 0) {
+
+        return;
+
+    }
+
+
+    section.style.display =
+    "block";
+
+
+    const medals = [
+        "🥇",
+        "🥈",
+        "🥉"
+    ];
+
+
+    const classes = [
+        "first",
+        "second",
+        "third"
+    ];
+
+
+    top.forEach(
+        function(record, index) {
+
+            const card =
+            document.createElement(
+                "div"
+            );
+
+
+            card.className =
+            "top-card " +
+            classes[index];
+
+
+            card.innerHTML = `
+
+                <div class="medal">
+                    ${medals[index]}
+                </div>
+
+                <div class="top-rank">
+                    Rank ${index + 1}
+                </div>
+
+                <div class="top-name">
+                    ${escapeHTML(record.name)}
+                </div>
+
+                <div class="top-score">
+                    ${record.score} / 50
+                </div>
+
+                <div class="top-percentage">
+                    ${record.percentage}%
+                </div>
+
+            `;
+
+
+            container.appendChild(
+                card
+            );
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   ADD TABLE ROW
+===================================================== */
+
+function addTableRow(
+    record,
+    rank
+) {
+
+    const body =
+    document.getElementById(
+        "leaderboardBody"
+    );
+
+
+    const row =
+    document.createElement(
+        "tr"
+    );
+
+
+    let rankDisplay =
+    rank;
+
+
+    if (rank === 1) {
+
+        rankDisplay =
+        "🥇";
+
+    }
+
+    else if (rank === 2) {
+
+        rankDisplay =
+        "🥈";
+
+    }
+
+    else if (rank === 3) {
+
+        rankDisplay =
+        "🥉";
+
+    }
+
+
+    const formattedDate =
+    formatDate(
+        record.date
+    );
+
+
+    row.innerHTML = `
+
+        <td class="rank">
+            <span class="rank-medal">
+                ${rankDisplay}
+            </span>
+        </td>
+
+        <td class="name-cell">
+            ${escapeHTML(record.name)}
+        </td>
+
+        <td>
+            <span class="test-badge">
+                ${escapeHTML(record.testName)}
+            </span>
+        </td>
+
+        <td class="score">
+            ${record.score} / 50
+        </td>
+
+        <td class="percentage">
+            ${record.percentage}%
+        </td>
+
+        <td>
+            ${formattedDate}
+        </td>
+
+    `;
+
+
+    body.appendChild(
+        row
+    );
+
+}
+
+
+/* =====================================================
+   FORMAT DATE
+===================================================== */
 
 function formatDate(value) {
 
     if (!value) {
+
         return "-";
+
     }
 
-    try {
 
-        const date = new Date(value);
+    const date =
+    new Date(value);
 
-        if (isNaN(date.getTime())) {
-            return "-";
-        }
+
+    if (
+        !isNaN(
+            date.getTime()
+        )
+    ) {
 
         return date.toLocaleDateString(
             "en-IN",
@@ -593,71 +1160,54 @@ function formatDate(value) {
             }
         );
 
-    } catch (error) {
-
-        return "-";
     }
+
+
+    return String(value);
+
 }
 
 
-/* =========================
-   MEDALS
-========================= */
-
-function getMedal(rank) {
-
-    if (rank === 1) {
-        return "🥇";
-    }
-
-    if (rank === 2) {
-        return "🥈";
-    }
-
-    if (rank === 3) {
-        return "🥉";
-    }
-
-    return "🏅";
-}
-
-
-/* =========================
+/* =====================================================
    SECURITY
-========================= */
+===================================================== */
 
-function escapeHTML(text) {
+function escapeHTML(value) {
 
-    return String(text)
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
+    return String(value)
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+        .replace(
+            /</g,
+            "&lt;"
+        )
+        .replace(
+            />/g,
+            "&gt;"
+        )
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
 }
 
 
-/* =========================
+/* =====================================================
    START
-========================= */
+===================================================== */
 
 loadLeaderboard();
 
-
-/* Refresh when page becomes visible */
-
-document.addEventListener(
-    "visibilitychange",
-    function() {
-
-        if (!document.hidden) {
-            loadLeaderboard();
-        }
-
-    }
-);
-
 </script>
+
 
 </body>
 </html>
+```
