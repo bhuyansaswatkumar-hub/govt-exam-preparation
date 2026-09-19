@@ -6,9 +6,6 @@
 
 <title>MCQ Practice | SSC & Banking</title>
 
-<meta name="description"
-content="Practice 30 important MCQs for SSC, Banking and Railway exams with instant score, percentage, answer review and leaderboard submission.">
-
 <style>
 * {
     box-sizing: border-box;
@@ -24,97 +21,82 @@ body {
 header {
     background: #173b75;
     color: white;
-    padding: 22px 15px;
     text-align: center;
+    padding: 25px 15px;
 }
 
 header h1 {
     margin: 0 0 8px;
-    font-size: 28px;
-}
-
-header p {
-    margin: 0;
-    font-size: 15px;
 }
 
 nav {
     background: #0d2852;
-    padding: 10px;
     text-align: center;
+    padding: 10px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
+    margin: 5px 10px;
     display: inline-block;
-    padding: 8px 10px;
-    font-size: 14px;
-}
-
-nav a:hover {
-    text-decoration: underline;
 }
 
 .container {
-    max-width: 950px;
+    max-width: 900px;
     margin: 25px auto;
-    padding: 0 15px;
+    padding: 15px;
 }
 
-.name-box,
-.question,
-.result-box,
-.review-box {
+.box {
     background: white;
-    border-radius: 10px;
-    padding: 20px;
+    padding: 25px;
     margin-bottom: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
 }
 
-.name-box h2 {
-    margin-top: 0;
-    color: #173b75;
-}
-
-.name-box input {
+.name-input {
     width: 100%;
-    padding: 13px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+    max-width: 500px;
+    padding: 14px;
     font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.question {
+    background: white;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 7px rgba(0,0,0,.07);
 }
 
 .question h3 {
-    margin-top: 0;
     color: #173b75;
 }
 
 .option {
     display: block;
-    background: #f5f7fb;
-    margin: 9px 0;
     padding: 12px;
-    border-radius: 6px;
+    margin: 7px 0;
+    background: #f5f7fb;
+    border-radius: 7px;
     cursor: pointer;
 }
 
 .option:hover {
-    background: #e9eef8;
-}
-
-.option input {
-    margin-right: 8px;
+    background: #e8eef9;
 }
 
 button {
-    border: none;
     background: #173b75;
     color: white;
-    padding: 13px 22px;
-    border-radius: 6px;
-    font-size: 16px;
+    border: 0;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 17px;
     cursor: pointer;
 }
 
@@ -124,128 +106,96 @@ button:hover {
 
 .submit-area {
     text-align: center;
-    margin: 25px 0;
+    margin: 30px 0;
 }
 
-.result-box {
+#result {
     display: none;
     text-align: center;
 }
 
-.result-box h2 {
+.score {
+    font-size: 40px;
+    font-weight: bold;
     color: #173b75;
 }
 
-.score {
-    font-size: 32px;
-    font-weight: bold;
-    margin: 15px 0;
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
-.result-details {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
-}
-
-.result-item {
+.stat {
     background: #f5f7fb;
-    padding: 15px;
+    padding: 15px 25px;
     border-radius: 8px;
 }
 
-.result-item strong {
+.stat strong {
     display: block;
-    font-size: 22px;
+    font-size: 25px;
     color: #173b75;
-    margin-bottom: 5px;
 }
 
-.message {
-    margin: 20px 0;
-    font-weight: bold;
-}
-
-.review-box {
-    display: none;
+.review {
+    text-align: left;
+    margin-top: 25px;
 }
 
 .review-item {
     padding: 15px;
-    margin-bottom: 12px;
-    border-radius: 7px;
+    margin: 10px 0;
+    border-radius: 8px;
+    background: #f5f7fb;
 }
 
 .correct {
-    background: #e8f7e8;
-    border-left: 5px solid #2e8b57;
+    border-left: 5px solid green;
 }
 
 .wrong {
-    background: #fdeaea;
-    border-left: 5px solid #d9534f;
+    border-left: 5px solid red;
 }
 
 .unanswered {
-    background: #fff7df;
-    border-left: 5px solid #f0ad4e;
+    border-left: 5px solid orange;
 }
 
-.action-buttons {
-    text-align: center;
-    margin: 25px 0;
+.links {
+    margin-top: 25px;
 }
 
-.action-buttons a {
+.links a {
     display: inline-block;
-    text-decoration: none;
     background: #173b75;
     color: white;
+    text-decoration: none;
     padding: 12px 18px;
-    border-radius: 6px;
+    border-radius: 7px;
     margin: 5px;
 }
 
-.action-buttons a:hover {
-    background: #0d2852;
-}
-
-.status {
-    text-align: center;
-    margin: 15px 0;
-    font-weight: bold;
-}
-
-.success {
-    color: #2e8b57;
-}
-
-.error {
-    color: #d9534f;
-}
-
 footer {
-    background: #0d2852;
+    background: #173b75;
     color: white;
     text-align: center;
     padding: 20px;
     margin-top: 40px;
 }
 
-@media (max-width: 700px) {
-
-    header h1 {
-        font-size: 23px;
+@media(max-width:600px) {
+    .stats {
+        display: block;
     }
 
-    nav a {
-        font-size: 13px;
-        padding: 7px 6px;
+    .stat {
+        margin: 8px;
     }
 
-    .result-details {
-        grid-template-columns: repeat(2, 1fr);
+    button {
+        width: 100%;
     }
 }
 </style>
@@ -254,8 +204,8 @@ footer {
 <body>
 
 <header>
-    <h1>MCQ Practice</h1>
-    <p>SSC • Banking • Railway Exam Preparation</p>
+    <h1>SSC & Banking Exam Preparation</h1>
+    <p>MCQ Practice Test</p>
 </header>
 
 <nav>
@@ -264,7 +214,7 @@ footer {
     <a href="banking.html">Banking</a>
     <a href="railway.html">Railway</a>
     <a href="notes.html">Study Material</a>
-    <a href="mcq.html">MCQ Practice</a>
+    <a href="mcq.html">MCQ</a>
     <a href="current-affairs.html">Current Affairs</a>
     <a href="daily-quiz.html">Daily Quiz</a>
     <a href="mock-test.html">Mock Test</a>
@@ -273,476 +223,563 @@ footer {
 
 <div class="container">
 
-    <div class="name-box">
-        <h2>Enter Your Name</h2>
-        <p>Your name will be displayed on the leaderboard after submitting your score.</p>
+<div class="box">
+    <h2>Enter Your Name</h2>
 
-        <input
-            type="text"
-            id="studentName"
-            placeholder="Enter your name"
-            maxlength="40"
-        >
+    <input
+        type="text"
+        id="studentName"
+        class="name-input"
+        placeholder="Enter your name"
+    >
+</div>
+
+<div class="box">
+    <h2>📝 MCQ Practice Test</h2>
+    <p>30 Questions | SSC | Banking | Railway</p>
+    <p>Select one answer for each question.</p>
+</div>
+
+<form id="mcqForm">
+
+<div id="questions"></div>
+
+<div class="submit-area">
+    <button type="submit" id="submitBtn">
+        Submit MCQ Test
+    </button>
+</div>
+
+</form>
+
+<div id="result" class="box">
+
+    <h2>🎉 Your Result</h2>
+
+    <h3 id="resultName"></h3>
+
+    <div class="score">
+        <span id="score">0</span> / 30
     </div>
 
-    <div id="quiz">
+    <div class="stats">
 
-        <div class="question">
-            <h3>1. Who is known as the Father of the Indian Constitution?</h3>
-
-            <label class="option">
-                <input type="radio" name="q1" value="A">
-                A. Mahatma Gandhi
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q1" value="B">
-                B. Dr. B. R. Ambedkar
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q1" value="C">
-                C. Jawaharlal Nehru
-            </label>
-
-            <label class="option">
-                <input type="radio" name="q1" value="D">
-                D. Sardar Patel
-            </label>
+        <div class="stat">
+            <strong id="correct">0</strong>
+            Correct
         </div>
 
-        <div class="question">
-            <h3>2. Which is the largest ocean in the world?</h3>
-
-            <label class="option"><input type="radio" name="q2" value="A"> A. Atlantic Ocean</label>
-            <label class="option"><input type="radio" name="q2" value="B"> B. Indian Ocean</label>
-            <label class="option"><input type="radio" name="q2" value="C"> C. Pacific Ocean</label>
-            <label class="option"><input type="radio" name="q2" value="D"> D. Arctic Ocean</label>
+        <div class="stat">
+            <strong id="wrong">0</strong>
+            Wrong
         </div>
 
-        <div class="question">
-            <h3>3. How many Fundamental Rights are currently guaranteed by the Indian Constitution?</h3>
-
-            <label class="option"><input type="radio" name="q3" value="A"> A. 5</label>
-            <label class="option"><input type="radio" name="q3" value="B"> B. 6</label>
-            <label class="option"><input type="radio" name="q3" value="C"> C. 7</label>
-            <label class="option"><input type="radio" name="q3" value="D"> D. 8</label>
+        <div class="stat">
+            <strong id="unanswered">0</strong>
+            Unanswered
         </div>
 
-        <div class="question">
-            <h3>4. What is the chemical symbol for Gold?</h3>
-
-            <label class="option"><input type="radio" name="q4" value="A"> A. Ag</label>
-            <label class="option"><input type="radio" name="q4" value="B"> B. Gd</label>
-            <label class="option"><input type="radio" name="q4" value="C"> C. Au</label>
-            <label class="option"><input type="radio" name="q4" value="D"> D. Go</label>
-        </div>
-
-        <div class="question">
-            <h3>5. What is the full form of RBI?</h3>
-
-            <label class="option"><input type="radio" name="q5" value="A"> A. Reserve Bank of India</label>
-            <label class="option"><input type="radio" name="q5" value="B"> B. Rural Bank of India</label>
-            <label class="option"><input type="radio" name="q5" value="C"> C. Regional Bank of India</label>
-            <label class="option"><input type="radio" name="q5" value="D"> D. Reserve Banking Institution</label>
-        </div>
-
-        <div class="question">
-            <h3>6. What is the full form of CPU?</h3>
-
-            <label class="option"><input type="radio" name="q6" value="A"> A. Central Processing Unit</label>
-            <label class="option"><input type="radio" name="q6" value="B"> B. Computer Processing Utility</label>
-            <label class="option"><input type="radio" name="q6" value="C"> C. Central Program Unit</label>
-            <label class="option"><input type="radio" name="q6" value="D"> D. Computer Processing Unit</label>
-        </div>
-
-        <div class="question">
-            <h3>7. Choose the synonym of "Rapid".</h3>
-
-            <label class="option"><input type="radio" name="q7" value="A"> A. Slow</label>
-            <label class="option"><input type="radio" name="q7" value="B"> B. Fast</label>
-            <label class="option"><input type="radio" name="q7" value="C"> C. Weak</label>
-            <label class="option"><input type="radio" name="q7" value="D"> D. Late</label>
-        </div>
-
-        <div class="question">
-            <h3>8. What is 25% of 200?</h3>
-
-            <label class="option"><input type="radio" name="q8" value="A"> A. 25</label>
-            <label class="option"><input type="radio" name="q8" value="B"> B. 40</label>
-            <label class="option"><input type="radio" name="q8" value="C"> C. 50</label>
-            <label class="option"><input type="radio" name="q8" value="D"> D. 75</label>
-        </div>
-
-        <div class="question">
-            <h3>9. Find the next number: 2, 4, 8, 16, ?</h3>
-
-            <label class="option"><input type="radio" name="q9" value="A"> A. 20</label>
-            <label class="option"><input type="radio" name="q9" value="B"> B. 24</label>
-            <label class="option"><input type="radio" name="q9" value="C"> C. 32</label>
-            <label class="option"><input type="radio" name="q9" value="D"> D. 36</label>
-        </div>
-
-        <div class="question">
-            <h3>10. What does RRB stand for?</h3>
-
-            <label class="option"><input type="radio" name="q10" value="A"> A. Railway Recruitment Board</label>
-            <label class="option"><input type="radio" name="q10" value="B"> B. Railway Registration Bureau</label>
-            <label class="option"><input type="radio" name="q10" value="C"> C. Railway Recruitment Bureau</label>
-            <label class="option"><input type="radio" name="q10" value="D"> D. Regional Railway Board</label>
-        </div>
-
-        <div class="question">
-            <h3>11. Who founded the Maurya Empire?</h3>
-
-            <label class="option"><input type="radio" name="q11" value="A"> A. Ashoka</label>
-            <label class="option"><input type="radio" name="q11" value="B"> B. Chandragupta Maurya</label>
-            <label class="option"><input type="radio" name="q11" value="C"> C. Bindusara</label>
-            <label class="option"><input type="radio" name="q11" value="D"> D. Harsha</label>
-        </div>
-
-        <div class="question">
-            <h3>12. Which Indian state has the longest coastline?</h3>
-
-            <label class="option"><input type="radio" name="q12" value="A"> A. Odisha</label>
-            <label class="option"><input type="radio" name="q12" value="B"> B. Maharashtra</label>
-            <label class="option"><input type="radio" name="q12" value="C"> C. Gujarat</label>
-            <label class="option"><input type="radio" name="q12" value="D"> D. Tamil Nadu</label>
-        </div>
-
-        <div class="question">
-            <h3>13. Who is the constitutional head of the Union of India?</h3>
-
-            <label class="option"><input type="radio" name="q13" value="A"> A. Prime Minister</label>
-            <label class="option"><input type="radio" name="q13" value="B"> B. President</label>
-            <label class="option"><input type="radio" name="q13" value="C"> C. Chief Justice of India</label>
-            <label class="option"><input type="radio" name="q13" value="D"> D. Home Minister</label>
-        </div>
-
-        <div class="question">
-            <h3>14. Which gas is most abundant in Earth's atmosphere?</h3>
-
-            <label class="option"><input type="radio" name="q14" value="A"> A. Oxygen</label>
-            <label class="option"><input type="radio" name="q14" value="B"> B. Carbon Dioxide</label>
-            <label class="option"><input type="radio" name="q14" value="C"> C. Nitrogen</label>
-            <label class="option"><input type="radio" name="q14" value="D"> D. Hydrogen</label>
-        </div>
-
-        <div class="question">
-            <h3>15. Which is the central bank of India?</h3>
-
-            <label class="option"><input type="radio" name="q15" value="A"> A. SBI</label>
-            <label class="option"><input type="radio" name="q15" value="B"> B. RBI</label>
-            <label class="option"><input type="radio" name="q15" value="C"> C. NABARD</label>
-            <label class="option"><input type="radio" name="q15" value="D"> D. SEBI</label>
-        </div>
-
-        <div class="question">
-            <h3>16. Which device is mainly used to enter text into a computer?</h3>
-
-            <label class="option"><input type="radio" name="q16" value="A"> A. Monitor</label>
-            <label class="option"><input type="radio" name="q16" value="B"> B. Keyboard</label>
-            <label class="option"><input type="radio" name="q16" value="C"> C. Speaker</label>
-            <label class="option"><input type="radio" name="q16" value="D"> D. Printer</label>
-        </div>
-
-        <div class="question">
-            <h3>17. What is the antonym of "Ancient"?</h3>
-
-            <label class="option"><input type="radio" name="q17" value="A"> A. Old</label>
-            <label class="option"><input type="radio" name="q17" value="B"> B. Modern</label>
-            <label class="option"><input type="radio" name="q17" value="C"> C. Historic</label>
-            <label class="option"><input type="radio" name="q17" value="D"> D. Past</label>
-        </div>
-
-        <div class="question">
-            <h3>18. What is 40 ÷ 5?</h3>
-
-            <label class="option"><input type="radio" name="q18" value="A"> A. 5</label>
-            <label class="option"><input type="radio" name="q18" value="B"> B. 6</label>
-            <label class="option"><input type="radio" name="q18" value="C"> C. 8</label>
-            <label class="option"><input type="radio" name="q18" value="D"> D. 10</label>
-        </div>
-
-        <div class="question">
-            <h3>19. Which one is different from the others?</h3>
-
-            <label class="option"><input type="radio" name="q19" value="A"> A. Apple</label>
-            <label class="option"><input type="radio" name="q19" value="B"> B. Mango</label>
-            <label class="option"><input type="radio" name="q19" value="C"> C. Carrot</label>
-            <label class="option"><input type="radio" name="q19" value="D"> D. Banana</label>
-        </div>
-
-        <div class="question">
-            <h3>20. What is the full form of IRCTC?</h3>
-
-            <label class="option"><input type="radio" name="q20" value="A"> A. Indian Railway Catering and Tourism Corporation</label>
-            <label class="option"><input type="radio" name="q20" value="B"> B. Indian Railway Cargo and Travel Corporation</label>
-            <label class="option"><input type="radio" name="q20" value="C"> C. Indian Railway Catering and Transport Company</label>
-            <label class="option"><input type="radio" name="q20" value="D"> D. Indian Railway Communication and Tourism Corporation</label>
-        </div>
-
-        <div class="question">
-            <h3>21. Who was the first Mughal emperor?</h3>
-
-            <label class="option"><input type="radio" name="q21" value="A"> A. Akbar</label>
-            <label class="option"><input type="radio" name="q21" value="B"> B. Babur</label>
-            <label class="option"><input type="radio" name="q21" value="C"> C. Humayun</label>
-            <label class="option"><input type="radio" name="q21" value="D"> D. Shah Jahan</label>
-        </div>
-
-        <div class="question">
-            <h3>22. Which is the highest mountain in the world?</h3>
-
-            <label class="option"><input type="radio" name="q22" value="A"> A. K2</label>
-            <label class="option"><input type="radio" name="q22" value="B"> B. Mount Everest</label>
-            <label class="option"><input type="radio" name="q22" value="C"> C. Kanchenjunga</label>
-            <label class="option"><input type="radio" name="q22" value="D"> D. Nanda Devi</label>
-        </div>
-
-        <div class="question">
-            <h3>23. Fundamental Duties are included in which part of the Constitution?</h3>
-
-            <label class="option"><input type="radio" name="q23" value="A"> A. Part III</label>
-            <label class="option"><input type="radio" name="q23" value="B"> B. Part IV</label>
-            <label class="option"><input type="radio" name="q23" value="C"> C. Part IV-A</label>
-            <label class="option"><input type="radio" name="q23" value="D"> D. Part V</label>
-        </div>
-
-        <div class="question">
-            <h3>24. Which organ pumps blood throughout the human body?</h3>
-
-            <label class="option"><input type="radio" name="q24" value="A"> A. Brain</label>
-            <label class="option"><input type="radio" name="q24" value="B"> B. Liver</label>
-            <label class="option"><input type="radio" name="q24" value="C"> C. Heart</label>
-            <label class="option"><input type="radio" name="q24" value="D"> D. Kidney</label>
-        </div>
-
-        <div class="question">
-            <h3>25. What does ATM stand for?</h3>
-
-            <label class="option"><input type="radio" name="q25" value="A"> A. Any Time Money</label>
-            <label class="option"><input type="radio" name="q25" value="B"> B. Automated Teller Machine</label>
-            <label class="option"><input type="radio" name="q25" value="C"> C. Automatic Transfer Machine</label>
-            <label class="option"><input type="radio" name="q25" value="D"> D. Automated Transaction Method</label>
-        </div>
-
-        <div class="question">
-            <h3>26. What is the keyboard shortcut for Copy?</h3>
-
-            <label class="option"><input type="radio" name="q26" value="A"> A. Ctrl + X</label>
-            <label class="option"><input type="radio" name="q26" value="B"> B. Ctrl + C</label>
-            <label class="option"><input type="radio" name="q26" value="C"> C. Ctrl + V</label>
-            <label class="option"><input type="radio" name="q26" value="D"> D. Ctrl + A</label>
-        </div>
-
-        <div class="question">
-            <h3>27. Choose the correctly spelled word.</h3>
-
-            <label class="option"><input type="radio" name="q27" value="A"> A. Goverment</label>
-            <label class="option"><input type="radio" name="q27" value="B"> B. Government</label>
-            <label class="option"><input type="radio" name="q27" value="C"> C. Governmant</label>
-            <label class="option"><input type="radio" name="q27" value="D"> D. Goverenment</label>
-        </div>
-
-        <div class="question">
-            <h3>28. What is the average of 10 and 20?</h3>
-
-            <label class="option"><input type="radio" name="q28" value="A"> A. 10</label>
-            <label class="option"><input type="radio" name="q28" value="B"> B. 12</label>
-            <label class="option"><input type="radio" name="q28" value="C"> C. 15</label>
-            <label class="option"><input type="radio" name="q28" value="D"> D. 20</label>
-        </div>
-
-        <div class="question">
-            <h3>29. If CAT is coded as DBU, how is DOG coded?</h3>
-
-            <label class="option"><input type="radio" name="q29" value="A"> A. EPH</label>
-            <label class="option"><input type="radio" name="q29" value="B"> B. EOG</label>
-            <label class="option"><input type="radio" name="q29" value="C"> C. FPH</label>
-            <label class="option"><input type="radio" name="q29" value="D"> D. DPH</label>
-        </div>
-
-        <div class="question">
-            <h3>30. What does PNR stand for in Indian Railways?</h3>
-
-            <label class="option"><input type="radio" name="q30" value="A"> A. Passenger Name Record</label>
-            <label class="option"><input type="radio" name="q30" value="B"> B. Passenger Number Registration</label>
-            <label class="option"><input type="radio" name="q30" value="C"> C. Passenger Network Record</label>
-            <label class="option"><input type="radio" name="q30" value="D"> D. Public Name Record</label>
+        <div class="stat">
+            <strong id="percentage">0%</strong>
+            Percentage
         </div>
 
     </div>
 
-    <div class="submit-area">
-        <button onclick="submitMCQ()">Submit MCQ Test</button>
-    </div>
+    <p id="message"></p>
 
-    <div id="status" class="status"></div>
-
-    <div id="resultBox" class="result-box">
-
-        <h2>MCQ Test Result</h2>
-
-        <div class="score">
-            <span id="score">0</span> / 30
-        </div>
-
-        <div class="result-details">
-
-            <div class="result-item">
-                <strong id="correct">0</strong>
-                Correct
-            </div>
-
-            <div class="result-item">
-                <strong id="wrong">0</strong>
-                Wrong
-            </div>
-
-            <div class="result-item">
-                <strong id="unanswered">0</strong>
-                Unanswered
-            </div>
-
-            <div class="result-item">
-                <strong id="percentage">0%</strong>
-                Percentage
-            </div>
-
-        </div>
-
-        <div id="message" class="message"></div>
-
-        <div class="action-buttons">
-            <a href="leaderboard.html">🏆 View Leaderboard</a>
-            <a href="daily-quiz.html">📝 Daily Quiz</a>
-            <a href="mock-test.html">🎯 Mock Test</a>
-        </div>
-
-    </div>
-
-    <div id="reviewBox" class="review-box">
-
-        <h2>Answer Review</h2>
-
+    <div class="review">
+        <h2>📖 Answer Review</h2>
         <div id="review"></div>
+    </div>
 
+    <div class="links">
+        <a href="leaderboard.html">🏆 Leaderboard</a>
+        <a href="mock-test.html">📝 Mock Test</a>
+        <a href="daily-quiz.html">📅 Daily Quiz</a>
     </div>
 
 </div>
 
+</div>
+
 <footer>
-    <p>© 2026 Govt Exam Preparation | SSC • Banking • Railway</p>
+    © 2026 Govt Exam Preparation | SSC, Banking & Railway
 </footer>
+
 
 <script>
 
-const correctAnswers = [
-    "B","C","B","C","A",
-    "A","B","C","C","A",
-    "B","C","B","C","B",
-    "B","B","C","C","A",
-    "B","B","C","C","B",
-    "B","B","C","A","A"
+/* ============================
+   MCQ DATA
+============================ */
+
+const questions = [
+
+{
+q:"Who is known as the Father of the Indian Constitution?",
+a:["Mahatma Gandhi","Dr. B. R. Ambedkar","Jawaharlal Nehru","Sardar Patel"],
+c:1
+},
+
+{
+q:"Which is the largest ocean in the world?",
+a:["Atlantic Ocean","Indian Ocean","Pacific Ocean","Arctic Ocean"],
+c:2
+},
+
+{
+q:"How many Fundamental Rights are currently guaranteed by the Indian Constitution?",
+a:["5","6","7","8"],
+c:1
+},
+
+{
+q:"What is the chemical symbol for gold?",
+a:["Ag","Gd","Au","Go"],
+c:2
+},
+
+{
+q:"What does RBI stand for?",
+a:["Reserve Bank of India","Rural Bank of India","Regional Bank of India","Revenue Bank of India"],
+c:0
+},
+
+{
+q:"What does CPU stand for?",
+a:["Central Processing Unit","Central Program Unit","Computer Processing Utility","Control Processing Unit"],
+c:0
+},
+
+{
+q:"Choose the synonym of Rapid.",
+a:["Slow","Fast","Weak","Late"],
+c:1
+},
+
+{
+q:"What is 25% of 200?",
+a:["25","40","50","75"],
+c:2
+},
+
+{
+q:"Find the next number: 2, 4, 8, 16, ?",
+a:["20","24","32","36"],
+c:2
+},
+
+{
+q:"What does RRB stand for?",
+a:["Railway Recruitment Board","Railway Registration Board","Railway Reservation Board","Railway Recruitment Bureau"],
+c:0
+},
+
+{
+q:"Who founded the Maurya Empire?",
+a:["Ashoka","Chandragupta Maurya","Harsha","Samudragupta"],
+c:1
+},
+
+{
+q:"Which Indian state has the longest coastline?",
+a:["Maharashtra","Tamil Nadu","Gujarat","Odisha"],
+c:2
+},
+
+{
+q:"Who is the constitutional head of the Union of India?",
+a:["Prime Minister","President","Chief Justice of India","Home Minister"],
+c:1
+},
+
+{
+q:"Which gas is most abundant in Earth's atmosphere?",
+a:["Oxygen","Carbon dioxide","Nitrogen","Hydrogen"],
+c:2
+},
+
+{
+q:"Which institution is the central bank of India?",
+a:["SBI","RBI","NABARD","SEBI"],
+c:1
+},
+
+{
+q:"Which device is commonly used to enter text into a computer?",
+a:["Monitor","Keyboard","Speaker","Printer"],
+c:1
+},
+
+{
+q:"Choose the antonym of Ancient.",
+a:["Old","Modern","Historic","Former"],
+c:1
+},
+
+{
+q:"What is 40 ÷ 5?",
+a:["5","6","8","10"],
+c:2
+},
+
+{
+q:"Find the odd one out.",
+a:["Apple","Mango","Carrot","Banana"],
+c:2
+},
+
+{
+q:"What is the full form of IRCTC?",
+a:[
+"Indian Railway Catering and Tourism Corporation",
+"Indian Railway Cargo and Travel Corporation",
+"Indian Railway Central Ticket Corporation",
+"Indian Railway Catering and Transport Company"
+],
+c:0
+},
+
+{
+q:"Who was the first Mughal emperor of India?",
+a:["Akbar","Babur","Humayun","Shah Jahan"],
+c:1
+},
+
+{
+q:"Which is the highest mountain peak in the world?",
+a:["K2","Mount Everest","Kanchenjunga","Nanda Devi"],
+c:1
+},
+
+{
+q:"Fundamental Duties are mentioned in which part of the Indian Constitution?",
+a:["Part III","Part IV","Part IV-A","Part V"],
+c:2
+},
+
+{
+q:"Which organ pumps blood throughout the human body?",
+a:["Brain","Liver","Heart","Kidney"],
+c:2
+},
+
+{
+q:"What does ATM stand for?",
+a:["Automatic Transfer Machine","Automated Teller Machine","Automated Transfer Money","Account Teller Machine"],
+c:1
+},
+
+{
+q:"Which shortcut is commonly used to copy selected text?",
+a:["Ctrl + X","Ctrl + C","Ctrl + V","Ctrl + Z"],
+c:1
+},
+
+{
+q:"Choose the correct spelling.",
+a:["Goverment","Government","Govermentt","Governmant"],
+c:1
+},
+
+{
+q:"What is the average of 10 and 20?",
+a:["10","12","15","20"],
+c:2
+},
+
+{
+q:"If CAT is coded as DBU, how is DOG coded?",
+a:["EPH","FPH","EOG","DPH"],
+c:0
+},
+
+{
+q:"What does PNR commonly stand for in railway ticketing?",
+a:["Passenger Name Record","Passenger Number Register","Public Name Record","Passenger National Reservation"],
+c:0
+}
+
 ];
 
-const TOTAL_QUESTIONS = 30;
 
-const SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbxV1CyjtjBJJlpvIJxEx37AsBms2rStoPck9kcvD9uaN5UpgoTkKT0Y4EQWr77onNNx/exec";
+/* ============================
+   CREATE QUESTIONS
+============================ */
+
+const questionBox =
+document.getElementById("questions");
+
+questions.forEach(function(item,index){
+
+    let html = "";
+
+    html += '<div class="question">';
+
+    html += '<h3>' +
+        (index + 1) +
+        '. ' +
+        item.q +
+        '</h3>';
+
+    item.a.forEach(function(option,optionIndex){
+
+        html +=
+        '<label class="option">' +
+
+        '<input type="radio" ' +
+
+        'name="q' +
+        index +
+        '" ' +
+
+        'value="' +
+        optionIndex +
+        '">' +
+
+        ' ' +
+        String.fromCharCode(65 + optionIndex) +
+        '. ' +
+        option +
+
+        '</label>';
+
+    });
+
+    html += '</div>';
+
+    questionBox.innerHTML += html;
+
+});
 
 
-function submitMCQ() {
+/* ============================
+   SUBMIT TEST
+============================ */
 
-    const nameInput = document.getElementById("studentName");
-    const name = nameInput.value.trim();
+document.getElementById("mcqForm")
+.addEventListener("submit", function(event){
 
-    if (name === "") {
+    event.preventDefault();
+
+    const name =
+        document.getElementById("studentName")
+        .value
+        .trim();
+
+    if(name === ""){
+
         alert("Please enter your name first.");
-        nameInput.focus();
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+
+        document.getElementById("studentName").focus();
+
         return;
+
     }
 
-    let correct = 0;
+
+    let score = 0;
+
     let wrong = 0;
+
     let unanswered = 0;
 
     let reviewHTML = "";
 
-    for (let i = 1; i <= TOTAL_QUESTIONS; i++) {
+
+    questions.forEach(function(item,index){
 
         const selected =
             document.querySelector(
-                'input[name="q' + i + '"]:checked'
+                'input[name="q' +
+                index +
+                '"]:checked'
             );
 
-        const correctAnswer = correctAnswers[i - 1];
 
-        if (!selected) {
+        if(!selected){
 
             unanswered++;
 
-            reviewHTML += `
-                <div class="review-item unanswered">
-                    <strong>Question ${i}</strong><br>
-                    Your answer: Not answered<br>
-                    Correct answer: ${correctAnswer}
-                </div>
-            `;
+            reviewHTML +=
+            '<div class="review-item unanswered">' +
 
-        } else if (selected.value === correctAnswer) {
+            '<strong>Question ' +
+            (index + 1) +
+            '</strong>' +
 
-            correct++;
+            '<p>⭕ Not answered</p>' +
 
-            reviewHTML += `
-                <div class="review-item correct">
-                    <strong>Question ${i}</strong><br>
-                    Your answer: ${selected.value} ✓<br>
-                    Correct answer: ${correctAnswer}
-                </div>
-            `;
+            '<p>Correct answer: <strong>' +
+            String.fromCharCode(65 + item.c) +
+            '. ' +
+            item.a[item.c] +
+            '</strong></p>' +
 
-        } else {
+            '</div>';
+
+        }
+
+        else if(
+            Number(selected.value) === item.c
+        ){
+
+            score++;
+
+            reviewHTML +=
+            '<div class="review-item correct">' +
+
+            '<strong>Question ' +
+            (index + 1) +
+            '</strong>' +
+
+            '<p>✅ Correct</p>' +
+
+            '<p>Your answer: ' +
+            item.a[item.c] +
+            '</p>' +
+
+            '</div>';
+
+        }
+
+        else{
 
             wrong++;
 
-            reviewHTML += `
-                <div class="review-item wrong">
-                    <strong>Question ${i}</strong><br>
-                    Your answer: ${selected.value} ✗<br>
-                    Correct answer: ${correctAnswer}
-                </div>
-            `;
-        }
-    }
+            reviewHTML +=
+            '<div class="review-item wrong">' +
 
-    const score = correct;
+            '<strong>Question ' +
+            (index + 1) +
+            '</strong>' +
+
+            '<p>❌ Wrong</p>' +
+
+            '<p>Your answer: ' +
+            item.a[Number(selected.value)] +
+            '</p>' +
+
+            '<p>Correct answer: <strong>' +
+            item.a[item.c] +
+            '</strong></p>' +
+
+            '</div>';
+
+        }
+
+    });
+
 
     const percentage =
-        ((score / TOTAL_QUESTIONS) * 100).toFixed(2);
+        ((score / questions.length) * 100)
+        .toFixed(2);
 
-    document.getElementById("score").textContent = score;
-    document.getElementById("correct").textContent = correct;
-    document.getElementById("wrong").textContent = wrong;
-    document.getElementById("unanswered").textContent = unanswered;
-    document.getElementById("percentage").textContent =
-        percentage + "%";
 
-    let message = "";
+    /* SHOW RESULT */
 
-    if (percentage >= 80) {
-        message = "Excellent performance! Keep preparing.";
-    } else if (percentage >= 60) {
-        message = "Good performance! Keep practicing.";
-    } else if (percentage >= 40) {
-        message = "Keep practicing and improve your score.";
-    } else {
-        message = "Do more practice and try again.";
+    document.getElementById("resultName")
+    .textContent =
+    "Student: " + name;
+
+    document.getElementById("score")
+    .textContent =
+    score;
+
+    document.getElementById("correct")
+    .textContent =
+    score;
+
+    document.getElementById("wrong")
+    .textContent =
+    wrong;
+
+    document.getElementById("unanswered")
+    .textContent =
+    unanswered;
+
+    document.getElementById("percentage")
+    .textContent =
+    percentage + "%";
+
+    document.getElementById("review")
+    .innerHTML =
+    reviewHTML;
+
+
+    if(Number(percentage) >= 80){
+
+        document.getElementById("message")
+        .textContent =
+        "🎉 Excellent performance!";
+
     }
 
-    document.getElementById("message").textContent = message
+    else if(Number(percentage) >= 60){
+
+        document.getElementById("message")
+        .textContent =
+        "👍 Good performance! Keep practicing.";
+
+    }
+
+    else{
+
+        document.getElementById("message")
+        .textContent =
+        "📚 Keep studying and try again.";
+
+    }
+
+
+    document.getElementById("result")
+    .style.display =
+    "block";
+
+
+    /* SAVE RESULT ON DEVICE */
+
+    const resultData = {
+
+        name:name,
+
+        score:score,
+
+        total:30,
+
+        percentage:percentage,
+
+        exam:"MCQ Practice"
+
+    };
+
+
+    localStorage.setItem(
+        "mcqLastResult",
+        JSON.stringify(resultData)
+    );
+
+
+    /* SCROLL TO RESULT */
+
+    document.getElementById("result")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+
+    /* CHANGE BUTTON */
+
+    document.getElementById("submitBtn")
+    .textContent =
+    "Test Submitted";
+
+
+});
+
+
+</script>
+
+</body>
+</html>
