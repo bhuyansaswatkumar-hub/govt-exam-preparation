@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,17 +7,16 @@
 <title>Leaderboard | SSC & Banking</title>
 
 <meta name="description"
-content="SSC and Banking Exam Leaderboard. Check mock test scores, ranks and performance.">
+content="SSC and Banking Exam Leaderboard. Check your mock test score, rank and performance.">
 
 <style>
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    font-family: Arial, sans-serif;
     background: #f4f6f8;
     color: #222;
 }
@@ -26,18 +24,18 @@ body {
 header {
     background: #173b75;
     color: white;
-    padding: 22px 15px;
+    padding: 25px 15px;
     text-align: center;
 }
 
 header h1 {
+    margin: 0 0 8px;
     font-size: 30px;
-    margin-bottom: 8px;
 }
 
 header p {
+    margin: 0;
     font-size: 15px;
-    opacity: 0.9;
 }
 
 nav {
@@ -50,7 +48,7 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
-    padding: 14px 18px;
+    padding: 13px 15px;
     font-size: 14px;
 }
 
@@ -60,169 +58,92 @@ nav a:hover {
 
 .container {
     max-width: 1100px;
-    margin: 30px auto;
+    margin: 25px auto;
     padding: 0 15px;
 }
 
-.page-title {
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.page-title h2 {
-    color: #173b75;
-    font-size: 28px;
-    margin-bottom: 8px;
-}
-
-.page-title p {
-    color: #666;
-}
-
-.status {
-    text-align: center;
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
     margin-bottom: 20px;
-    padding: 12px;
-    border-radius: 8px;
-    background: #eef4ff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+    margin-top: 0;
     color: #173b75;
-    font-weight: bold;
 }
 
 .top-three {
-    display: flex;
-    justify-content: center;
-    align-items: end;
-    gap: 20px;
-    margin-bottom: 35px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
 .top-card {
-    background: white;
-    width: 250px;
-    padding: 25px 20px;
     text-align: center;
-    border-radius: 14px;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-    border-top: 5px solid #173b75;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f8f9fb;
+    border: 1px solid #ddd;
 }
 
-.top-card.first {
-    transform: scale(1.05);
-    border-top-color: #d4a017;
-}
-
-.top-card.second {
-    border-top-color: #777;
-}
-
-.top-card.third {
-    border-top-color: #9b5a32;
-}
-
-.medal {
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.rank-number {
-    font-size: 36px;
+.top-card .rank {
+    font-size: 28px;
     font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.top-card h3 {
-    color: #173b75;
     margin-bottom: 8px;
 }
 
-.top-card p {
-    color: #666;
-    margin: 5px 0;
-}
-
-.score {
-    font-size: 22px;
+.top-card .name {
+    font-size: 18px;
     font-weight: bold;
     color: #173b75;
-    margin-top: 12px;
+    word-break: break-word;
 }
 
-.leaderboard-box {
-    background: white;
-    border-radius: 14px;
-    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
-    padding: 25px;
-}
-
-.search-area {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-}
-
-.search-area h3 {
-    color: #173b75;
-    font-size: 22px;
+.top-card .score {
+    margin-top: 8px;
+    font-size: 16px;
 }
 
 .search-box {
-    padding: 12px 15px;
-    width: 280px;
+    width: 100%;
+    padding: 13px;
     border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 14px;
-    outline: none;
+    border-radius: 6px;
+    font-size: 15px;
+    margin-bottom: 15px;
 }
 
-.search-box:focus {
-    border-color: #173b75;
-}
-
-.table-container {
+.table-wrapper {
     overflow-x: auto;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 650px;
-}
-
-thead {
-    background: #173b75;
-    color: white;
-}
-
-th,
-td {
-    padding: 14px 12px;
-    text-align: center;
-    border-bottom: 1px solid #eee;
+    min-width: 700px;
 }
 
 th {
-    font-size: 14px;
+    background: #173b75;
+    color: white;
+    padding: 12px;
+    text-align: left;
 }
 
 td {
-    font-size: 14px;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
 }
 
-tbody tr:hover {
-    background: #f1f5fa;
+tr:hover {
+    background: #f5f7fb;
 }
 
-.rank {
-    font-weight: bold;
-    color: #173b75;
-}
-
-.user-name {
+.rank-number {
     font-weight: bold;
 }
 
@@ -235,87 +156,51 @@ tbody tr:hover {
     font-weight: bold;
 }
 
-.badge {
+.exam-badge {
     display: inline-block;
     padding: 5px 9px;
-    border-radius: 20px;
+    border-radius: 15px;
+    background: #eaf0ff;
+    color: #173b75;
     font-size: 12px;
     font-weight: bold;
 }
 
-.excellent {
-    background: #dff5e1;
-    color: #1b7a32;
-}
-
-.good {
-    background: #e5efff;
-    color: #2459a6;
-}
-
-.average {
-    background: #fff3cd;
-    color: #856404;
-}
-
-.your-rank {
-    margin-top: 25px;
-    background: #eef4ff;
-    border-left: 5px solid #173b75;
-    padding: 18px;
-    border-radius: 8px;
-}
-
-.your-rank h3 {
-    color: #173b75;
-    margin-bottom: 8px;
-}
-
-.your-rank p {
-    color: #444;
-    line-height: 1.7;
-}
-
-.refresh-area {
+.loading {
     text-align: center;
-    margin-top: 20px;
+    padding: 25px;
+    color: #666;
 }
 
-.refresh-button {
-    border: none;
+.error {
+    text-align: center;
+    padding: 20px;
+    color: #b00020;
+    background: #fff0f0;
+    border-radius: 6px;
+}
+
+.refresh-btn {
     background: #173b75;
     color: white;
-    padding: 11px 20px;
-    border-radius: 7px;
+    border: none;
+    padding: 11px 18px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
 }
 
-.refresh-button:hover {
+.refresh-btn:hover {
     background: #0d2852;
 }
 
 footer {
-    background: #0d2852;
+    margin-top: 40px;
+    background: #173b75;
     color: white;
     text-align: center;
-    padding: 25px 15px;
-    margin-top: 40px;
-}
-
-footer p {
-    margin: 5px 0;
+    padding: 20px;
     font-size: 14px;
-}
-
-footer a {
-    color: white;
-    text-decoration: none;
-    margin: 0 6px;
-}
-
-footer a:hover {
-    text-decoration: underline;
 }
 
 @media (max-width: 700px) {
@@ -324,35 +209,17 @@ footer a:hover {
         font-size: 24px;
     }
 
+    .top-three {
+        grid-template-columns: 1fr;
+    }
+
     nav a {
-        padding: 11px 10px;
+        padding: 10px 8px;
         font-size: 12px;
     }
 
-    .page-title h2 {
-        font-size: 23px;
-    }
-
-    .top-card {
-        width: 100%;
-        max-width: 320px;
-    }
-
-    .top-card.first {
-        transform: none;
-    }
-
-    .leaderboard-box {
+    .card {
         padding: 15px;
-    }
-
-    .search-area {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .search-box {
-        width: 100%;
     }
 }
 </style>
@@ -361,8 +228,8 @@ footer a:hover {
 <body>
 
 <header>
-    <h1>SSC & Banking Exam Preparation</h1>
-    <p>Free Study Material • Mock Tests • Current Affairs • Practice Questions</p>
+    <h1>🏆 Leaderboard</h1>
+    <p>SSC & Banking Exam Preparation</p>
 </header>
 
 <nav>
@@ -372,77 +239,58 @@ footer a:hover {
     <a href="railway.html">Railway</a>
     <a href="notes.html">Notes</a>
     <a href="mcq.html">MCQ</a>
-    <a href="current-affairs.html">Current Affairs</a>
     <a href="mock-test.html">Mock Test</a>
+    <a href="current-affairs.html">Current Affairs</a>
+    <a href="daily-quiz.html">Daily Quiz</a>
     <a href="leaderboard.html">Leaderboard</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
 </nav>
 
 <div class="container">
 
-    <div class="page-title">
-        <h2>🏆 Mock Test Leaderboard</h2>
-        <p>See the latest mock test scores and rankings.</p>
+    <div class="card">
+        <h2>🏆 Top Performers</h2>
+
+        <div id="topThree" class="top-three">
+            <div class="loading">Loading...</div>
+        </div>
     </div>
 
-    <div class="status" id="status">
-        Loading leaderboard...
-    </div>
+    <div class="card">
 
-    <div class="top-three" id="topThree"></div>
+        <h2>📊 All Scores</h2>
 
-    <div class="leaderboard-box">
+        <input
+            type="text"
+            id="searchBox"
+            class="search-box"
+            placeholder="Search student name or exam..."
+        >
 
-        <div class="search-area">
-            <h3>All Participants</h3>
+        <button class="refresh-btn" onclick="loadLeaderboard()">
+            🔄 Refresh Leaderboard
+        </button>
 
-            <input
-                type="text"
-                id="searchInput"
-                class="search-box"
-                placeholder="Search participant..."
-                onkeyup="searchTable()"
-            >
+        <div id="status" class="loading">
+            Loading leaderboard...
         </div>
 
-        <div class="table-container">
-
-            <table>
+        <div class="table-wrapper">
+            <table id="leaderboardTable" style="display:none;">
 
                 <thead>
                     <tr>
                         <th>Rank</th>
-                        <th>Participant</th>
+                        <th>Student</th>
+                        <th>Exam</th>
                         <th>Score</th>
                         <th>Percentage</th>
-                        <th>Performance</th>
+                        <th>Date</th>
                     </tr>
                 </thead>
 
-                <tbody id="leaderboardBody">
-                </tbody>
+                <tbody id="leaderboardBody"></tbody>
 
             </table>
-
-        </div>
-
-        <div class="your-rank" id="yourRank">
-
-            <h3>📊 Your Performance</h3>
-
-            <p>
-                Complete a mock test to see your score and rank.
-            </p>
-
-        </div>
-
-        <div class="refresh-area">
-
-            <button class="refresh-button" onclick="loadLeaderboard()">
-                🔄 Refresh Leaderboard
-            </button>
-
         </div>
 
     </div>
@@ -450,594 +298,360 @@ footer a:hover {
 </div>
 
 <footer>
-
-    <p>
-        © 2026 SSC & Banking Exam Preparation
-    </p>
-
-    <p>
-        <a href="index.html">Home</a> |
-        <a href="about.html">About</a> |
-        <a href="contact.html">Contact</a> |
-        <a href="privacy.html">Privacy Policy</a>
-    </p>
-
+    © 2026 Govt Exam Preparation | SSC & Banking
 </footer>
 
 <script>
 
-/* =====================================================
-   GOOGLE APPS SCRIPT WEB APP URL
-   ===================================================== */
-
-const SCRIPT_URL =
+const GOOGLE_SCRIPT_URL =
 "https://script.google.com/macros/s/AKfycbxV1CyjtjBJJlpvIJxEx37AsBms2rStoPck9kcvD9uaN5UpgoTkKT0Y4EQWr77onNNx/exec";
 
+let leaderboardData = [];
 
-/* =====================================================
-   LOAD LEADERBOARD FROM GOOGLE SHEETS
-   ===================================================== */
+
+/* =========================
+   LOAD LEADERBOARD
+========================= */
 
 async function loadLeaderboard() {
 
-    const status =
-        document.getElementById("status");
+    const status = document.getElementById("status");
+    const table = document.getElementById("leaderboardTable");
+    const body = document.getElementById("leaderboardBody");
+    const topThree = document.getElementById("topThree");
 
-    status.textContent =
-        "Loading latest scores...";
+    status.className = "loading";
+    status.innerHTML = "Loading leaderboard...";
+
+    table.style.display = "none";
 
     try {
 
-        const response =
-            await fetch(SCRIPT_URL + "?t=" + Date.now());
+        const response = await fetch(
+            GOOGLE_SCRIPT_URL + "?t=" + new Date().getTime()
+        );
 
         if (!response.ok) {
-            throw new Error("Network response was not OK");
+            throw new Error("Network response failed");
         }
 
-        const data =
-            await response.json();
-
-        console.log("Google Sheet data:", data);
+        const data = await response.json();
 
         if (!Array.isArray(data)) {
-
-            throw new Error(
-                "Google Apps Script did not return an array."
-            );
-
+            throw new Error("Invalid leaderboard data");
         }
 
-        const participants =
-            data.map(normalizeResult)
-                .filter(function(person) {
-                    return person.name &&
-                           person.name !== "Student";
-                });
+        leaderboardData = data;
 
-        participants.sort(function(a, b) {
+        displayTopThree(leaderboardData);
+        displayTable(leaderboardData);
 
-            if (b.percentage !== a.percentage) {
-                return b.percentage - a.percentage;
-            }
-
-            return b.score - a.score;
-
-        });
-
-        renderTopThree(participants);
-
-        renderTable(participants);
-
-        renderCurrentUser(participants);
-
-        status.textContent =
-            participants.length +
-            " participant(s) loaded from Google Sheets.";
+        status.style.display = "none";
+        table.style.display = "table";
 
     } catch (error) {
 
-        console.error("Leaderboard error:", error);
-
-        status.textContent =
-            "Unable to load scores. Please check the Apps Script deployment.";
-
-        document.getElementById("leaderboardBody").innerHTML = `
-            <tr>
-                <td colspan="5">
-                    Could not load leaderboard data.
-                </td>
-            </tr>
-        `;
-
-        document.getElementById("topThree").innerHTML = "";
-
-    }
-
-}
-
-
-/* =====================================================
-   NORMALIZE GOOGLE SHEET RESULT
-   ===================================================== */
-
-function normalizeResult(result) {
-
-    /*
-       Apps Script returns:
-
-       {
-          name: "...",
-          score: ...,
-          percentage: ...
-       }
-    */
-
-    const score =
-        Number(result.score) || 0;
-
-    let percentage =
-        Number(result.percentage);
-
-    if (!percentage) {
-
-        percentage = score;
-
-    }
-
-    return {
-
-        id:
-            result.id ||
-            (
-                "student-" +
-                String(result.name) +
-                "-" +
-                String(score)
-            ),
-
-        name:
-            result.name ||
-            "Student",
-
-        exam:
-            result.exam ||
-            "Mock Test",
-
-        score:
-            score,
-
-        total:
-            Number(result.total) ||
-            20,
-
-        percentage:
-            percentage
-
-    };
-
-}
-
-
-/* =====================================================
-   TOP THREE
-   ===================================================== */
-
-function renderTopThree(participants) {
-
-    const topThree =
-        document.getElementById("topThree");
-
-    if (!participants.length) {
+        console.error(error);
 
         topThree.innerHTML = `
-            <div class="top-card">
-                <h3>No Scores Yet</h3>
-                <p>Complete a mock test to appear here.</p>
+            <div class="error">
+                Unable to load leaderboard.
+            </div>
+        `;
+
+        status.className = "error";
+        status.innerHTML =
+            "Unable to load scores. Please check the Apps Script deployment.";
+
+    }
+}
+
+
+/* =========================
+   TOP 3
+========================= */
+
+function displayTopThree(data) {
+
+    const topThree = document.getElementById("topThree");
+
+    if (!data || data.length === 0) {
+
+        topThree.innerHTML = `
+            <div class="loading">
+                No scores available yet.
             </div>
         `;
 
         return;
-
     }
 
-    const medals =
-        ["🏆", "🥈", "🥉"];
-
-    const classes =
-        ["first", "second", "third"];
+    const top = data.slice(0, 3);
 
     let html = "";
 
-    for (
-        let i = 0;
-        i < Math.min(3, participants.length);
-        i++
-    ) {
+    top.forEach(function(item, index) {
 
-        const person =
-            participants[i];
+        const rank = index + 1;
+
+        const name = escapeHTML(
+            item.name || "Student"
+        );
+
+        const score = Number(item.score) || 0;
+
+        const total = getTotal(item);
+
+        const percentage = Number(item.percentage) || 0;
 
         html += `
+            <div class="top-card">
 
-            <div class="top-card ${classes[i]}">
-
-                <div class="medal">
-                    ${medals[i]}
+                <div class="rank">
+                    ${getMedal(rank)} #${rank}
                 </div>
 
-                <div class="rank-number">
-                    #${i + 1}
+                <div class="name">
+                    ${name}
                 </div>
-
-                <h3>
-                    ${escapeHTML(person.name)}
-                </h3>
-
-                <p>
-                    ${escapeHTML(person.exam)}
-                </p>
 
                 <div class="score">
-                    ${person.score} / ${person.total}
+                    ${score} / ${total}
+                    <br>
+                    <strong>${percentage}%</strong>
                 </div>
 
-                <p>
-                    ${formatPercentage(person.percentage)}
-                </p>
-
             </div>
-
         `;
+    });
 
-    }
-
-    topThree.innerHTML =
-        html;
-
+    topThree.innerHTML = html;
 }
 
 
-/* =====================================================
+/* =========================
    TABLE
-   ===================================================== */
+========================= */
 
-function renderTable(participants) {
+function displayTable(data) {
 
-    const body =
-        document.getElementById("leaderboardBody");
+    const body = document.getElementById("leaderboardBody");
 
-    if (!participants.length) {
+    body.innerHTML = "";
+
+    if (!data || data.length === 0) {
 
         body.innerHTML = `
             <tr>
-                <td colspan="5">
-                    No scores available yet.
+                <td colspan="6" style="text-align:center;">
+                    No scores available.
                 </td>
             </tr>
         `;
 
         return;
-
     }
 
-    let html = "";
+    data.forEach(function(item, index) {
 
-    participants.forEach(function(person, index) {
+        const rank = index + 1;
 
-        html += `
+        const name = escapeHTML(
+            item.name || "Student"
+        );
+
+        const exam = escapeHTML(
+            item.exam || "Mock Test"
+        );
+
+        const score = Number(item.score) || 0;
+
+        const total = getTotal(item);
+
+        const percentage = Number(item.percentage) || 0;
+
+        const date = formatDate(item.date);
+
+        body.innerHTML += `
 
             <tr>
 
-                <td class="rank">
-                    #${index + 1}
-                </td>
-
-                <td class="user-name">
-                    ${escapeHTML(person.name)}
-                </td>
-
-                <td class="score-cell">
-                    ${person.score} / ${person.total}
-                </td>
-
-                <td class="percentage">
-                    ${formatPercentage(person.percentage)}
+                <td class="rank-number">
+                    ${rank}
                 </td>
 
                 <td>
-                    ${getPerformance(person.percentage)}
+                    ${name}
+                </td>
+
+                <td>
+                    <span class="exam-badge">
+                        ${exam}
+                    </span>
+                </td>
+
+                <td class="score-cell">
+                    ${score} / ${total}
+                </td>
+
+                <td class="percentage">
+                    ${percentage}%
+                </td>
+
+                <td>
+                    ${date}
                 </td>
 
             </tr>
 
         `;
-
     });
-
-    body.innerHTML =
-        html;
-
 }
 
 
-/* =====================================================
-   PERFORMANCE BADGE
-   ===================================================== */
+/* =========================
+   SEARCH
+========================= */
 
-function getPerformance(percentage) {
+document.getElementById("searchBox").addEventListener(
+    "input",
+    function() {
 
-    if (percentage >= 85) {
+        const searchText =
+            this.value.toLowerCase().trim();
 
-        return `
-            <span class="badge excellent">
-                Excellent
-            </span>
-        `;
+        const filtered =
+            leaderboardData.filter(function(item) {
 
-    }
+                const name =
+                    String(item.name || "")
+                    .toLowerCase();
 
-    if (percentage >= 70) {
+                const exam =
+                    String(item.exam || "")
+                    .toLowerCase();
 
-        return `
-            <span class="badge good">
-                Good
-            </span>
-        `;
-
-    }
-
-    return `
-        <span class="badge average">
-            Keep Practicing
-        </span>
-    `;
-
-}
-
-
-/* =====================================================
-   CURRENT USER
-   ===================================================== */
-
-function getCurrentUser() {
-
-    try {
-
-        const saved =
-            localStorage.getItem("examPrepCurrentUser");
-
-        if (!saved) {
-            return null;
-        }
-
-        return JSON.parse(saved);
-
-    } catch (error) {
-
-        return null;
-
-    }
-
-}
-
-
-/* =====================================================
-   CURRENT USER PERFORMANCE
-   ===================================================== */
-
-function renderCurrentUser(participants) {
-
-    const box =
-        document.getElementById("yourRank");
-
-    const currentUser =
-        getCurrentUser();
-
-    if (!currentUser) {
-
-        box.innerHTML = `
-
-            <h3>📊 Your Performance</h3>
-
-            <p>
-                Complete a mock test to see your score and rank.
-            </p>
-
-        `;
-
-        return;
-
-    }
-
-    let userIndex =
-        participants.findIndex(function(person) {
-
-            return person.id === currentUser.id;
-
-        });
-
-
-    if (
-        userIndex === -1 &&
-        currentUser.name
-    ) {
-
-        userIndex =
-            participants.findIndex(function(person) {
-
-                return person.name.toLowerCase() ===
-                    currentUser.name.toLowerCase();
+                return (
+                    name.includes(searchText) ||
+                    exam.includes(searchText)
+                );
 
             });
 
+        displayTable(filtered);
+    }
+);
+
+
+/* =========================
+   TOTAL MARKS
+========================= */
+
+function getTotal(item) {
+
+    if (item.total && Number(item.total) > 0) {
+        return Number(item.total);
     }
 
+    const exam =
+        String(item.exam || "").toLowerCase();
 
-    if (userIndex === -1) {
-
-        box.innerHTML = `
-
-            <h3>📊 Your Performance</h3>
-
-            <p>
-                Your latest result is not available yet.
-                Please refresh after completing the mock test.
-            </p>
-
-        `;
-
-        return;
-
-    }
-
-
-    const person =
-        participants[userIndex];
-
-    const rank =
-        userIndex + 1;
-
-
-    box.innerHTML = `
-
-        <h3>📊 Your Performance</h3>
-
-        <p>
-
-            <strong>
-                ${escapeHTML(person.name)}
-            </strong>
-
-            &nbsp; | &nbsp;
-
-            🏆 Rank:
-            <strong>#${rank}</strong>
-
-            &nbsp; | &nbsp;
-
-            Score:
-            <strong>
-                ${person.score}/${person.total}
-            </strong>
-
-            &nbsp; | &nbsp;
-
-            Percentage:
-            <strong>
-                ${formatPercentage(person.percentage)}
-            </strong>
-
-        </p>
-
-    `;
-
-}
-
-
-/* =====================================================
-   SEARCH
-   ===================================================== */
-
-function searchTable() {
-
-    const input =
-        document
-        .getElementById("searchInput")
-        .value
-        .toLowerCase()
-        .trim();
-
-    const rows =
-        document
-        .getElementById("leaderboardBody")
-        .getElementsByTagName("tr");
-
-    for (
-        let i = 0;
-        i < rows.length;
-        i++
+    if (
+        exam.includes("mcq")
     ) {
-
-        const cells =
-            rows[i].getElementsByTagName("td");
-
-        if (!cells.length) {
-            continue;
-        }
-
-        const name =
-            cells[1].textContent.toLowerCase();
-
-        if (
-            name.indexOf(input) > -1
-        ) {
-
-            rows[i].style.display = "";
-
-        } else {
-
-            rows[i].style.display = "none";
-
-        }
-
+        return 30;
     }
 
+    return 50;
 }
 
 
-/* =====================================================
-   FORMAT PERCENTAGE
-   ===================================================== */
+/* =========================
+   DATE FORMAT
+========================= */
 
-function formatPercentage(value) {
+function formatDate(value) {
 
-    const number =
-        Number(value) || 0;
+    if (!value) {
+        return "-";
+    }
 
-    return number
-        .toFixed(2)
-        .replace(".00", "") + "%";
+    try {
 
+        const date = new Date(value);
+
+        if (isNaN(date.getTime())) {
+            return "-";
+        }
+
+        return date.toLocaleDateString(
+            "en-IN",
+            {
+                day: "2-digit",
+                month: "short",
+                year: "numeric"
+            }
+        );
+
+    } catch (error) {
+
+        return "-";
+    }
 }
 
 
-/* =====================================================
-   ESCAPE HTML
-   ===================================================== */
+/* =========================
+   MEDALS
+========================= */
 
-function escapeHTML(value) {
+function getMedal(rank) {
 
-    const div =
-        document.createElement("div");
+    if (rank === 1) {
+        return "🥇";
+    }
 
-    div.textContent =
-        value;
+    if (rank === 2) {
+        return "🥈";
+    }
 
-    return div.innerHTML;
+    if (rank === 3) {
+        return "🥉";
+    }
 
+    return "🏅";
 }
 
 
-/* =====================================================
+/* =========================
+   SECURITY
+========================= */
+
+function escapeHTML(text) {
+
+    return String(text)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+
+/* =========================
    START
-   ===================================================== */
+========================= */
 
 loadLeaderboard();
 
 
-/* =====================================================
-   AUTO REFRESH WHEN PAGE BECOMES VISIBLE
-   ===================================================== */
+/* Refresh when page becomes visible */
 
 document.addEventListener(
     "visibilitychange",
     function() {
 
         if (!document.hidden) {
-
             loadLeaderboard();
-
         }
 
     }
@@ -1047,4 +661,3 @@ document.addEventListener(
 
 </body>
 </html>
-```
