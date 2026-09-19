@@ -104,6 +104,11 @@ button:hover {
     background: #0d2852;
 }
 
+button:disabled {
+    background: #777;
+    cursor: not-allowed;
+}
+
 .submit-area {
     text-align: center;
     margin: 30px 0;
@@ -177,6 +182,11 @@ button:hover {
     margin: 5px;
 }
 
+.status {
+    font-weight: bold;
+    margin-top: 15px;
+}
+
 footer {
     background: #173b75;
     color: white;
@@ -186,6 +196,7 @@ footer {
 }
 
 @media(max-width:600px) {
+
     .stats {
         display: block;
     }
@@ -197,6 +208,7 @@ footer {
     button {
         width: 100%;
     }
+
 }
 </style>
 </head>
@@ -224,6 +236,7 @@ footer {
 <div class="container">
 
 <div class="box">
+
     <h2>Enter Your Name</h2>
 
     <input
@@ -231,13 +244,19 @@ footer {
         id="studentName"
         class="name-input"
         placeholder="Enter your name"
+        maxlength="50"
     >
+
 </div>
 
 <div class="box">
+
     <h2>📝 MCQ Practice Test</h2>
+
     <p>30 Questions | SSC | Banking | Railway</p>
+
     <p>Select one answer for each question.</p>
+
 </div>
 
 <form id="mcqForm">
@@ -245,9 +264,11 @@ footer {
 <div id="questions"></div>
 
 <div class="submit-area">
+
     <button type="submit" id="submitBtn">
         Submit MCQ Test
     </button>
+
 </div>
 
 </form>
@@ -288,15 +309,24 @@ footer {
 
     <p id="message"></p>
 
+    <p id="submitStatus" class="status"></p>
+
     <div class="review">
+
         <h2>📖 Answer Review</h2>
+
         <div id="review"></div>
+
     </div>
 
     <div class="links">
+
         <a href="leaderboard.html">🏆 Leaderboard</a>
+
         <a href="mock-test.html">📝 Mock Test</a>
+
         <a href="daily-quiz.html">📅 Daily Quiz</a>
+
     </div>
 
 </div>
@@ -310,9 +340,17 @@ footer {
 
 <script>
 
-/* ============================
+/* =====================================================
+   GOOGLE APPS SCRIPT URL
+===================================================== */
+
+const GOOGLE_SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbxV1CyjtjBJJlpvIJxEx37AsBms2rStoPck9kcvD9uaN5UpgoTkKT0Y4EQWr77onNNx/exec";
+
+
+/* =====================================================
    MCQ DATA
-============================ */
+===================================================== */
 
 const questions = [
 
@@ -504,9 +542,9 @@ c:0
 ];
 
 
-/* ============================
+/* =====================================================
    CREATE QUESTIONS
-============================ */
+===================================================== */
 
 const questionBox =
 document.getElementById("questions");
@@ -539,8 +577,11 @@ questions.forEach(function(item,index){
         '">' +
 
         ' ' +
+
         String.fromCharCode(65 + optionIndex) +
+
         '. ' +
+
         option +
 
         '</label>';
@@ -554,19 +595,78 @@ questions.forEach(function(item,index){
 });
 
 
-/* ============================
+/* =====================================================
+   SEND SCORE TO GOOGLE SHEETS
+===================================================== */
+
+function sendScoreToGoogle(name, score, percentage) {
+
+    const data = {
+
+        name: name,
+
+        score: score,
+
+        percentage: Number(percentage)
+
+    };
+
+
+    /*
+       no-cors is used because Google Apps Script
+       may not return normal browser CORS headers.
+
+       The POST request is still sent to the Apps Script.
+    */
+
+    fetch(
+        GOOGLE_SCRIPT_URL,
+        {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8"
+            },
+            body: JSON.stringify(data)
+        }
+    )
+    .then(function(){
+
+        document.getElementById("submitStatus")
+        .textContent =
+        "✅ Score submitted to the leaderboard.";
+
+    })
+    .catch(function(error){
+
+        console.log("Score submission error:", error);
+
+        document.getElementById("submitStatus")
+        .textContent =
+        "⚠️ Result calculated, but score submission needs to be checked.";
+
+    });
+
+}
+
+
+/* =====================================================
    SUBMIT TEST
-============================ */
+===================================================== */
 
 document.getElementById("mcqForm")
 .addEventListener("submit", function(event){
 
     event.preventDefault();
 
+
+    /* NAME */
+
     const name =
         document.getElementById("studentName")
         .value
         .trim();
+
 
     if(name === ""){
 
@@ -579,6 +679,17 @@ document.getElementById("mcqForm")
     }
 
 
+    /* DISABLE BUTTON */
+
+    const submitBtn =
+        document.getElementById("submitBtn");
+
+    submitBtn.disabled = true;
+
+    submitBtn.textContent =
+        "Submitting...";
+
+
     let score = 0;
 
     let wrong = 0;
@@ -587,6 +698,8 @@ document.getElementById("mcqForm")
 
     let reviewHTML = "";
 
+
+    /* CHECK QUESTIONS */
 
     questions.forEach(function(item,index){
 
@@ -603,6 +716,7 @@ document.getElementById("mcqForm")
             unanswered++;
 
             reviewHTML +=
+
             '<div class="review-item unanswered">' +
 
             '<strong>Question ' +
@@ -612,9 +726,13 @@ document.getElementById("mcqForm")
             '<p>⭕ Not answered</p>' +
 
             '<p>Correct answer: <strong>' +
+
             String.fromCharCode(65 + item.c) +
+
             '. ' +
+
             item.a[item.c] +
+
             '</strong></p>' +
 
             '</div>';
@@ -628,6 +746,7 @@ document.getElementById("mcqForm")
             score++;
 
             reviewHTML +=
+
             '<div class="review-item correct">' +
 
             '<strong>Question ' +
@@ -637,7 +756,9 @@ document.getElementById("mcqForm")
             '<p>✅ Correct</p>' +
 
             '<p>Your answer: ' +
+
             item.a[item.c] +
+
             '</p>' +
 
             '</div>';
@@ -649,6 +770,7 @@ document.getElementById("mcqForm")
             wrong++;
 
             reviewHTML +=
+
             '<div class="review-item wrong">' +
 
             '<strong>Question ' +
@@ -658,11 +780,15 @@ document.getElementById("mcqForm")
             '<p>❌ Wrong</p>' +
 
             '<p>Your answer: ' +
+
             item.a[Number(selected.value)] +
+
             '</p>' +
 
             '<p>Correct answer: <strong>' +
+
             item.a[item.c] +
+
             '</strong></p>' +
 
             '</div>';
@@ -672,6 +798,8 @@ document.getElementById("mcqForm")
     });
 
 
+    /* PERCENTAGE */
+
     const percentage =
         ((score / questions.length) * 100)
         .toFixed(2);
@@ -680,33 +808,35 @@ document.getElementById("mcqForm")
     /* SHOW RESULT */
 
     document.getElementById("resultName")
-    .textContent =
-    "Student: " + name;
+        .textContent =
+        "Student: " + name;
 
     document.getElementById("score")
-    .textContent =
-    score;
+        .textContent =
+        score;
 
     document.getElementById("correct")
-    .textContent =
-    score;
+        .textContent =
+        score;
 
     document.getElementById("wrong")
-    .textContent =
-    wrong;
+        .textContent =
+        wrong;
 
     document.getElementById("unanswered")
-    .textContent =
-    unanswered;
+        .textContent =
+        unanswered;
 
     document.getElementById("percentage")
-    .textContent =
-    percentage + "%";
+        .textContent =
+        percentage + "%";
 
     document.getElementById("review")
-    .innerHTML =
-    reviewHTML;
+        .innerHTML =
+        reviewHTML;
 
+
+    /* MESSAGE */
 
     if(Number(percentage) >= 80){
 
@@ -733,24 +863,28 @@ document.getElementById("mcqForm")
     }
 
 
+    /* SHOW RESULT */
+
     document.getElementById("result")
-    .style.display =
-    "block";
+        .style.display =
+        "block";
 
 
-    /* SAVE RESULT ON DEVICE */
+    /* SAVE LOCALLY */
 
     const resultData = {
 
-        name:name,
+        name: name,
 
-        score:score,
+        score: score,
 
-        total:30,
+        total: 30,
 
-        percentage:percentage,
+        percentage: Number(percentage),
 
-        exam:"MCQ Practice"
+        exam: "MCQ Practice",
+
+        date: new Date().toISOString()
 
     };
 
@@ -761,20 +895,32 @@ document.getElementById("mcqForm")
     );
 
 
-    /* SCROLL TO RESULT */
+    /* SEND TO GOOGLE SHEET */
+
+    document.getElementById("submitStatus")
+        .textContent =
+        "⏳ Sending score to leaderboard...";
+
+
+    sendScoreToGoogle(
+        name,
+        score,
+        percentage
+    );
+
+
+    /* SCROLL */
 
     document.getElementById("result")
-    .scrollIntoView({
-        behavior:"smooth"
-    });
+        .scrollIntoView({
+            behavior: "smooth"
+        });
 
 
-    /* CHANGE BUTTON */
+    /* BUTTON */
 
-    document.getElementById("submitBtn")
-    .textContent =
-    "Test Submitted";
-
+    submitBtn.textContent =
+        "Test Submitted";
 
 });
 
