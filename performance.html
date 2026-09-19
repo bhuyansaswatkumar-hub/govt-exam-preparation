@@ -1,14 +1,15 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Performance Dashboard | SSC & Banking</title>
 
 <meta name="description"
-content="View your SSC, Banking and Railway mock test performance, scores, percentage and test history.">
+content="Track Mock Test 1 and Mock Test 2 scores, best performance, average percentage and complete test history.">
 
 <style>
 
@@ -22,8 +23,6 @@ body {
     background: #f4f6f8;
     color: #222;
 }
-
-/* HEADER */
 
 header {
     background: #173b75;
@@ -41,8 +40,6 @@ header p {
     margin: 0;
     font-size: 15px;
 }
-
-/* NAVIGATION */
 
 nav {
     background: #0d2852;
@@ -62,15 +59,11 @@ nav a:hover {
     background: #173b75;
 }
 
-/* CONTAINER */
-
 .container {
-    max-width: 1000px;
+    max-width: 1050px;
     margin: 25px auto;
     padding: 0 15px;
 }
-
-/* CARD */
 
 .card {
     background: white;
@@ -81,11 +74,9 @@ nav a:hover {
 }
 
 .card h2 {
-    color: #173b75;
     margin-top: 0;
+    color: #173b75;
 }
-
-/* STUDENT */
 
 .student-box {
     text-align: center;
@@ -101,8 +92,6 @@ nav a:hover {
 .student-message {
     color: #555;
 }
-
-/* STATISTICS */
 
 .stats {
     display: grid;
@@ -120,7 +109,7 @@ nav a:hover {
 .stat strong {
     display: block;
     color: #173b75;
-    font-size: 30px;
+    font-size: 28px;
     margin-bottom: 8px;
 }
 
@@ -129,8 +118,6 @@ nav a:hover {
     color: #555;
 }
 
-/* TEST CARDS */
-
 .test-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -138,37 +125,41 @@ nav a:hover {
 }
 
 .test-card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
     background: #fafbfd;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 22px;
 }
 
 .test-card h3 {
     color: #173b75;
     margin-top: 0;
+    font-size: 21px;
 }
 
 .test-score {
-    font-size: 35px;
+    font-size: 36px;
     font-weight: bold;
     color: #173b75;
-    margin: 10px 0;
+    margin: 12px 0;
 }
 
 .test-info {
-    margin: 7px 0;
     color: #555;
+    margin: 8px 0;
 }
 
-/* PROGRESS */
+.test-date {
+    font-size: 13px;
+    color: #777;
+}
 
 .progress-container {
     background: #ddd;
     border-radius: 20px;
     overflow: hidden;
     height: 18px;
-    margin: 12px 0;
+    margin: 15px 0;
 }
 
 .progress-bar {
@@ -178,7 +169,11 @@ nav a:hover {
     transition: width 0.5s ease;
 }
 
-/* TABLE */
+.no-test {
+    text-align: center;
+    color: #777;
+    padding: 15px;
+}
 
 .table-container {
     overflow-x: auto;
@@ -187,30 +182,33 @@ nav a:hover {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 th {
     background: #173b75;
     color: white;
     padding: 13px;
-    text-align: left;
+    text-align: center;
 }
 
 td {
     padding: 13px;
     border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+td:first-child {
+    text-align: left;
+    font-weight: bold;
 }
 
 tr:nth-child(even) {
     background: #f5f7fb;
 }
 
-/* BUTTONS */
-
 .buttons {
     text-align: center;
-    margin-top: 25px;
 }
 
 .btn {
@@ -228,15 +226,19 @@ tr:nth-child(even) {
     background: #0d2852;
 }
 
-/* NO DATA */
-
-.no-data {
-    text-align: center;
-    padding: 25px;
-    color: #666;
+.btn.green {
+    background: #2d6a4f;
 }
 
-/* FOOTER */
+.btn.green:hover {
+    background: #1f4d39;
+}
+
+.empty {
+    text-align: center;
+    color: #777;
+    padding: 25px;
+}
 
 footer {
     background: #0d2852;
@@ -245,8 +247,6 @@ footer {
     padding: 25px 15px;
     margin-top: 40px;
 }
-
-/* MOBILE */
 
 @media (max-width: 750px) {
 
@@ -267,12 +267,8 @@ footer {
     }
 
     nav a {
-        padding: 10px 8px;
+        padding: 9px 7px;
         font-size: 12px;
-    }
-
-    .card {
-        padding: 18px;
     }
 
     .stats {
@@ -281,6 +277,10 @@ footer {
 
     .student-name {
         font-size: 23px;
+    }
+
+    .card {
+        padding: 18px;
     }
 
     th,
@@ -292,25 +292,22 @@ footer {
 }
 
 </style>
+
 </head>
 
 <body>
 
 
-<!-- HEADER -->
-
 <header>
 
-    <h1>SSC & Banking Exam Preparation</h1>
+    <h1>📊 Performance Dashboard</h1>
 
     <p>
-        Performance Dashboard • Scores • Progress • Test History
+        SSC & Banking Exam Preparation
     </p>
 
 </header>
 
-
-<!-- NAVIGATION -->
 
 <nav>
 
@@ -330,7 +327,9 @@ footer {
 
     <a href="daily-quiz.html">Daily Quiz</a>
 
-    <a href="mock-test.html">Mock Test</a>
+    <a href="mock-test.html">Mock Test 1</a>
+
+    <a href="mock-test-2.html">Mock Test 2</a>
 
     <a href="performance.html">Performance</a>
 
@@ -342,11 +341,11 @@ footer {
 <div class="container">
 
 
-<!-- STUDENT PROFILE -->
+<!-- STUDENT -->
 
 <div class="card student-box">
 
-    <h2>👤 Student Performance</h2>
+    <h2>👤 Student</h2>
 
     <div
         id="studentName"
@@ -359,13 +358,13 @@ footer {
         id="studentMessage"
         class="student-message"
     >
-        Your mock test performance will appear here.
+        Complete a mock test to track your performance.
     </p>
 
 </div>
 
 
-<!-- OVERALL STATISTICS -->
+<!-- OVERALL -->
 
 <div class="card">
 
@@ -389,7 +388,7 @@ footer {
         <div class="stat">
 
             <strong id="bestScore">
-                0
+                0 / 50
             </strong>
 
             <span>
@@ -429,57 +428,53 @@ footer {
 </div>
 
 
-<!-- TEST PERFORMANCE -->
+<!-- SEPARATE TEST PERFORMANCE -->
 
 <div class="card">
 
-    <h2>📝 Mock Test Performance</h2>
+    <h2>📝 Individual Test Performance</h2>
 
     <div
-        id="testCards"
+        id="testGrid"
         class="test-grid"
     >
-
-        <div class="no-data">
-            No mock test completed yet.
-        </div>
 
     </div>
 
 </div>
 
 
-<!-- LATEST PERFORMANCE -->
+<!-- LATEST -->
 
 <div class="card">
 
-    <h2>📈 Latest Performance</h2>
+    <h2>📈 Latest Attempt</h2>
 
     <p>
-        Latest Score:
+        Score:
         <strong id="latestScore">
-            0
+            -
         </strong>
     </p>
 
     <p>
-        Latest Percentage:
+        Percentage:
         <strong id="latestPercentage">
-            0%
+            -
         </strong>
     </p>
 
     <div class="progress-container">
 
         <div
-            id="progressBar"
+            id="latestProgress"
             class="progress-bar"
         ></div>
 
     </div>
 
-    <p id="progressText">
-        Complete a mock test to see your progress.
+    <p id="latestMessage">
+        Complete a mock test to see your latest performance.
     </p>
 
 </div>
@@ -489,7 +484,7 @@ footer {
 
 <div class="card">
 
-    <h2>📚 Test History</h2>
+    <h2>📚 Complete Test History</h2>
 
     <div class="table-container">
 
@@ -512,6 +507,14 @@ footer {
                     </th>
 
                     <th>
+                        Correct
+                    </th>
+
+                    <th>
+                        Wrong
+                    </th>
+
+                    <th>
                         Date
                     </th>
 
@@ -530,7 +533,7 @@ footer {
 </div>
 
 
-<!-- BUTTONS -->
+<!-- ACTIONS -->
 
 <div class="card">
 
@@ -540,12 +543,19 @@ footer {
             href="mock-test.html"
             class="btn"
         >
-            📝 Take Mock Test
+            📝 Take Mock Test 1
+        </a>
+
+        <a
+            href="mock-test-2.html"
+            class="btn"
+        >
+            📝 Take Mock Test 2
         </a>
 
         <a
             href="leaderboard.html"
-            class="btn"
+            class="btn green"
         >
             🏆 View Leaderboard
         </a>
@@ -554,7 +564,7 @@ footer {
             href="index.html"
             class="btn"
         >
-            🏠 Back to Home
+            🏠 Home
         </a>
 
     </div>
@@ -564,8 +574,6 @@ footer {
 
 </div>
 
-
-<!-- FOOTER -->
 
 <footer>
 
@@ -579,214 +587,247 @@ footer {
 <script>
 
 /* =====================================================
-   LOAD PERFORMANCE DATA
-===================================================== */
-
-
-/*
-   The current Mock Test saves:
-
-   mockTestName
-   mockTestScore
-   mockTestPercentage
-   mockTestLastResult
-   examPrepCurrentUser
-*/
-
-
-const name =
-localStorage.getItem("mockTestName") ||
-"Student";
-
-
-const latestScore =
-Number(
-    localStorage.getItem("mockTestScore") || 0
-);
-
-
-const latestPercentage =
-Number(
-    localStorage.getItem("mockTestPercentage") || 0
-);
-
-
-/* =====================================================
-   STUDENT NAME
-===================================================== */
-
-document.getElementById(
-    "studentName"
-).textContent = name;
-
-
-/* =====================================================
-   CHECK LAST RESULT
-===================================================== */
-
-let lastResult = null;
-
-try {
-
-    const saved =
-    localStorage.getItem(
-        "mockTestLastResult"
-    );
-
-    if (saved) {
-
-        lastResult =
-        JSON.parse(saved);
-
-    }
-
-} catch (error) {
-
-    console.log(
-        "Unable to read saved result."
-    );
-
-}
-
-
-/* =====================================================
-   CREATE TEST HISTORY
+   LOAD HISTORY
 ===================================================== */
 
 let history = [];
 
 
 /*
-   Add latest Mock Test result
+   Main history created by both mock tests
 */
-
-if (lastResult) {
-
-    history.push({
-
-        test:
-        lastResult.exam ||
-        "Mock Test",
-
-        score:
-        Number(
-            lastResult.score || 0
-        ),
-
-        percentage:
-        Number(
-            lastResult.percentage || 0
-        ),
-
-        date:
-        lastResult.date ||
-        new Date().toISOString()
-
-    });
-
-}
-
-
-/*
-   If the basic localStorage values exist
-   but lastResult does not exist
-*/
-
-if (
-    history.length === 0 &&
-    localStorage.getItem("mockTestScore")
-) {
-
-    history.push({
-
-        test: "Mock Test",
-
-        score: latestScore,
-
-        percentage: latestPercentage,
-
-        date:
-        new Date().toISOString()
-
-    });
-
-}
-
-
-/* =====================================================
-   OPTIONAL MOCK TEST 2 SUPPORT
-===================================================== */
-
-
-/*
-   If Mock Test 2 is added later, this page
-   will automatically read these values:
-
-   mockTest2Name
-   mockTest2Score
-   mockTest2Percentage
-   mockTest2LastResult
-*/
-
-
-let mockTest2 = null;
 
 try {
 
-    const saved2 =
-    localStorage.getItem(
-        "mockTest2LastResult"
-    );
+    const savedHistory =
+        localStorage.getItem("mockTestHistory");
 
-    if (saved2) {
+    if (savedHistory) {
 
-        mockTest2 =
-        JSON.parse(saved2);
+        history =
+            JSON.parse(savedHistory);
+
+        if (!Array.isArray(history)) {
+
+            history = [];
+
+        }
 
     }
 
 } catch (error) {
 
     console.log(
-        "Mock Test 2 result not available."
+        "Could not read mockTestHistory"
     );
 
 }
 
 
-if (mockTest2) {
+/* =====================================================
+   LEGACY RESULT SUPPORT
+===================================================== */
 
-    history.push({
+if (history.length === 0) {
 
-        test:
-        mockTest2.exam ||
-        "Mock Test 2",
+    try {
 
-        score:
-        Number(
-            mockTest2.score || 0
-        ),
+        const oldResult =
+            localStorage.getItem(
+                "mockTestLastResult"
+            );
 
-        percentage:
-        Number(
-            mockTest2.percentage || 0
-        ),
+        if (oldResult) {
 
-        date:
-        mockTest2.date ||
-        new Date().toISOString()
+            const result =
+                JSON.parse(oldResult);
 
-    });
+            history.push(result);
+
+        }
+
+    } catch (error) {
+
+        console.log(
+            "Could not read old result"
+        );
+
+    }
 
 }
 
 
 /* =====================================================
-   CALCULATE STATISTICS
+   NORMALIZE HISTORY
+===================================================== */
+
+history = history.map(
+function(item) {
+
+    let testName =
+        item.testName ||
+        item.test ||
+        item.exam ||
+        "Mock Test 1";
+
+
+    /*
+       Older Mock Test 1 entries may not have
+       a testName. Treat them as Mock Test 1.
+    */
+
+    if (
+        !item.testName &&
+        !item.test &&
+        item.exam === "Mock Test"
+    ) {
+
+        testName =
+        "Mock Test 1";
+
+    }
+
+
+    const score =
+        Number(item.score || 0);
+
+
+    const total =
+        Number(item.total || 50);
+
+
+    let percentage =
+        Number(item.percentage);
+
+
+    if (
+        isNaN(percentage) ||
+        percentage === 0 && score > 0
+    ) {
+
+        percentage =
+            total > 0
+            ? (score / total) * 100
+            : 0;
+
+    }
+
+
+    const correct =
+        Number(
+            item.correct !== undefined
+            ? item.correct
+            : score
+        );
+
+
+    const wrong =
+        Number(
+            item.wrong || 0
+        );
+
+
+    const unanswered =
+        Number(
+            item.unanswered || 0
+        );
+
+
+    return {
+
+        testName:
+            testName,
+
+        name:
+            item.name ||
+            localStorage.getItem(
+                "mockTestName"
+            ) ||
+            "Student",
+
+        score:
+            score,
+
+        total:
+            total,
+
+        percentage:
+            Number(
+                percentage.toFixed(2)
+            ),
+
+        correct:
+            correct,
+
+        wrong:
+            wrong,
+
+        unanswered:
+            unanswered,
+
+        date:
+            item.date ||
+            new Date().toISOString()
+
+    };
+
+});
+
+
+/* =====================================================
+   SORT HISTORY
+===================================================== */
+
+history.sort(
+function(a, b) {
+
+    return new Date(b.date) -
+           new Date(a.date);
+
+});
+
+
+/* =====================================================
+   STUDENT NAME
+===================================================== */
+
+let studentName =
+    localStorage.getItem(
+        "mockTestName"
+    ) ||
+    localStorage.getItem(
+        "examPrepCurrentUser"
+    ) ||
+    "Student";
+
+
+/*
+   If history has a name, use it.
+*/
+
+if (
+    history.length > 0 &&
+    history[0].name
+) {
+
+    studentName =
+        history[0].name;
+
+}
+
+
+document.getElementById(
+    "studentName"
+).textContent =
+studentName;
+
+
+/* =====================================================
+   OVERALL STATISTICS
 ===================================================== */
 
 const totalTests =
-history.length;
+    history.length;
 
 
 let bestScore = 0;
@@ -796,41 +837,38 @@ let totalPercentage = 0;
 let totalCorrect = 0;
 
 
-history.forEach(function(test) {
+history.forEach(
+function(test) {
 
-    if (test.score > bestScore) {
+    if (
+        Number(test.score) >
+        bestScore
+    ) {
 
         bestScore =
-        test.score;
+            Number(test.score);
 
     }
 
+
     totalPercentage +=
-    Number(test.percentage);
+        Number(test.percentage);
+
 
     totalCorrect +=
-    Number(test.score);
+        Number(test.correct);
 
 });
 
 
-let averagePercentage = 0;
-
-
-if (totalTests > 0) {
-
-    averagePercentage =
-    (
+let averagePercentage =
+    totalTests > 0
+    ? (
         totalPercentage /
         totalTests
-    ).toFixed(2);
+    ).toFixed(2)
+    : "0";
 
-}
-
-
-/* =====================================================
-   DISPLAY STATISTICS
-===================================================== */
 
 document.getElementById(
     "totalTests"
@@ -860,82 +898,158 @@ totalCorrect;
    STUDENT MESSAGE
 ===================================================== */
 
-if (totalTests === 0) {
+if (totalTests > 0) {
 
     document.getElementById(
         "studentMessage"
     ).textContent =
-    "You have not completed a mock test yet.";
-
-}
-
-else {
-
-    document.getElementById(
-        "studentMessage"
-    ).textContent =
-    "Keep practicing and improve your score.";
+    "Keep practicing and improve your mock test performance.";
 
 }
 
 
 /* =====================================================
-   TEST CARDS
+   GET LATEST TEST OF TYPE
 ===================================================== */
 
-const testCards =
-document.getElementById(
-    "testCards"
-);
+function getLatestTest(testNumber) {
+
+    const target =
+        "Mock Test " + testNumber;
 
 
-testCards.innerHTML = "";
+    for (
+        let i = 0;
+        i < history.length;
+        i++
+    ) {
+
+        if (
+            history[i].testName ===
+            target
+        ) {
+
+            return history[i];
+
+        }
+
+    }
 
 
-if (history.length === 0) {
-
-    testCards.innerHTML = `
-
-        <div class="no-data">
-
-            📝 No mock test completed yet.
-
-            <br><br>
-
-            Take your first mock test
-            to start tracking your performance.
-
-        </div>
-
-    `;
+    return null;
 
 }
 
 
-history.forEach(function(test, index) {
+/* =====================================================
+   CREATE TEST CARD
+===================================================== */
+
+function createTestCard(
+    testNumber,
+    fileName
+) {
+
+    const target =
+        "Mock Test " + testNumber;
+
+
+    const result =
+        getLatestTest(testNumber);
+
 
     const card =
-    document.createElement("div");
+        document.createElement("div");
+
 
     card.className =
-    "test-card";
+        "test-card";
+
+
+    if (!result) {
+
+        card.innerHTML = `
+
+            <h3>
+                📝 ${target}
+            </h3>
+
+            <div class="no-test">
+
+                No attempt completed yet.
+
+                <br><br>
+
+                <a
+                    href="${fileName}"
+                    class="btn"
+                >
+                    Start ${target}
+                </a>
+
+            </div>
+
+        `;
+
+        return card;
+
+    }
+
+
+    const percentage =
+        Number(result.percentage);
+
+
+    const date =
+        formatDate(result.date);
 
 
     card.innerHTML = `
 
         <h3>
-            📝 ${test.test}
+            📝 ${target}
         </h3>
 
         <div class="test-score">
-            ${test.score} / 50
+
+            ${result.score} / ${result.total}
+
         </div>
 
         <p class="test-info">
+
             Percentage:
             <strong>
-                ${test.percentage}%
+                ${percentage}%
             </strong>
+
+        </p>
+
+        <p class="test-info">
+
+            Correct:
+            <strong>
+                ${result.correct}
+            </strong>
+
+        </p>
+
+        <p class="test-info">
+
+            Wrong:
+            <strong>
+                ${result.wrong}
+            </strong>
+
+        </p>
+
+        <p class="test-info">
+
+            Unanswered:
+            <strong>
+                ${result.unanswered}
+            </strong>
+
         </p>
 
         <div class="progress-container">
@@ -943,65 +1057,105 @@ history.forEach(function(test, index) {
             <div
                 class="progress-bar"
                 style="width:${Math.min(
-                    Number(test.percentage),
+                    percentage,
                     100
                 )}%"
             ></div>
 
         </div>
 
-        <p class="test-info">
-            Status:
-            <strong>
-                Completed
-            </strong>
+        <p class="test-date">
+
+            Last Attempt:
+            ${date}
+
         </p>
+
+        <a
+            href="${fileName}"
+            class="btn"
+        >
+            🔄 Retake ${target}
+        </a>
 
     `;
 
 
-    testCards.appendChild(card);
+    return card;
 
-});
+}
 
 
 /* =====================================================
-   LATEST PERFORMANCE
+   SHOW TEST CARDS
+===================================================== */
+
+const testGrid =
+    document.getElementById(
+        "testGrid"
+    );
+
+
+testGrid.innerHTML = "";
+
+
+testGrid.appendChild(
+    createTestCard(
+        1,
+        "mock-test.html"
+    )
+);
+
+
+testGrid.appendChild(
+    createTestCard(
+        2,
+        "mock-test-2.html"
+    )
+);
+
+
+/* =====================================================
+   LATEST ATTEMPT
 ===================================================== */
 
 if (history.length > 0) {
 
     const latest =
-    history[history.length - 1];
+        history[0];
 
 
     document.getElementById(
         "latestScore"
     ).textContent =
-    latest.score + " / 50";
+        latest.score +
+        " / " +
+        latest.total;
 
 
     document.getElementById(
         "latestPercentage"
     ).textContent =
-    latest.percentage + "%";
+        latest.percentage +
+        "%";
 
 
     document.getElementById(
-        "progressBar"
+        "latestProgress"
     ).style.width =
-    Math.min(
-        Number(latest.percentage),
-        100
-    ) + "%";
+        Math.min(
+            latest.percentage,
+            100
+        ) +
+        "%";
 
 
     document.getElementById(
-        "progressText"
+        "latestMessage"
     ).textContent =
-    "Your latest performance is " +
-    latest.percentage +
-    "%. Keep practicing!";
+        latest.testName +
+        " completed successfully. Keep practicing!";
+
 }
 
 
@@ -1010,9 +1164,9 @@ if (history.length > 0) {
 ===================================================== */
 
 const historyTable =
-document.getElementById(
-    "historyTable"
-);
+    document.getElementById(
+        "historyTable"
+    );
 
 
 historyTable.innerHTML = "";
@@ -1024,12 +1178,9 @@ if (history.length === 0) {
 
         <tr>
 
-            <td
-                colspan="4"
-                style="text-align:center;"
-            >
+            <td colspan="6">
 
-                No test history available.
+                No test history available yet.
 
             </td>
 
@@ -1040,49 +1191,24 @@ if (history.length === 0) {
 }
 
 
-history.slice().reverse().forEach(
+history.forEach(
 function(test) {
 
     const row =
-    document.createElement("tr");
-
-
-    let formattedDate =
-    "Recently";
-
-
-    if (test.date) {
-
-        const date =
-        new Date(test.date);
-
-
-        if (!isNaN(date.getTime())) {
-
-            formattedDate =
-            date.toLocaleDateString(
-                "en-IN",
-                {
-                    day: "2-digit",
-                    month: "short",
-                    year: "numeric"
-                }
-            );
-
-        }
-
-    }
+        document.createElement("tr");
 
 
     row.innerHTML = `
 
         <td>
-            ${test.test}
+            ${escapeHTML(
+                test.testName
+            )}
         </td>
 
         <td>
             <strong>
-                ${test.score} / 50
+                ${test.score} / ${test.total}
             </strong>
         </td>
 
@@ -1091,7 +1217,15 @@ function(test) {
         </td>
 
         <td>
-            ${formattedDate}
+            ${test.correct}
+        </td>
+
+        <td>
+            ${test.wrong}
+        </td>
+
+        <td>
+            ${formatDate(test.date)}
         </td>
 
     `;
@@ -1102,8 +1236,82 @@ function(test) {
 });
 
 
+/* =====================================================
+   DATE FORMAT
+===================================================== */
+
+function formatDate(value) {
+
+    if (!value) {
+
+        return "-";
+
+    }
+
+
+    const date =
+        new Date(value);
+
+
+    if (
+        isNaN(
+            date.getTime()
+        )
+    ) {
+
+        return "-";
+
+    }
+
+
+    return date.toLocaleDateString(
+        "en-IN",
+        {
+            day: "2-digit",
+            month: "short",
+            year: "numeric"
+        }
+    );
+
+}
+
+
+/* =====================================================
+   HTML SECURITY
+===================================================== */
+
+function escapeHTML(value) {
+
+    return String(value)
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+}
+
 </script>
 
 </body>
 </html>
-```
