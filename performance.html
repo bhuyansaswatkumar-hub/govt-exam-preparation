@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +7,7 @@
 
 <title>Performance | SSC & Banking</title>
 
-<meta name="description"
-content="Check your SSC and Banking mock test performance, score, percentage and progress.">
+<meta name="description" content="Check your SSC and Banking mock test performance, score, percentage and progress.">
 
 <style>
 * {
@@ -24,8 +24,8 @@ body {
 header {
     background: #173b75;
     color: white;
-    padding: 22px 15px;
     text-align: center;
+    padding: 22px 15px;
 }
 
 header h1 {
@@ -35,7 +35,6 @@ header h1 {
 
 header p {
     margin: 8px 0 0;
-    font-size: 15px;
 }
 
 nav {
@@ -49,7 +48,6 @@ nav a {
     color: white;
     text-decoration: none;
     padding: 13px 16px;
-    font-size: 14px;
 }
 
 nav a:hover {
@@ -71,40 +69,14 @@ nav a:hover {
 }
 
 .card h2 {
+    color: #173b75;
     margin-top: 0;
-    color: #173b75;
-}
-
-.performance-box {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.stat {
-    background: #f4f6f8;
-    padding: 20px;
-    text-align: center;
-    border-radius: 8px;
-}
-
-.stat h3 {
-    margin: 0 0 10px;
-    color: #173b75;
-    font-size: 16px;
-}
-
-.stat p {
-    margin: 0;
-    font-size: 28px;
-    font-weight: bold;
 }
 
 input {
     width: 100%;
     padding: 13px;
-    margin: 8px 0 15px;
+    margin: 10px 0 15px;
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 16px;
@@ -124,11 +96,36 @@ button:hover {
     background: #0d2852;
 }
 
+.performance-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.stat {
+    background: #f4f6f8;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.stat h3 {
+    margin: 0 0 10px;
+    color: #173b75;
+}
+
+.stat p {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+}
+
 .message {
+    display: none;
     margin-top: 15px;
     padding: 12px;
     border-radius: 6px;
-    display: none;
 }
 
 .success {
@@ -147,8 +144,7 @@ table {
     margin-top: 15px;
 }
 
-th,
-td {
+th, td {
     padding: 12px;
     border-bottom: 1px solid #ddd;
     text-align: center;
@@ -169,7 +165,6 @@ footer {
 
 footer p {
     margin: 5px;
-    font-size: 14px;
 }
 
 @media (max-width: 700px) {
@@ -180,10 +175,6 @@ footer p {
     nav a {
         padding: 10px;
         font-size: 13px;
-    }
-
-    header h1 {
-        font-size: 23px;
     }
 }
 </style>
@@ -211,9 +202,7 @@ footer p {
     <div class="card">
         <h2>Check Your Performance</h2>
 
-        <p>
-            Enter the name used while submitting your mock test score.
-        </p>
+        <p>Enter the name used in your Mock Test.</p>
 
         <input
             type="text"
@@ -259,9 +248,11 @@ footer p {
     </div>
 
     <div class="card">
+
         <h2>Performance Guide</h2>
 
         <table>
+
             <tr>
                 <th>Percentage</th>
                 <th>Performance</th>
@@ -286,15 +277,18 @@ footer p {
                 <td>Below 40%</td>
                 <td>Needs Improvement</td>
             </tr>
+
         </table>
+
     </div>
 
     <div class="card">
-        <h2>Improve Your Score</h2>
+
+        <h2>Continue Preparation</h2>
 
         <p>
-            Practice more MCQs, revise your study notes regularly,
-            and attempt mock tests to improve your speed and accuracy.
+            Practice more MCQs and take mock tests regularly
+            to improve your speed and accuracy.
         </p>
 
         <a href="mock-test.html">
@@ -304,6 +298,7 @@ footer p {
         <a href="leaderboard.html">
             <button>View Leaderboard</button>
         </a>
+
     </div>
 
 </div>
@@ -317,8 +312,10 @@ footer p {
 
 function checkPerformance() {
 
-    const nameInput = document.getElementById("studentName");
-    const name = nameInput.value.trim();
+    const name = document
+        .getElementById("studentName")
+        .value
+        .trim();
 
     const message = document.getElementById("message");
     const resultCard = document.getElementById("resultCard");
@@ -334,50 +331,49 @@ function checkPerformance() {
         return;
     }
 
-    /*
-      The mock test stores the latest result in localStorage.
-      This allows the Performance page to display the score
-      from the same browser.
-    */
-
-    let score = localStorage.getItem("mockTestScore");
-    let percentage = localStorage.getItem("mockTestPercentage");
-    let savedName = localStorage.getItem("mockTestName");
+    const savedName = localStorage.getItem("mockTestName");
+    const score = localStorage.getItem("mockTestScore");
+    const percentage = localStorage.getItem("mockTestPercentage");
 
     if (score === null || percentage === null) {
 
         message.style.display = "block";
         message.className = "message error";
+
         message.innerHTML =
-            "No mock test result found. Please complete a mock test first.";
+            "No mock test result found. Please complete a Mock Test first.";
 
         resultCard.style.display = "none";
 
         return;
     }
 
-    if (savedName && savedName.toLowerCase() !== name.toLowerCase()) {
+    if (
+        savedName &&
+        savedName.toLowerCase() !== name.toLowerCase()
+    ) {
 
         message.style.display = "block";
         message.className = "message error";
+
         message.innerHTML =
-            "No result found for this name. Please enter the same name used in the Mock Test.";
+            "No result found for this name. Please use the same name entered in the Mock Test.";
 
         resultCard.style.display = "none";
 
         return;
     }
 
-    score = Number(score);
-    percentage = Number(percentage);
+    const scoreNumber = Number(score);
+    const percentageNumber = Number(percentage);
 
-    let performance = "";
+    let performance;
 
-    if (percentage >= 80) {
+    if (percentageNumber >= 80) {
         performance = "Excellent";
-    } else if (percentage >= 60) {
+    } else if (percentageNumber >= 60) {
         performance = "Very Good";
-    } else if (percentage >= 40) {
+    } else if (percentageNumber >= 40) {
         performance = "Good";
     } else {
         performance = "Needs Improvement";
@@ -387,10 +383,10 @@ function checkPerformance() {
         savedName || name;
 
     document.getElementById("displayScore").textContent =
-        score;
+        scoreNumber;
 
     document.getElementById("displayPercentage").textContent =
-        percentage.toFixed(2) + "%";
+        percentageNumber.toFixed(2) + "%";
 
     document.getElementById("displayPerformance").textContent =
         performance;
@@ -407,3 +403,4 @@ function checkPerformance() {
 
 </body>
 </html>
+```
