@@ -1,16 +1,14 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Performance Dashboard | SSC & Banking</title>
 
 <meta name="description"
-content="Professional SSC and Banking exam performance dashboard with test history, scores, percentages and performance statistics.">
+content="View your SSC, Banking and Railway mock test performance, scores, percentage and test history.">
 
 <style>
 
@@ -25,8 +23,7 @@ body {
     color: #222;
 }
 
-
-/* ================= HEADER ================= */
+/* HEADER */
 
 header {
     background: #173b75;
@@ -45,8 +42,7 @@ header p {
     font-size: 15px;
 }
 
-
-/* ================= NAVIGATION ================= */
+/* NAVIGATION */
 
 nav {
     background: #0d2852;
@@ -66,96 +62,74 @@ nav a:hover {
     background: #173b75;
 }
 
-
-/* ================= CONTAINER ================= */
+/* CONTAINER */
 
 .container {
-    max-width: 1100px;
-    margin: 30px auto;
+    max-width: 1000px;
+    margin: 25px auto;
     padding: 0 15px;
 }
 
+/* CARD */
 
-/* ================= STUDENT CARD ================= */
-
-.student-card {
+.card {
     background: white;
-    border-radius: 14px;
-    padding: 28px;
-    text-align: center;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-    margin-bottom: 22px;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-.student-icon {
-    font-size: 45px;
-}
-
-.student-card h2 {
-    margin: 8px 0;
+.card h2 {
     color: #173b75;
+    margin-top: 0;
+}
+
+/* STUDENT */
+
+.student-box {
+    text-align: center;
+}
+
+.student-name {
     font-size: 28px;
+    font-weight: bold;
+    color: #173b75;
+    margin: 10px 0;
 }
 
-.student-card p {
-    margin: 5px 0;
-    color: #666;
+.student-message {
+    color: #555;
 }
 
+/* STATISTICS */
 
-/* ================= STATISTICS ================= */
-
-.stats-grid {
+.stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
-    margin-bottom: 22px;
 }
 
-.stat-card {
-    background: white;
-    border-radius: 12px;
-    padding: 22px 15px;
+.stat {
+    background: #f5f7fb;
+    padding: 20px 10px;
     text-align: center;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.07);
+    border-radius: 10px;
 }
 
-.stat-icon {
-    font-size: 28px;
-}
-
-.stat-number {
+.stat strong {
+    display: block;
+    color: #173b75;
     font-size: 30px;
-    font-weight: bold;
-    color: #173b75;
-    margin: 8px 0;
+    margin-bottom: 8px;
 }
 
-.stat-label {
-    color: #666;
+.stat span {
     font-size: 14px;
+    color: #555;
 }
 
-
-/* ================= SECTION ================= */
-
-.section {
-    background: white;
-    border-radius: 14px;
-    padding: 25px;
-    margin-bottom: 22px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-}
-
-.section-title {
-    color: #173b75;
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 23px;
-}
-
-
-/* ================= TEST CARDS ================= */
+/* TEST CARDS */
 
 .test-grid {
     display: grid;
@@ -165,186 +139,104 @@ nav a:hover {
 
 .test-card {
     border: 1px solid #ddd;
-    border-radius: 12px;
-    padding: 22px;
-    background: #fafafa;
+    border-radius: 10px;
+    padding: 20px;
+    background: #fafbfd;
 }
 
 .test-card h3 {
-    margin-top: 0;
     color: #173b75;
-    font-size: 20px;
+    margin-top: 0;
 }
 
 .test-score {
     font-size: 35px;
     font-weight: bold;
     color: #173b75;
-    margin: 12px 0;
+    margin: 10px 0;
 }
 
 .test-info {
-    line-height: 1.8;
+    margin: 7px 0;
     color: #555;
 }
 
-.test-info strong {
-    color: #222;
-}
-
-
-/* ================= PROGRESS BAR ================= */
+/* PROGRESS */
 
 .progress-container {
-    margin-top: 15px;
-}
-
-.progress-label {
-    display: flex;
-    justify-content: space-between;
-    font-size: 13px;
-    margin-bottom: 5px;
+    background: #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 18px;
+    margin: 12px 0;
 }
 
 .progress-bar {
-    width: 100%;
-    height: 12px;
-    background: #e5e5e5;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.progress-fill {
     height: 100%;
     width: 0%;
     background: #173b75;
-    border-radius: 10px;
+    transition: width 0.5s ease;
 }
 
+/* TABLE */
 
-/* ================= HISTORY ================= */
-
-.history-item {
-    border: 1px solid #ddd;
-    border-radius: 11px;
-    padding: 18px;
-    margin-bottom: 15px;
-    background: #fafafa;
+.table-container {
+    overflow-x: auto;
 }
 
-.history-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-}
-
-.history-header h3 {
-    margin: 0;
-    color: #173b75;
-}
-
-.history-score {
-    font-weight: bold;
-    color: #173b75;
-}
-
-.history-details {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+table {
+    width: 100%;
+    border-collapse: collapse;
     margin-top: 15px;
 }
 
-.history-stat {
-    background: white;
-    border-radius: 8px;
-    padding: 12px;
-    text-align: center;
+th {
+    background: #173b75;
+    color: white;
+    padding: 13px;
+    text-align: left;
 }
 
-.history-stat strong {
-    display: block;
-    color: #173b75;
-    font-size: 19px;
-    margin-bottom: 4px;
+td {
+    padding: 13px;
+    border-bottom: 1px solid #ddd;
 }
 
-.history-stat span {
-    font-size: 12px;
-    color: #666;
+tr:nth-child(even) {
+    background: #f5f7fb;
 }
 
-.history-date {
-    color: #777;
-    font-size: 13px;
-    margin-top: 12px;
-}
-
-
-/* ================= EMPTY STATE ================= */
-
-.empty {
-    text-align: center;
-    padding: 30px 15px;
-    color: #666;
-}
-
-.empty-icon {
-    font-size: 45px;
-    margin-bottom: 10px;
-}
-
-
-/* ================= BUTTONS ================= */
+/* BUTTONS */
 
 .buttons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
+    text-align: center;
+    margin-top: 25px;
 }
 
 .btn {
     display: inline-block;
-    text-decoration: none;
-    color: white;
     background: #173b75;
+    color: white;
+    text-decoration: none;
     padding: 13px 20px;
     border-radius: 8px;
-    font-weight: bold;
+    margin: 5px;
+    font-size: 15px;
 }
 
 .btn:hover {
     background: #0d2852;
 }
 
-.btn-green {
-    background: #198754;
+/* NO DATA */
+
+.no-data {
+    text-align: center;
+    padding: 25px;
+    color: #666;
 }
 
-.btn-green:hover {
-    background: #146c43;
-}
-
-.btn-orange {
-    background: #f39c12;
-}
-
-.btn-orange:hover {
-    background: #d68910;
-}
-
-.btn-purple {
-    background: #6f42c1;
-}
-
-.btn-purple:hover {
-    background: #59359a;
-}
-
-
-/* ================= FOOTER ================= */
+/* FOOTER */
 
 footer {
     background: #0d2852;
@@ -354,16 +246,11 @@ footer {
     margin-top: 40px;
 }
 
-footer p {
-    margin: 5px 0;
-}
+/* MOBILE */
 
+@media (max-width: 750px) {
 
-/* ================= MOBILE ================= */
-
-@media (max-width: 800px) {
-
-    .stats-grid {
+    .stats {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -371,14 +258,9 @@ footer p {
         grid-template-columns: 1fr;
     }
 
-    .history-details {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
 }
 
-
-@media (max-width: 550px) {
+@media (max-width: 500px) {
 
     header h1 {
         font-size: 24px;
@@ -389,68 +271,46 @@ footer p {
         font-size: 12px;
     }
 
-    .container {
-        margin-top: 20px;
+    .card {
+        padding: 18px;
     }
 
-    .student-card {
-        padding: 22px 15px;
+    .stats {
+        grid-template-columns: 1fr;
     }
 
-    .student-card h2 {
+    .student-name {
         font-size: 23px;
     }
 
-    .stats-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-    }
-
-    .stat-card {
-        padding: 17px 8px;
-    }
-
-    .stat-number {
-        font-size: 25px;
-    }
-
-    .section {
-        padding: 18px 14px;
-    }
-
-    .history-header {
-        display: block;
-    }
-
-    .history-score {
-        display: block;
-        margin-top: 8px;
+    th,
+    td {
+        font-size: 13px;
+        padding: 9px;
     }
 
 }
 
 </style>
-
 </head>
-
 
 <body>
 
 
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 
 <header>
 
     <h1>SSC & Banking Exam Preparation</h1>
 
     <p>
-        📊 Professional Performance Dashboard
+        Performance Dashboard • Scores • Progress • Test History
     </p>
 
 </header>
 
 
-<!-- ================= NAVIGATION ================= -->
+<!-- NAVIGATION -->
 
 <nav>
 
@@ -470,9 +330,7 @@ footer p {
 
     <a href="daily-quiz.html">Daily Quiz</a>
 
-    <a href="mock-test.html">Mock Test 1</a>
-
-    <a href="mock-test-2.html">Mock Test 2</a>
+    <a href="mock-test.html">Mock Test</a>
 
     <a href="performance.html">Performance</a>
 
@@ -484,323 +342,768 @@ footer p {
 <div class="container">
 
 
-<!-- ================= STUDENT ================= -->
+<!-- STUDENT PROFILE -->
 
-<div class="student-card">
+<div class="card student-box">
 
-    <div class="student-icon">
-        👤
+    <h2>👤 Student Performance</h2>
+
+    <div
+        id="studentName"
+        class="student-name"
+    >
+        Student
     </div>
 
-    <h2 id="studentName">
-        Student
-    </h2>
-
-    <p>
-        Your complete exam performance dashboard
+    <p
+        id="studentMessage"
+        class="student-message"
+    >
+        Your mock test performance will appear here.
     </p>
 
 </div>
 
 
-<!-- ================= STATISTICS ================= -->
+<!-- OVERALL STATISTICS -->
 
-<div class="stats-grid">
+<div class="card">
 
+    <h2>📊 Overall Statistics</h2>
 
-    <div class="stat-card">
+    <div class="stats">
 
-        <div class="stat-icon">
-            📝
+        <div class="stat">
+
+            <strong id="totalTests">
+                0
+            </strong>
+
+            <span>
+                Tests Attempted
+            </span>
+
         </div>
 
-        <div
-            class="stat-number"
-            id="totalTests">
+
+        <div class="stat">
+
+            <strong id="bestScore">
+                0
+            </strong>
+
+            <span>
+                Best Score
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong id="averagePercentage">
+                0%
+            </strong>
+
+            <span>
+                Average Percentage
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong id="totalCorrect">
+                0
+            </strong>
+
+            <span>
+                Total Correct
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TEST PERFORMANCE -->
+
+<div class="card">
+
+    <h2>📝 Mock Test Performance</h2>
+
+    <div
+        id="testCards"
+        class="test-grid"
+    >
+
+        <div class="no-data">
+            No mock test completed yet.
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- LATEST PERFORMANCE -->
+
+<div class="card">
+
+    <h2>📈 Latest Performance</h2>
+
+    <p>
+        Latest Score:
+        <strong id="latestScore">
             0
-        </div>
+        </strong>
+    </p>
 
-        <div class="stat-label">
-            Tests Attempted
-        </div>
-
-    </div>
-
-
-    <div class="stat-card">
-
-        <div class="stat-icon">
-            🏆
-        </div>
-
-        <div
-            class="stat-number"
-            id="bestScore">
-            0
-        </div>
-
-        <div class="stat-label">
-            Best Score
-        </div>
-
-    </div>
-
-
-    <div class="stat-card">
-
-        <div class="stat-icon">
-            📈
-        </div>
-
-        <div
-            class="stat-number"
-            id="averagePercentage">
+    <p>
+        Latest Percentage:
+        <strong id="latestPercentage">
             0%
-        </div>
+        </strong>
+    </p>
 
-        <div class="stat-label">
-            Average Percentage
-        </div>
-
-    </div>
-
-
-    <div class="stat-card">
-
-        <div class="stat-icon">
-            🎯
-        </div>
+    <div class="progress-container">
 
         <div
-            class="stat-number"
-            id="bestPercentage">
-            0%
-        </div>
-
-        <div class="stat-label">
-            Best Percentage
-        </div>
+            id="progressBar"
+            class="progress-bar"
+        ></div>
 
     </div>
 
+    <p id="progressText">
+        Complete a mock test to see your progress.
+    </p>
 
 </div>
 
 
-<!-- ================= TEST PERFORMANCE ================= -->
+<!-- HISTORY -->
 
-<div class="section">
+<div class="card">
 
-    <h2 class="section-title">
-        📚 Test Performance
-    </h2>
+    <h2>📚 Test History</h2>
 
+    <div class="table-container">
 
-    <div class="test-grid">
+        <table>
 
+            <thead>
 
-        <!-- MOCK TEST 1 -->
+                <tr>
 
-        <div class="test-card">
+                    <th>
+                        Test
+                    </th>
 
-            <h3>
-                📝 Mock Test 1
-            </h3>
+                    <th>
+                        Score
+                    </th>
 
-            <div
-                class="test-score"
-                id="test1Score">
-                Not Attempted
-            </div>
+                    <th>
+                        Percentage
+                    </th>
 
-            <div class="test-info">
+                    <th>
+                        Date
+                    </th>
 
-                Percentage:
-                <strong id="test1Percentage">
-                    -
-                </strong>
+                </tr>
 
-                <br>
+            </thead>
 
-                Correct:
-                <strong id="test1Correct">
-                    -
-                </strong>
+            <tbody id="historyTable">
 
-                <br>
+            </tbody>
 
-                Wrong:
-                <strong id="test1Wrong">
-                    -
-                </strong>
-
-                <br>
-
-                Unanswered:
-                <strong id="test1Unanswered">
-                    -
-                </strong>
-
-                <br>
-
-                Attempts:
-                <strong id="test1Attempts">
-                    0
-                </strong>
-
-            </div>
-
-
-            <div class="progress-container">
-
-                <div class="progress-label">
-
-                    <span>
-                        Performance
-                    </span>
-
-                    <span id="test1ProgressText">
-                        0%
-                    </span>
-
-                </div>
-
-                <div class="progress-bar">
-
-                    <div
-                        class="progress-fill"
-                        id="test1Progress">
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- MOCK TEST 2 -->
-
-        <div class="test-card">
-
-            <h3>
-                📝 Mock Test 2
-            </h3>
-
-            <div
-                class="test-score"
-                id="test2Score">
-                Not Attempted
-            </div>
-
-            <div class="test-info">
-
-                Percentage:
-                <strong id="test2Percentage">
-                    -
-                </strong>
-
-                <br>
-
-                Correct:
-                <strong id="test2Correct">
-                    -
-                </strong>
-
-                <br>
-
-                Wrong:
-                <strong id="test2Wrong">
-                    -
-                </strong>
-
-                <br>
-
-                Unanswered:
-                <strong id="test2Unanswered">
-                    -
-                </strong>
-
-                <br>
-
-                Attempts:
-                <strong id="test2Attempts">
-                    0
-                </strong>
-
-            </div>
-
-
-            <div class="progress-container">
-
-                <div class="progress-label">
-
-                    <span>
-                        Performance
-                    </span>
-
-                    <span id="test2ProgressText">
-                        0%
-                    </span>
-
-                </div>
-
-                <div class="progress-bar">
-
-                    <div
-                        class="progress-fill"
-                        id="test2Progress">
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
+        </table>
 
     </div>
 
 </div>
 
 
-<!-- ================= COMPLETE HISTORY ================= -->
+<!-- BUTTONS -->
 
-<div class="section">
-
-    <h2 class="section-title">
-        📖 Complete Test History
-    </h2>
-
-    <div id="historyContainer">
-
-        <div class="empty">
-
-            <div class="empty-icon">
-                📚
-            </div>
-
-            <h3>
-                No tests attempted yet
-            </h3>
-
-            <p>
-                Complete Mock Test 1 or Mock Test 2
-                to see your history here.
-            </p>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- ================= ACTION BUTTONS ================= -->
-
-<div class="section">
+<div class="card">
 
     <div class="buttons">
 
         <a
-            class="btn
+            href="mock-test.html"
+            class="btn"
+        >
+            📝 Take Mock Test
+        </a>
+
+        <a
+            href="leaderboard.html"
+            class="btn"
+        >
+            🏆 View Leaderboard
+        </a>
+
+        <a
+            href="index.html"
+            class="btn"
+        >
+            🏠 Back to Home
+        </a>
+
+    </div>
+
+</div>
+
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 Govt Exam Preparation | SSC, Banking & Railway
+    </p>
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   LOAD PERFORMANCE DATA
+===================================================== */
+
+
+/*
+   The current Mock Test saves:
+
+   mockTestName
+   mockTestScore
+   mockTestPercentage
+   mockTestLastResult
+   examPrepCurrentUser
+*/
+
+
+const name =
+localStorage.getItem("mockTestName") ||
+"Student";
+
+
+const latestScore =
+Number(
+    localStorage.getItem("mockTestScore") || 0
+);
+
+
+const latestPercentage =
+Number(
+    localStorage.getItem("mockTestPercentage") || 0
+);
+
+
+/* =====================================================
+   STUDENT NAME
+===================================================== */
+
+document.getElementById(
+    "studentName"
+).textContent = name;
+
+
+/* =====================================================
+   CHECK LAST RESULT
+===================================================== */
+
+let lastResult = null;
+
+try {
+
+    const saved =
+    localStorage.getItem(
+        "mockTestLastResult"
+    );
+
+    if (saved) {
+
+        lastResult =
+        JSON.parse(saved);
+
+    }
+
+} catch (error) {
+
+    console.log(
+        "Unable to read saved result."
+    );
+
+}
+
+
+/* =====================================================
+   CREATE TEST HISTORY
+===================================================== */
+
+let history = [];
+
+
+/*
+   Add latest Mock Test result
+*/
+
+if (lastResult) {
+
+    history.push({
+
+        test:
+        lastResult.exam ||
+        "Mock Test",
+
+        score:
+        Number(
+            lastResult.score || 0
+        ),
+
+        percentage:
+        Number(
+            lastResult.percentage || 0
+        ),
+
+        date:
+        lastResult.date ||
+        new Date().toISOString()
+
+    });
+
+}
+
+
+/*
+   If the basic localStorage values exist
+   but lastResult does not exist
+*/
+
+if (
+    history.length === 0 &&
+    localStorage.getItem("mockTestScore")
+) {
+
+    history.push({
+
+        test: "Mock Test",
+
+        score: latestScore,
+
+        percentage: latestPercentage,
+
+        date:
+        new Date().toISOString()
+
+    });
+
+}
+
+
+/* =====================================================
+   OPTIONAL MOCK TEST 2 SUPPORT
+===================================================== */
+
+
+/*
+   If Mock Test 2 is added later, this page
+   will automatically read these values:
+
+   mockTest2Name
+   mockTest2Score
+   mockTest2Percentage
+   mockTest2LastResult
+*/
+
+
+let mockTest2 = null;
+
+try {
+
+    const saved2 =
+    localStorage.getItem(
+        "mockTest2LastResult"
+    );
+
+    if (saved2) {
+
+        mockTest2 =
+        JSON.parse(saved2);
+
+    }
+
+} catch (error) {
+
+    console.log(
+        "Mock Test 2 result not available."
+    );
+
+}
+
+
+if (mockTest2) {
+
+    history.push({
+
+        test:
+        mockTest2.exam ||
+        "Mock Test 2",
+
+        score:
+        Number(
+            mockTest2.score || 0
+        ),
+
+        percentage:
+        Number(
+            mockTest2.percentage || 0
+        ),
+
+        date:
+        mockTest2.date ||
+        new Date().toISOString()
+
+    });
+
+}
+
+
+/* =====================================================
+   CALCULATE STATISTICS
+===================================================== */
+
+const totalTests =
+history.length;
+
+
+let bestScore = 0;
+
+let totalPercentage = 0;
+
+let totalCorrect = 0;
+
+
+history.forEach(function(test) {
+
+    if (test.score > bestScore) {
+
+        bestScore =
+        test.score;
+
+    }
+
+    totalPercentage +=
+    Number(test.percentage);
+
+    totalCorrect +=
+    Number(test.score);
+
+});
+
+
+let averagePercentage = 0;
+
+
+if (totalTests > 0) {
+
+    averagePercentage =
+    (
+        totalPercentage /
+        totalTests
+    ).toFixed(2);
+
+}
+
+
+/* =====================================================
+   DISPLAY STATISTICS
+===================================================== */
+
+document.getElementById(
+    "totalTests"
+).textContent =
+totalTests;
+
+
+document.getElementById(
+    "bestScore"
+).textContent =
+bestScore + " / 50";
+
+
+document.getElementById(
+    "averagePercentage"
+).textContent =
+averagePercentage + "%";
+
+
+document.getElementById(
+    "totalCorrect"
+).textContent =
+totalCorrect;
+
+
+/* =====================================================
+   STUDENT MESSAGE
+===================================================== */
+
+if (totalTests === 0) {
+
+    document.getElementById(
+        "studentMessage"
+    ).textContent =
+    "You have not completed a mock test yet.";
+
+}
+
+else {
+
+    document.getElementById(
+        "studentMessage"
+    ).textContent =
+    "Keep practicing and improve your score.";
+
+}
+
+
+/* =====================================================
+   TEST CARDS
+===================================================== */
+
+const testCards =
+document.getElementById(
+    "testCards"
+);
+
+
+testCards.innerHTML = "";
+
+
+if (history.length === 0) {
+
+    testCards.innerHTML = `
+
+        <div class="no-data">
+
+            📝 No mock test completed yet.
+
+            <br><br>
+
+            Take your first mock test
+            to start tracking your performance.
+
+        </div>
+
+    `;
+
+}
+
+
+history.forEach(function(test, index) {
+
+    const card =
+    document.createElement("div");
+
+    card.className =
+    "test-card";
+
+
+    card.innerHTML = `
+
+        <h3>
+            📝 ${test.test}
+        </h3>
+
+        <div class="test-score">
+            ${test.score} / 50
+        </div>
+
+        <p class="test-info">
+            Percentage:
+            <strong>
+                ${test.percentage}%
+            </strong>
+        </p>
+
+        <div class="progress-container">
+
+            <div
+                class="progress-bar"
+                style="width:${Math.min(
+                    Number(test.percentage),
+                    100
+                )}%"
+            ></div>
+
+        </div>
+
+        <p class="test-info">
+            Status:
+            <strong>
+                Completed
+            </strong>
+        </p>
+
+    `;
+
+
+    testCards.appendChild(card);
+
+});
+
+
+/* =====================================================
+   LATEST PERFORMANCE
+===================================================== */
+
+if (history.length > 0) {
+
+    const latest =
+    history[history.length - 1];
+
+
+    document.getElementById(
+        "latestScore"
+    ).textContent =
+    latest.score + " / 50";
+
+
+    document.getElementById(
+        "latestPercentage"
+    ).textContent =
+    latest.percentage + "%";
+
+
+    document.getElementById(
+        "progressBar"
+    ).style.width =
+    Math.min(
+        Number(latest.percentage),
+        100
+    ) + "%";
+
+
+    document.getElementById(
+        "progressText"
+    ).textContent =
+    "Your latest performance is " +
+    latest.percentage +
+    "%. Keep practicing!";
+}
+
+
+/* =====================================================
+   HISTORY TABLE
+===================================================== */
+
+const historyTable =
+document.getElementById(
+    "historyTable"
+);
+
+
+historyTable.innerHTML = "";
+
+
+if (history.length === 0) {
+
+    historyTable.innerHTML = `
+
+        <tr>
+
+            <td
+                colspan="4"
+                style="text-align:center;"
+            >
+
+                No test history available.
+
+            </td>
+
+        </tr>
+
+    `;
+
+}
+
+
+history.slice().reverse().forEach(
+function(test) {
+
+    const row =
+    document.createElement("tr");
+
+
+    let formattedDate =
+    "Recently";
+
+
+    if (test.date) {
+
+        const date =
+        new Date(test.date);
+
+
+        if (!isNaN(date.getTime())) {
+
+            formattedDate =
+            date.toLocaleDateString(
+                "en-IN",
+                {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric"
+                }
+            );
+
+        }
+
+    }
+
+
+    row.innerHTML = `
+
+        <td>
+            ${test.test}
+        </td>
+
+        <td>
+            <strong>
+                ${test.score} / 50
+            </strong>
+        </td>
+
+        <td>
+            ${test.percentage}%
+        </td>
+
+        <td>
+            ${formattedDate}
+        </td>
+
+    `;
+
+
+    historyTable.appendChild(row);
+
+});
+
+
+</script>
+
+</body>
+</html>
+```
