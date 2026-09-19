@@ -7,7 +7,7 @@
 <title>Performance | SSC & Banking</title>
 
 <meta name="description"
-content="View your SSC and Banking mock test performance, score, percentage, correct answers, wrong answers and rank.">
+content="View SSC and Banking mock test scores, percentages, correct answers, wrong answers and test history.">
 
 <style>
 * {
@@ -35,7 +35,6 @@ header h1 {
 
 header p {
     margin: 8px 0 0;
-    font-size: 15px;
 }
 
 nav {
@@ -48,7 +47,7 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
-    padding: 13px 16px;
+    padding: 12px 15px;
     font-size: 14px;
 }
 
@@ -57,152 +56,102 @@ nav a:hover {
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 30px auto;
     padding: 0 15px;
 }
 
 .card {
     background: white;
-    border-radius: 12px;
     padding: 25px;
+    border-radius: 12px;
     margin-bottom: 20px;
     box-shadow: 0 3px 12px rgba(0,0,0,0.08);
 }
 
-.student-name {
+.student {
     text-align: center;
     color: #173b75;
-    font-size: 25px;
+    font-size: 26px;
     font-weight: bold;
-    margin-bottom: 5px;
 }
 
-.exam-title {
+.subtitle {
     text-align: center;
     color: #666;
-    margin-bottom: 25px;
+    margin-top: 8px;
 }
 
-.stats {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-}
-
-.stat {
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    background: #f5f7fb;
-}
-
-.stat h3 {
-    margin: 0 0 8px;
-    font-size: 15px;
-    color: #555;
-}
-
-.stat .value {
-    font-size: 28px;
-    font-weight: bold;
-    color: #173b75;
-}
-
-.score-box {
-    text-align: center;
-    padding: 25px;
+.latest {
     background: #eef4ff;
-    border-radius: 12px;
-    margin-bottom: 20px;
+    text-align: center;
 }
 
-.score {
+.latest h2 {
+    color: #173b75;
+    margin-top: 0;
+}
+
+.big-score {
     font-size: 48px;
     font-weight: bold;
     color: #173b75;
 }
 
-.percentage {
-    font-size: 22px;
-    font-weight: bold;
-    margin-top: 5px;
+.latest-info {
+    font-size: 17px;
+    line-height: 1.8;
 }
 
-.rank-box {
-    text-align: center;
-    padding: 22px;
-    background: #fff8e1;
-    border-radius: 12px;
-    margin-top: 20px;
-}
-
-.rank-label {
-    font-size: 16px;
-    color: #666;
-}
-
-.rank {
-    font-size: 38px;
-    font-weight: bold;
+.history-title {
     color: #173b75;
-    margin-top: 5px;
-}
-
-.performance-message {
     text-align: center;
-    font-size: 20px;
-    font-weight: bold;
-    margin: 20px 0;
-}
-
-.chart-title {
-    text-align: center;
-    font-size: 20px;
     margin-bottom: 20px;
+}
+
+.history-item {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 15px;
+    background: #fafafa;
+}
+
+.history-item h3 {
+    margin-top: 0;
     color: #173b75;
 }
 
-.chart {
-    max-width: 500px;
-    margin: auto;
+.history-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 15px;
 }
 
-.bar-row {
-    margin-bottom: 18px;
+.history-stat {
+    background: white;
+    padding: 12px;
+    text-align: center;
+    border-radius: 7px;
 }
 
-.bar-label {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 6px;
-    font-weight: bold;
+.history-stat strong {
+    display: block;
+    font-size: 20px;
+    color: #173b75;
 }
 
-.bar-background {
-    width: 100%;
-    height: 25px;
-    background: #e6e6e6;
-    border-radius: 20px;
-    overflow: hidden;
+.date {
+    color: #777;
+    font-size: 13px;
+    margin-top: 12px;
 }
 
-.bar {
-    height: 100%;
-    border-radius: 20px;
-    transition: width 0.8s ease;
-}
-
-.correct-bar {
-    background: #28a745;
-}
-
-.wrong-bar {
-    background: #dc3545;
-}
-
-.unanswered-bar {
-    background: #6c757d;
+.empty {
+    text-align: center;
+    padding: 30px;
+    color: #666;
 }
 
 .buttons {
@@ -210,7 +159,6 @@ nav a:hover {
     flex-wrap: wrap;
     justify-content: center;
     gap: 12px;
-    margin-top: 25px;
 }
 
 .btn {
@@ -235,50 +183,42 @@ nav a:hover {
     background: #f39c12;
 }
 
-.error {
-    text-align: center;
-    padding: 30px;
-    color: #b00020;
-}
-
 footer {
-    text-align: center;
     background: #173b75;
     color: white;
+    text-align: center;
     padding: 20px;
     margin-top: 40px;
-    font-size: 14px;
 }
 
-@media (max-width: 600px) {
+@media(max-width:700px) {
 
     header h1 {
         font-size: 24px;
     }
 
     nav a {
-        padding: 10px 9px;
+        padding: 10px 8px;
         font-size: 12px;
-    }
-
-    .container {
-        margin-top: 20px;
     }
 
     .card {
         padding: 18px;
     }
 
-    .stats {
-        grid-template-columns: 1fr;
+    .history-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .score {
+    .big-score {
         font-size: 40px;
     }
+}
 
-    .rank {
-        font-size: 32px;
+@media(max-width:450px) {
+
+    .history-grid {
+        grid-template-columns: 1fr 1fr;
     }
 }
 </style>
@@ -288,7 +228,7 @@ footer {
 
 <header>
     <h1>SSC & Banking Exam Preparation</h1>
-    <p>Your Mock Test Performance</p>
+    <p>Performance Dashboard</p>
 </header>
 
 <nav>
@@ -297,169 +237,111 @@ footer {
     <a href="banking.html">Banking</a>
     <a href="notes.html">Notes</a>
     <a href="mcq.html">MCQ</a>
-    <a href="mock-test.html">Mock Test</a>
+    <a href="mock-test.html">Mock Test 1</a>
+    <a href="mock-test-2.html">Mock Test 2</a>
     <a href="performance.html">Performance</a>
     <a href="leaderboard.html">Leaderboard</a>
 </nav>
 
+
 <div class="container">
 
-    <div id="content">
+    <div class="card">
 
-        <div class="card">
+        <div class="student" id="studentName">
+            Student
+        </div>
 
-            <div class="student-name" id="studentName">
-                Student
-            </div>
+        <div class="subtitle">
+            Your Mock Test Performance
+        </div>
 
-            <div class="exam-title">
-                Mock Test Performance Report
-            </div>
+    </div>
 
-            <div class="score-box">
 
-                <div class="score">
-                    <span id="score">0</span> / 50
-                </div>
+    <div class="card latest">
 
-                <div class="percentage">
-                    <span id="percentage">0</span>%
-                </div>
+        <h2>📊 Latest Test Result</h2>
 
-            </div>
+        <div class="big-score">
+            <span id="latestScore">0</span>
+            / <span id="latestTotal">50</span>
+        </div>
 
-            <div class="stats">
+        <div class="latest-info">
 
-                <div class="stat">
-                    <h3>✅ Correct</h3>
-                    <div class="value" id="correct">0</div>
-                </div>
+            📚 Test:
+            <strong id="latestTest">
+                -
+            </strong>
+            <br>
 
-                <div class="stat">
-                    <h3>❌ Wrong</h3>
-                    <div class="value" id="wrong">0</div>
-                </div>
+            📈 Percentage:
+            <strong id="latestPercentage">
+                0%
+            </strong>
+            <br>
 
-                <div class="stat">
-                    <h3>⏳ Unanswered</h3>
-                    <div class="value" id="unanswered">0</div>
-                </div>
+            ✅ Correct:
+            <strong id="latestCorrect">
+                0
+            </strong>
+            <br>
 
-                <div class="stat">
-                    <h3>📝 Total Questions</h3>
-                    <div class="value" id="total">50</div>
-                </div>
+            ❌ Wrong:
+            <strong id="latestWrong">
+                0
+            </strong>
+            <br>
 
-            </div>
-
-            <div class="rank-box">
-
-                <div class="rank-label">
-                    🏆 Your Current Rank
-                </div>
-
-                <div class="rank" id="rank">
-                    Loading...
-                </div>
-
-            </div>
-
-            <div class="performance-message" id="message">
-                Checking your performance...
-            </div>
+            ⏳ Unanswered:
+            <strong id="latestUnanswered">
+                0
+            </strong>
 
         </div>
 
-
-        <div class="card">
-
-            <div class="chart-title">
-                📊 Answer Analysis
-            </div>
-
-            <div class="chart">
-
-                <div class="bar-row">
-
-                    <div class="bar-label">
-                        <span>Correct</span>
-                        <span id="correctPercent">0%</span>
-                    </div>
-
-                    <div class="bar-background">
-                        <div
-                            class="bar correct-bar"
-                            id="correctBar"
-                            style="width:0%">
-                        </div>
-                    </div>
-
-                </div>
+    </div>
 
 
-                <div class="bar-row">
+    <div class="card">
 
-                    <div class="bar-label">
-                        <span>Wrong</span>
-                        <span id="wrongPercent">0%</span>
-                    </div>
+        <h2 class="history-title">
+            📚 Test History
+        </h2>
 
-                    <div class="bar-background">
-                        <div
-                            class="bar wrong-bar"
-                            id="wrongBar"
-                            style="width:0%">
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <div class="bar-row">
-
-                    <div class="bar-label">
-                        <span>Unanswered</span>
-                        <span id="unansweredPercent">0%</span>
-                    </div>
-
-                    <div class="bar-background">
-                        <div
-                            class="bar unanswered-bar"
-                            id="unansweredBar"
-                            style="width:0%">
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
+        <div id="historyContainer">
         </div>
 
+    </div>
 
-        <div class="card">
 
-            <div class="buttons">
+    <div class="card">
 
-                <a class="btn green" href="mock-test.html">
-                    📝 Take Mock Test Again
-                </a>
+        <div class="buttons">
 
-                <a class="btn orange" href="leaderboard.html">
-                    🏆 View Leaderboard
-                </a>
+            <a class="btn green" href="mock-test.html">
+                📝 Mock Test 1
+            </a>
 
-                <a class="btn" href="index.html">
-                    🏠 Back to Home
-                </a>
+            <a class="btn orange" href="mock-test-2.html">
+                📝 Mock Test 2
+            </a>
 
-            </div>
+            <a class="btn" href="leaderboard.html">
+                🏆 Leaderboard
+            </a>
+
+            <a class="btn" href="index.html">
+                🏠 Home
+            </a>
 
         </div>
 
     </div>
 
 </div>
+
 
 <footer>
     © 2026 SSC & Banking Exam Preparation
@@ -468,330 +350,285 @@ footer {
 
 <script>
 
-const APPS_SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbxV1CyjtjBJJlpvIJxEx37AsBms2rStoPck9kcvD9uaN5UpgoTkKT0Y4EQWr77onNNx/exec";
+function getHistory() {
+
+    let history = [];
+
+    try {
+
+        history =
+        JSON.parse(
+            localStorage.getItem("mockTestHistory")
+        ) || [];
+
+    } catch(error) {
+
+        history = [];
+
+    }
+
+    return history;
+}
 
 
-function showError(message) {
+function getLatestResult() {
 
-    document.getElementById("content").innerHTML = `
-        <div class="card error">
-            <h2>⚠️ ${message}</h2>
+    let result = null;
+
+    try {
+
+        const saved =
+        localStorage.getItem("mockTestLastResult");
+
+        if (saved) {
+            result = JSON.parse(saved);
+        }
+
+    } catch(error) {
+
+        result = null;
+
+    }
+
+    return result;
+}
+
+
+function formatDate(dateString) {
+
+    if (!dateString) {
+        return "Date not available";
+    }
+
+    const date = new Date(dateString);
+
+    if (isNaN(date.getTime())) {
+        return "Date not available";
+    }
+
+    return date.toLocaleString("en-IN", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit"
+    });
+
+}
+
+
+function displayLatest(result) {
+
+    if (!result) {
+        return;
+    }
+
+
+    document.getElementById("studentName")
+    .textContent =
+    result.name || "Student";
+
+
+    document.getElementById("latestTest")
+    .textContent =
+    result.testName || "Mock Test";
+
+
+    document.getElementById("latestScore")
+    .textContent =
+    Number(result.score || 0);
+
+
+    document.getElementById("latestTotal")
+    .textContent =
+    Number(result.total || 50);
+
+
+    document.getElementById("latestPercentage")
+    .textContent =
+    Number(result.percentage || 0).toFixed(2)
+    + "%";
+
+
+    document.getElementById("latestCorrect")
+    .textContent =
+    Number(result.correct || 0);
+
+
+    document.getElementById("latestWrong")
+    .textContent =
+    Number(result.wrong || 0);
+
+
+    document.getElementById("latestUnanswered")
+    .textContent =
+    Number(result.unanswered || 0);
+
+}
+
+
+function displayHistory(history) {
+
+    const container =
+    document.getElementById("historyContainer");
+
+
+    if (!history.length) {
+
+        container.innerHTML = `
+            <div class="empty">
+                <h3>📚 No Test History Yet</h3>
+
+                <p>
+                    Take Mock Test 1 or Mock Test 2
+                    to create your performance history.
+                </p>
+
+                <div class="buttons">
+
+                    <a class="btn green"
+                       href="mock-test.html">
+                       Start Mock Test 1
+                    </a>
+
+                    <a class="btn orange"
+                       href="mock-test-2.html">
+                       Start Mock Test 2
+                    </a>
+
+                </div>
+            </div>
+        `;
+
+        return;
+    }
+
+
+    const reversed =
+    [...history].reverse();
+
+
+    let html = "";
+
+
+    reversed.forEach(function(result,index) {
+
+        const testName =
+        result.testName || "Mock Test";
+
+
+        const score =
+        Number(result.score || 0);
+
+
+        const total =
+        Number(result.total || 50);
+
+
+        const percentage =
+        Number(result.percentage || 0);
+
+
+        const correct =
+        Number(result.correct || 0);
+
+
+        const wrong =
+        Number(result.wrong || 0);
+
+
+        const unanswered =
+        Number(result.unanswered || 0);
+
+
+        html += `
+
+        <div class="history-item">
+
+            <h3>
+                ${index + 1}. ${testName}
+            </h3>
+
+            <div class="history-grid">
+
+                <div class="history-stat">
+                    Score
+                    <strong>
+                        ${score}/${total}
+                    </strong>
+                </div>
+
+                <div class="history-stat">
+                    Percentage
+                    <strong>
+                        ${percentage.toFixed(2)}%
+                    </strong>
+                </div>
+
+                <div class="history-stat">
+                    Correct
+                    <strong>
+                        ${correct}
+                    </strong>
+                </div>
+
+                <div class="history-stat">
+                    Wrong
+                    <strong>
+                        ${wrong}
+                    </strong>
+                </div>
+
+            </div>
 
             <p>
-                Please take the Mock Test first and submit your answers.
+                ⏳ Unanswered:
+                <strong>${unanswered}</strong>
             </p>
 
-            <div class="buttons">
-                <a class="btn" href="mock-test.html">
-                    📝 Take Mock Test
-                </a>
-
-                <a class="btn orange" href="leaderboard.html">
-                    🏆 Leaderboard
-                </a>
+            <div class="date">
+                🕒 ${formatDate(result.date)}
             </div>
+
         </div>
-    `;
+
+        `;
+
+    });
+
+
+    container.innerHTML = html;
+
 }
 
 
 function loadPerformance() {
 
-    let result = localStorage.getItem("mockTestLastResult");
+    const latest =
+    getLatestResult();
 
-    let name = localStorage.getItem("mockTestName");
-    let score = localStorage.getItem("mockTestScore");
-    let percentage = localStorage.getItem("mockTestPercentage");
 
-    if (!result && !name) {
-        showError("No mock test result found.");
+    const history =
+    getHistory();
+
+
+    if (!latest && !history.length) {
+
+        displayHistory([]);
+
         return;
-    }
-
-
-    let data = null;
-
-    if (result) {
-
-        try {
-            data = JSON.parse(result);
-        } catch (error) {
-            data = null;
-        }
 
     }
 
 
-    if (data) {
+    if (latest) {
 
-        name = data.name || name;
-
-        score = data.score !== undefined
-            ? data.score
-            : score;
-
-        percentage = data.percentage !== undefined
-            ? data.percentage
-            : percentage;
+        displayLatest(latest);
 
     }
 
 
-    score = Number(score) || 0;
-
-    percentage = Number(percentage) || 0;
-
-
-    let total = 50;
-
-    if (data && data.total) {
-        total = Number(data.total);
-    }
-
-
-    let correct = 0;
-    let wrong = 0;
-    let unanswered = 0;
-
-
-    if (data) {
-
-        if (data.correct !== undefined) {
-            correct = Number(data.correct);
-        }
-
-        if (data.wrong !== undefined) {
-            wrong = Number(data.wrong);
-        }
-
-        if (data.unanswered !== undefined) {
-            unanswered = Number(data.unanswered);
-        }
-
-    }
-
-
-    /*
-       If the older result format does not contain
-       correct/wrong/unanswered, calculate them.
-    */
-
-    if (
-        correct === 0 &&
-        wrong === 0 &&
-        unanswered === 0 &&
-        data
-    ) {
-
-        if (data.answers && Array.isArray(data.answers)) {
-
-            data.answers.forEach(function(answer) {
-
-                if (
-                    answer === "" ||
-                    answer === null ||
-                    answer === undefined
-                ) {
-                    unanswered++;
-                }
-
-            });
-
-        }
-
-        correct = score;
-
-        wrong = total - correct - unanswered;
-
-        if (wrong < 0) {
-            wrong = 0;
-        }
-
-    }
-
-
-    if (correct + wrong + unanswered > total) {
-
-        unanswered = total - correct - wrong;
-
-        if (unanswered < 0) {
-            unanswered = 0;
-        }
-
-    }
-
-
-    document.getElementById("studentName").textContent =
-        name || "Student";
-
-    document.getElementById("score").textContent =
-        score;
-
-    document.getElementById("percentage").textContent =
-        percentage.toFixed(2);
-
-    document.getElementById("correct").textContent =
-        correct;
-
-    document.getElementById("wrong").textContent =
-        wrong;
-
-    document.getElementById("unanswered").textContent =
-        unanswered;
-
-    document.getElementById("total").textContent =
-        total;
-
-
-    let correctPct = (correct / total) * 100;
-    let wrongPct = (wrong / total) * 100;
-    let unansweredPct = (unanswered / total) * 100;
-
-
-    document.getElementById("correctPercent").textContent =
-        correctPct.toFixed(0) + "%";
-
-    document.getElementById("wrongPercent").textContent =
-        wrongPct.toFixed(0) + "%";
-
-    document.getElementById("unansweredPercent").textContent =
-        unansweredPct.toFixed(0) + "%";
-
-
-    document.getElementById("correctBar").style.width =
-        correctPct + "%";
-
-    document.getElementById("wrongBar").style.width =
-        wrongPct + "%";
-
-    document.getElementById("unansweredBar").style.width =
-        unansweredPct + "%";
-
-
-    let message = "";
-
-
-    if (percentage >= 80) {
-
-        message = "🌟 Excellent Performance! Keep it up.";
-
-    } else if (percentage >= 60) {
-
-        message = "👏 Very Good Performance! Keep practicing.";
-
-    } else if (percentage >= 40) {
-
-        message = "👍 Good Effort! More practice will improve your score.";
-
-    } else {
-
-        message = "📚 Keep Practicing! You can improve your score.";
-
-    }
-
-
-    document.getElementById("message").textContent =
-        message;
-
-
-    loadRank(name, score);
-
-}
-
-
-function loadRank(name, score) {
-
-    const rankElement =
-        document.getElementById("rank");
-
-
-    fetch(APPS_SCRIPT_URL)
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(data) {
-
-            if (!Array.isArray(data)) {
-
-                rankElement.textContent =
-                    "Available on Leaderboard";
-
-                return;
-            }
-
-
-            let players = data;
-
-
-            players.sort(function(a, b) {
-
-                let scoreA =
-                    Number(a.score || a.Score || a[1] || 0);
-
-                let scoreB =
-                    Number(b.score || b.Score || b[1] || 0);
-
-                return scoreB - scoreA;
-
-            });
-
-
-            let foundRank = null;
-
-
-            for (let i = 0; i < players.length; i++) {
-
-                let playerName =
-                    players[i].name ||
-                    players[i].Name ||
-                    players[i][0] ||
-                    "";
-
-                let playerScore =
-                    Number(
-                        players[i].score ||
-                        players[i].Score ||
-                        players[i][1] ||
-                        0
-                    );
-
-
-                if (
-                    String(playerName).trim().toLowerCase()
-                    ===
-                    String(name).trim().toLowerCase()
-                    &&
-                    playerScore === Number(score)
-                ) {
-
-                    foundRank = i + 1;
-                    break;
-
-                }
-
-            }
-
-
-            if (foundRank) {
-
-                rankElement.textContent =
-                    "#" + foundRank;
-
-            } else {
-
-                rankElement.textContent =
-                    "See Leaderboard";
-
-            }
-
-        })
-        .catch(function(error) {
-
-            rankElement.textContent =
-                "See Leaderboard";
-
-        });
+    displayHistory(history);
 
 }
 
