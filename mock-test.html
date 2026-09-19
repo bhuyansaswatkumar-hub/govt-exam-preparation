@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -279,7 +278,8 @@ footer {
     <a href="mcq.html">MCQ</a>
     <a href="current-affairs.html">Current Affairs</a>
     <a href="daily-quiz.html">Daily Quiz</a>
-    <a href="mock-test.html">Mock Test</a>
+    <a href="mock-test.html">Mock Test 1</a>
+    <a href="mock-test-2.html">Mock Test 2</a>
     <a href="performance.html">Performance</a>
     <a href="leaderboard.html">Leaderboard</a>
 
@@ -289,7 +289,7 @@ footer {
 
     <div class="card">
 
-        <h2>📝 Mock Test</h2>
+        <h2>📝 Mock Test 1</h2>
 
         <p>
             Test your preparation with 50 practice questions.
@@ -392,6 +392,10 @@ footer {
                 🔄 Retake Mock Test
             </a>
 
+            <a href="mock-test-2.html">
+                📝 Mock Test 2
+            </a>
+
             <a href="mcq.html">
                 📝 MCQ Test
             </a>
@@ -431,7 +435,7 @@ const GOOGLE_SCRIPT_URL =
 
 
 /* ==================================================
-   MOCK TEST QUESTIONS
+   MOCK TEST 1 QUESTIONS
 ================================================== */
 
 const questions = [
@@ -1040,7 +1044,11 @@ questions.forEach(function(item, index) {
    SEND SCORE TO GOOGLE SHEETS
 ================================================== */
 
-function sendScoreToGoogle(name, score, percentage) {
+function sendScoreToGoogle(
+    name,
+    score,
+    percentage
+) {
 
     return fetch(
         GOOGLE_SCRIPT_URL,
@@ -1056,9 +1064,15 @@ function sendScoreToGoogle(name, score, percentage) {
             body: JSON.stringify({
 
                 name: name,
+
+                testName: "Mock Test 1",
+
                 score: score,
+
                 percentage: percentage,
+
                 exam: "Mock Test",
+
                 total: 50
 
             })
@@ -1073,15 +1087,20 @@ function sendScoreToGoogle(name, score, percentage) {
 
 document
 .getElementById("mockTestForm")
-.addEventListener("submit", function(event) {
+.addEventListener(
+"submit",
+function(event) {
 
     event.preventDefault();
+
 
     const nameInput =
     document.getElementById("studentName");
 
+
     const name =
     nameInput.value.trim();
+
 
     if (!name) {
 
@@ -1094,35 +1113,45 @@ document
 
 
     let score = 0;
+
     let wrong = 0;
+
     let unanswered = 0;
 
 
-    questions.forEach(function(item, index) {
+    questions.forEach(
+    function(item, index) {
 
         const selected =
         document.querySelector(
             `input[name="q${index}"]:checked`
         );
 
+
         if (!selected) {
 
             unanswered++;
 
-        } else {
+        }
+
+        else {
 
             const answer =
             Number(selected.value);
+
 
             if (answer === item.c) {
 
                 score++;
 
-            } else {
+            }
+
+            else {
 
                 wrong++;
 
             }
+
         }
 
     });
@@ -1140,63 +1169,72 @@ document
        SHOW RESULT
     ============================================== */
 
-    document.getElementById("resultName")
-    .textContent =
+    document.getElementById(
+        "resultName"
+    ).textContent =
     "Student: " + name;
 
 
-    document.getElementById("score")
-    .textContent =
+    document.getElementById(
+        "score"
+    ).textContent =
     score;
 
 
-    document.getElementById("correct")
-    .textContent =
+    document.getElementById(
+        "correct"
+    ).textContent =
     score;
 
 
-    document.getElementById("wrong")
-    .textContent =
+    document.getElementById(
+        "wrong"
+    ).textContent =
     wrong;
 
 
-    document.getElementById("unanswered")
-    .textContent =
+    document.getElementById(
+        "unanswered"
+    ).textContent =
     unanswered;
 
 
-    document.getElementById("percentage")
-    .textContent =
+    document.getElementById(
+        "percentage"
+    ).textContent =
     percentage + "%";
 
 
     if (Number(percentage) >= 80) {
 
-        document.getElementById("message")
-        .textContent =
+        document.getElementById(
+            "message"
+        ).textContent =
         "🎉 Excellent performance!";
 
     }
 
     else if (Number(percentage) >= 60) {
 
-        document.getElementById("message")
-        .textContent =
+        document.getElementById(
+            "message"
+        ).textContent =
         "👍 Good performance! Keep practicing.";
 
     }
 
     else {
 
-        document.getElementById("message")
-        .textContent =
+        document.getElementById(
+            "message"
+        ).textContent =
         "📚 Keep studying and try again.";
 
     }
 
 
     /* ==============================================
-       SAVE RESULT FOR PERFORMANCE PAGE
+       SAVE LATEST RESULT
     ============================================== */
 
     localStorage.setItem(
@@ -1204,10 +1242,12 @@ document
         name
     );
 
+
     localStorage.setItem(
         "mockTestScore",
         score
     );
+
 
     localStorage.setItem(
         "mockTestPercentage",
@@ -1216,26 +1256,115 @@ document
 
 
     /* ==============================================
-       SAVE COMPLETE RESULT
+       COMPLETE RESULT OBJECT
     ============================================== */
 
     const resultData = {
 
+        testName: "Mock Test 1",
+
         name: name,
+
         score: score,
+
+        correct: score,
+
+        wrong: wrong,
+
+        unanswered: unanswered,
+
         total: total,
+
         percentage: percentage,
+
         exam: "Mock Test",
+
         date: new Date().toISOString()
 
     };
 
+
+    /* ==============================================
+       SAVE LATEST RESULT
+    ============================================== */
 
     localStorage.setItem(
         "mockTestLastResult",
         JSON.stringify(resultData)
     );
 
+
+    /* ==============================================
+       SAVE ALL TEST HISTORY
+    ============================================== */
+
+    let history = [];
+
+
+    try {
+
+        history =
+        JSON.parse(
+            localStorage.getItem(
+                "mockTestHistory"
+            )
+        ) || [];
+
+    }
+
+    catch(error) {
+
+        history = [];
+
+    }
+
+
+    history.push(resultData);
+
+
+    localStorage.setItem(
+        "mockTestHistory",
+        JSON.stringify(history)
+    );
+
+
+    /* ==============================================
+       SAVE MOCK TEST 1 HISTORY
+    ============================================== */
+
+    let mockTest1History = [];
+
+
+    try {
+
+        mockTest1History =
+        JSON.parse(
+            localStorage.getItem(
+                "mockTest1History"
+            )
+        ) || [];
+
+    }
+
+    catch(error) {
+
+        mockTest1History = [];
+
+    }
+
+
+    mockTest1History.push(resultData);
+
+
+    localStorage.setItem(
+        "mockTest1History",
+        JSON.stringify(mockTest1History)
+    );
+
+
+    /* ==============================================
+       SAVE CURRENT USER
+    ============================================== */
 
     localStorage.setItem(
         "examPrepCurrentUser",
@@ -1247,10 +1376,14 @@ document
             .replace(/\s+/g, "-"),
 
             name: name,
+
             score: score,
+
             total: total,
+
             percentage: percentage,
-            exam: "Mock Test"
+
+            exam: "Mock Test 1"
 
         })
     );
@@ -1263,7 +1396,8 @@ document
     let reviewHTML = "";
 
 
-    questions.forEach(function(item, index) {
+    questions.forEach(
+    function(item, index) {
 
         const selected =
         document.querySelector(
@@ -1323,7 +1457,9 @@ document
 
             `;
 
-        } else {
+        }
+
+        else {
 
             reviewHTML += `
 
@@ -1356,8 +1492,9 @@ document
     });
 
 
-    document.getElementById("review")
-    .innerHTML =
+    document.getElementById(
+        "review"
+    ).innerHTML =
     reviewHTML;
 
 
@@ -1365,8 +1502,9 @@ document
        SHOW RESULT
     ============================================== */
 
-    document.getElementById("result")
-    .style.display =
+    document.getElementById(
+        "result"
+    ).style.display =
     "block";
 
 
@@ -1411,8 +1549,9 @@ document
        SCROLL TO RESULT
     ============================================== */
 
-    document.getElementById("result")
-    .scrollIntoView({
+    document.getElementById(
+        "result"
+    ).scrollIntoView({
         behavior: "smooth"
     });
 
@@ -1425,7 +1564,8 @@ document
     document.getElementById("submitBtn");
 
 
-    submitButton.disabled = true;
+    submitButton.disabled =
+    true;
 
 
     submitButton.textContent =
@@ -1437,4 +1577,3 @@ document
 
 </body>
 </html>
-```
