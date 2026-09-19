@@ -78,6 +78,7 @@ h2 {
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 20px;
+    line-height: 1.8;
 }
 
 input[type="text"] {
@@ -192,6 +193,7 @@ button:disabled {
     padding: 15px;
     margin-bottom: 10px;
     border-radius: 8px;
+    line-height: 1.6;
 }
 
 .correct {
@@ -215,6 +217,7 @@ footer {
 }
 
 @media(max-width:600px) {
+
     header h1 {
         font-size: 24px;
     }
@@ -258,13 +261,12 @@ footer {
 
 <div class="card">
 
-<h2>Mock Test 2</h2>
+<h2>📝 Mock Test 2</h2>
 
 <div class="info">
     <strong>Total Questions:</strong> 50<br>
     <strong>Total Marks:</strong> 50<br>
-    <strong>Time:</strong> Practice Mode<br>
-    <strong>Type:</strong> SSC & Banking
+    <strong>Type:</strong> SSC & Banking Practice
 </div>
 
 <label for="studentName">
@@ -302,6 +304,10 @@ footer {
 
 <div class="score">
     <span id="score">0</span> / 50
+</div>
+
+<div class="result-item">
+    👤 Name: <strong id="resultName"></strong>
 </div>
 
 <div class="result-item">
@@ -359,6 +365,10 @@ footer {
 
 
 <script>
+
+const APPS_SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbxV1CyjtjBJJlpvIJxEx37AsBms2rStoPck9kcvD9uaN5UpgoTkKT0Y4EQWr77onNNx/exec";
+
 
 const questions = [
 
@@ -763,10 +773,7 @@ questions.forEach(function(item,index) {
 
     let html = `
     <div class="question">
-
-        <p>
-        ${index + 1}. ${item.q}
-        </p>
+        <p>${index + 1}. ${item.q}</p>
     `;
 
     item.options.forEach(function(option,optIndex) {
@@ -805,9 +812,10 @@ document.getElementById("quizForm")
     if (!name) {
 
         alert("Please enter your name before submitting.");
-        document.getElementById("studentName").focus();
-        return;
 
+        document.getElementById("studentName").focus();
+
+        return;
     }
 
 
@@ -831,10 +839,7 @@ document.getElementById("quizForm")
 
 
         if (selected) {
-
-            selectedAnswer =
-            Number(selected.value);
-
+            selectedAnswer = Number(selected.value);
         }
 
 
@@ -845,7 +850,7 @@ document.getElementById("quizForm")
             reviewHTML += `
             <div class="review-item unanswered">
                 <strong>Q${index + 1}:</strong>
-                Not Answered<br>
+                ⏳ Not Answered<br>
                 <strong>Correct Answer:</strong>
                 ${item.options[item.answer]}
             </div>
@@ -890,38 +895,30 @@ document.getElementById("quizForm")
 
 
     const percentage =
-    ((score / questions.length) * 100)
-    .toFixed(2);
+    ((score / questions.length) * 100).toFixed(2);
 
 
-    document.getElementById("score")
-    .textContent = score;
+    document.getElementById("score").textContent =
+    score;
 
+    document.getElementById("resultName").textContent =
+    name;
 
-    document.getElementById("correct")
-    .textContent = correct;
+    document.getElementById("correct").textContent =
+    correct;
 
+    document.getElementById("wrong").textContent =
+    wrong;
 
-    document.getElementById("wrong")
-    .textContent = wrong;
+    document.getElementById("unanswered").textContent =
+    unanswered;
 
+    document.getElementById("percentage").textContent =
+    percentage + "%";
 
-    document.getElementById("unanswered")
-    .textContent = unanswered;
+    document.getElementById("reviewContent").innerHTML =
+    reviewHTML;
 
-
-    document.getElementById("percentage")
-    .textContent = percentage + "%";
-
-
-    document.getElementById("reviewContent")
-    .innerHTML = reviewHTML;
-
-
-    /*
-       Save the result so the existing
-       Performance page can use it.
-    */
 
     const result = {
 
@@ -945,6 +942,10 @@ document.getElementById("quizForm")
 
     };
 
+
+    /*
+       SAVE LATEST RESULT
+    */
 
     localStorage.setItem(
         "mockTestLastResult",
@@ -977,12 +978,66 @@ document.getElementById("quizForm")
 
 
     /*
-       Submit score to Google Sheets
+       SAVE TEST HISTORY
     */
 
-    const APPS_SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbxV1CyjtjBJJlpvIJxEx37AsBms2rStoPck9kcvD9uaN5UpgoTkKT0Y4EQWr77onNNx/exec";
+    let history = [];
 
+    try {
+
+        history =
+        JSON.parse(
+            localStorage.getItem("mockTestHistory")
+        ) || [];
+
+    } catch(error) {
+
+        history = [];
+
+    }
+
+
+    history.push(result);
+
+
+    localStorage.setItem(
+        "mockTestHistory",
+        JSON.stringify(history)
+    );
+
+
+    /*
+       ALSO SAVE MOCK TEST 2 HISTORY
+    */
+
+    let test2History = [];
+
+    try {
+
+        test2History =
+        JSON.parse(
+            localStorage.getItem("mockTest2History")
+        ) || [];
+
+    } catch(error) {
+
+        test2History = [];
+
+    }
+
+
+    test2History.push(result);
+
+
+    localStorage.setItem(
+        "mockTest2History",
+        JSON.stringify(test2History)
+    );
+
+
+    /*
+       SEND SCORE TO GOOGLE SHEETS
+    */
 
     const data = {
 
@@ -1012,7 +1067,7 @@ document.getElementById("quizForm")
     })
     .then(function() {
 
-        console.log("Score submitted.");
+        console.log("Mock Test 2 score submitted.");
 
     })
     .catch(function(error) {
