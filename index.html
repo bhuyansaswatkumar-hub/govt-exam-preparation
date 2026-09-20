@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,7 @@
 <title>Govt Exam Preparation - SSC & Banking</title>
 
 <meta name="description"
-content="Free government exam preparation for SSC and Banking exams with study notes, MCQs, current affairs, mock tests and performance tracking.">
+content="Free government exam preparation for SSC, Banking and Railway exams with study notes, MCQs, current affairs, mock tests, performance tracking and student dashboard.">
 
 <style>
 * {
@@ -102,7 +103,7 @@ nav a:hover {
 }
 
 .btn:hover {
-    background: #0d2852;
+    opacity: 0.9;
 }
 
 .btn.green {
@@ -186,6 +187,25 @@ nav a:hover {
     color: #173b75;
 }
 
+.dashboard-section {
+    background: white;
+    padding: 28px 20px;
+    border-radius: 12px;
+    margin-top: 25px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+}
+
+.dashboard-section h2 {
+    color: #6f42c1;
+    margin-top: 0;
+}
+
+.dashboard-section p {
+    color: #555;
+    line-height: 1.6;
+}
+
 .features {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -204,6 +224,10 @@ nav a:hover {
 .feature-icon {
     font-size: 32px;
     margin-bottom: 10px;
+}
+
+.feature p {
+    color: #555;
 }
 
 footer {
@@ -282,6 +306,7 @@ footer a {
     <a href="notes.html">Notes</a>
     <a href="mcq.html">MCQ</a>
     <a href="current-affairs.html">Current Affairs</a>
+    <a href="daily-quiz.html">Daily Quiz</a>
     <a href="mock-test.html">Mock Test 1</a>
     <a href="mock-test-2.html">Mock Test 2</a>
     <a href="performance.html">Performance</a>
@@ -291,279 +316,297 @@ footer a {
 
 <div class="container">
 
-    <section class="hero">
+<section class="hero">
 
-        <h2>Welcome to Govt Exam Preparation</h2>
+    <h2>Welcome to Govt Exam Preparation</h2>
 
-        <p>
-            Prepare for SSC, Banking and Railway examinations
-            with free study material, MCQs, current affairs,
-            mock tests and performance tracking.
-        </p>
+    <p>
+        Prepare for SSC, Banking and Railway examinations
+        with free study material, MCQs, current affairs,
+        daily quizzes, mock tests and performance tracking.
+    </p>
 
-        <div class="buttons">
+    <div class="buttons">
 
-            <a class="btn" href="ssc.html">
-                📚 SSC Preparation
-            </a>
+        <a class="btn" href="ssc.html">
+            📚 SSC Preparation
+        </a>
 
-            <a class="btn" href="banking.html">
-                🏦 Banking Preparation
-            </a>
+        <a class="btn" href="banking.html">
+            🏦 Banking Preparation
+        </a>
 
-            <a class="btn green" href="mock-test.html">
-                📝 Start Mock Test
-            </a>
+        <a class="btn green" href="mock-test.html">
+            📝 Start Mock Test
+        </a>
 
-            <a class="btn purple" href="student-dashboard.html">
-                🎓 Student Dashboard
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <h2 class="section-title">
-        📖 Study Material
-    </h2>
-
-    <div class="grid">
-
-        <div class="card">
-            <h3>🏛️ History</h3>
-            <p>
-                Ancient History, Medieval History, Modern History,
-                Mughal Empire and important historical topics.
-            </p>
-            <a href="study-material.html">View Study Material →</a>
-        </div>
-
-        <div class="card">
-            <h3>🌍 Geography</h3>
-            <p>
-                Important geography notes and topics for
-                SSC and Banking examinations.
-            </p>
-            <a href="geography.html">Study Geography →</a>
-        </div>
-
-        <div class="card">
-            <h3>⚖️ Polity</h3>
-            <p>
-                Indian Constitution, Fundamental Rights,
-                Parliament and important polity topics.
-            </p>
-            <a href="polity.html">Study Polity →</a>
-        </div>
-
-        <div class="card">
-            <h3>💰 Indian Economy</h3>
-            <p>
-                Important economy concepts and banking-related
-                economic topics for competitive exams.
-            </p>
-            <a href="economics.html">Study Economy →</a>
-        </div>
-
-        <div class="card">
-            <h3>🔬 General Science</h3>
-            <p>
-                Physics, Chemistry, Biology and important
-                science questions for competitive exams.
-            </p>
-            <a href="general-science.html">Study Science →</a>
-        </div>
-
-        <div class="card">
-            <h3>💻 Computer Awareness</h3>
-            <p>
-                Computer fundamentals, internet, hardware,
-                software and important computer questions.
-            </p>
-            <a href="computer-awareness.html">
-                Study Computer →
-            </a>
-        </div>
-
-        <div class="card">
-            <h3>🧠 Reasoning</h3>
-            <p>
-                Practice important reasoning concepts and
-                questions for SSC and Banking exams.
-            </p>
-            <a href="reasoning.html">Study Reasoning →</a>
-        </div>
-
-        <div class="card">
-            <h3>🔢 Quantitative Aptitude</h3>
-            <p>
-                Mathematics and quantitative aptitude topics
-                for competitive examinations.
-            </p>
-            <a href="quantitative-aptitude.html">
-                Study Quantitative Aptitude →
-            </a>
-        </div>
-
-        <div class="card">
-            <h3>📖 English</h3>
-            <p>
-                English grammar, vocabulary and practice
-                material for SSC and Banking exams.
-            </p>
-            <a href="english.html">Study English →</a>
-        </div>
+        <a class="btn purple" href="student-dashboard.html">
+            🎓 Student Dashboard
+        </a>
 
     </div>
 
-
-    <h2 class="section-title">
-        📝 Mock Tests
-    </h2>
+</section>
 
 
-    <section class="mock-section">
+<h2 class="section-title">
+    📖 Study Material
+</h2>
 
-        <h2>Practice Your Exam Skills</h2>
-
-        <p>
-            Take our free mock tests and check your score,
-            percentage and performance.
-        </p>
-
-
-        <div class="mock-card">
-
-            <h3>📝 Mock Test 1</h3>
-
-            <p>
-                50 questions covering SSC & Banking topics.
-            </p>
-
-            <a class="btn green" href="mock-test.html">
-                Start Mock Test 1
-            </a>
-
-        </div>
-
-
-        <div class="mock-card">
-
-            <h3>📝 Mock Test 2</h3>
-
-            <p>
-                50 new SSC & Banking practice questions.
-            </p>
-
-            <a class="btn orange" href="mock-test-2.html">
-                Start Mock Test 2
-            </a>
-
-        </div>
-
-
-        <div class="buttons">
-
-            <a class="btn" href="performance.html">
-                📊 View Performance
-            </a>
-
-            <a class="btn red" href="leaderboard.html">
-                🏆 View Leaderboard
-            </a>
-
-            <a class="btn purple" href="student-dashboard.html">
-                🎓 Student Dashboard
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <h2 class="section-title">
-        🎯 What You Can Practice
-    </h2>
-
-
-    <div class="features">
-
-        <div class="feature">
-            <div class="feature-icon">📚</div>
-            <strong>Study Notes</strong>
-            <p>Important exam topics</p>
-        </div>
-
-        <div class="feature">
-            <div class="feature-icon">❓</div>
-            <strong>MCQs</strong>
-            <p>Practice questions</p>
-        </div>
-
-        <div class="feature">
-            <div class="feature-icon">📰</div>
-            <strong>Current Affairs</strong>
-            <p>Important updates</p>
-        </div>
-
-        <div class="feature">
-            <div class="feature-icon">🏆</div>
-            <strong>Leaderboard</strong>
-            <p>Check your ranking</p>
-        </div>
-
-    </div>
-
-
-    <h2 class="section-title">
-        🔗 Quick Links
-    </h2>
-
+<div class="grid">
 
     <div class="card">
+        <h3>🏛️ History</h3>
+        <p>
+            Ancient History, Medieval History, Modern History,
+            Mughal Empire and important historical topics.
+        </p>
+        <a href="study-material.html">View Study Material →</a>
+    </div>
 
-        <div class="buttons">
+    <div class="card">
+        <h3>🌍 Geography</h3>
+        <p>
+            Important geography notes and topics for
+            SSC and Banking examinations.
+        </p>
+        <a href="geography.html">Study Geography →</a>
+    </div>
 
-            <a class="btn" href="study-material.html">
-                📚 Study Material
-            </a>
+    <div class="card">
+        <h3>⚖️ Polity</h3>
+        <p>
+            Indian Constitution, Fundamental Rights,
+            Parliament and important polity topics.
+        </p>
+        <a href="polity.html">Study Polity →</a>
+    </div>
 
-            <a class="btn" href="mcq.html">
-                ❓ MCQ Practice
-            </a>
+    <div class="card">
+        <h3>💰 Indian Economy</h3>
+        <p>
+            Important economy concepts and banking-related
+            economic topics for competitive exams.
+        </p>
+        <a href="economics.html">Study Economy →</a>
+    </div>
 
-            <a class="btn" href="current-affairs.html">
-                📰 Current Affairs
-            </a>
+    <div class="card">
+        <h3>🔬 General Science</h3>
+        <p>
+            Physics, Chemistry, Biology and important
+            science questions for competitive exams.
+        </p>
+        <a href="general-science.html">Study Science →</a>
+    </div>
 
-            <a class="btn" href="daily-quiz.html">
-                🎯 Daily Quiz
-            </a>
+    <div class="card">
+        <h3>💻 Computer Awareness</h3>
+        <p>
+            Computer fundamentals, internet, hardware,
+            software and important computer questions.
+        </p>
+        <a href="computer-awareness.html">
+            Study Computer →
+        </a>
+    </div>
 
-            <a class="btn" href="mock-test.html">
-                📝 Mock Test 1
-            </a>
+    <div class="card">
+        <h3>🧠 Reasoning</h3>
+        <p>
+            Practice important reasoning concepts and
+            questions for SSC and Banking exams.
+        </p>
+        <a href="reasoning.html">Study Reasoning →</a>
+    </div>
 
-            <a class="btn orange" href="mock-test-2.html">
-                📝 Mock Test 2
-            </a>
+    <div class="card">
+        <h3>🔢 Quantitative Aptitude</h3>
+        <p>
+            Mathematics and quantitative aptitude topics
+            for competitive examinations.
+        </p>
+        <a href="quantitative-aptitude.html">
+            Study Quantitative Aptitude →
+        </a>
+    </div>
 
-            <a class="btn green" href="performance.html">
-                📊 Performance
-            </a>
+    <div class="card">
+        <h3>📖 English</h3>
+        <p>
+            English grammar, vocabulary and practice
+            material for SSC and Banking exams.
+        </p>
+        <a href="english.html">Study English →</a>
+    </div>
 
-            <a class="btn red" href="leaderboard.html">
-                🏆 Leaderboard
-            </a>
+</div>
 
-            <a class="btn purple" href="student-dashboard.html">
-                🎓 Student Dashboard
-            </a>
 
-        </div>
+<h2 class="section-title">
+    📝 Mock Tests
+</h2>
+
+<section class="mock-section">
+
+    <h2>Practice Your Exam Skills</h2>
+
+    <p>
+        Take our free mock tests and check your score,
+        percentage and performance.
+    </p>
+
+    <div class="mock-card">
+
+        <h3>📝 Mock Test 1</h3>
+
+        <p>
+            50 questions covering SSC & Banking topics.
+        </p>
+
+        <a class="btn green" href="mock-test.html">
+            Start Mock Test 1
+        </a>
 
     </div>
+
+    <div class="mock-card">
+
+        <h3>📝 Mock Test 2</h3>
+
+        <p>
+            50 new SSC & Banking practice questions.
+        </p>
+
+        <a class="btn orange" href="mock-test-2.html">
+            Start Mock Test 2
+        </a>
+
+    </div>
+
+    <div class="buttons">
+
+        <a class="btn" href="performance.html">
+            📊 View Performance
+        </a>
+
+        <a class="btn red" href="leaderboard.html">
+            🏆 View Leaderboard
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="dashboard-section">
+
+    <h2>🎓 Student Dashboard</h2>
+
+    <p>
+        Track your mock test attempts, scores, percentage,
+        performance and leaderboard results in one place.
+    </p>
+
+    <div class="buttons">
+
+        <a class="btn purple" href="student-dashboard.html">
+            Open Student Dashboard
+        </a>
+
+        <a class="btn" href="performance.html">
+            📊 My Performance
+        </a>
+
+        <a class="btn red" href="leaderboard.html">
+            🏆 Leaderboard
+        </a>
+
+    </div>
+
+</section>
+
+
+<h2 class="section-title">
+    🎯 What You Can Practice
+</h2>
+
+<div class="features">
+
+    <div class="feature">
+        <div class="feature-icon">📚</div>
+        <strong>Study Notes</strong>
+        <p>Important exam topics</p>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon">❓</div>
+        <strong>MCQs</strong>
+        <p>Practice questions</p>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon">📰</div>
+        <strong>Current Affairs</strong>
+        <p>Important updates</p>
+    </div>
+
+    <div class="feature">
+        <div class="feature-icon">🏆</div>
+        <strong>Leaderboard</strong>
+        <p>Check your scores</p>
+    </div>
+
+</div>
+
+
+<h2 class="section-title">
+    🔗 Quick Links
+</h2>
+
+<div class="card">
+
+    <div class="buttons">
+
+        <a class="btn" href="study-material.html">
+            📚 Study Material
+        </a>
+
+        <a class="btn" href="mcq.html">
+            ❓ MCQ Practice
+        </a>
+
+        <a class="btn" href="current-affairs.html">
+            📰 Current Affairs
+        </a>
+
+        <a class="btn" href="daily-quiz.html">
+            🎯 Daily Quiz
+        </a>
+
+        <a class="btn" href="mock-test.html">
+            📝 Mock Test 1
+        </a>
+
+        <a class="btn orange" href="mock-test-2.html">
+            📝 Mock Test 2
+        </a>
+
+        <a class="btn green" href="performance.html">
+            📊 Performance
+        </a>
+
+        <a class="btn red" href="leaderboard.html">
+            🏆 Leaderboard
+        </a>
+
+        <a class="btn purple" href="student-dashboard.html">
+            🎓 Student Dashboard
+        </a>
+
+    </div>
+
+</div>
 
 </div>
 
@@ -586,3 +629,4 @@ footer a {
 
 </body>
 </html>
+```
